@@ -210,6 +210,18 @@ harness first.** That has been the correct call every time so far — see
   have contradicted each other on facts in this repo; the orchestrator settles it with a
   search, not by picking the more confident answer.
 - Give agents self-contained specs. A vague brief produces confident, wrong output.
+- **Spawn the fewest agents that cover the work.** One agent given a batched brief is
+  cheaper than five given a slice each, and it usually answers better, because it sees how
+  the pieces relate — the item that only makes sense next to another item is exactly what a
+  narrow brief loses. Every agent also re-reads the repo's context from nothing, so the
+  setup cost is paid **per agent**, not per question.
+  Split only when the pieces are genuinely independent **and** one agent would run out of
+  room, or when they need different tools. Before spawning N, ask what a single
+  well-batched agent would miss; if the honest answer is "nothing", spawn one.
+- **Scale the pass to the evidence already in hand.** When the person asking has already
+  tested something on their own console, the job is to fill gaps and find the
+  right-observation-wrong-explanation cases — not to re-derive what they watched happen.
+  That is a small pass, not a fan-out.
 
 ## 10. Keep concepts portable — nothing hardcoded to one game
 

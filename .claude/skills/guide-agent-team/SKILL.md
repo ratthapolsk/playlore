@@ -5,6 +5,28 @@ description: Runs a multi-agent pass over a game folder in this repo — splitti
 
 # Run a multi-agent pass over a game
 
+## 0. First decide whether to fan out at all
+
+**The default is one agent, or none.** A multi-agent pass is for work that is genuinely
+wide — many pages at once, a sweep across a whole game folder — not for a task a single
+pass can hold. One agent with a batched brief costs far less than one agent per item and
+usually answers better, because it sees how the pieces relate, and the item that only makes
+sense beside another item is exactly what a narrow brief drops.
+
+Every agent re-reads this repo's context from nothing. **The setup cost is paid per agent,
+not per question**, so five narrow agents pay it five times to answer what one agent could
+have answered once.
+
+Fan out only when both are true: the pieces are **independent** (no agent needs another's
+answer) and they are **too large for one** (one agent would run out of room, or they need
+different tools). Before spawning N agents, ask what a single well-batched agent would
+miss. If the honest answer is "nothing", spawn one.
+
+**Scale to the evidence already in hand.** When the person asking has already tested
+something on their own console, the pass is small: fill the gaps they could not see, and
+catch the places where a correct observation has picked up a wrong explanation. It is not a
+reason to re-derive what they watched happen.
+
 Fanning out across 30 stage pages is the only practical way to build a game folder. It is also
 the fastest way to lose content, duplicate work, and ship two pages that contradict each
 other. These rules exist because each failure has already happened here. `CLAUDE.md` §7.

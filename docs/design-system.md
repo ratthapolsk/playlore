@@ -519,6 +519,22 @@ both names in the same table without a reason. The same tables commonly also car
 `.item`/`class="item"` (cyan, the column naming a material used) alongside `td .miss`/`td .safe`
 (red/green, for a status column reading "permanently missable"/"safe").
 
+**Status columns have three levels, not two, and picking the wrong one misinforms the
+reader.** Across the whole collection red means exactly one thing: **miss it and it is gone
+for good.** Cells that only meant "there is a step before this" — walk in instead of flying,
+type a coordinate first, clear a battle first — were written with `.miss`, so ordinary
+prerequisites read as permanent losses, and a reader said so. Use:
+
+| class | colour | means |
+|---|---|---|
+| `.safe` | green | nothing is required and nothing can be lost |
+| `.step` | gold | something is required first, but nothing can be lost |
+| `.miss` | red | genuinely gone for good if missed |
+
+`.step` is defined in section 52 of the stylesheet. The same three-way distinction applies
+to the prose: see the reserved meaning of the word "พลาด" in
+[`content-model.md`](content-model.md).
+
 ```html
 <tr><td class="nm">Caladbolg (Tidus)</td><td>สัดส่วน HP</td><td>เลือดเต็ม = แรงเต็ม 100%</td></tr>
 

@@ -448,3 +448,38 @@ actually generic yet."
   environment variable or a runtime fallback that asks the package manager directly for its
   global install location. A "cannot find module" error from a tool built this way means the
   global install or the environment variable is missing, not that the tool itself is broken.
+
+- **A hook that exists to keep something out of a public repository must not contain that
+  something.** A house-style hook here blocked a set of private orchestration labels from
+  reaching committed files — by holding the complete list in a plain array in its own
+  source. That was invisible while the repository was private and self-defeating the moment
+  it went public: publishing the guard publishes exactly what the guard protects. The list
+  now lives in a git-ignored local file that the hook loads if present; absent, that single
+  check no-ops and every other check still runs. **Before a repository goes public, read
+  the enforcement code as an attacker would, not as its author.**
+
+- **One colour cannot carry three meanings.** A red status class meant "gone for good"
+  everywhere in this collection, and it had also been used for "you must do something
+  first" and for "this is the largest number in the column". A reader hunting for
+  permanently-missable content read the prerequisites as losses and said the flags were
+  wrong. They were. Status needs three levels — nothing required, something required but
+  nothing losable, and genuinely losable — and the middle one has to exist or it gets
+  written as one of the extremes.
+
+- **A correct fact can still be unusable.** "Jupiter Crest — Luca, the Besaid Aurochs
+  locker room" is accurate, and a reader took **Luca** for a person's name. Nothing said it
+  was a city, which building to enter, or how to travel there. **Verifying a fact and
+  writing a usable line are two separate jobs**; the harness checks structure and the
+  ledger checks truth, and neither one catches a line that is true and unreadable.
+
+- **When a player contradicts the reference, the reference is what gets re-checked.** A
+  player reported meeting a fiend in an area the project's primary reference does not list
+  it in. Two other sources confirmed the player and showed the primary reference's list was
+  simply incomplete. Treat a report from someone with the game running as evidence that
+  outranks a website, and re-verify rather than explain it away.
+
+- **A trick is only as good as its timing, and timing is the part that gets dropped.** A
+  documented prize-reroll shortcut said "save before taking the prize." The prize list is
+  actually rolled when the menu is opened, so a reader following that line saves too late
+  and the shortcut does nothing. **When writing a save-and-reload technique, state the exact
+  moment the game decides**, because that moment is the whole technique.

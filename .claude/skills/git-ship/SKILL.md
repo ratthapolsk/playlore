@@ -116,7 +116,7 @@ Then check each against what actually changed:
 | `GEMINI.md` | Thin — it `@`-imports `AGENTS.md`. Usually needs no change; confirm the import path still resolves. |
 | `.github/copilot-instructions.md` | Also deliberately self-contained, because GitHub warns against instructions that send the model to read another file. Same rules restated. |
 | `.cursor/rules/*.mdc` | Frontmatter still valid, and `alwaysApply` still set for the always-on rule. |
-| `README.md` | Written **in Thai for a human**. Folder table still complete, still describes how to open the site and add a game. |
+| `README.md` | Written **in English** — the project is public, so the front door has to be readable by anyone who finds it. Check the feature list, the folder layout and the "how to open it" steps still match the repo. |
 | `docs/*.md` | Written **in English for agents**. A new class, check, threshold or content rule belongs in the matching document. |
 | `docs/verified-facts/*.md` | Every fact verified this session recorded, with two sources and a date. **A fact verified and not written down was paid for and thrown away.** |
 | `.claude/skills/*/SKILL.md` | If this session found a way of working worth repeating — or a mistake worth never repeating — it belongs in the relevant skill. |
@@ -125,7 +125,8 @@ Then check each against what actually changed:
 **Language rule while sweeping:** anything an agent reads is **English**
 (`CLAUDE.md`, `AGENTS.md`, `GEMINI.md`, the Copilot and Cursor files, everything under
 `docs/`, every `SKILL.md`, and commit messages). Anything a human reads may be Thai —
-today that is `README.md` and the guide pages themselves under each game folder.
+today that is the guide pages themselves under each game folder. `README.md` is the
+exception among human-facing files: it is English, because the repository is public.
 
 **What slips most often:** adding a script under `tools/` and not describing it; setting a
 new rule mid-session and writing it into one file instead of all the agent-instruction

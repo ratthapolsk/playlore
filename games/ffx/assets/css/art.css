@@ -1,0 +1,74 @@
+/* =========================================================================
+   FFX Guide — Vector Art layer (art.css)
+   Positioning / sizing / opacity / theme tinting for every art.js graphic.
+
+   Colour discipline: everything here is monochrome — currentColor resolved
+   against var(--ink) or var(--line) at low opacity. The only multi-hue
+   element left is the progress ring (window.ART.ring), which the site's
+   colour rule explicitly exempts ("progress fill" carries hue). No
+   per-stage rainbow, no multi-hue ornament, and no mark that can't answer
+   "what is this for" — a centred symmetric hero crest was cut for exactly
+   that reason; do not reintroduce a background mark behind the headline.
+
+   Note: this file previously had a centred hero-crest ring behind every
+   page's <h1> (faceted rings + a rotating pilgrimage spiral). It read as an
+   unexplained decoration competing with the title, so it was removed along
+   with its injection in art.js. If a replacement is ever proposed, the bar
+   is that it must do a job (place / progress / orientation) and stay clear
+   of the headline — not simply swap one ornament for another.
+   ========================================================================= */
+
+/* ---------- icon swap: h2 > span.ic now holds an inline <svg> ------------ */
+/* h2 sets its own color:transparent in dark mode for a gradient-text trick;
+   without this rule the icon's stroke="currentColor" would inherit that and
+   vanish. var(--ink) already flips per theme, so one rule covers both. */
+h2 .ic svg{display:block;width:20px;height:20px;color:var(--ink)}
+@media(max-width:420px){h2 .ic svg{width:17px;height:17px}}
+
+/* ---------- per-stage sigil: hero corner mark + index list marker --------- */
+.art-hero-sigil{
+  position:absolute;left:18px;top:18px;width:50px;height:50px;z-index:-1;
+  pointer-events:none;opacity:.38;color:var(--ink);
+}
+[data-theme="dark"] .art-hero-sigil{opacity:.48}
+@media(max-width:480px){.art-hero-sigil{width:36px;height:36px}}
+.art-sigil-svg{display:block;width:100%;height:100%}
+.art-sigil-mini{
+  display:inline-block;width:15px;height:15px;margin:0 6px 0 0;vertical-align:-2px;
+  color:var(--ink);opacity:.7;
+}
+
+/* ---------- section divider: fading hairline + faceted diamond ------------ */
+.art-divider{height:20px;margin:6px 0;display:flex;align-items:center;
+  pointer-events:none;color:var(--line);overflow:visible}
+.art-divider svg{width:100%;height:100%;display:block;overflow:visible}
+
+/* ---------- footer wave: one thin drifting hairline, full viewport width -- */
+/* Breakout trick matches the codebase's own .tbl-wrap convention: percentage
+   margin resolves against .wrap's width, but since .wrap is itself centred
+   (margin:0 auto), "own left edge + 50% of container width" always lands on
+   the viewport's true centre — so this centres on the viewport, not .wrap. */
+.art-footer-wave{
+  position:relative;width:100vw;margin-left:50%;transform:translateX(-50%);
+  margin-top:4px;margin-bottom:-2px;
+  height:36px;overflow:hidden;pointer-events:none;
+  color:var(--ink);opacity:.14;
+}
+[data-theme="dark"] .art-footer-wave{opacity:.2}
+.art-wave-svg{position:absolute;left:0;top:0;width:200%;height:100%;
+  animation:artWaveDrift 36s linear infinite}
+@keyframes artWaveDrift{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* ---------- index hero panorama: quiet parallax silhouette (index.html) --- */
+.art-index-panorama{position:absolute;inset:0;z-index:-1;overflow:hidden;
+  pointer-events:none;color:var(--ink);opacity:.4}
+[data-theme="dark"] .art-index-panorama{opacity:.48}
+.art-pano-svg{display:block;width:100%;height:100%}
+.art-layer-back,.art-layer-mid,.art-layer-front{will-change:transform}
+
+/* ---------- progress ring helper (window.ART.ring) ------------------------ */
+/* the one place this layer keeps a multi-stop hue: a "progress fill" is
+   explicitly exempt from the site's colour-discipline rule, and this
+   mirrors the sticky progress bar's own cyan->purple->gold gradient. */
+.art-ring{display:block}
+.art-ring-fill{transition:stroke-dashoffset .6s cubic-bezier(.2,.8,.2,1)}

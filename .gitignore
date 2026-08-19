@@ -1,0 +1,20 @@
+# Node / editor / OS noise. This repo has no package.json and no build step, but a
+# contributor may install Playwright locally to run the browser checks in tools/.
+node_modules/
+npm-debug.log*
+.DS_Store
+Thumbs.db
+*.swp
+
+# Superseded pages the author keeps on disk while rewriting. The leading underscore
+# already makes every tool in tools/ skip the folder; this keeps it out of the repo too.
+# The files are NOT deleted — they stay in the working copy.
+games/*/_to_delete/
+
+# Scratch files from one-off edit scripts.
+.*.tmp.js
+
+# The private orchestration codename list the house-style hook reads. Deliberately
+# NOT committed: this repo is public, and a hook that blocks codenames must not ship
+# them. Absent file means that one check no-ops; every other check still runs.
+.claude/hooks/codenames.local.json

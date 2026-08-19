@@ -1,0 +1,92 @@
+# Runs the repository's own verification harness against every pull request.
+#
+# WHY THIS EXISTS
+# The enforcement hooks under `.claude/hooks/` block a bad edit at the moment it is
+# made – a removed `data-k` key, a stray middot, a per-page `<style>` block. They run
+# only on a maintainer's own machine, so they never see a contributor's pull request.
+# This workflow is the only thing that holds a contributed change to the same standard.
+#
+# ACTION VERSIONS – verified 2026-08-19, not remembered
+#   actions/checkout@v7   latest major (v7.0.1, 2026-07-20)
+#                         https://github.com/actions/checkout/releases
+#   actions/setup-node@v7 latest major (v7.0.0, 2026-07-14)
+#                         https://github.com/actions/setup-node/releases
+# Both are pinned to a major rather than an older one because GitHub is retiring the
+# Node 20 runtime that powers `checkout@v4` and `setup-node@v4` and earlier: runners
+# began defaulting to Node 24 on 2026-06-16, with removal planned for autumn 2026.
+#   https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+# `ubuntu-latest` is current and maps to Ubuntu 24.04; the 26.04 images are still in
+# public preview, so they are not the right default yet.
+#   https://docs.github.com/en/actions/reference/runners/github-hosted-runners
+
+name: verify
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+# Read-only: this workflow only needs the source it is checking.
+permissions:
+  contents: read
+
+# A new push to the same pull request makes the previous run pointless – a full harness
+# run takes several minutes, so cancel the superseded one rather than paying for it.
+concurrency:
+  group: verify-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  harness:
+    runs-on: ubuntu-latest
+    # The browser checks load and measure every page one at a time. The Final Fantasy X
+    # guide alone takes roughly four minutes, so this ceiling is generous on purpose and
+    # is here to catch a hang, not to cap normal growth.
+    timeout-minutes: 30
+
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-node@v7
+        with:
+          # Playwright supports Node 22.x, 24.x and 26.x.
+          # https://playwright.dev/docs/intro#system-requirements
+          node-version: 24
+          # No `cache:` input on purpose. This repository intentionally has no
+          # package.json and no lockfile, and setup-node's npm cache fails outright
+          # when it cannot find one to hash.
+
+      - name: Install the harness dependencies globally
+        # This repository has no package.json by design (see CLAUDE.md: no build step,
+        # no package install), and tools/lib/repo.js resolves `playwright` and `pngjs`
+        # from the global npm root for exactly that reason. Installing them globally
+        # here reproduces a maintainer's own machine rather than inventing a local
+        # dependency tree that does not exist in the repository.
+        #
+        # Playwright is pinned because its browser binaries are version-locked to the
+        # library: an unpinned install can leave `playwright install` and the library
+        # out of step. 1.62.1 was the `latest` release on 2026-08-19 – bump it when it
+        # ages. pngjs is left unpinned: it is a small, stable PNG decoder with no such
+        # coupling, and no current version was verified at the time of writing.
+        run: npm install --global playwright@1.62.1 pngjs
+
+      - name: Install the Chromium browser
+        # Every browser check in tools/ launches chromium and nothing else, so there is
+        # no reason to download Firefox and WebKit as well. `--with-deps` installs the
+        # system libraries the browser needs on Ubuntu.
+        # https://playwright.dev/docs/ci
+        run: playwright install --with-deps chromium
+
+      - name: Point Node at the global package root
+        # tools/lib/repo.js falls back to asking npm for its global root on its own, so
+        # this is belt and braces rather than a requirement – it is the same NODE_PATH
+        # export that tools/README.md tells a contributor to use locally.
+        run: echo "NODE_PATH=$(npm root -g)" >> "$GITHUB_ENV"
+
+      - name: Run the verification harness
+        # verify-all.js exits non-zero when any check fails, which is what fails this
+        # job. Structural checks (tag balance, duplicate or lost data-k keys, the
+        # forbidden separator) report first, so a broken key is visible in the log
+        # without waiting out the browser checks behind it.
+        run: node tools/verify-all.js

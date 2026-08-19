@@ -1,0 +1,797 @@
+<!DOCTYPE html><html lang="th"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>อ้างอิง — Monster Arena: 13 พื้นที่ 102 ชนิด + เส้นทางไล่เก็บ</title><meta name="color-scheme" content="dark light"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="../assets/css/style.css"><link rel="stylesheet" href="../assets/css/art.css"><link rel="stylesheet" href="../assets/css/gimmicks.css"><script>try{document.documentElement.setAttribute("data-theme",localStorage.getItem("ffx_theme")||"light")}catch(e){document.documentElement.setAttribute("data-theme","light")}</script></head>
+<body data-page="refarena">
+<header class="hero">
+  <div class="eyebrow">อ้างอิง – Monster Arena</div>
+  <h1>Monster Arena <span>13 พื้นที่ – 102 ชนิด – ไล่เก็บทีละสเต็ป</span></h1>
+  <p>พื้นที่จับ fiend ของสนามมีอะไรบ้าง แต่ละพื้นที่ต้องจับตัวไหน อยู่แมพย่อยไหน บินไปลงตรงไหน และปลดพื้นที่นั้นแล้วได้อะไรกลับมา — เรียงเป็นลำดับที่เดินตามได้จริงตั้งแต่จุดที่ 1 ถึงจุดที่ 13 (ติ๊กได้ เซฟถาวร)</p>
+  <div class="badges">
+    <span class="badge b-key">102 ชนิด – 13 พื้นที่</span>
+    <span class="badge b-quest">Blossom Crown – Mars Sigil – Nemesis</span>
+    <span class="badge b-key">เช็กลิสต์ 2 รอบ – ชนิดละ 1 ตัว และครบ 10 ตัว</span>
+    <span class="badge b-miss">Qactuar ไม่โผล่จนกว่าจะปลดล็อก</span>
+  </div>
+  <div class="navbtns"><a class="home" href="../index.html">≡ หน้ารวม</a><span style="display:flex;gap:8px"><a href="ref-abilities.html">สกิล/คอมโบ</a><a href="ref-gear.html">อาวุธ/เกราะ</a><a href="ref-sidequests.html">Side Quest</a></span></div>
+</header>
+<div class="pbar"><div class="inner"><span>ความคืบหน้า</span><div class="pbar-track"><div class="pbar-fill"></div></div><span><b data-progress="all">0/0</b></span><button class="rst" data-reset>ล้าง</button></div></div>
+<div class="wrap">
+<nav class="toc">
+  <a href="#start">อ่านก่อนลงมือ</a>
+  <a href="#tiers">จะเล่นถึงระดับไหน</a>
+  <a href="#a1-besaid">1 – Besaid</a>
+  <a href="#a2-kilika">2 – Kilika</a>
+  <a href="#a3-miihen">3 – Mi'ihen Highroad</a>
+  <a href="#a4-mushroom">4 – Mushroom Rock Road</a>
+  <a href="#a5-djose">5 – Djose Road</a>
+  <a href="#a6-thunder">6 – Thunder Plains</a>
+  <a href="#a7-macalania">7 – Macalania</a>
+  <a href="#a8-bikanel">8 – Bikanel</a>
+  <a href="#a9-calmlands">9 – Calm Lands</a>
+  <a href="#a10-stolenfayth">10 – Stolen Fayth Cavern</a>
+  <a href="#a11-gagazet">11 – Mt. Gagazet</a>
+  <a href="#a12-insidesin">12 – Inside Sin</a>
+  <a href="#a13-omega">13 – Omega Dungeon</a>
+  <a href="#species">Species Conquest</a>
+  <a href="#rewards">ทำทั้งหมดนี้ไปเพื่ออะไร</a>
+  <a href="#gloss">ศัพท์ควรรู้</a>
+</nav>
+
+<div class="story"><b>หน้านี้ใช้ยังไง:</b> Monster Arena คือสนามของชายเจ้าของสนามที่ตั้งอยู่ริม <b>Calm Lands</b> เขารับ fiend ที่คุณจับเป็น ๆ มาให้ แล้วแลกเป็นบอสตัวใหม่กับของรางวัลกองใหญ่ — งานทั้งหมดคือการ<b>ไล่จับ fiend 102 ชนิดจาก 13 พื้นที่ทั่ว Spira</b> ปัญหาของงานนี้ไม่ใช่ความยาก แต่คือความ<b>ไม่รู้ว่าเหลืออะไร</b> เพราะเมนูของสนามบอกแค่ว่าพื้นที่ไหนยังไม่ครบ ไม่ได้บอกว่าขาดตัวไหน หน้านี้จึงเรียงทุกอย่างเป็นลำดับการบินจริงตั้งแต่จุดที่ 1 ถึงจุดที่ 13 แต่ละจุดบอกครบว่า<b>เลือกอะไรบน NavMap – จับตัวไหน – ตัวนั้นอยู่แมพย่อยไหน – ปลดแล้วได้อะไร – แล้วไปต่อที่ไหน</b> ติ๊กไปเรื่อย ๆ แล้วแถบบนสุดจะบอกเองว่าเหลืออีกกี่ตัว
+<b>ทุกพื้นที่มีเช็กลิสต์สองรอบ</b> คือ <b>รอบที่ 1</b> สำหรับ "จับได้ชนิดละ 1 ตัวแล้ว" ซึ่งพอสำหรับ Area Conquest กับของรางวัลเกือบทั้งหมด และ <b>รอบที่ 2</b> สำหรับ "ครบ 10 ตัวแล้ว" ซึ่งเป็นรอบที่ปิดทุกเงื่อนไขในเกมรวมถึง <b>Nemesis</b> — ถ้ายังไม่แน่ใจว่าจะเอาถึงระดับไหน ให้อ่านหัวข้อ <a href="#tiers">จะเล่นถึงระดับไหน</a> ก่อนเริ่มลงแรง</div>
+
+<section id="start">
+  <h2><span class="ic">🧭</span> อ่านก่อนลงมือ — ตัวเลขสามตัวที่ตัดสินว่างานนี้ใหญ่แค่ไหน</h2>
+
+  <div class="callout tip"><b>ข้อแรกที่ต้องรู้ก่อนอย่างอื่น — งานนี้แทบไม่มีอะไร "หายถาวร" เลย:</b> คู่มือชุดนี้ใช้คำว่า <b>พลาด</b> ในหัวข้อ "พลาดแล้วหายถาวรไหม" ของหน้าด่านต่าง ๆ ในความหมายว่า<b>เก็บไม่ทันแล้วหมดสิทธิ์</b> — <b>แต่ในหน้านี้ไม่ใช่แบบนั้น</b> เมื่อพูดว่าตัวไหน "คนเดินผ่านโดยไม่รู้ตัว" หมายถึง<b>เดินผ่านทางแยกไปโดยไม่ทันสังเกต</b> ซึ่ง<b>บินกลับมาเก็บได้เสมอ</b> เสียแค่เวลา ไม่เสียโอกาส
+    <br>• <b>12 จาก 13 พื้นที่กลับไปได้ตลอดชีวิตเซฟ</b> — Oldroad ของ Mi'ihen, ทะเลทราย West ของ Bikanel, ส่วนใต้น้ำของถ้ำ Gagazet, ถ้ำ Stolen Fayth ทั้งหมดไม่มีเงื่อนไขปิดตัวเอง
+    <br>• <b>มีพื้นที่เดียวที่มีเส้นตายจริงคือ <span class="it">Inside Sin</span></b> และเส้นตายคือ<b>การแตะ glyph กลางหอคอยเพื่อเข้า Nucleus</b> ไม่ใช่การเข้า Sin — ก่อนถึงจุดนั้นออกด้วยเรือบินแล้วกลับเข้ามาใหม่ได้ไม่จำกัดครั้ง
+    <br>• <b><span class="it">Qactuar</span> เป็นกรณีพิเศษที่ไม่ใช่ทั้งสองแบบ</b> — มัน<b>ติดล็อก</b> ไม่ใช่หายถาวร คือไม่โผล่เป็นฉากรบเลยจนกว่าจะไปสวดที่หินใน Thunder Plains ปลดล็อกเมื่อไหร่ก็จับได้เมื่อนั้น</div>
+
+  <div class="callout warn"><b>คนเลิกทำ Monster Arena เพราะเข้าใจตัวเลขสามตัวนี้ผิด และผิดได้สองทางซึ่งเจ็บคนละแบบ:</b>
+    <p style="margin:6px 0 0"><b>1) Area Conquest ต้องจับ "ชนิดละ 1 ตัว" เท่านั้น</b> — จับ fiend ในพื้นที่นั้นให้ครบทุกชนิด ชนิดละตัวเดียวก็ปลดบอสประจำพื้นที่ได้แล้ว นี่คือหมวดที่ถูกที่สุดและควรทำก่อนเสมอ</p>
+    <p style="margin:6px 0 0"><b>2) Species Conquest ต้องจับ "ชนิดละ 3 ถึง 10 ตัว" และจำนวนไม่เท่ากันในแต่ละสายพันธุ์</b> — สายที่ถูกที่สุดคือ 3 ตัวต่อชนิด สายที่แพงที่สุดคือ 10 ตัวต่อชนิด ให้เปิดตารางโควตาในหัวข้อ <a href="#species">Species Conquest</a> ดูก่อนเริ่มฟาร์มทุกครั้ง</p>
+    <p style="margin:6px 0 0"><b>3) มีแค่ Nemesis ตัวเดียวที่ต้องจับชนิดละ 10 ตัวทั้งเกม</b> — ตัวเลข 10 ที่คนจำกันติดปากเป็นเงื่อนไขของบอสลับตัวสุดท้ายเท่านั้น ไม่ใช่เงื่อนไขของงานทั่วไปในสนาม</p>
+    <p style="margin:6px 0 0">เข้าใจผิดว่า<b>ทุกอย่างต้องชนิดละ 10</b> จะทำให้งานนี้ดูใหญ่กว่าความจริงหลายเท่าจนคนล้มเลิกตั้งแต่ยังไม่เริ่ม ส่วนเข้าใจผิดว่า<b>ทุกอย่างชนิดละ 1</b> จะทำให้คุณฟาร์มจนคิดว่าครบแล้วแต่บอสสาย Species ไม่ปลดสักตัว แล้วหาไม่เจอว่าพลาดตรงไหน</p>
+  </div>
+
+  <div class="callout tip"><b>ทางลัดทางความคิดที่ทำให้ระบบสามชั้นนี้เหลือเลขเดียว — ถ้าคุณตั้งใจจะเอา Nemesis อยู่แล้ว ให้จับชนิดละ 10 ตัวไปเลยทุกตัว แล้วเลิกสนใจโควตาที่เหลือทั้งหมด:</b>
+    <p style="margin:6px 0 0">เหตุผลง่ายมากคือ <b>10 มันครอบคลุมทุกเงื่อนไขที่เล็กกว่าอยู่แล้ว</b> — Area Conquest ขอชนิดละ 1 ตัว ซึ่ง 10 ก็ผ่าน – Species Conquest ขอชนิดละ 3 ถึง 10 ตัว ซึ่ง 10 ก็ผ่านทุกสาย – และ Nemesis ขอชนิดละ 10 ตัวพอดี ฉะนั้น<b>การไล่เก็บให้ครบ 10 ตัวรอบเดียวจึงปิดทั้งสามเป้าหมายพร้อมกัน</b> ไม่มีเหตุผลต้องจำว่าตัวไหนขอ 1 ตัวไหนขอ 3 ตัวไหนขอ 4 หรือ 5 อีกเลย</p>
+    <p style="margin:6px 0 0">เพราะแบบนี้ แต่ละพื้นที่ในหน้านี้จึงมีเช็กลิสต์<b>สองรอบ</b> — <b>รอบที่ 1</b> คือติ๊กว่าจับได้ชนิดละ 1 ตัวแล้ว ซึ่งพอสำหรับ Area Conquest และของรางวัลเกือบทั้งหมด ส่วน<b>รอบที่ 2</b> คือติ๊กว่าครบ 10 ตัวแล้ว ซึ่งเป็นรอบที่ปิดทุกอย่างรวมถึง Nemesis — <b>ถ้าคุณไม่เอา Nemesis ก็ข้ามรอบที่ 2 ได้ทั้งหมด</b> อ่านหัวข้อถัดไปก่อนตัดสินใจ</p>
+  </div>
+
+  <div class="card"><h4>ของชิ้นเดียวที่ขาดไม่ได้ — อาวุธที่ติดอบิลิตี้ <span class="it">Capture</span></h4>
+    <ul>
+      <li><b>ซื้อจากเจ้าของ Monster Arena เท่านั้น ราคาเล่มละ 9,075 Gil</b> — คัสตอม <span class="it">Capture</span> ลงอาวุธปกติไม่ได้เลย จึงไม่มีทางลัดอื่น</li>
+      <li><b>อาวุธจับมีคนละเล่มต่อคน</b> คือ <b>Taming Sword</b> (Tidus) – <b>Herding Staff</b> (Yuna) – <b>Catcher</b> (Wakka) – <b>Trapper Mog</b> (Lulu) – <b>Taming Spear</b> (Kimahri) – <b>Beastmaster</b> (Auron) – <b>Iron Grip</b> (Rikku)</li>
+      <li><b>แต่ละเล่มมีแค่ Capture กับช่องว่างอีกหนึ่งช่อง</b> — เท่านั้นจริง ๆ และเพราะ Capture เป็นความสามารถหลักของเล่ม ชื่ออาวุธจะไม่เปลี่ยนไม่ว่าคุณจะใส่อะไรลงช่องว่างนั้น</li>
+      <li><b>ตัวที่จะถูกจับต้องโดนปิดจ็อบด้วยอาวุธเล่มนี้</b> — วิธีจับแบบละเอียดอยู่ที่หัวข้อ <a href="ref-sidequests.html#arena">Monster Arena ในหน้า Side Quest</a> หน้านี้จะไม่เขียนซ้ำ</li>
+    </ul>
+  </div>
+
+  <div class="card"><h4>เมนูเลือกพื้นที่ในสนาม — และช่อง <b>Unknown</b> สองช่องที่ทำให้คนสับสน</h4>
+    <ul>
+      <li><b>รายการอ่านจากซ้ายไปขวาทีละแถว ไม่ใช่ไล่ลงทีละคอลัมน์</b> — ลำดับของเกมคือ Besaid – Kilika – Mi'ihen Highroad – Mushroom Rock Road – Djose Road – Thunder Plains – Macalania – Bikanel – Calm Lands – Stolen Fayth Cavern – Mt. Gagazet – Inside Sin – Omega Dungeon แล้วต่อด้วยสามหมวดสร้างบอสคือ Area Conquest – Species Conquest – Original</li>
+      <li><b>ช่องที่ขึ้นว่า <span class="it">Unknown</span> มีสองช่อง คือ Inside Sin (ช่องที่ 12) และ Species Conquest (ช่องที่ 15)</b> — พื้นที่จะขึ้นว่า Unknown จนกว่าคุณจะจับ fiend จากที่นั่นได้อย่างน้อยหนึ่งตัว ส่วนหมวดสร้างบอสจะขึ้นว่า Unknown จนกว่าจะปลดบอสตัวแรกของหมวดนั้นได้</li>
+      <li><b><span class="it">Omega Dungeon</span> ในเมนูคือแมพที่ชื่อ <span class="it">Omega Ruins</span></b> — เป็นชื่อเรียกคนละชื่อของที่เดียวกัน ไม่ใช่สองที่</li>
+      <li><b>ชื่อที่เรียกไม่ตรงกันอีกสามคู่</b> คือ <span class="it">Djose Road</span> ก็คือ Djose Highroad – <span class="it">Bikanel</span> ก็คือ Sanubia Desert – <span class="it">Stolen Fayth Cavern</span> ก็คือ Cavern of the Stolen Fayth</li>
+    </ul>
+  </div>
+
+  <div class="callout tip"><b><span class="it">Baaj Temple</span> ไม่ใช่พื้นที่จับของสนาม อย่าไปเสียเวลาหา:</b> มันไม่ปรากฏในพื้นที่ทั้ง 13 ของสนามเลย และไม่มีอะไรจับได้ที่นั่น เพราะสิ่งเดียวที่สู้ได้คือ <b>Geosgaeno</b> ซึ่งเป็นบอส และบอสจับไม่ได้ — บทบาทจริงของ Baaj คือเควส <b>Anima</b> ซึ่งอยู่ที่หัวข้อ <a href="ref-sidequests.html#aeons">Aeon ครบ 8 ตัว</a></div>
+
+  <div class="card"><h4>ภาพรวมทั้ง 13 พื้นที่ — ใช้เป็นตารางเปิดหาเวลาลืมว่าเหลือที่ไหน</h4>
+    <p data-note>คอลัมน์ <b>จำนวนชนิด</b> คือจำนวน fiend ที่ต้องจับให้ครบเพื่อปลด Area Conquest ของพื้นที่นั้น (ชนิดละ 1 ตัวพอ) รวมกันทั้ง 13 พื้นที่ได้ <b>102 ชนิด</b> — คอลัมน์ <b>ไปยังไง</b> บอกว่าเรือบินลงตรงจุดได้เลยหรือต้องทำอย่างอื่นก่อน</p>
+    <table>
+      <tr><th>ลำดับ</th><th>พื้นที่</th><th>จำนวนชนิด</th><th>ไปยังไง</th><th>ปลดบอสตัวไหน</th><th>รางวัลตอนปลด</th></tr>
+      <tr><td class="n">1</td><td class="nm"><a href="#a1-besaid">Besaid</a></td><td>3</td><td class="safe">NavMap ลงตรงจุด</td><td>Stratoavis</td><td><span class="it">Stamina Tonic ×99</span></td></tr>
+      <tr><td class="n">2</td><td class="nm"><a href="#a2-kilika">Kilika</a></td><td>4</td><td class="safe">NavMap ลงตรงจุด</td><td>Malboro Menace</td><td><span class="it">Poison Fang ×99</span></td></tr>
+      <tr><td class="n">3</td><td class="nm"><a href="#a3-miihen">Mi'ihen Highroad</a></td><td>8</td><td class="safe">NavMap ลงตรงจุด</td><td>Kottos</td><td><span class="it">Soul Spring ×99</span></td></tr>
+      <tr><td class="n">4</td><td class="nm"><a href="#a4-mushroom">Mushroom Rock Road</a></td><td>7</td><td class="step">ไม่มีในเมนู ต้องเดินเข้า</td><td>Coeurlregina</td><td><span class="it">Candle of Life ×99</span></td></tr>
+      <tr><td class="n">5</td><td class="nm"><a href="#a5-djose">Djose Road</a></td><td>7</td><td class="safe">NavMap ลงตรงจุด</td><td>Jormungand</td><td><span class="it">Petrify Grenade ×99</span></td></tr>
+      <tr><td class="n">6</td><td class="nm"><a href="#a6-thunder">Thunder Plains</a></td><td>8</td><td class="safe">NavMap ลงตรงจุด</td><td>Cactuar King</td><td><span class="it">Chocobo Wing ×99</span></td></tr>
+      <tr><td class="n">7</td><td class="nm"><a href="#a7-macalania">Macalania</a></td><td>10</td><td class="safe">NavMap ลงตรงจุด</td><td>Espada</td><td><span class="it">Shining Gem ×60</span></td></tr>
+      <tr><td class="n">8</td><td class="nm"><a href="#a8-bikanel">Bikanel</a></td><td>6</td><td class="safe">NavMap ลงตรงจุด</td><td>Abyss Worm</td><td><span class="it">Shadow Gem ×99</span></td></tr>
+      <tr><td class="n">9</td><td class="nm"><a href="#a9-calmlands">Calm Lands</a></td><td>9</td><td class="safe">NavMap ลงตรงจุด</td><td>Chimerageist</td><td><span class="it">Farplane Wind ×60</span></td></tr>
+      <tr><td class="n">10</td><td class="nm"><a href="#a10-stolenfayth">Stolen Fayth Cavern</a></td><td>9</td><td class="step">ไม่มีในเมนู ต้องเดินเข้า</td><td>Don Tonberry</td><td><span class="it">Silver Hourglass ×40</span></td></tr>
+      <tr><td class="n">11</td><td class="nm"><a href="#a11-gagazet">Mt. Gagazet</a></td><td>12</td><td class="safe">NavMap ลงตรงจุด</td><td>Catoblepas</td><td><span class="it">Blossom Crown</span></td></tr>
+      <tr><td class="n">12</td><td class="nm"><a href="#a12-insidesin">Inside Sin</a></td><td>9</td><td class="step">ต้องผ่านศึกเรือบิน 5 ยกก่อน</td><td>Abaddon</td><td><span class="it">Lunar Curtain ×99</span></td></tr>
+      <tr><td class="n">13</td><td class="nm"><a href="#a13-omega">Omega Dungeon</a><small>บนแผนที่โลกเรียก Omega Ruins</small></td><td>10</td><td class="step">พิมพ์พิกัด X72, Y35 บน NavMap ก่อน</td><td>Vorban</td><td><span class="it">Designer Wallet ×60</span></td></tr>
+    </table>
+  </div>
+
+  <div class="callout tip"><b>คำว่า "ทั่วพื้นที่" ในหน้านี้แปลว่าอะไร:</b> มันแปลว่า<b>แหล่งข้อมูลระบุแค่ชื่อพื้นที่ ไม่เคยเผยแพร่โซนย่อยของตัวนั้น</b> — เป็นการบอกตามตรงว่าข้อมูลมีเท่านี้ ไม่ใช่การเขียนกำกวมเอาไว้ก่อน ตัวไหนที่มีจุดชัดเจนจริงหน้านี้จะระบุจุดให้เสมอ และตัวไหนที่แหล่งข้อมูลขัดกันเองก็จะเขียนบอกว่าขัดกันตรงไหน</div>
+
+  <div class="callout secret"><b>ช่อง <span class="it">Unknown</span> สองช่องในเมนู — และเรื่องที่เข้าใจผิดกันมากคือมันไม่ได้เป็นแมพทั้งคู่:</b>
+    <p style="margin:6px 0 0"><b>ช่องที่ 12 คือ <span class="it">Inside Sin</span> ซึ่งเป็นพื้นที่จริง</b> — เกมซ่อนชื่อพื้นที่ไว้จนกว่าคุณจะจับ fiend จากที่นั่นได้อย่างน้อยหนึ่งตัว พอจับตัวแรกได้ ชื่อจะเปลี่ยนจาก Unknown เป็น Inside Sin ทันที</p>
+    <p style="margin:6px 0 0"><b>ช่องที่ 15 คือ <span class="it">Species Conquest</span> ซึ่งไม่ใช่แมพเลย</b> — มันคือหมวดสร้างบอสหมวดที่สอง วางอยู่ระหว่าง Area Conquest กับ Original ไม่มีพิกัดให้บินไปและไม่มีที่ให้เดินหา มันเปิดเองเมื่อคุณปลดบอส Species Conquest ตัวแรกได้ วิธีทำอยู่ที่หัวข้อ <a href="#species">Species Conquest</a> ด้านล่าง</p>
+    <p style="margin:6px 0 0"><b>สรุปคือแมพลับที่ต้องออกตามหาจริง ๆ มีที่เดียว</b> คือ <b>Omega Dungeon</b> ซึ่งไม่โผล่ในเมนู NavMap จนกว่าจะพิมพ์พิกัด <b>X72, Y35</b> ลงช่องค้นหาบนเรือบิน (<b>Baaj Temple</b> ก็เปิดด้วยพิกัดเหมือนกันคือ <b>X11–16, Y57–63</b> แต่ <b>ไม่ใช่พื้นที่จับของสนาม</b> จึงไม่อยู่ในตารางนี้)</p>
+  </div>
+
+  <div class="callout tip"><b>ลำดับในตารางนี้ตรงกับเมนูของสนามทุกช่องแล้ว แต่ลำดับที่ควรลงมือไม่ใช่ลำดับเดียวกัน:</b> <b>Inside Sin</b> อยู่ช่องที่ 12 ก็จริง แต่ควรเป็นงานสุดท้ายที่ลงมือ เพราะมีศึกเรือบิน 5 ยกคั่นหน้าและมีประตูทางเดียวรออยู่ข้างใน ส่วน <b>Omega Dungeon</b> ที่อยู่ช่องถัดไปกลับบินเข้าออกได้ไม่จำกัดครั้งเมื่อค้นพิกัดเจอแล้ว จึงควรเก็บให้จบก่อน</div>
+
+  <div class="callout tip"><b>fiend ที่เดินอยู่หลายพื้นที่ นับเข้าพื้นที่เดียวเสมอ ไม่ว่าคุณจะจับมันที่ไหน — ข้อนี้ประหยัดเวลาได้มากที่สุดในหน้านี้:</b>
+    <p style="margin:6px 0 0">มอนหลายตัวโผล่ในมากกว่าหนึ่งพื้นที่ แต่ตอนนับให้สนาม เกมให้เครดิตกับ<b>พื้นที่เดียวเท่านั้น</b> ซึ่งโดยทั่วไปคือพื้นที่แรกที่มันเริ่มโผล่ในเกม แปลว่าคุณ<b>เลือกไปจับมันในที่ที่หาง่ายที่สุดได้</b> แล้วเครดิตจะไปลงพื้นที่เดิมของมันเองอยู่ดี</p>
+    <p style="margin:6px 0 0"><b>ตัวอย่างที่คุ้มที่สุดคือ <span class="it">Malboro</span></b> — ในสนามมันขึ้นอยู่กับ <b>Calm Lands</b> และที่นั่นมันโผล่เฉพาะโซนหญ้าแถว<b>ทางลาดลงที่มีชายยืนเฝ้าอยู่</b> ด้วยอัตราเจอที่ต่ำมาก แต่มันเดินอยู่ใน <b>Cavern of the Stolen Fayth</b> ด้วยและที่นั่นเจอง่ายกว่าชัดเจน โดยจะโผล่<b>เฉพาะในห้องโล่ง ไม่โผล่ในทางเดินแคบ</b> — จับในถ้ำแล้วเครดิตยังลง Calm Lands เหมือนเดิม</p>
+    <p style="margin:6px 0 0" data-note><b>ที่มาของข้อนี้ และเหตุผลที่เขียนไว้ตรงนี้:</b> ผู้เล่นรายงานจากหน้าจอจริงว่าเจอ Malboro ในถ้ำ ซึ่งขัดกับรายชื่อ fiend ของถ้ำที่คู่มืออ้างอิงหลักเผยแพร่ไว้ ตรวจซ้ำกับแหล่งอื่นแล้วพบว่า<b>รายชื่อนั้นตกไปเอง</b> ไม่ใช่ผู้เล่นจำผิด</p>
+    <p style="margin:8px 0 4px"><b>Malboro เป็นแค่ตัวอย่างเดียว การซ้อนพื้นที่แบบนี้เกิดกับหลายตัว</b> — ตัวที่ยืนยันได้แล้วมีดังนี้ และให้ถือว่า<b>ตารางนี้ยังไม่ครบ</b></p>
+    <div class="tbl-wrap"><table>
+      <tr><th>fiend</th><th>สนามนับให้พื้นที่ไหน</th><th>แต่ไปเจอมันได้ที่ไหนอีก</th></tr>
+      <tr><td class="nm">Malboro</td><td>Calm Lands</td><td><b>Cavern of the Stolen Fayth</b> เฉพาะในห้องโล่ง เจอง่ายกว่าที่ Calm Lands ชัดเจน</td></tr>
+      <tr><td class="nm">Nidhogg</td><td>Cavern of the Stolen Fayth</td><td><b>Mt. Gagazet</b></td></tr>
+      <tr><td class="nm">Wraith</td><td>Inside Sin</td><td><b>Omega Dungeon</b> (และมีอีกตัวใน The Nucleus)</td></tr>
+      <tr><td class="nm">Demonolith</td><td>Inside Sin</td><td><b>Omega Dungeon</b></td></tr>
+      <tr><td class="nm">Great Malboro</td><td>Inside Sin</td><td><b>Omega Dungeon</b></td></tr>
+      <tr><td class="nm">Adamantoise</td><td>Inside Sin</td><td><b>Omega Dungeon</b></td></tr>
+    </table></div>
+    <p style="margin:6px 0 0" data-note><b>ทำไมถึงบอกว่ายังไม่ครบ:</b> ไม่มีแหล่งข้อมูลไหนเผยแพร่รายการซ้อนพื้นที่แบบครบถ้วน หกตัวข้างบนคือตัวที่ตรวจสอบได้จริงเท่านั้น — <b>กฎที่ใช้ได้เสมอคือ ถ้าตัวไหนหาในพื้นที่ที่ระบุไว้แล้วไม่เจอสักที ให้สังเกตว่าคุณกำลังเจอมันบ่อย ๆ ที่อื่นอยู่หรือเปล่า แล้วจับที่นั่นแทน</b> เครดิตจะไปลงพื้นที่เดิมของมันเองไม่ว่าคุณจับที่ไหน</p>
+  </div>
+</section>
+
+<section id="tiers">
+  <h2><span class="ic">🎯</span> จะเล่นถึงระดับไหน — เลือกก่อนเริ่ม จะได้ไม่ฟาร์มเกินจำเป็น</h2>
+  <p data-note>หัวข้อนี้มีไว้ให้ตัดสินใจครั้งเดียวตั้งแต่ต้นว่าจะเอาแค่ไหน เพราะสามระดับข้างล่างนี้ใช้เวลาต่างกัน<b>หลายเท่า</b> และคนที่ไม่รู้ว่าตัวเองเลือกได้มักลงมือด้วยความคิดว่าต้องทำระดับสูงสุดเสมอ</p>
+
+  <div class="card"><h4>สามระดับ และใครควรทำระดับไหน</h4>
+    <dl class="kv">
+      <dt>ระดับที่ 1 – จับชนิดละ <b>1 ตัว</b></dt><dd>นี่คือเงื่อนไขของ <b>Area Conquest</b> และมันปลด<b>ของรางวัลกอง ×99 เกือบทั้งหมดที่ใช้ทำอุปกรณ์ปลายเกม</b> รวมทั้ง <span class="it">Blossom Crown</span> และ <span class="it">Mars Sigil</span> ด้วย — ถ้าคุณเล่นเพื่อปั้นทีมให้แข็งพอสู้ของยาก ๆ <b>ระดับนี้พอแล้วจริง ๆ</b> และคิดเป็นงาน 102 ตัวเท่านั้น ให้ติ๊กเฉพาะ <b>รอบที่ 1</b> ของแต่ละพื้นที่</dd>
+      <dt>ระดับที่ 2 – จับชนิดละ <b>3 ถึง 10 ตัว</b> แล้วแต่สาย</dt><dd>นี่คือเงื่อนไขของ <b>Species Conquest</b> ทั้ง 14 สาย ซึ่งปลดบอสอีกชุดพร้อมของรางวัลอีกกอง โดยแต่ละสายขอไม่เท่ากัน ให้เปิดตารางโควตาที่หัวข้อ <a href="#species">Species Conquest</a> เทียบทีละสาย — <b>ระดับนี้คือระดับที่ต้องจำตัวเลขเยอะที่สุด</b> และเป็นเหตุผลเดียวที่ทำให้ระบบนี้ดูยุ่ง</dd>
+      <dt>ระดับที่ 3 – จับชนิดละ <b>10 ตัว ทุกชนิดทั้งเกม</b></dt><dd>นี่คือเงื่อนไขฝั่งการจับของ <b>Nemesis</b> บอสลับตัวสุดท้ายของสนาม และมันคือ<b>ระดับเดียวที่ไม่ต้องจำอะไรเลย</b> เพราะเลข 10 กลืนระดับที่ 1 กับระดับที่ 2 ไปทั้งหมด ให้ติ๊ก <b>รอบที่ 2</b> ของทุกพื้นที่แล้วจบในทีเดียว</dd>
+    </dl>
+  </div>
+
+  <div class="callout tip"><b>ไม่ทำ Nemesis เป็นทางเลือกที่ถูกต้องเหมือนกัน และไม่ได้ทำให้คุณพลาดอะไรที่ใช้จริง:</b> การข้ามระดับที่ 3 ทำให้คุณเสีย<b>ตัว Nemesis เองกับรางวัลตอนปลดของมันคือ <span class="it">Master Sphere</span> ×10 เท่านั้น</b> — ของรางวัลที่ใช้ทำเกราะและอาวุธจริง ๆ ทั้งหมดมาจากระดับที่ 1 กับระดับที่ 2 ซึ่งคุณทำครบไปก่อนแล้ว เงื่อนไขปลด Nemesis ส่วนที่เหลือและค่าพลังของมันอยู่ที่หน้า <a href="ref-sidequests.html#endgame">เก็บครบแล้วทำต่อ</a></div>
+
+  <div class="card"><h4>ราคาจริงของระดับที่ 3 — เก้าตัวนี้คือตัวที่ทำให้รอบ 10 ตัวยาว</h4>
+    <p data-note>ตัวอื่นอีกเกือบร้อยชนิดเจอบ่อยพอที่ 10 ตัวจะเป็นแค่เรื่องเวลา แต่เก้าตัวข้างล่างนี้<b>แหล่งข้อมูลระบุว่าหายากหรือมีเงื่อนไขพิเศษ</b> จึงเป็นตัวที่ควรดูให้ครบ<b>ก่อน</b>ตัดสินใจว่าจะเอา Nemesis ไหม ไม่ใช่มารู้ตอนเหลือมันเป็นกลุ่มสุดท้าย</p>
+    <table>
+      <tr><th>fiend</th><th>อยู่พื้นที่ไหน</th><th>ทำไม 10 ตัวถึงกินเวลา</th></tr>
+      <tr><td class="nm">Qactuar</td><td><a href="#a6-thunder">Thunder Plains</a></td><td class="step"><b>ฟาร์มไม่ได้เลยแม้แต่ตัวเดียว</b>จนกว่าจะไปสวดที่หินเรืองแสงให้ครบก่อน จึงต้องเผื่อเวลาของสายเควสนั้นไว้ในแผนด้วย</td></tr>
+      <tr><td class="nm">Simurgh</td><td><a href="#a5-djose">Djose Road</a></td><td>หายาก เพราะโผล่ในรูปแบบการจัดทีมศัตรูของพื้นที่นั้นแค่ 2 แบบ ต้องปักหลักที่ป้ายบอกทางแล้ววนซ้ำ</td></tr>
+      <tr><td class="nm">Malboro</td><td><a href="#a9-calmlands">Calm Lands</a></td><td>อัตราการเจอต่ำมากอย่างชัดเจน และเป็นปัญหาเรื่องอัตราการเจอล้วน ๆ ไม่ใช่เรื่องตำแหน่ง จึงไม่มีทางลัด</td></tr>
+      <tr><td class="nm">Valaha</td><td><a href="#a10-stolenfayth">Stolen Fayth Cavern</a></td><td>หายาก และแหล่งข้อมูลบอกตรง ๆ ว่า<b>ไม่มีจุดไหนดีกว่าจุดไหน</b> ต้องวนเอาอย่างเดียว</td></tr>
+      <tr><td class="nm">Tonberry</td><td><a href="#a10-stolenfayth">Stolen Fayth Cavern</a></td><td>หายากที่สุดของถ้ำนั้น และทุกครั้งที่เจอยังต้องรับมือ <b>Karma</b> ที่น็อกตัวหลักดับได้ทีเดียว</td></tr>
+      <tr><td class="nm">Ghost</td><td><a href="#a10-stolenfayth">Stolen Fayth Cavern</a></td><td><b>ความหายากยังขัดกัน</b> แหล่งหนึ่งว่าเจอบ่อย อีกแหล่งว่าหายากมาก จึงประเมินเวลาล่วงหน้าไม่ได้</td></tr>
+      <tr><td class="nm">Varuna</td><td><a href="#a13-omega">Omega Ruins</a></td><td>หายากจริงและไม่มีจุดตายตัว จะหนาแน่นขึ้นก็ต่อเมื่อปราบ Omega Weapon ไปแล้วเท่านั้น</td></tr>
+      <tr><td class="nm">Machea</td><td><a href="#a13-omega">Omega Ruins</a></td><td><b>ความหายากยังขัดกัน</b> แหล่งหนึ่งว่าหนาแน่นแถวทางเข้า อีกฝั่งคือผู้เล่นจำนวนมากที่รายงานว่าหายาก</td></tr>
+      <tr><td class="nm">Cactuar</td><td><a href="#a8-bikanel">Bikanel</a></td><td>ไม่ได้หายากแต่<b>หลบเก่งจนขึ้นชื่อ</b> จึงเสียเทิร์นกับการตีพลาดมาก และสิบตัวใช้เวลากว่าที่ตัวเลขบอก</td></tr>
+    </table>
+    <p data-note><b>ข่าวดีที่หักลบให้แล้ว:</b> <b>Iron Giant</b> กับ <b>Gemini</b> ทั้งสองแบบต้องจับชนิดละ 10 ตัวอยู่แล้วเพื่อปลด <b>Ironclad</b> ในระดับที่ 2 — สามชนิดนี้จึง<b>ไม่ใช่งานที่เพิ่มขึ้นมา</b>จากการเลือกระดับที่ 3 และ Gemini สองชนิดยังโผล่มาพร้อมกันเสมอ จับครั้งเดียวจึงเดินหน้าทั้งสองชนิดพร้อมกัน</p>
+  </div>
+</section>
+
+<section id="a1-besaid">
+  <h2><span class="ic">1</span> Besaid — 3 ชนิด <span class="sec-count" data-count>0/0</span></h2>
+  <div class="card"><h4>สรุปจุดนี้</h4>
+    <dl class="kv">
+      <dt>เลือกอะไรบน NavMap</dt><dd>เลือก <b>Besaid</b> ลงตรงจุดได้เลย แล้วเดินออกจากหมู่บ้านไปตามทางเดินบนเกาะ</dd>
+      <dt>ต้องจับกี่ชนิด</dt><dd>3 ชนิด คือ Dingo – Condor – Water Flan ซึ่งเป็นพื้นที่ที่เบาที่สุดของทั้ง 13 จุด</dd>
+      <dt>ตัวที่คนเดินผ่านโดยไม่รู้ตัว</dt><dd>ไม่มี ทั้งสามชนิดโผล่ตามทางเดินธรรมดาบนเกาะ ไม่ต้องแวะโซนพิเศษไหนเลย</dd>
+      <dt>ปลดแล้วได้อะไร</dt><dd>Area Conquest ปลด <b>Stratoavis</b> พร้อมรางวัล <span class="it">Stamina Tonic ×99</span></dd>
+      <dt>ไปต่อที่ไหน</dt><dd>บินต่อไป <b>Kilika</b> ซึ่งเป็นพื้นที่ที่เบาเป็นอันดับสองและอยู่ต่อกันในเมนูพอดี</dd>
+    </dl>
+  </div>
+  <div class="callout warn"><b>บินกลับมาลง Besaid แล้วจะโดนดักในหมู่บ้าน:</b> การกลับมาที่นี่ด้วยเรือบินจะทำให้เจอศึก <b>Dark Valefor</b> ในหมู่บ้าน (มีเฉพาะเวอร์ชัน International กับ HD Remaster) — ตัวนี้ไม่เกี่ยวกับการจับ fiend และไม่ได้ปิดทางเดินบนเกาะ คุณยังไล่จับสามชนิดต่อได้ตามปกติ แต่ควรรู้ล่วงหน้าว่ามีศึกรออยู่ตรงนั้น ไม่ใช่เดินเข้าไปแบบไม่ได้เตรียมตัว</div>
+  <div class="pick"><h4>รอบที่ 1 – จับชนิดละ 1 ตัว ที่ Besaid</h4><ul class="chklist">
+    <li class="chk"><input type="checkbox" data-k="ra-f-dingo"><span class="lbl"><b>Dingo</b> — โผล่ตามทางเดินทั่วเกาะ Besaid ไม่มีโซนย่อยที่ยืนยันได้</span></li>
+    <li class="chk"><input type="checkbox" data-k="ra-f-condor"><span class="lbl"><b>Condor</b> — โผล่ตามทางเดินทั่วเกาะ Besaid ไม่มีโซนย่อยที่ยืนยันได้</span></li>
+    <li class="chk"><input type="checkbox" data-k="ra-f-waterflan"><span class="lbl"><b>Water Flan</b> — โผล่ตามทางเดินทั่วเกาะ Besaid ไม่มีโซนย่อยที่ยืนยันได้</span></li>
+  </ul></div>
+  <div class="pick"><h4>รอบที่ 2 – ครบ 10 ตัวแล้ว (สำหรับ Nemesis)</h4><ul class="chklist">
+    <li class="chk"><input type="checkbox" data-k="ra-x10-dingo"><span class="lbl"><b>Dingo</b> — ครบ 10 ตัว (ทางเดินทั่วเกาะ Besaid)</span></li>
+    <li class="chk"><input type="checkbox" data-k="ra-x10-condor"><span class="lbl"><b>Condor</b> — ครบ 10 ตัว (ทางเดินทั่วเกาะ Besaid)</span></li>
+    <li class="chk"><input type="checkbox" data-k="ra-x10-waterflan"><span class="lbl"><b>Water Flan</b> — ครบ 10 ตัว (ทางเดินทั่วเกาะ Besaid)</span></li>
+  </ul></div>
+  <div class="pick milestone"><h4>ปลด Area Conquest ของ Besaid</h4><ul class="chklist">
+    <li class="chk"><input type="checkbox" data-k="ra-area-besaid"><span class="lbl">ปลด <b>Stratoavis</b> — กลับไปคุยกับเจ้าของ Monster Arena ที่ Calm Lands หลังจับครบทั้ง 3 ชนิด แล้วรับ <span class="it">Stamina Tonic ×99</span></span></li>
+  </ul></div>
+  <p data-note><b>มีข่าวลือว่า Besaid มี Garuda ป่าด้วย ข้อมูลนี้ยังไม่ยืนยัน</b> — มีแหล่งเดียวที่อ้างแบบนั้นและไม่มีแหล่งที่สองรับรอง อีกอย่างคือสนามนับ <b>Garuda</b> ไว้ในพื้นที่ <b>Mushroom Rock Road</b> อยู่แล้ว ฉะนั้นไม่ว่าข่าวลือจะจริงหรือไม่ Besaid ก็ยังต้องจับแค่ 3 ชนิดเท่าเดิม</p>
+</section>
+
+<section id="a2-kilika">
+  <h2><span class="ic">2</span> Kilika — 4 ชนิด <span class="sec-count" data-count>0/0</span></h2>
+  <div class="card"><h4>สรุปจุดนี้</h4>
+    <dl class="kv">
+      <dt>เลือกอะไรบน NavMap</dt><dd>เลือก <b>Kilika</b> ลงตรงจุดได้เลย แล้วเดินจากท่าเรือเข้าไปในป่า</dd>
+      <dt>ต้องจับกี่ชนิด</dt><dd>4 ชนิด และทั้งสี่อยู่ใน <b>Kilika Woods</b> ทั้งหมด <b>ไม่มีตัวไหนอยู่ที่ Kilika Port</b> ฉะนั้นอย่าเดินวนอยู่แถวท่าเรือ</dd>
+      <dt>ตัวที่คนเดินผ่านโดยไม่รู้ตัว</dt><dd>ไม่มีตัวที่หลบซ่อน แต่ <b>Dinonix</b> เป็นตัวไวที่ตีพลาดบ่อยจนเสียเทิร์นและถูกฆ่าด้วยตัวอื่นในทีมโดยไม่ตั้งใจ</dd>
+      <dt>ปลดแล้วได้อะไร</dt><dd>Area Conquest ปลด <b>Malboro Menace</b> พร้อมรางวัล <span class="it">Poison Fang ×99</span> ซึ่งเป็นวัตถุทำ <span class="it">Poisonproof</span> บนเกราะ</dd>
+      <dt>ไปต่อที่ไหน</dt><dd>บินต่อไป <b>Mi'ihen Highroad</b> ซึ่งเป็นพื้นที่แรกที่มีทางแยกที่คนข้ามไปทั้งเส้น</dd>
+    </dl>
+  </div>
+  <div class="callout tip"><b>ชื่อโซนอาจไม่ตรงกับที่คุณเคยเห็น:</b> บางเว็บเรียกโซนเดียวกันนี้ว่า <b>Kilika Jungle</b> แทน <b>Kilika Woods</b> — เป็นการเรียกคนละชื่อของป่าเดียวกัน ไม่ใช่สองที่</div>
+  <div class="pick"><h4>รอบที่ 1 – จับชนิดละ 1 ตัว ที่ Kilika Woods</h4><ul class="chklist">
+    <li class="chk"><input type="checkbox" data-k="ra-f-dinonix"><span class="lbl"><b>Dinonix</b> — ใน Kilika Woods เป็นตัวว่องไวหลบเก่ง จึงตีมองข้ามบ่อยกว่าตัวอื่นในป่านี้</span></li>
+    <li class="chk"><input type="checkbox" data-k="ra-f-killerbee"><span class="lbl"><b>Killer Bee</b> — ใน Kilika Woods</span></li>
+    <li class="chk"><input type="checkbox" data-k="ra-f-yellowelement"><span class="lbl"><b>Yellow Element</b> — ใน Kilika Woods และการตีกายภาพแทบไม่ทำดาเมจใส่มันเลย</span></li>
+    <li class="chk"><input type="checkbox" data-k="ra-f-ragora"><span class="lbl"><b>Ragora</b> — ใน Kilika Woods</span></li>
+  </ul></div>
+  <div class="pick"><h4>รอบที่ 2 – ครบ 10 ตัวแล้ว (สำหรับ Nemesis)</h4><ul class="chklist">
+    <li class="chk"><input type="checkbox" data-k="ra-x10-dinonix"><span class="lbl"><b>Dinonix</b> — ครบ 10 ตัว (Kilika Woods – ตัวไวจึงตีมองข้ามบ่อย ทำให้สิบตัวใช้เวลามากกว่าที่คิด)</span></li>
+    <li class="chk"><input type="checkbox" data-k="ra-x10-killerbee"><span class="lbl"><b>Killer Bee</b> — ครบ 10 ตัว (Kilika Woods)</span></li>
+    <li class="chk"><input type="checkbox" data-k="ra-x10-yellowelement"><span class="lbl"><b>Yellow Element</b> — ครบ 10 ตัว (Kilika Woods – กายภาพแทบไม่เข้า)</span></li>
+    <li class="chk"><input type="checkbox" data-k="ra-x10-ragora"><span class="lbl"><b>Ragora</b> — ครบ 10 ตัว (Kilika Woods)</span></li>
+  </ul></div>
+  <div class="pick milestone"><h4>ปลด Area Conquest ของ Kilika</h4><ul class="chklist">
+    <li class="chk"><input type="checkbox" data-k="ra-area-kilika"><span class="lbl">ปลด <b>Malboro Menace</b> — จับครบทั้ง 4 ชนิดใน Kilika Woods แล้วกลับไปคุยกับเจ้าของสนาม รับ <span class="it">Poison Fang ×99</span></span></li>
+  </ul></div>
+  <div class="callout warn"><b><span class="it">Lord Ochu</span> ที่นอนอยู่กลางทางแยกในป่าไม่ใช่ตัวที่ห้า:</b> มันเป็นบอสประจำแมพที่มีอยู่ตัวเดียว ไม่ได้อยู่ในรายชื่อ 4 ชนิดของ Kilika — คนที่กวาดป่าอยู่มักเข้าใจว่ามันคือของที่ต้องเก็บอีกชิ้นแล้วเสียเวลากับมัน ส่วน <b>Ochu</b> ตัวธรรมดาที่ต้องจับจริงเป็นคนละตัวและอยู่ที่จุดที่ 5 คือ <a href="#a5-djose">Djose Road</a></div>
+</section>
+
+<section id="a3-miihen">
+  <h2><span class="ic">3</span> Mi'ihen Highroad — 8 ชนิด <span class="sec-count" data-count>0/0</span></h2>
+  <div class="card"><h4>สรุปจุดนี้</h4>
+    <dl class="kv">
+      <dt>เลือกอะไรบน NavMap</dt><dd>เลือก <b>Mi'ihen Highroad</b> ลงตรงจุดได้เลย</dd>
+      <dt>ต้องจับกี่ชนิด</dt><dd>8 ชนิด และมันแบ่งเป็นสองชุดคือ <b>6 ชนิดบนถนนสายหลัก</b> กับ <b>2 ชนิดที่อยู่เฉพาะบน Oldroad</b></dd>
+      <dt>ตัวที่คนเดินผ่านโดยไม่รู้ตัว</dt><dd><b>Ipiria</b> กับ <b>Vouivre</b> เพราะทั้งคู่อยู่บน <b>Oldroad</b> ซึ่งเป็นทางแยกที่คนวิ่งตรงไป Luca ข้ามทั้งเส้น</dd>
+      <dt>จุดเดียวที่คุ้มที่สุด</dt><dd><b>ปักหลักบน Oldroad</b> เพราะเป็นจุดเดียวที่ปิดสองตัวที่มองข้ามบ่อยที่สุดได้พร้อมกัน</dd>
+      <dt>ปลดแล้วได้อะไร</dt><dd>Area Conquest ปลด <b>Kottos</b> พร้อมรางวัล <span class="it">Soul Spring ×99</span></dd>
+      <dt>ไปต่อที่ไหน</dt><dd>อย่าเพิ่งขึ้นเรือ — เดินต่อจากปลายถนนเข้า <b>Mushroom Rock Road</b> ซึ่งเป็นจุดที่ 4 และเป็นพื้นที่ที่ NavMap พาไปไม่ได้</dd>
+    </dl>
+  </div>
+  <div class="pick"><h4>รอบที่ 1 – จับชนิดละ 1 ตัว ที่ Mi'ihen Highroad</h4><ul class="chklist">
+    <li class="chk"><input type="checkbox" data-k="ra-f-miihenfang"><span class="lbl"><b>Mi'ihen Fang</b> — บนถนนสายหลักและช่วง New Road โดยเฉพาะช่วงต้น ๆ ของเส้นทาง</span></li>
+    <li class="chk"><input type="checkbox" data-k="ra-f-raldo"><span class="lbl"><b>Raldo</b> — บนถนนสายหลักและช่วง New Road</span></li>
+    <li class="chk"><input type="checkbox" data-k="ra-f-bomb"><span class="lbl"><b>Bomb</b> — บนถนนสายหลักและช่วง New Road และถ้าปล่อยให้มันอยู่นานมันจะพองตัวขึ้นเรื่อย ๆ แล้วระเบิดตัวเองใส่ทีม</span></li>
+    <li class="chk"><input type="checkbox" data-k="ra-f-floatingeye"><span class="lbl"><b>Floating Eye</b> — ช่วงต้น ๆ ของถนน เป็นตัวลอย จึงต้องใช้อาวุธระยะไกลหรือเวทมนตร์ถึงจะโดน</span></li>
+    <li class="chk"><input type="checkbox" data-k="ra-f-whiteelement"><span class="lbl"><b>White Element</b> — ช่วงแรกของถนน ฝั่งที่ใกล้ทาง Luca</span></li>
+    <li class="chk"><input type="checkbox" data-k="ra-f-dualhorn"><span class="lbl"><b>Dual Horn</b> — ช่วงต้น ๆ ของถนน</span></li>
+    <li class="chk"><input type="checkbox" data-k="ra-f-ipiria"><span class="lbl">⚠️ <b>Ipiria</b> — อยู่บน <b>Oldroad</b> เท่านั้น ซึ่งเป็นทางแยกเสริมที่ไม่เดินก็ผ่านด่านได้</span></li>
+    <li class="chk"><input type="checkbox" data-k="ra-f-vouivre"><span class="lbl">⚠️ <b>Vouivre</b> — อยู่บน <b>Oldroad</b> เท่านั้น จึงพลาดคู่กับ Ipiria เสมอ</span></li>
+  </ul></div>
+  <div class="pick"><h4>รอบที่ 2 – ครบ 10 ตัวแล้ว (สำหรับ Nemesis)</h4><ul class="chklist">
+    <li class="chk"><input type="checkbox" data-k="ra-x10-miihenfang"><span class="lbl"><b>Mi'ihen Fang</b> — ครบ 10 ตัว (ถนนสายหลัก)</span></li>
+    <li class="chk"><input type="checkbox" data-k="ra-x10-raldo"><span class="lbl"><b>Raldo</b> — ครบ 10 ตัว (ถนนสายหลัก)</span></li>
+    <li class="chk"><input type="checkbox" data-k="ra-x10-bomb"><span class="lbl"><b>Bomb</b> — ครบ 10 ตัว (ถนนสายหลัก)</span></li>
+    <li class="chk"><input type="checkbox" data-k="ra-x10-floatingeye"><span class="lbl"><b>Floating Eye</b> — ครบ 10 ตัว (ช่วงต้นถนน – เป็นตัวลอย ต้องระยะไกลหรือเวทมนตร์)</span></li>
+    <li class="chk"><input type="checkbox" data-k="ra-x10-whiteelement"><span class="lbl"><b>White Element</b> — ครบ 10 ตัว (ช่วงแรกของถนน ฝั่งใกล้ Luca)</span></li>
+    <li class="chk"><input type="checkbox" data-k="ra-x10-dualhorn"><span class="lbl"><b>Dual Horn</b> — ครบ 10 ตัว (ช่วงต้นถนน)</span></li>
+    <li class="chk"><input type="checkbox" data-k="ra-x10-ipiria"><span class="lbl"><b>Ipiria</b> — ครบ 10 ตัว (อยู่บน Oldroad เท่านั้น)</span></li>
+    <li class="chk"><input type="checkbox" data-k="ra-x10-vouivre"><span class="lbl"><b>Vouivre</b> — ครบ 10 ตัว (อยู่บน Oldroad เท่านั้น)</span></li>
+  </ul></div>
+  <div class="pick milestone"><h4>ปลด Area Conquest ของ Mi'ihen Highroad</h4><ul class="chklist">
+    <li class="chk"><input type="checkbox" data-k="ra-area-miihen"><span class="lbl">ปลด <b>Kottos</b> — จับครบทั้ง 8 ชนิดแล้วกลับไปคุยกับเจ้าของสนาม รับ <span class="it">Soul Spring ×99</span></span></li>
+  </ul></div>
+  <div class="callout warn"><b>กับดักที่ทำให้คนนับ Mi'ihen ไม่ครบสักที — <span class="it">Thunder Flan</span>:</b> มันโผล่บน <b>Oldroad</b> ของ Mi'ihen จริง คุณจะเจอมันระหว่างตาม Ipiria กับ Vouivre แน่นอน แต่<b>สนามนับมันไว้ในพื้นที่ Mushroom Rock Road ไม่ใช่ Mi'ihen</b> — จับมันได้ก็ไม่ได้ทำให้ตัวเลขของ Mi'ihen ขยับ ให้ยึดว่า Mi'ihen มี <b>8 ชนิด</b> ตามรายการข้างบนนี้
+    <p style="margin:6px 0 0"><b>และข้อนี้ยังเป็นข้อพิพาทที่ยังไม่ยุติ:</b> jegged จัด Thunder Flan ไว้ใต้ Mushroom Rock Road ส่วนดัชนีศัตรูภาคสนามของ game8 จัดมันไว้ใต้ Mi'ihen Highroad อย่างเดียว สองเว็บน่าจะกำลังจัดหมวดคนละเรื่องกัน (รายชื่อของสนาม กับ สถานที่ที่เจอตัวจริง) แต่ยังไม่มีแหล่งที่สามมาตัดสิน หน้านี้จึง<b>บันทึกไว้ทั้งสองฝั่งและไม่ตัดฝั่งไหนทิ้ง</b> ทางที่ปลอดภัยคือจับ Thunder Flan ตอนอยู่บน Oldroad นี่แหละ แล้วค่อยไปดูว่าตัวเลขของพื้นที่ไหนขยับ</p>
+  </div>
+  <p data-note><b>ช่องว่างของข้อมูลที่ต้องบอกตามตรง:</b> โซนของ <b>Bomb</b> มีแหล่งอ้างอิงอ่อนกว่าอีกเจ็ดตัวในพื้นที่เดียวกัน — ให้ถือว่าถนนสายหลักคือจุดตั้งต้น แต่ถ้าไล่แล้วไม่เจอ อย่าเพิ่งคิดว่าตัวเองเดินผิดที่</p>
+</section>
+
+<section id="a4-mushroom">
+  <h2><span class="ic">4</span> Mushroom Rock Road — 7 ชนิด <span class="sec-count" data-count>0/0</span></h2>
+  <div class="card"><h4>สรุปจุดนี้</h4>
+    <dl class="kv">
+      <dt>เลือกอะไรบน NavMap</dt><dd><b>ไม่มีให้เลือก</b> — พื้นที่นี้ไม่ใช่จุดหมายปกติของเรือบิน ต้องลงที่ <b>Mi'ihen Highroad</b> หรือ <b>Djose</b> แล้วเดินเข้ามาเอง</dd>
+      <dt>ต้องจับกี่ชนิด</dt><dd>7 ชนิด และหกในเจ็ดตัวโผล่ทั่วพื้นที่โดยไม่มีโซนย่อย</dd>
+      <dt>ตัวที่คนเดินผ่านโดยไม่รู้ตัว</dt><dd><b>Garuda</b> ซึ่งเป็นตัวที่แข็งที่สุดในเจ็ดตัว และเป็น fiend ตัวเดียวในพื้นที่ที่ 1 ถึง 4 ทั้งหมดที่มีจุดฟาร์มเจาะจงจริง ๆ</dd>
+      <dt>ปลดแล้วได้อะไร</dt><dd>Area Conquest ปลด <b>Coeurlregina</b> พร้อมรางวัล <span class="it">Candle of Life ×99</span></dd>
+      <dt>ไปต่อที่ไหน</dt><dd>เดินต่อจากปลายถนนนี้เข้าสู่ <b>Djose Road</b> ได้เลย ไม่ต้องขึ้นเรือกลับ</dd>
+    </dl>
+  </div>
+  <div class="callout warn"><b>ระวังกับดักของรหัสลับ — ในเมนู NavMap จะมีคำว่า <span class="it">Mushroom Rock Road</span> โผล่มาได้ แต่มันไม่ใช่ถนนที่คุณต้องการ:</b> รายการนั้นเปิดด้วยรหัสลับ <b>GODHAND</b> และมันพาคุณไป<b>ถ้ำข้างทางที่ซ่อนอยู่</b> ไม่ใช่ตัวถนน — ใช้จับ fiend ไม่ได้เลย ทางเดียวที่ได้ผลคือลงที่ Mi'ihen Highroad หรือ Djose แล้วเดินเข้ามา</div>
+  <div class="pick"><h4>รอบที่ 1 – จับชนิดละ 1 ตัว ที่ Mushroom Rock Road</h4><ul class="chklist">
+    <li class="chk"><input type="checkbox" data-k="ra-f-raptor"><span class="lbl"><b>Raptor</b> — ทั่วพื้นที่ ไม่มีโซนย่อยที่ยืนยันได้ และมันยังโผล่ที่ Djose Highroad ด้วย</span></li>
+    <li class="chk"><input type="checkbox" data-k="ra-f-gandarewa"><span class="lbl"><b>Gandarewa</b> — ทั่วพื้นที่ เป็นตัวลอยที่ต้องใช้อาวุธระยะไกลหรือเวทมนตร์ และยังโผล่ที่ Djose กับ Moonflow ด้วย</span></li>
+    <li class="chk"><input type="checkbox" data-k="ra-f-thunderflan"><span class="lbl">⚠️ <b>Thunder Flan</b> — สนามนับไว้ในพื้นที่นี้ แต่ตัวมันโผล่บน <b>Oldroad ของ Mi'ihen Highroad</b> ซึ่งเป็นคนละที่กัน (การจัดหมวดนี้ยังเป็นข้อพิพาท ดูกล่องเตือนที่ <a href="#a3-miihen">จุดที่ 3</a>)</span></li>
+    <li class="chk"><input type="checkbox" data-k="ra-f-redelement"><span class="lbl"><b>Red Element</b> — ทั่วพื้นที่ ไม่มีโซนย่อยที่ยืนยันได้</span></li>
+    <li class="chk"><input type="checkbox" data-k="ra-f-lamashtu"><span class="lbl"><b>Lamashtu</b> — ทั่วพื้นที่ และยังโผล่ที่ Djose Highroad ด้วย</span></li>
+    <li class="chk"><input type="checkbox" data-k="ra-f-funguar"><span class="lbl"><b>Funguar</b> — ทั่วพื้นที่ มันสวนกลับการตีกายภาพด้วย <b>Pollen</b> ที่ทำให้ตัวละครหลับ และมันอ่อนธาตุไฟ</span></li>
+    <li class="chk"><input type="checkbox" data-k="ra-f-garuda"><span class="lbl">⚠️ <b>Garuda</b> — อยู่ช่วงถนนยกระดับตอนท้าย ๆ ใกล้กลุ่มลิฟต์ ตรงบริเวณที่ <b>Luzzu</b> กับ <b>Gatta</b> ยืนอยู่ในเนื้อเรื่อง</span></li>
+  </ul></div>
+  <div class="pick"><h4>รอบที่ 2 – ครบ 10 ตัวแล้ว (สำหรับ Nemesis)</h4><ul class="chklist">
+    <li class="chk"><input type="checkbox" data-k="ra-x10-raptor"><span class="lbl"><b>Raptor</b> — ครบ 10 ตัว (ทั่วพื้นที่)</span></li>
+    <li class="chk"><input type="checkbox" data-k="ra-x10-gandarewa"><span class="lbl"><b>Gandarewa</b> — ครบ 10 ตัว (ทั่วพื้นที่ – เป็นตัวลอย)</span></li>
+    <li class="chk"><input type="checkbox" data-k="ra-x10-thunderflan"><span class="lbl"><b>Thunder Flan</b> — ครบ 10 ตัว (ตัวจริงโผล่บน Oldroad ของ Mi&#39;ihen Highroad)</span></li>
+    <li class="chk"><input type="checkbox" data-k="ra-x10-redelement"><span class="lbl"><b>Red Element</b> — ครบ 10 ตัว (ทั่วพื้นที่)</span></li>
+    <li class="chk"><input type="checkbox" data-k="ra-x10-lamashtu"><span class="lbl"><b>Lamashtu</b> — ครบ 10 ตัว (ทั่วพื้นที่)</span></li>
+    <li class="chk"><input type="checkbox" data-k="ra-x10-funguar"><span class="lbl"><b>Funguar</b> — ครบ 10 ตัว (ทั่วพื้นที่)</span></li>
+    <li class="chk"><input type="checkbox" data-k="ra-x10-garuda"><span class="lbl"><b>Garuda</b> — ครบ 10 ตัว (ถนนยกระดับใกล้ลิฟต์ ตรงที่ Luzzu กับ Gatta ยืน – แข็งที่สุดในพื้นที่นี้)</span></li>
+  </ul></div>
+  <div class="pick milestone"><h4>ปลด Area Conquest ของ Mushroom Rock Road</h4><ul class="chklist">
+    <li class="chk"><input type="checkbox" data-k="ra-area-mushroom"><span class="lbl">ปลด <b>Coeurlregina</b> — จับครบทั้ง 7 ชนิดแล้วกลับไปคุยกับเจ้าของสนาม รับ <span class="it">Candle of Life ×99</span></span></li>
+  </ul></div>
+</section>
+
+<section id="a5-djose">
+  <h2><span class="ic">5</span> Djose Road — 7 ชนิด <span class="sec-count" data-count>0/0</span></h2>
+  <div class="card"><h4>สรุปจุดนี้</h4>
+    <dl class="kv">
+      <dt>เลือกอะไรบน NavMap</dt><dd>เลือกรายการที่ชื่อ <b>Djose Highroad and Temple</b> ซึ่งคือพื้นที่ที่สนามเรียกว่า <b>Djose Road</b></dd>
+      <dt>ต้องจับกี่ชนิด</dt><dd>7 ชนิด โดยห้าตัวแรกเดินเจอเองระหว่างทาง เหลือสองตัวที่ต้องตั้งใจตาม</dd>
+      <dt>ตัวที่คนเดินผ่านโดยไม่รู้ตัว</dt><dd><b>Simurgh</b> เพราะมันหายากจริง ๆ โดยโผล่ในรูปแบบการจัดทีมศัตรูของพื้นที่นี้แค่ 2 แบบเท่านั้น</dd>
+      <dt>จุดเดียวที่คุ้มที่สุด</dt><dd>ปักหลักที่ <b>หย่อมแสงแดดสีจาง</b> ตรงป้ายบอกทางที่แยกไป Djose Temple กับแยกไป Moonflow แล้ววนเข้าออกเพื่อรีเซ็ตการเจอศัตรู</dd>
+      <dt>ปลดแล้วได้อะไร</dt><dd>Area Conquest ปลด <b>Jormungand</b> พร้อมรางวัล <span class="it">Petrify Grenade ×99</span> ซึ่งเป็นวัตถุทำ <span class="it">Stoneproof</span> บนเกราะ</dd>
+      <dt>ไปต่อที่ไหน</dt><dd>บินไป <b>Thunder Plains</b> ต่อ — แต่ให้อ่านกล่องเตือนเรื่อง <b>Qactuar</b> ที่จุดที่ 6 ก่อนไป เพราะมันเป็นตัวที่ต้องปลดล็อกด้วยเควสถึงจะโผล่</dd>
+    </dl>
+  </div>
+  <div class="pick"><h4>รอบที่ 1 – จับชนิดละ 1 ตัว ที่ Djose Road</h4><ul class="chklist">
+    <li class="chk"><input type="checkbox" data-k="ra-f-garm"><span class="lbl"><b>Garm</b> — ทั่วพื้นที่ ไม่มีโซนย่อยที่ยืนยันได้</span></li>
+    <li class="chk"><input type="checkbox" data-k="ra-f-bitebug"><span class="lbl"><b>Bite Bug</b> — ทั่วพื้นที่ ไม่มีโซนย่อยที่ยืนยันได้</span></li>
+    <li class="chk"><input type="checkbox" data-k="ra-f-snowflan"><span class="lbl"><b>Snow Flan</b> — ทั่วพื้นที่ (ตัวที่ถูกเรียกออกมาตอนหนีออกจาก Macalania Temple เป็นฉากตามบท ใช้ฟาร์มไม่ได้)</span></li>
+    <li class="chk"><input type="checkbox" data-k="ra-f-bunyip"><span class="lbl"><b>Bunyip</b> — ทั่วพื้นที่ ไม่มีโซนย่อยที่ยืนยันได้</span></li>
+    <li class="chk"><input type="checkbox" data-k="ra-f-basilisk"><span class="lbl"><b>Basilisk</b> — ทั่วพื้นที่ ไม่มีโซนย่อยที่ยืนยันได้</span></li>
+    <li class="chk"><input type="checkbox" data-k="ra-f-simurgh"><span class="lbl">⚠️ <b>Simurgh</b> — หายาก โผล่ในรูปแบบการจัดทีมศัตรูของพื้นที่นี้เพียง 2 แบบ จุดที่มีรายงานว่าดีที่สุดคือหย่อมแสงแดดสีจางตรงป้ายบอกทางที่แยกไป Djose Temple กับ Moonflow</span></li>
+    <li class="chk"><input type="checkbox" data-k="ra-f-ochu"><span class="lbl">⚠️ <b>Ochu</b> — สนามนับไว้ที่ Djose ก็จริง แต่<b>หาง่ายกว่ามากบน South Bank Road ของ Moonflow</b> ซึ่งคืออีกทางแยกของป้ายบอกทางป้ายเดียวกัน</span></li>
+  </ul></div>
+  <div class="pick"><h4>รอบที่ 2 – ครบ 10 ตัวแล้ว (สำหรับ Nemesis)</h4><ul class="chklist">
+    <li class="chk"><input type="checkbox" data-k="ra-x10-garm"><span class="lbl"><b>Garm</b> — ครบ 10 ตัว (ทั่วพื้นที่)</span></li>
+    <li class="chk"><input type="checkbox" data-k="ra-x10-bitebug"><span class="lbl"><b>Bite Bug</b> — ครบ 10 ตัว (ทั่วพื้นที่)</span></li>
+    <li class="chk"><input type="checkbox" data-k="ra-x10-snowflan"><span class="lbl"><b>Snow Flan</b> — ครบ 10 ตัว (ทั่วพื้นที่)</span></li>
+    <li class="chk"><input type="checkbox" data-k="ra-x10-bunyip"><span class="lbl"><b>Bunyip</b> — ครบ 10 ตัว (ทั่วพื้นที่)</span></li>
+    <li class="chk"><input type="checkbox" data-k="ra-x10-basilisk"><span class="lbl"><b>Basilisk</b> — ครบ 10 ตัว (ทั่วพื้นที่)</span></li>
+    <li class="chk"><input type="checkbox" data-k="ra-x10-simurgh"><span class="lbl">⚠️ <b>Simurgh</b> — ครบ 10 ตัว (หายาก เพราะโผล่ในรูปแบบการจัดทีมศัตรูของพื้นที่นี้แค่ 2 แบบ – สิบตัวนี้คืองานที่ยาวที่สุดของพื้นที่)</span></li>
+    <li class="chk"><input type="checkbox" data-k="ra-x10-ochu"><span class="lbl"><b>Ochu</b> — ครบ 10 ตัว (ไล่บน South Bank Road ของ Moonflow เร็วกว่ากรินด์ที่ Djose มาก)</span></li>
+  </ul></div>
+  <div class="pick milestone"><h4>ปลด Area Conquest ของ Djose Road</h4><ul class="chklist">
+    <li class="chk"><input type="checkbox" data-k="ra-area-djose"><span class="lbl">ปลด <b>Jormungand</b> — จับครบทั้ง 7 ชนิดแล้วกลับไปคุยกับเจ้าของสนาม รับ <span class="it">Petrify Grenade ×99</span></span></li>
+  </ul></div>
+  <div class="callout tip"><b>อย่ากรินด์หา Ochu ที่ Djose:</b> มันเสียเวลากว่าหลายเท่าโดยไม่จำเป็น — เดินจากป้ายบอกทางเดียวกันนั้นออกไปทาง <b>Moonflow</b> แล้วไล่บน <b>South Bank Road</b> แทน จับได้ที่นั่นก็นับเข้าพื้นที่ Djose Road เหมือนกัน</div>
+  <p data-note><b>ช่องว่างของข้อมูลที่ต้องบอกตามตรง:</b> ไม่มีแหล่งไหนระบุโซนย่อยของ <b>Garm</b> – <b>Bite Bug</b> – <b>Bunyip</b> – <b>Basilisk</b> เลย ทั้งสี่ตัวจึงเขียนว่าทั่วพื้นที่ตามข้อมูลที่มีจริง ไม่ได้เดาโซนให้</p>
+</section>
+
+<section id="a6-thunder">
+  <h2><span class="ic">6</span> Thunder Plains — 8 ชนิด <span class="sec-count" data-count>0/0</span></h2>
+  <div class="card"><h4>สรุปจุดนี้</h4>
+    <dl class="kv">
+      <dt>เลือกอะไรบน NavMap</dt><dd>เลือก <b>Thunder Plains</b> ลงตรงจุดได้เลย</dd>
+      <dt>ต้องจับกี่ชนิด</dt><dd>8 ชนิด แต่ <b>7 ชนิดเท่านั้นที่จับได้ทันที</b> ส่วนตัวที่แปดต้องปลดล็อกด้วยเควสก่อน</dd>
+      <dt>ตัวที่คนเดินผ่านโดยไม่รู้ตัวที่สุดของทั้งเกม</dt><dd><b>Qactuar</b> — มันไม่ปรากฏเป็นศัตรูสุ่มเลยจนกว่าคุณจะปลดล็อกมัน อ่านกล่องเตือนข้างล่างก่อนเสียเวลาเดินหา</dd>
+      <dt>งานพิเศษที่ควรทำตอนอยู่ที่นี่</dt><dd><b>Iron Giant</b> คือหนึ่งในสามตัวของสาย <b>Iron Giant</b> ที่ต้องจับ <b>ชนิดละ 10 ตัว</b> เพื่อปลด <b>Ironclad</b> — ถ้าตั้งใจจะทำ Species Conquest ให้ครบ ให้ฟาร์มมันให้ครบ 10 ตัวตั้งแต่รอบนี้เลย จะได้ไม่ต้องบินกลับมาอีก</dd>
+      <dt>ปลดแล้วได้อะไร</dt><dd>Area Conquest ปลด <b>Cactuar King</b> พร้อมรางวัล <span class="it">Chocobo Wing ×99</span> ซึ่งเป็นวัตถุของ <span class="it">Auto-Haste</span> — เป็นรางวัลที่คุ้มที่สุดกองหนึ่งของทั้งสนาม</dd>
+      <dt>ไปต่อที่ไหน</dt><dd>บินต่อไป <b>Macalania</b> ซึ่งเป็นพื้นที่ที่มีถึง 10 ชนิดและแยกเป็นสองจอที่ต้องกวาดทั้งคู่</dd>
+    </dl>
+  </div>
+  <div class="callout warn"><b><span class="it">Qactuar</span> ไม่มีอยู่ในเกมจนกว่าคุณจะไปสวดที่หินเรืองแสงก่อน — นี่คือสาเหตุที่คนเล่นจบเกมโดยไม่เคยเห็นมันเลย:</b> มันไม่ใช่ตัวหายาก แต่มัน<b>ไม่โผล่เป็นศัตรูสุ่มเลยแม้แต่ครั้งเดียว</b> จนกว่าคุณจะไปสวดที่ <b>หินเรืองแสงที่กระจายอยู่ทั่วทุ่ง</b> ซึ่งมี <b>2 ก้อนอยู่ครึ่งฝั่งที่ใกล้ Guadosalam</b> และอีก <b>6 ก้อนอยู่ครึ่งฝั่งที่เดินต่อไปทาง Macalania</b>
+    <p style="margin:6px 0 0">งานสวดหินชุดนี้คือ<b>สายเควสอาวุธเทพของ Kimahri คือ <span class="it">Spirit Lance</span></b> ฉะนั้นถ้าคุณตั้งใจจะเก็บอาวุธเทพอยู่แล้ว มันเป็นงานเดียวกันและได้ผลสองต่อ — รายละเอียดของสายเควสอยู่ที่หน้า <a href="ref-sidequests.html#weapons">อาวุธเทพ 7 ตัว</a> และ <a href="../stages/14-thunder-plains.html">ด่าน 14</a></p>
+    <p style="margin:6px 0 0"><b>ควรทำตอนไหน:</b> ทำตอนปลายเกม แล้วค่อยกลับมาไล่จับ Qactuar ทีเดียว — อย่าปักหลักหา Qactuar ก่อนสวดหิน เพราะยังไงก็ไม่เจอ</p>
+  </div>
+  <div class="pick"><h4>รอบที่ 1 – จับชนิดละ 1 ตัว ที่ Thunder Plains</h4><ul class="chklist">
+    <li class="chk"><input type="checkbox" data-k="ra-f-melusine"><span class="lbl"><b>Melusine</b> — ทั่วทุ่ง แต่หนาแน่นกว่าในครึ่งฝั่งที่ใกล้ <b>Guadosalam</b></span></li>
+    <li class="chk"><input type="checkbox" data-k="ra-f-goldelement"><span class="lbl"><b>Gold Element</b> — ทั่วทุ่ง แต่หนาแน่นกว่าในครึ่งฝั่งที่ใกล้ <b>Guadosalam</b> เช่นเดียวกับ Melusine</span></li>
+    <li class="chk"><input type="checkbox" data-k="ra-f-aerouge"><span class="lbl"><b>Aerouge</b> — ทั่วทุ่ง ไม่มีโซนย่อยที่ยืนยันได้</span></li>
+    <li class="chk"><input type="checkbox" data-k="ra-f-buer"><span class="lbl"><b>Buer</b> — ทั่วทุ่ง ไม่มีโซนย่อยที่ยืนยันได้</span></li>
+    <li class="chk"><input type="checkbox" data-k="ra-f-kusariqqu"><span class="lbl"><b>Kusariqqu</b> — ทั่วทุ่ง ไม่มีโซนย่อยที่ยืนยันได้</span></li>
+    <li class="chk"><input type="checkbox" data-k="ra-f-larva"><span class="lbl"><b>Larva</b> — ทั่วทุ่ง ไม่มีโซนย่อยที่ยืนยันได้</span></li>
+    <li class="chk"><input type="checkbox" data-k="ra-f-irongiant"><span class="lbl"><b>Iron Giant</b> — อยู่ในครึ่งฝั่งที่เดินต่อไปทาง <b>Macalania</b> และเป็นตัวที่ต้องจับถึง 10 ตัวถ้าจะปลด <b>Ironclad</b></span></li>
+    <li class="chk"><input type="checkbox" data-k="ra-f-qactuar"><span class="lbl">⚠️ <b>Qactuar</b> — ไล่จับได้ทั่วทุ่ง <b>แต่หลังจากไปสวดที่หินเรืองแสงครบแล้วเท่านั้น</b> ก่อนหน้านั้นมันไม่โผล่เลย</span></li>
+  </ul></div>
+  <div class="pick"><h4>รอบที่ 2 – ครบ 10 ตัวแล้ว (สำหรับ Nemesis)</h4><ul class="chklist">
+    <li class="chk"><input type="checkbox" data-k="ra-x10-melusine"><span class="lbl"><b>Melusine</b> — ครบ 10 ตัว (ครึ่งฝั่งใกล้ Guadosalam)</span></li>
+    <li class="chk"><input type="checkbox" data-k="ra-x10-goldelement"><span class="lbl"><b>Gold Element</b> — ครบ 10 ตัว (ครึ่งฝั่งใกล้ Guadosalam)</span></li>
+    <li class="chk"><input type="checkbox" data-k="ra-x10-aerouge"><span class="lbl"><b>Aerouge</b> — ครบ 10 ตัว (ทั่วทุ่ง)</span></li>
+    <li class="chk"><input type="checkbox" data-k="ra-x10-buer"><span class="lbl"><b>Buer</b> — ครบ 10 ตัว (ทั่วทุ่ง)</span></li>
+    <li class="chk"><input type="checkbox" data-k="ra-x10-kusariqqu"><span class="lbl"><b>Kusariqqu</b> — ครบ 10 ตัว (ทั่วทุ่ง)</span></li>
+    <li class="chk"><input type="checkbox" data-k="ra-x10-larva"><span class="lbl"><b>Larva</b> — ครบ 10 ตัว (ทั่วทุ่ง)</span></li>
+    <li class="chk"><input type="checkbox" data-k="ra-x10-irongiant"><span class="lbl"><b>Iron Giant</b> — ครบ 10 ตัว (ครึ่งฝั่งใกล้ Macalania – ต้องครบ 10 ตัวอยู่แล้วเพื่อปลด Ironclad จึงไม่ใช่งานเพิ่ม)</span></li>
+    <li class="chk"><input type="checkbox" data-k="ra-x10-qactuar"><span class="lbl">⚠️ <b>Qactuar</b> — ครบ 10 ตัว (<b>ฟาร์มไม่ได้เลย</b>จนกว่าจะไปสวดที่หินเรืองแสงให้ครบก่อน จึงต้องเผื่อเวลาส่วนนั้นไว้ในแผน)</span></li>
+  </ul></div>
+  <div class="pick milestone"><h4>ปลด Area Conquest ของ Thunder Plains</h4><ul class="chklist">
+    <li class="chk"><input type="checkbox" data-k="ra-area-thunder"><span class="lbl">ปลด <b>Cactuar King</b> — จับครบทั้ง 8 ชนิด (รวม Qactuar) แล้วกลับไปคุยกับเจ้าของสนาม รับ <span class="it">Chocobo Wing ×99</span> ซึ่งเป็นวัตถุทำ <span class="it">Auto-Haste</span></span></li>
+  </ul></div>
+  <p data-note><b>ช่องว่างของข้อมูลที่ต้องบอกตามตรง:</b> ไม่มีแหล่งไหนระบุโซนย่อยของ <b>Aerouge</b> – <b>Buer</b> – <b>Kusariqqu</b> – <b>Larva</b> เลย ทั้งสี่ตัวจึงเขียนว่าทั่วทุ่งตามข้อมูลที่มีจริง</p>
+</section>
+
+<section id="a7-macalania">
+  <h2><span class="ic">7</span> Macalania — 10 ชนิด <span class="sec-count" data-count>0/0</span></h2>
+  <div class="card"><h4>สรุปจุดนี้</h4>
+    <dl class="kv">
+      <dt>เลือกอะไรบน NavMap</dt><dd>เลือก <b>Macalania</b> ลงตรงจุดได้เลย</dd>
+      <dt>ต้องจับกี่ชนิด</dt><dd>10 ชนิด ซึ่งเยอะเป็นอันดับสองของทั้งเกม และมันแยกเป็นสองจอชัดเจนคือ <b>Macalania Woods 7 ชนิด</b> กับ <b>Lake Macalania 3 ชนิด</b></dd>
+      <dt>ตัวที่คนเดินผ่านโดยไม่รู้ตัว</dt><dd><b>สามตัวที่ Lake Macalania</b> คือ Snow Wolf – Ice Flan – Mafdet เพราะทางเดินเนื้อเรื่องผ่านป่าอย่างเดียวและไม่เคยบังคับให้แวะออกไปบนน้ำแข็ง (และมีคนพลาดสลับกันด้วย คือกวาดทะเลสาบจนครบแต่ลืมกวาดป่า)</dd>
+      <dt>ทำยังไงถึงไม่พลาด</dt><dd><b>ตั้งใจกวาดให้ครบทั้งสองจอ</b> แล้วเช็กรายการข้างล่างทีละตัว — ถือเป็นสองงานแยกกัน ไม่ใช่งานเดียว</dd>
+      <dt>ปลดแล้วได้อะไร</dt><dd>Area Conquest ปลด <b>Espada</b> พร้อมรางวัล <span class="it">Shining Gem ×60</span></dd>
+      <dt>ไปต่อที่ไหน</dt><dd>บินต่อไป <b>Bikanel</b> ซึ่งเป็นทะเลทรายที่แบ่งเป็นสี่โซนบนจอ</dd>
+    </dl>
+  </div>
+  <div class="pick"><h4>รอบที่ 1 – ชุดที่ 1: จับให้ครบใน Macalania Woods</h4><ul class="chklist">
+    <li class="chk"><input type="checkbox" data-k="ra-f-iguion"><span class="lbl"><b>Iguion</b> — ใน Macalania Woods</span></li>
+    <li class="chk"><input type="checkbox" data-k="ra-f-wasp"><span class="lbl"><b>Wasp</b> — ใน Macalania Woods</span></li>
+    <li class="chk"><input type="checkbox" data-k="ra-f-blueelement"><span class="lbl"><b>Blue Element</b> — ใน Macalania Woods</span></li>
+    <li class="chk"><input type="checkbox" data-k="ra-f-murussu"><span class="lbl"><b>Murussu</b> — ใน Macalania Woods และไม่ได้จำกัดว่าต้องดำน้ำถึงจะเจอ</span></li>
+    <li class="chk"><input type="checkbox" data-k="ra-f-xiphos"><span class="lbl"><b>Xiphos</b> — ใน Macalania Woods</span></li>
+    <li class="chk"><input type="checkbox" data-k="ra-f-chimera"><span class="lbl"><b>Chimera</b> — ใน Macalania Woods</span></li>
+    <li class="chk"><input type="checkbox" data-k="ra-f-evileye"><span class="lbl">⚠️ <b>Evil Eye</b> — <b>ตำแหน่งยังไม่ยุติ</b> jegged วางไว้ใน Macalania Woods ส่วนอีกแหล่งอ้างว่าอยู่ที่ Lake Macalania แต่หน้าที่มันอ้างถึงไม่มีข้อความนั้นอยู่จริง จึงให้กวาดทั้งสองจอเผื่อไว้</span></li>
+  </ul></div>
+  <div class="pick"><h4>รอบที่ 1 – ชุดที่ 2: จับให้ครบที่ Lake Macalania (จอที่คนลืมแวะ)</h4><ul class="chklist">
+    <li class="chk"><input type="checkbox" data-k="ra-f-snowwolf"><span class="lbl">⚠️ <b>Snow Wolf</b> — ที่ <b>Lake Macalania</b> บริเวณแถว Rin's Travel Agency</span></li>
+    <li class="chk"><input type="checkbox" data-k="ra-f-iceflan"><span class="lbl">⚠️ <b>Ice Flan</b> — ที่ <b>Lake Macalania</b> บริเวณแถว Rin's Travel Agency</span></li>
+    <li class="chk"><input type="checkbox" data-k="ra-f-mafdet"><span class="lbl">⚠️ <b>Mafdet</b> — ที่ <b>Lake Macalania</b> บริเวณแถว Rin's Travel Agency</span></li>
+  </ul></div>
+  <div class="pick"><h4>รอบที่ 2 – ครบ 10 ตัวแล้ว (สำหรับ Nemesis) – รวมทุกกลุ่มของพื้นที่นี้</h4><ul class="chklist">
+    <li class="chk"><input type="checkbox" data-k="ra-x10-iguion"><span class="lbl"><b>Iguion</b> — ครบ 10 ตัว (Macalania Woods)</span></li>
+    <li class="chk"><input type="checkbox" data-k="ra-x10-wasp"><span class="lbl"><b>Wasp</b> — ครบ 10 ตัว (Macalania Woods)</span></li>
+    <li class="chk"><input type="checkbox" data-k="ra-x10-blueelement"><span class="lbl"><b>Blue Element</b> — ครบ 10 ตัว (Macalania Woods)</span></li>
+    <li class="chk"><input type="checkbox" data-k="ra-x10-murussu"><span class="lbl"><b>Murussu</b> — ครบ 10 ตัว (Macalania Woods)</span></li>
+    <li class="chk"><input type="checkbox" data-k="ra-x10-xiphos"><span class="lbl"><b>Xiphos</b> — ครบ 10 ตัว (Macalania Woods)</span></li>
+    <li class="chk"><input type="checkbox" data-k="ra-x10-chimera"><span class="lbl"><b>Chimera</b> — ครบ 10 ตัว (Macalania Woods)</span></li>
+    <li class="chk"><input type="checkbox" data-k="ra-x10-evileye"><span class="lbl"><b>Evil Eye</b> — ครบ 10 ตัว (ตำแหน่งยังไม่ยุติ จึงต้องกวาดทั้งป่าและทะเลสาบ)</span></li>
+    <li class="chk"><input type="checkbox" data-k="ra-x10-snowwolf"><span class="lbl"><b>Snow Wolf</b> — ครบ 10 ตัว (Lake Macalania)</span></li>
+    <li class="chk"><input type="checkbox" data-k="ra-x10-iceflan"><span class="lbl"><b>Ice Flan</b> — ครบ 10 ตัว (Lake Macalania)</span></li>
+    <li class="chk"><input type="checkbox" data-k="ra-x10-mafdet"><span class="lbl"><b>Mafdet</b> — ครบ 10 ตัว (Lake Macalania)</span></li>
+  </ul></div>
+  <div class="pick milestone"><h4>ปลด Area Conquest ของ Macalania</h4><ul class="chklist">
+    <li class="chk"><input type="checkbox" data-k="ra-area-macalania"><span class="lbl">ปลด <b>Espada</b> — จับครบทั้ง 10 ชนิดจากทั้งสองจอ แล้วกลับไปคุยกับเจ้าของสนาม รับ <span class="it">Shining Gem ×60</span></span></li>
+  </ul></div>
+  <p data-note><b>ระดับความมั่นใจของข้อมูลชุดนี้:</b> รายชื่อ 10 ชนิดยืนยันแล้วจากสองแหล่ง แต่<b>การแบ่งว่าตัวไหนอยู่ป่าตัวไหนอยู่ทะเลสาบมาจากแหล่งเดียว</b> — ถ้าไล่ตามที่เขียนแล้วไม่เจอ ให้ลองอีกจอหนึ่งก่อนคิดว่าตัวเองทำอะไรผิด</p>
+</section>
+
+<section id="a8-bikanel">
+  <h2><span class="ic">8</span> Bikanel — 6 ชนิด <span class="sec-count" data-count>0/0</span></h2>
+  <div class="card"><h4>สรุปจุดนี้</h4>
+    <dl class="kv">
+      <dt>เลือกอะไรบน NavMap</dt><dd>เลือก <b>Bikanel</b> ลงตรงจุดได้เลย ซึ่งพาไปที่ <b>Sanubia Desert</b></dd>
+      <dt>ทะเลทรายแบ่งเป็นกี่ส่วน</dt><dd>บนจอมันแบ่งเป็นสี่ส่วนคือ <b>Oasis – East – Central – West</b> และมีตัวเดียวที่ผูกกับส่วนใดส่วนหนึ่งชัดเจน</dd>
+      <dt>ต้องจับกี่ชนิด</dt><dd>6 ชนิด ซึ่งน้อยที่สุดในบรรดาพื้นที่ช่วงกลางเกม</dd>
+      <dt>ตัวที่คนเดินผ่านโดยไม่รู้ตัว</dt><dd><b>Cactuar</b> เพราะจุดของมันอยู่ในโซน <b>West</b> ซึ่งเนื้อเรื่องไม่เคยบังคับให้เดินไป — และตัวมันเองก็หลบเก่งมากด้วย</dd>
+      <dt>ทำยังไงถึงไม่พลาด</dt><dd><b>ตั้งใจเดินให้ครบทั้ง East – Central – West</b> อย่าเดินแค่เส้นที่เนื้อเรื่องเคยพาไป</dd>
+      <dt>ปลดแล้วได้อะไร</dt><dd>Area Conquest ปลด <b>Abyss Worm</b> พร้อมรางวัล <span class="it">Shadow Gem ×99</span></dd>
+      <dt>ไปต่อที่ไหน</dt><dd>บินต่อไป <b>Calm Lands</b> ซึ่งเป็นที่ตั้งของตัวสนามเอง จะได้ส่งของที่จับมาทั้งหมดรวดเดียว</dd>
+    </dl>
+  </div>
+  <div class="callout tip"><b><span class="it">Home</span> กลับเข้าไปไม่ได้แล้วหลังจบเนื้อเรื่องช่วงนั้น และไม่ต้องเสียใจ:</b> สิ่งที่เหลือให้เข้าได้คือ<b>ทะเลทรายรอบ ๆ</b> ซึ่งเป็นที่ที่ fiend ทั้ง 6 ชนิดอยู่พอดี — ไม่มี fiend ของสนามตัวไหนติดอยู่ข้างใน Home</div>
+  <div class="pick"><h4>รอบที่ 1 – จับชนิดละ 1 ตัว ที่ Sanubia Desert</h4><ul class="chklist">
+    <li class="chk"><input type="checkbox" data-k="ra-f-sandwolf"><span class="lbl"><b>Sand Wolf</b> — ทั่วทะเลทราย ไม่มีโซนย่อยที่ยืนยันได้</span></li>
+    <li class="chk"><input type="checkbox" data-k="ra-f-alcyone"><span class="lbl"><b>Alcyone</b> — ทั่วทะเลทราย ไม่มีโซนย่อยที่ยืนยันได้</span></li>
+    <li class="chk"><input type="checkbox" data-k="ra-f-mushussu"><span class="lbl"><b>Mushussu</b> — ทั่วทะเลทราย แต่โอกาสเจอดีที่สุดเมื่อเดินลึกเข้าไปทางฝั่งที่ต่อไปยัง <b>Home</b></span></li>
+    <li class="chk"><input type="checkbox" data-k="ra-f-zu"><span class="lbl"><b>Zu</b> — ทั่วทะเลทราย แต่โอกาสเจอดีที่สุดทางฝั่งซ้ายของ<b>ป้าย Al Bhed</b> ใกล้ Save Sphere ที่เขียนว่าตัวที่อ่อนกว่าอยู่ทางขวาและตัวที่แรงกว่าอยู่ทางซ้าย (ตัวที่บังคับให้สู้ตอนมาถึง Oasis ครั้งแรกจับไม่ได้)</span></li>
+    <li class="chk"><input type="checkbox" data-k="ra-f-sandworm"><span class="lbl"><b>Sand Worm</b> — ทั่วทะเลทราย แต่โอกาสเจอดีที่สุดในโซนฝั่งตะวันตกของป้าย Al Bhed ป้ายเดียวกันนั้น — เลือดหนามากจนหลายคนเผลอปิดจ็อบด้วย Overdrive ซึ่งทำให้จับไม่ติด</span></li>
+    <li class="chk"><input type="checkbox" data-k="ra-f-cactuar"><span class="lbl">⚠️ <b>Cactuar</b> — อยู่ในโซน <b>Sanubia Desert – West</b> แถว <b>Village of the Cactuars</b> และหลบเก่งจนขึ้นชื่อ</span></li>
+  </ul></div>
+  <div class="pick"><h4>รอบที่ 2 – ครบ 10 ตัวแล้ว (สำหรับ Nemesis)</h4><ul class="chklist">
+    <li class="chk"><input type="checkbox" data-k="ra-x10-sandwolf"><span class="lbl"><b>Sand Wolf</b> — ครบ 10 ตัว (ทั่วทะเลทราย)</span></li>
+    <li class="chk"><input type="checkbox" data-k="ra-x10-alcyone"><span class="lbl"><b>Alcyone</b> — ครบ 10 ตัว (ทั่วทะเลทราย)</span></li>
+    <li class="chk"><input type="checkbox" data-k="ra-x10-mushussu"><span class="lbl"><b>Mushussu</b> — ครบ 10 ตัว (ฝั่งที่เดินต่อไปเจอ Home)</span></li>
+    <li class="chk"><input type="checkbox" data-k="ra-x10-zu"><span class="lbl"><b>Zu</b> — ครบ 10 ตัว (ฝั่งซ้ายของป้าย Al Bhed)</span></li>
+    <li class="chk"><input type="checkbox" data-k="ra-x10-sandworm"><span class="lbl"><b>Sand Worm</b> — ครบ 10 ตัว (ฝั่งตะวันตกของป้าย Al Bhed – อย่าเผลอปิดจ็อบด้วย Overdrive)</span></li>
+    <li class="chk"><input type="checkbox" data-k="ra-x10-cactuar"><span class="lbl">⚠️ <b>Cactuar</b> — ครบ 10 ตัว (Sanubia Desert – West – หลบเก่งจนขึ้นชื่อ สิบตัวนี้จึงกินเวลากว่าที่ตัวเลขบอก)</span></li>
+  </ul></div>
+  <div class="pick milestone"><h4>ปลด Area Conquest ของ Bikanel</h4><ul class="chklist">
+    <li class="chk"><input type="checkbox" data-k="ra-area-bikanel"><span class="lbl">ปลด <b>Abyss Worm</b> — จับครบทั้ง 6 ชนิดแล้วกลับไปคุยกับเจ้าของสนาม รับ <span class="it">Shadow Gem ×99</span></span></li>
+  </ul></div>
+  <p data-note><b>ช่องว่างของข้อมูลที่ต้องบอกตามตรง:</b> มีแค่ <b>Cactuar</b> ตัวเดียวที่แหล่งข้อมูลผูกกับชื่อโซนตรง ๆ ส่วนอีกห้าตัวไม่มีใครระบุว่าอยู่ East, Central หรือ West — หน้านี้จึงไม่แบ่งโซนให้ห้าตัวนั้น</p>
+</section>
+
+<section id="a9-calmlands">
+  <h2><span class="ic">9</span> Calm Lands — 9 ชนิด <span class="sec-count" data-count>0/0</span></h2>
+  <div class="card"><h4>สรุปจุดนี้</h4>
+    <dl class="kv">
+      <dt>เลือกอะไรบน NavMap</dt><dd>เลือก <b>Calm Lands</b> ลงตรงจุดได้เลย และนี่คือที่ตั้งของ <a href="../stages/22-calm-lands-monster-arena.html">ตัว Monster Arena เอง</a> จึงเป็นจุดที่ควรแวะส่งของบ่อยที่สุด</dd>
+      <dt>ต้องจับกี่ชนิด</dt><dd><b>9 ชนิด</b> — ทั้งที่ในทุ่งมีศัตรูสุ่มถึง 10 แบบ เหตุผลอยู่ในกล่องเตือนข้างล่าง</dd>
+      <dt>ตัวที่คนเดินผ่านโดยไม่รู้ตัว</dt><dd><b>Malboro</b> และปัญหาของมันคือ<b>อัตราการเจอต่ำ ไม่ใช่ตำแหน่งลับ</b> — ไม่มีจุดไหนที่เดินไปแล้วเจอแน่นอน</dd>
+      <dt>ทำยังไงถึงเจอ Malboro</dt><dd>ปักหลักฝั่งตะวันตกเฉียงเหนือของทุ่ง หรือแถวที่ <b>Belgemine</b> ยืนอยู่ แล้ววนเข้าออกจอซ้ำ ๆ เพื่อรีเซ็ตการเจอศัตรู</dd>
+      <dt>ปลดแล้วได้อะไร</dt><dd>Area Conquest ปลด <b>Chimerageist</b> พร้อมรางวัล <span class="it">Farplane Wind ×60</span> ซึ่งพอดีกับการทำ <span class="it">Deathproof</span> บนเกราะหนึ่งชิ้น</dd>
+      <dt>ไปต่อที่ไหน</dt><dd>ลงไป <b>Stolen Fayth Cavern</b> ซึ่งอยู่ใต้ทุ่งนี้เอง และเป็นพื้นที่ที่ NavMap พาไปไม่ได้</dd>
+    </dl>
+  </div>
+  <div class="callout warn"><b>ทุ่งนี้มีศัตรูสุ่ม 10 แบบ แต่นับเป็นงานของสนามแค่ 9 — ตัวที่ไม่นับคือ <span class="it">Mech Scouter</span>:</b> มันเป็น <b>machina</b> คือเครื่องจักร ไม่ใช่สิ่งมีชีวิต จึง<b>จับไม่ได้เลย</b> และการใช้ Steal กับ machina จะทำลายมันทิ้งทันที — เว็บที่เขียนลอย ๆ ว่า "Calm Lands มีสิบตัว" กำลังนับสองเรื่องนี้ปนกัน ถ้าคุณจับได้ 9 ชนิดแล้วรู้สึกว่ายังขาด นั่นแปลว่าคุณครบแล้ว
+    <p style="margin:6px 0 0"><b>Defender X</b> ก็เป็น machina เหมือนกัน แต่มันเป็นบอสที่สู้ครั้งเดียวตามบท จึงไม่เกี่ยวกับการนับนี้ตั้งแต่ต้น</p>
+  </div>
+  <div class="pick"><h4>รอบที่ 1 – จับชนิดละ 1 ตัว ที่ Calm Lands</h4><ul class="chklist">
+    <li class="chk"><input type="checkbox" data-k="ra-f-skoll"><span class="lbl"><b>Skoll</b> — ทั่วทุ่ง และเป็นกลุ่มที่หาเจอง่ายที่สุดในพื้นที่นี้</span></li>
+    <li class="chk"><input type="checkbox" data-k="ra-f-nebiros"><span class="lbl"><b>Nebiros</b> — ทั่วทุ่ง และเป็นตัวที่หาเจอง่ายที่สุดในพื้นที่นี้</span></li>
+    <li class="chk"><input type="checkbox" data-k="ra-f-flameflan"><span class="lbl"><b>Flame Flan</b> — ทั่วทุ่ง ไม่มีโซนย่อยที่ยืนยันได้</span></li>
+    <li class="chk"><input type="checkbox" data-k="ra-f-shred"><span class="lbl"><b>Shred</b> — ทั่วทุ่ง แต่<b>ข้อมูลขัดกัน</b> เพราะอีกแหล่งบอกว่ามันหายากและโผล่แถวทางเข้าเท่านั้น</span></li>
+    <li class="chk"><input type="checkbox" data-k="ra-f-chimerabrain"><span class="lbl"><b>Chimera Brain</b> — ทั่วทุ่ง แต่<b>ข้อมูลขัดกัน</b> เพราะอีกแหล่งบอกว่ามันโผล่เฉพาะฝั่งตะวันตกเฉียงเหนือ</span></li>
+    <li class="chk"><input type="checkbox" data-k="ra-f-anacondaur"><span class="lbl"><b>Anacondaur</b> — ทั่วทุ่ง แต่หนาแน่นที่สุดฝั่งตะวันตกเฉียงเหนือ ซึ่งเป็นฝั่งเดียวกับที่ <b>Belgemine</b> ยืนอยู่</span></li>
+    <li class="chk"><input type="checkbox" data-k="ra-f-ogre"><span class="lbl"><b>Ogre</b> — อยู่สองมุมบนของทุ่ง คือฝั่งตะวันตกเฉียงเหนือกับฝั่งตะวันออกเฉียงเหนือ โดยมุมหลังคือฝั่งเดียวกับทางลงไป <b>Gorge Bottom</b></span></li>
+    <li class="chk"><input type="checkbox" data-k="ra-f-coeurl"><span class="lbl"><b>Coeurl</b> — ทั่วทุ่ง แต่หนาแน่นที่สุดฝั่งตะวันตก คือฝั่งตรงข้ามกับทางลงไป <b>Gorge Bottom</b></span></li>
+    <li class="chk"><input type="checkbox" data-k="ra-f-malboro"><span class="lbl">⚠️ <b>Malboro</b> — โผล่ได้เกือบทั้งทุ่ง หนาแน่นฝั่งตะวันตกเฉียงเหนือและแถวที่ Belgemine ยืน แต่<b>อัตราการเจอต่ำมากอย่างชัดเจน</b> จึงต้องวนซ้ำเอา</span></li>
+  </ul></div>
+  <div class="pick"><h4>รอบที่ 2 – ครบ 10 ตัวแล้ว (สำหรับ Nemesis)</h4><ul class="chklist">
+    <li class="chk"><input type="checkbox" data-k="ra-x10-skoll"><span class="lbl"><b>Skoll</b> — ครบ 10 ตัว (ทั่วทุ่ง – หาง่ายที่สุดกลุ่มหนึ่ง)</span></li>
+    <li class="chk"><input type="checkbox" data-k="ra-x10-nebiros"><span class="lbl"><b>Nebiros</b> — ครบ 10 ตัว (ทั่วทุ่ง – หาง่ายที่สุด)</span></li>
+    <li class="chk"><input type="checkbox" data-k="ra-x10-flameflan"><span class="lbl"><b>Flame Flan</b> — ครบ 10 ตัว (ทั่วทุ่ง)</span></li>
+    <li class="chk"><input type="checkbox" data-k="ra-x10-shred"><span class="lbl"><b>Shred</b> — ครบ 10 ตัว (ทั่วทุ่ง – โซนยังขัดกันระหว่างสองแหล่ง)</span></li>
+    <li class="chk"><input type="checkbox" data-k="ra-x10-chimerabrain"><span class="lbl"><b>Chimera Brain</b> — ครบ 10 ตัว (ทั่วทุ่ง – โซนยังขัดกันระหว่างสองแหล่ง)</span></li>
+    <li class="chk"><input type="checkbox" data-k="ra-x10-anacondaur"><span class="lbl"><b>Anacondaur</b> — ครบ 10 ตัว (หนาแน่นฝั่งที่ Belgemine ยืน)</span></li>
+    <li class="chk"><input type="checkbox" data-k="ra-x10-ogre"><span class="lbl"><b>Ogre</b> — ครบ 10 ตัว (สองมุมบนของทุ่ง)</span></li>
+    <li class="chk"><input type="checkbox" data-k="ra-x10-coeurl"><span class="lbl"><b>Coeurl</b> — ครบ 10 ตัว (หนาแน่นฝั่งตรงข้ามกับทางลง Gorge Bottom)</span></li>
+    <li class="chk"><input type="checkbox" data-k="ra-x10-malboro"><span class="lbl">⚠️ <b>Malboro</b> — ครบ 10 ตัว (อัตราการเจอต่ำมากอย่างชัดเจน – สิบตัวนี้คือหนึ่งในงานที่ยาวที่สุดของทั้ง Nemesis)</span></li>
+  </ul></div>
+  <div class="pick milestone"><h4>ปลด Area Conquest ของ Calm Lands</h4><ul class="chklist">
+    <li class="chk"><input type="checkbox" data-k="ra-area-calmlands"><span class="lbl">ปลด <b>Chimerageist</b> — จับครบทั้ง 9 ชนิดแล้วคุยกับเจ้าของสนามที่อยู่ในทุ่งนี้เอง รับ <span class="it">Farplane Wind ×60</span></span></li>
+  </ul></div>
+  <p data-note><b>ช่องว่างของข้อมูลที่ต้องบอกตามตรง:</b> โซนของ <b>Shred</b> กับ <b>Chimera Brain</b> ยังขัดกันอยู่ระหว่างหน้าข้อมูลรายตัวกับหน้าสรุป — หน้านี้บันทึกไว้ทั้งสองฝั่งแทนที่จะเลือกข้างโดยไม่มีหลักฐาน</p>
+</section>
+
+<section id="a10-stolenfayth">
+  <h2><span class="ic">10</span> Stolen Fayth Cavern — 9 ชนิด <span class="sec-count" data-count>0/0</span></h2>
+  <div class="card"><h4>สรุปจุดนี้</h4>
+    <dl class="kv">
+      <dt>เลือกอะไรบน NavMap</dt><dd><b>ไม่มีให้เลือก</b> — ถ้ำนี้ไม่ใช่จุดหมายของเรือบิน ต้องเดินเข้าไปเองทั้งสองทาง</dd>
+      <dt>ทางที่ 1 จาก Calm Lands</dt><dd>เดินไปทางออกฝั่งที่มีสะพาน พอถึง<b>สะพานที่สอง คือสะพานที่สู้ Defender X</b> ให้ย้อนตัวลอดลงไป<b>ใต้สะพาน</b> ลงสู่ <b>Gorge Bottom</b> แล้วลงต่ออีกชั้นจะถึงปากถ้ำ</dd>
+      <dt>ทางที่ 2 จาก Mt. Gagazet</dt><dd>ลงเรือบินที่ <b>Mt. Gagazet</b> แล้วเดินย้อนลงมาทางฝั่งที่ต่อกับ Calm Lands — ทางนี้ง่ายกว่าเมื่อคุณปลด Mt. Gagazet ไว้แล้ว แต่ก็ยังต้องจบด้วยการเดินเท้าอยู่ดี</dd>
+      <dt>ต้องจับกี่ชนิด</dt><dd>9 ชนิด และในนั้นมีตัวหายากสองตัวที่กินเวลามากที่สุดของถ้ำนี้</dd>
+      <dt>ตัวที่คนเดินผ่านโดยไม่รู้ตัว</dt><dd><b>Tonberry</b> กับ <b>Valaha</b> ซึ่งทั้งคู่เป็นปัญหาเรื่องอัตราการเจอล้วน ๆ</dd>
+      <dt>ปลดแล้วได้อะไร</dt><dd>Area Conquest ปลด <b>Don Tonberry</b> พร้อมรางวัล <span class="it">Silver Hourglass ×40</span></dd>
+      <dt>ไปต่อที่ไหน</dt><dd>ขึ้นไป <b>Mt. Gagazet</b> ซึ่งเป็นพื้นที่ที่มี fiend เยอะที่สุดของทั้งเกม และเป็นพื้นที่ที่ให้ <span class="it">Blossom Crown</span></dd>
+    </dl>
+  </div>
+  <div class="callout warn"><b>ท่า <span class="it">Karma</span> ของ Tonberry ทำดาเมจเท่ากับจำนวนศัตรูที่ตัวละครคนนั้นฆ่ามาทั้งเกมคูณสิบ:</b> แปลว่า<b>ตัวหลักที่คุณใช้ตีมาตลอดเกมคือคนที่เสี่ยงตายทันทีหนึ่งดอก</b> ในขณะที่ตัวสำรองที่แทบไม่เคยฆ่าอะไรกลับปลอดภัยกว่ามาก — เตรียมใจไว้ว่าคนที่ล้มก่อนคือคนที่แข็งที่สุดในทีม</div>
+  <div class="pick"><h4>รอบที่ 1 – จับชนิดละ 1 ตัว ที่ Cavern of the Stolen Fayth</h4><ul class="chklist">
+    <li class="chk"><input type="checkbox" data-k="ra-f-yowie"><span class="lbl"><b>Yowie</b> — ทั่วถ้ำ แต่หนาแน่นกว่าแถว <b>Save Sphere ตรงปากทางเข้า</b></span></li>
+    <li class="chk"><input type="checkbox" data-k="ra-f-imp"><span class="lbl"><b>Imp</b> — ทั่วถ้ำ ไม่มีโซนย่อยที่ยืนยันได้</span></li>
+    <li class="chk"><input type="checkbox" data-k="ra-f-darkelement"><span class="lbl"><b>Dark Element</b> — ทั่วถ้ำ และมันร่าย <b>Reflect</b> ใส่ตัวเอง ซึ่งทำให้เวทมนตร์ของคุณสะท้อนกลับมาเข้าทีมแทน</span></li>
+    <li class="chk"><input type="checkbox" data-k="ra-f-nidhogg"><span class="lbl"><b>Nidhogg</b> — ทั่วถ้ำ ไม่มีโซนย่อยที่ยืนยันได้</span></li>
+    <li class="chk"><input type="checkbox" data-k="ra-f-thorn"><span class="lbl"><b>Thorn</b> — ทั่วถ้ำ ไม่มีโซนย่อยที่ยืนยันได้</span></li>
+    <li class="chk"><input type="checkbox" data-k="ra-f-epaaj"><span class="lbl"><b>Epaaj</b> — ทั่วถ้ำ ไม่มีโซนย่อยที่ยืนยันได้</span></li>
+    <li class="chk"><input type="checkbox" data-k="ra-f-ghost"><span class="lbl"><b>Ghost</b> — ทั่วถ้ำ แต่<b>ความหายากยังขัดกัน</b> เพราะ jegged บอกว่าเจอบ่อย ส่วนข้อมูลที่มาจาก game8 บอกว่าหายากมาก</span></li>
+    <li class="chk"><input type="checkbox" data-k="ra-f-valaha"><span class="lbl">⚠️ <b>Valaha</b> — หายาก และแหล่งข้อมูลบอกตรง ๆ ว่า<b>ไม่มีจุดไหนดีกว่าจุดไหน</b> จึงต้องวนเอาอย่างเดียว</span></li>
+    <li class="chk"><input type="checkbox" data-k="ra-f-tonberry"><span class="lbl">⚠️ <b>Tonberry</b> — หายากที่สุดของถ้ำนี้ ผู้เล่นรายงานว่าเจอบ่อยกว่าใน<b>ห้องโทนเขียว</b> และท่า <b>Karma</b> ของมันอาจน็อกตัวหลักของคุณดับทันทีหนึ่งดอก</span></li>
+  </ul></div>
+  <div class="pick"><h4>รอบที่ 2 – ครบ 10 ตัวแล้ว (สำหรับ Nemesis)</h4><ul class="chklist">
+    <li class="chk"><input type="checkbox" data-k="ra-x10-yowie"><span class="lbl"><b>Yowie</b> — ครบ 10 ตัว (หนาแน่นแถว Save Sphere ปากทางเข้า)</span></li>
+    <li class="chk"><input type="checkbox" data-k="ra-x10-imp"><span class="lbl"><b>Imp</b> — ครบ 10 ตัว (ทั่วถ้ำ)</span></li>
+    <li class="chk"><input type="checkbox" data-k="ra-x10-darkelement"><span class="lbl"><b>Dark Element</b> — ครบ 10 ตัว (ทั่วถ้ำ – ร่าย Reflect ใส่ตัวเอง)</span></li>
+    <li class="chk"><input type="checkbox" data-k="ra-x10-nidhogg"><span class="lbl"><b>Nidhogg</b> — ครบ 10 ตัว (ทั่วถ้ำ)</span></li>
+    <li class="chk"><input type="checkbox" data-k="ra-x10-thorn"><span class="lbl"><b>Thorn</b> — ครบ 10 ตัว (ทั่วถ้ำ)</span></li>
+    <li class="chk"><input type="checkbox" data-k="ra-x10-epaaj"><span class="lbl"><b>Epaaj</b> — ครบ 10 ตัว (ทั่วถ้ำ)</span></li>
+    <li class="chk"><input type="checkbox" data-k="ra-x10-ghost"><span class="lbl">⚠️ <b>Ghost</b> — ครบ 10 ตัว (ความหายากยังขัดกัน จึงประเมินเวลาของสิบตัวนี้ล่วงหน้าไม่ได้)</span></li>
+    <li class="chk"><input type="checkbox" data-k="ra-x10-valaha"><span class="lbl">⚠️ <b>Valaha</b> — ครบ 10 ตัว (หายาก และแหล่งข้อมูลบอกตรง ๆ ว่าไม่มีจุดไหนดีกว่าจุดไหน สิบตัวนี้จึงต้องวนล้วน ๆ)</span></li>
+    <li class="chk"><input type="checkbox" data-k="ra-x10-tonberry"><span class="lbl">⚠️ <b>Tonberry</b> — ครบ 10 ตัว (หายากที่สุดของถ้ำ และ Karma อาจน็อกตัวหลักทุกครั้งที่เจอ)</span></li>
+  </ul></div>
+  <div class="pick milestone"><h4>ปลด Area Conquest ของ Stolen Fayth Cavern</h4><ul class="chklist">
+    <li class="chk"><input type="checkbox" data-k="ra-area-stolenfayth"><span class="lbl">ปลด <b>Don Tonberry</b> — จับครบทั้ง 9 ชนิดแล้วกลับไปคุยกับเจ้าของสนาม รับ <span class="it">Silver Hourglass ×40</span></span></li>
+  </ul></div>
+  <div class="callout tip"><b>ถ้ำนี้คือที่เดียวกับที่ซื้อ Aeon <span class="it">Yojimbo</span>:</b> ถ้ายังไม่ได้ตัวนั้น ให้ทำสองงานพร้อมกันในรอบเดียว — วิธีต่อราคาอยู่ที่ <a href="../stages/23-cavern-aeon-yojimbo.html">ด่าน 23</a></div>
+</section>
+
+<section id="a11-gagazet">
+  <h2><span class="ic">11</span> Mt. Gagazet — 12 ชนิด <span class="sec-count" data-count>0/0</span></h2>
+  <div class="card"><h4>สรุปจุดนี้</h4>
+    <dl class="kv">
+      <dt>เลือกอะไรบน NavMap</dt><dd>เลือก <b>Mt. Gagazet</b> ลงตรงจุดได้เลย</dd>
+      <dt>ต้องจับกี่ชนิด</dt><dd><b>12 ชนิด ซึ่งมากที่สุดในบรรดา 13 พื้นที่</b> และมันแบ่งเป็นสี่กลุ่มตามที่อยู่</dd>
+      <dt>สี่กลุ่มนั้นคืออะไร</dt><dd><b>กลุ่มที่ 1</b> อยู่บนทางเดินภูเขา 3 ชนิด – <b>กลุ่มที่ 2</b> อยู่ใน Gagazet Cave 3 ชนิด – <b>กลุ่มที่ 3</b> โผล่ได้ทั้งในถ้ำและบนทางเดินไป Zanarkand Ruins 3 ชนิด – <b>กลุ่มที่ 4</b> อยู่เฉพาะช่วงดำน้ำในถ้ำ 3 ชนิด</dd>
+      <dt>ตัวที่คนเดินผ่านโดยไม่รู้ตัว</dt><dd><b>สามตัวใต้น้ำ</b> คือ Achelous – Maelspike – Splasher เพราะเดินขึ้นภูเขาจนจบได้โดยไม่เคยลงไปในส่วนที่ว่ายน้ำได้เลย</dd>
+      <dt>ปลดแล้วได้อะไร</dt><dd>Area Conquest ปลด <b>Catoblepas</b> พร้อมรางวัลที่เป็นของสำคัญจริง ๆ คือ <span class="it">Blossom Crown</span> ซึ่งเป็นหนึ่งในสองชิ้นที่ปลด Aeon <b>Magus Sisters</b></dd>
+      <dt>ไปต่อที่ไหน</dt><dd>ไปที่ <b>Omega Ruins</b> ซึ่งยังไม่มีในเมนู NavMap และต้องค้นพิกัดให้เจอก่อน</dd>
+    </dl>
+  </div>
+  <div class="callout warn"><b>สามตัวใต้น้ำบังคับให้คุณจัดทีมเป็น Tidus – Rikku – Wakka เท่านั้น:</b> การต่อสู้ใต้น้ำใน FFX ใช้ได้แค่สามคนนี้ ฉะนั้นถ้าคุณเดินมาทั้งภูเขาด้วยทีมตีหนักชุดอื่น คุณจะถูกสลับทีมทันทีที่ลงน้ำ — ให้เตรียม<b>อาวุธที่ติด <span class="it">Capture</span> ของสามคนนี้ติดตัวมาด้วย</b> ไม่งั้นเจอตัวแล้วก็จับไม่ได้อยู่ดี
+    <p style="margin:6px 0 0"><b>ข่าวดีคือพอลงไปได้แล้วมันเจอง่าย</b> — ความยากทั้งหมดของสามตัวนี้คือการรู้ว่าต้องลงไป ไม่ใช่การหาตัว</p>
+  </div>
+  <div class="pick"><h4>รอบที่ 1 – กลุ่มที่ 1: บนทางเดินภูเขา</h4><ul class="chklist">
+    <li class="chk"><input type="checkbox" data-k="ra-f-bandersnatch"><span class="lbl"><b>Bandersnatch</b> — บนทางเดินภูเขา และเป็นตัวที่เจอง่ายมาก</span></li>
+    <li class="chk"><input type="checkbox" data-k="ra-f-bashura"><span class="lbl"><b>Bashura</b> — บนทางเดินภูเขา</span></li>
+    <li class="chk"><input type="checkbox" data-k="ra-f-grenade"><span class="lbl"><b>Grenade</b> — บนทางเดินภูเขา</span></li>
+  </ul></div>
+  <div class="pick"><h4>รอบที่ 1 – กลุ่มที่ 2: ใน Gagazet Cave</h4><ul class="chklist">
+    <li class="chk"><input type="checkbox" data-k="ra-f-ahriman"><span class="lbl"><b>Ahriman</b> — ใน <b>Gagazet Cave</b></span></li>
+    <li class="chk"><input type="checkbox" data-k="ra-f-grat"><span class="lbl"><b>Grat</b> — ใน <b>Gagazet Cave</b></span></li>
+    <li class="chk"><input type="checkbox" data-k="ra-f-mandragora"><span class="lbl"><b>Mandragora</b> — ใน <b>Gagazet Cave</b> และหนาแน่นกว่าแถวปากทางเข้าออกของถ้ำ</span></li>
+  </ul></div>
+  <div class="pick"><h4>รอบที่ 1 – กลุ่มที่ 3: ในถ้ำหรือบนทางเดินไป Zanarkand Ruins (สลับสองที่เอา)</h4><ul class="chklist">
+    <li class="chk"><input type="checkbox" data-k="ra-f-behemoth"><span class="lbl"><b>Behemoth</b> — โผล่ทั้งในถ้ำและบนทางเดินไป Zanarkand Ruins แล้วแต่ดวง ให้สลับไปมาสองที่ (คนละตัวกับ <b>Behemoth King</b> ที่อยู่ใน Sin ซึ่งสวนกลับตอนตายด้วย Meteor)</span></li>
+    <li class="chk"><input type="checkbox" data-k="ra-f-darkflan"><span class="lbl"><b>Dark Flan</b> — โผล่ทั้งในถ้ำและบนทางเดินไป Zanarkand Ruins และ<b>ไม่มีจุดไหนเพิ่มโอกาสได้เลย</b></span></li>
+    <li class="chk"><input type="checkbox" data-k="ra-f-grendel"><span class="lbl"><b>Grendel</b> — โผล่ทั้งในถ้ำและบนทางเดินไป Zanarkand Ruins</span></li>
+  </ul></div>
+  <div class="pick"><h4>รอบที่ 1 – กลุ่มที่ 4: เฉพาะช่วงดำน้ำในถ้ำ (ทีมถูกบังคับเป็น Tidus – Rikku – Wakka)</h4><ul class="chklist">
+    <li class="chk"><input type="checkbox" data-k="ra-f-achelous"><span class="lbl">⚠️ <b>Achelous</b> — เฉพาะช่วงที่ว่ายน้ำได้ในถ้ำเท่านั้น</span></li>
+    <li class="chk"><input type="checkbox" data-k="ra-f-maelspike"><span class="lbl">⚠️ <b>Maelspike</b> — เฉพาะช่วงที่ว่ายน้ำได้ในถ้ำเท่านั้น</span></li>
+    <li class="chk"><input type="checkbox" data-k="ra-f-splasher"><span class="lbl">⚠️ <b>Splasher</b> — เฉพาะช่วงที่ว่ายน้ำได้ในถ้ำเท่านั้น</span></li>
+  </ul></div>
+  <div class="pick"><h4>รอบที่ 2 – ครบ 10 ตัวแล้ว (สำหรับ Nemesis) – รวมทุกกลุ่มของพื้นที่นี้</h4><ul class="chklist">
+    <li class="chk"><input type="checkbox" data-k="ra-x10-bandersnatch"><span class="lbl"><b>Bandersnatch</b> — ครบ 10 ตัว (ทางเดินภูเขา)</span></li>
+    <li class="chk"><input type="checkbox" data-k="ra-x10-bashura"><span class="lbl"><b>Bashura</b> — ครบ 10 ตัว (ทางเดินภูเขา)</span></li>
+    <li class="chk"><input type="checkbox" data-k="ra-x10-grenade"><span class="lbl"><b>Grenade</b> — ครบ 10 ตัว (ทางเดินภูเขา)</span></li>
+    <li class="chk"><input type="checkbox" data-k="ra-x10-ahriman"><span class="lbl"><b>Ahriman</b> — ครบ 10 ตัว (Gagazet Cave)</span></li>
+    <li class="chk"><input type="checkbox" data-k="ra-x10-grat"><span class="lbl"><b>Grat</b> — ครบ 10 ตัว (Gagazet Cave)</span></li>
+    <li class="chk"><input type="checkbox" data-k="ra-x10-mandragora"><span class="lbl"><b>Mandragora</b> — ครบ 10 ตัว (Gagazet Cave แถวปากทางเข้าออก)</span></li>
+    <li class="chk"><input type="checkbox" data-k="ra-x10-behemoth"><span class="lbl"><b>Behemoth</b> — ครบ 10 ตัว (ในถ้ำหรือทางเดินไป Zanarkand Ruins)</span></li>
+    <li class="chk"><input type="checkbox" data-k="ra-x10-darkflan"><span class="lbl"><b>Dark Flan</b> — ครบ 10 ตัว (ในถ้ำหรือทางเดินไป Zanarkand Ruins – ไม่มีจุดไหนเพิ่มโอกาส)</span></li>
+    <li class="chk"><input type="checkbox" data-k="ra-x10-grendel"><span class="lbl"><b>Grendel</b> — ครบ 10 ตัว (ในถ้ำหรือทางเดินไป Zanarkand Ruins)</span></li>
+    <li class="chk"><input type="checkbox" data-k="ra-x10-achelous"><span class="lbl"><b>Achelous</b> — ครบ 10 ตัว (ช่วงดำน้ำในถ้ำ – ทีมถูกบังคับเป็น Tidus – Rikku – Wakka)</span></li>
+    <li class="chk"><input type="checkbox" data-k="ra-x10-maelspike"><span class="lbl"><b>Maelspike</b> — ครบ 10 ตัว (ช่วงดำน้ำในถ้ำ – ทีมถูกบังคับเป็น Tidus – Rikku – Wakka)</span></li>
+    <li class="chk"><input type="checkbox" data-k="ra-x10-splasher"><span class="lbl"><b>Splasher</b> — ครบ 10 ตัว (ช่วงดำน้ำในถ้ำ – ทีมถูกบังคับเป็น Tidus – Rikku – Wakka)</span></li>
+  </ul></div>
+  <div class="pick milestone"><h4>ปลด Area Conquest ของ Mt. Gagazet — พื้นที่ที่ให้ของสำคัญที่สุด</h4><ul class="chklist">
+    <li class="chk"><input type="checkbox" data-k="ra-area-gagazet"><span class="lbl">ปลด <b>Catoblepas</b> และรับ <span class="it">Blossom Crown</span> — จับ fiend บน Mt. Gagazet ให้ครบทั้ง 12 ชนิด อย่างน้อยชนิดละ 1 ตัว แล้วกลับไปคุยกับเจ้าของสนาม ของชิ้นนี้คือครึ่งหนึ่งของเงื่อนไข Aeon <b>Magus Sisters</b> ส่วนอีกครึ่งคือ <span class="it">Flower Scepter</span> จาก Belgemine ที่ <a href="../stages/24-remiem-aeon-magus-sisters.html">Remiem Temple</a></span></li>
+  </ul></div>
+  <p data-note><b>ช่องว่างของข้อมูลที่ต้องบอกตามตรง:</b> ยังยืนยันไม่ได้ว่า<b>ทางเดินไป Zanarkand Ruins</b> มีชื่อแมพเป็นของตัวเองหรือยังนับเป็น Mt. Gagazet อยู่ — ไม่ว่าคำตอบจะเป็นอย่างไร ตัวที่จับได้ตรงนั้นก็นับเข้าพื้นที่ Mt. Gagazet เหมือนกัน</p>
+</section>
+
+<section id="a12-insidesin">
+  <h2><span class="ic">12</span> Inside Sin — 9 ชนิด (พื้นที่สุดท้าย และเดิมพันสูงสุด) <span class="sec-count" data-count>0/0</span></h2>
+  <div class="card"><h4>สรุปจุดนี้</h4>
+    <dl class="kv">
+      <dt>เลือกอะไรบน NavMap</dt><dd>รายการในเมนูชื่อว่า <b>Sin</b> เฉย ๆ <b>ไม่ได้ชื่อว่า Inside Sin</b> — คนที่ไล่หาคำว่า Inside Sin ในเมนูจะหาไม่เจอ</dd>
+      <dt>เลือกแล้วเกิดอะไรขึ้นทันที</dt><dd>เกมจะพาเข้า<b>ศึกเรือบินห้ายกที่ข้ามไม่ได้</b>ก่อน แล้วคุณถึงจะได้ยืนอยู่ในที่ที่ fiend ทั้ง 9 ชนิดอยู่จริง</dd>
+      <dt>ต้องจับกี่ชนิด</dt><dd>9 ชนิด และทั้งหมดอยู่ในสองโซนคือ <b>Sea of Sorrow</b> กับ <b>City of Dying Dreams</b></dd>
+      <dt>ปลดแล้วได้อะไร</dt><dd>Area Conquest ปลด <b>Abaddon</b> พร้อมรางวัล <span class="it">Lunar Curtain ×99</span></dd>
+      <dt>ทำไมต้องเป็นงานสุดท้าย</dt><dd>เพราะข้างในมี<b>ประตูทางเดียว</b>รออยู่ และเพราะสองในเก้าตัวคือ <b>Gemini</b> คู่นั้นเป็นชิ้นส่วนของงานที่หนักที่สุดในสนาม คือ <b>Ironclad</b> ที่ต้องจับชนิดละ 10 ตัว</dd>
+    </dl>
+  </div>
+
+  <div class="callout tip"><b>ข่าวดีที่คนเข้าใจผิดกันมากที่สุด — เข้า Sin แล้วยังไม่ใช่ทางเดียว และไม่มีอะไรหายถาวรในภูมิศาสตร์ของ Sin เอง:</b>
+    <p style="margin:6px 0 0"><b>fiend ทั้ง 9 ชนิดอยู่ใน Sea of Sorrow และ City of Dying Dreams ซึ่งทั้งสองโซนอยู่ก่อนประตูทางเดียว</b> — คุณสามารถ<b>ขึ้นเรือบินออกไปข้างนอกแล้วกลับเข้ามาใหม่ได้ไม่จำกัดครั้ง</b> โดยใช้ Save Sphere ที่มีอยู่ ตราบใดที่ยังไม่ข้ามเข้า <b>The Nucleus</b></p>
+    <p style="margin:6px 0 0">พูดอีกแบบคือ คุณไม่ได้ถูกบังคับให้จับให้ครบในรอบเดียว และไม่ต้องกลัวว่าเข้าไปแล้วจะออกมาซื้อของหรือฟาร์มต่อไม่ได้</p>
+  </div>
+
+  <div class="callout warn"><b>แต่กฎที่ปลอดภัยยังคงเป็น "จับให้ครบทั้ง 9 ชนิดก่อนแตะ glyph" และนี่คือเหตุผล:</b> เมื่อข้ามเข้า <b>The Nucleus</b> ไปแล้ว<b>ไม่มีทางย้อนกลับออกมาอีกเลย</b> และมีเพียง <b>3 ใน 9 ตัว</b> เท่านั้นที่ยืนยันได้ว่ายังโผล่หลังประตูนั้น คือ <b>Wraith</b> – <b>Demonolith</b> – <b>Behemoth King</b>
+    <p style="margin:6px 0 0">แปลว่าอีก <b>6 ตัวที่เหลือไม่มีหลักฐานว่ายังจับได้หลังประตู</b> — อย่าเดิมพันกับโอกาสครั้งที่สองที่ไม่มีใครยืนยัน ให้เก็บให้ครบเก้าตัวตั้งแต่ก่อนแตะ glyph ที่พาเข้า The Nucleus จุดห้ามย้อนกลับของทั้งเกมและลำดับปิดเกมทั้งหมดอยู่ที่ <a href="ref-sidequests.html#endgame">หัวข้อเก็บครบแล้วทำต่อ</a> และ <a href="../stages/29-inside-sin.html">ด่าน 29</a></p>
+  </div>
+
+  <div class="pick"><h4>รอบที่ 1 – จับชนิดละ 1 ตัว ใน Inside Sin (ทั้ง 9 ชนิดอยู่ก่อนประตูทางเดียว)</h4><ul class="chklist">
+    <li class="chk"><input type="checkbox" data-k="ra-f-exoray"><span class="lbl"><b>Exoray</b> — ที่ <b>Sea of Sorrow</b> และที่ <b>City of Dying Dreams</b> ด้วย มันสวนกลับการตีกายภาพด้วย <b>Pollen</b> ที่ทำให้หลับ</span></li>
+    <li class="chk"><input type="checkbox" data-k="ra-f-adamantoise"><span class="lbl"><b>Adamantoise</b> — ที่ Sea of Sorrow และ City of Dying Dreams เลือดหนาและเกราะแน่น</span></li>
+    <li class="chk"><input type="checkbox" data-k="ra-f-geminisword"><span class="lbl"><b>Gemini (Sword)</b> — ที่ Sea of Sorrow และ City of Dying Dreams <b>โผล่มาพร้อมกับ Gemini (Club) เสมอ</b> จึงจับได้ทีละคู่</span></li>
+    <li class="chk"><input type="checkbox" data-k="ra-f-geminiclub"><span class="lbl"><b>Gemini (Club)</b> — ที่ Sea of Sorrow และ City of Dying Dreams <b>โผล่มาพร้อมกับ Gemini (Sword) เสมอ</b> ทั้งคู่ต้องจับ 10 ตัวถ้าจะปลด Ironclad</span></li>
+    <li class="chk"><input type="checkbox" data-k="ra-f-behemothking"><span class="lbl"><b>Behemoth King</b> — ที่ Sea of Sorrow และ City of Dying Dreams หนาแน่นขึ้นช่วงท้าย และยังมีอีกตัวใน The Nucleus (คนละตัวกับ <b>Behemoth</b> ที่ Mt. Gagazet)</span></li>
+    <li class="chk"><input type="checkbox" data-k="ra-f-greatmalboro"><span class="lbl"><b>Great Malboro</b> — ที่ Sea of Sorrow และ City of Dying Dreams ท่า <b>Bad Breath</b> ของมันใส่สถานะผิดปกติได้ถึงหกอย่างพร้อมกัน</span></li>
+    <li class="chk"><input type="checkbox" data-k="ra-f-barbatos"><span class="lbl">⚠️ <b>Barbatos</b> — อยู่ที่ <b>City of Dying Dreams</b> เท่านั้น ไม่มีแหล่งไหนวางมันไว้ที่ Sea of Sorrow เลย มันสวนกลับ <b>Armor Break</b> ด้วยท่า Mortar</span></li>
+    <li class="chk"><input type="checkbox" data-k="ra-f-demonolith"><span class="lbl"><b>Demonolith</b> — อยู่ที่ <b>City of Dying Dreams</b> และมีอีกตัวใน The Nucleus มันสวนกลับแทบทุกอย่างด้วย <b>Pharaoh's Curse</b> และมี <b>Stone Breath</b> ที่ใส่ทั้งทีม</span></li>
+    <li class="chk"><input type="checkbox" data-k="ra-f-wraith"><span class="lbl"><b>Wraith</b> — อยู่ที่ <b>City of Dying Dreams</b> ส่วนตัวที่แรงกว่าอยู่ใน The Nucleus เลือดเป๊ะ 22,222 และเปิดฉากด้วย <b>Doom</b> (ตัวใน The Nucleus เปิดด้วย Instant Death แทน)</span></li>
+  </ul></div>
+  <div class="pick"><h4>รอบที่ 2 – ครบ 10 ตัวแล้ว (สำหรับ Nemesis)</h4><ul class="chklist">
+    <li class="chk"><input type="checkbox" data-k="ra-x10-exoray"><span class="lbl"><b>Exoray</b> — ครบ 10 ตัว (Sea of Sorrow และ City of Dying Dreams)</span></li>
+    <li class="chk"><input type="checkbox" data-k="ra-x10-adamantoise"><span class="lbl"><b>Adamantoise</b> — ครบ 10 ตัว (Sea of Sorrow และ City of Dying Dreams – ฟาร์มที่ Omega Ruins ก็นับ)</span></li>
+    <li class="chk"><input type="checkbox" data-k="ra-x10-geminisword"><span class="lbl"><b>Gemini (Sword)</b> — ครบ 10 ตัว (มาเป็นคู่เสมอ จับทีเดียวได้ทั้งสองชนิด – ต้องครบ 10 ตัวอยู่แล้วเพื่อ Ironclad)</span></li>
+    <li class="chk"><input type="checkbox" data-k="ra-x10-geminiclub"><span class="lbl"><b>Gemini (Club)</b> — ครบ 10 ตัว (มาเป็นคู่เสมอ จับทีเดียวได้ทั้งสองชนิด – ต้องครบ 10 ตัวอยู่แล้วเพื่อ Ironclad)</span></li>
+    <li class="chk"><input type="checkbox" data-k="ra-x10-behemothking"><span class="lbl"><b>Behemoth King</b> — ครบ 10 ตัว (Sea of Sorrow และ City of Dying Dreams หนาแน่นช่วงท้าย)</span></li>
+    <li class="chk"><input type="checkbox" data-k="ra-x10-greatmalboro"><span class="lbl"><b>Great Malboro</b> — ครบ 10 ตัว (Sea of Sorrow และ City of Dying Dreams – ฟาร์มที่ Omega Ruins ก็นับ)</span></li>
+    <li class="chk"><input type="checkbox" data-k="ra-x10-barbatos"><span class="lbl"><b>Barbatos</b> — ครบ 10 ตัว (City of Dying Dreams เท่านั้น)</span></li>
+    <li class="chk"><input type="checkbox" data-k="ra-x10-demonolith"><span class="lbl"><b>Demonolith</b> — ครบ 10 ตัว (City of Dying Dreams – ฟาร์มที่ Omega Ruins ก็นับ)</span></li>
+    <li class="chk"><input type="checkbox" data-k="ra-x10-wraith"><span class="lbl"><b>Wraith</b> — ครบ 10 ตัว (City of Dying Dreams – ฟาร์มที่ Omega Ruins ก็นับ)</span></li>
+  </ul></div>
+  <div class="pick milestone"><h4>ปลด Area Conquest ของ Inside Sin</h4><ul class="chklist">
+    <li class="chk"><input type="checkbox" data-k="ra-area-insidesin"><span class="lbl">ปลด <b>Abaddon</b> — จับครบทั้ง 9 ชนิดแล้วบินออกไปคุยกับเจ้าของสนาม รับ <span class="it">Lunar Curtain ×99</span> (ทำได้ก่อนแตะ glyph เพราะยังบินออกมาได้)</span></li>
+  </ul></div>
+
+  <div class="callout tip"><b>สี่ตัวจากเก้าตัวนี้ตัดงานได้ตั้งแต่ยังไม่เข้า Sin:</b> <b>Wraith</b> – <b>Demonolith</b> – <b>Great Malboro</b> – <b>Adamantoise</b> เดินอยู่ใน <a href="#a13-omega">Omega Ruins</a> ด้วย และจับที่นั่นก็นับเข้าพื้นที่ Inside Sin เหมือนกัน — ทำที่ Omega Ruins ให้เสร็จก่อนจึงคุ้มกว่าเสมอ</div>
+
+  <div class="card"><h4>สิ่งที่ไม่ต้องเสียเวลาใน Sin</h4>
+    <ul>
+      <li><b>ศึกเรือบินห้ายกก่อนเข้าไปจับอะไรไม่ได้สักตัว</b> — <b>Sin's Left Fin</b> – <b>Right Fin</b> – <b>Sinspawn Genais</b> – <b>Sin Core</b> – <b>Overdrive Sin</b> ทั้งหมดเป็นบอสเฉพาะกิจ และบอสจับไม่ได้</li>
+      <li><b>สามโซนข้างในไม่มี fiend ให้จับเลย</b> — <b>Garden of Pain</b> มีแต่ Seymour Omnis – <b>Tower of the Dead</b> มีแค่ Save Sphere กับฉากคัตซีน – <b>Dream's End</b> คือบอสปิดเกม</li>
+      <li><b>สองโซนที่ต้องกวาดจริงมีแค่ Sea of Sorrow กับ City of Dying Dreams</b> — ที่เหลือเดินผ่านได้เลย</li>
+    </ul>
+  </div>
+  <p data-note><b>ระดับความมั่นใจของข้อมูลชุดนี้:</b> รายชื่อ 9 ชนิดยืนยันแล้ว แต่<b>การแบ่งว่าตัวไหนอยู่ Sea of Sorrow ตัวไหนอยู่ City of Dying Dreams สืบสายมาจากแหล่งเดียว</b> — ถ้าไล่ตามที่เขียนแล้วไม่เจอ ให้กวาดอีกโซนก่อนสรุปว่าตัวเองพลาด และเนื่องจากทั้งสองโซนอยู่ก่อนประตูทางเดียวเหมือนกัน การกวาดผิดโซนจึงไม่ทำให้เสียอะไรถาวร</p>
+</section>
+
+<section id="a13-omega">
+  <h2><span class="ic">13</span> Omega Dungeon — 10 ชนิด (ในเมนูสนามใช้ชื่อนี้ บนแผนที่โลกใช้ชื่อ Omega Ruins) <span class="sec-count" data-count>0/0</span></h2>
+  <div class="card"><h4>สรุปจุดนี้</h4>
+    <dl class="kv">
+      <dt>เลือกอะไรบน NavMap</dt><dd><b>ยังไม่มีในเมนู</b> — ต้องค้นให้เจอด้วยตัวเองก่อน แล้วหลังจากนั้นมันจะกลายเป็นรายการปกติที่เลือกได้ทุกครั้ง</dd>
+      <dt>ค้นยังไง</dt><dd><b>ไม่ต้องใช้ของสำคัญและไม่ต้องทำเควสใด ๆ</b> — คุยกับ <b>Cid</b> เปิดเมนูเลือกจุดหมาย เข้าโหมด <b>Search/Input</b> แล้วกวาดหาในช่วง <b>X 69 ถึง 75 และ Y 33 ถึง 38</b> จนกว่าจะเจอ จุดที่มีรายงานว่าใช้ได้จริงคือ <b>X 72, Y 35</b></dd>
+      <dt>ต้องจับกี่ชนิด</dt><dd>10 ชนิด และมันเป็นพื้นที่ที่ศัตรูแรงที่สุดในบรรดาพื้นที่จับทั้งหมด</dd>
+      <dt>ตัวที่คนเดินผ่านโดยไม่รู้ตัว</dt><dd><b>Varuna</b> ซึ่งหายากจริงและไม่มีจุดตายตัว ส่วน <b>Machea</b> ก็มีข้อมูลขัดกันเรื่องความหายาก</dd>
+      <dt>ปลดแล้วได้อะไร</dt><dd>Area Conquest ปลด <b>Vorban</b> พร้อมรางวัล <span class="it">Designer Wallet ×60</span></dd>
+      <dt>ไปต่อที่ไหน</dt><dd>เหลือพื้นที่สุดท้ายคือ <b>Inside Sin</b> — เคลียร์งานนอกทั้งหมดให้จบก่อนค่อยเข้าไป</dd>
+    </dl>
+  </div>
+  <div class="callout warn"><b>ระวังนับผิดหนักที่สุดในพื้นที่นี้ — มี fiend สี่ตัวที่เดินอยู่ใน Omega Ruins แต่เครดิตการจับไม่ได้เป็นของที่นี่:</b> <b>Wraith</b> – <b>Demonolith</b> – <b>Great Malboro</b> – <b>Adamantoise</b> ทั้งสี่ตัวนี้สนามนับเข้าพื้นที่ <b>Inside Sin</b> — จับมันที่นี่จึงไม่ได้ทำให้ตัวเลขของ Omega Ruins ขยับสักนิด ให้ยึดรายการ 10 ชนิดข้างล่างนี้เท่านั้น
+    <p style="margin:6px 0 0"><b>แต่ข่าวดีคือมันนับเข้า Inside Sin ได้จริง</b> — ถ้าคุณจับสี่ตัวนี้ได้ตอนอยู่ที่นี่ ก็เท่ากับตัดงานของพื้นที่สุดท้ายไปได้สี่ตัวจากเก้าตัวโดยยังไม่ต้องเข้า Sin เลย</p>
+  </div>
+  <div class="pick"><h4>รอบที่ 1 – จับชนิดละ 1 ตัว ที่ Omega Ruins</h4><ul class="chklist">
+    <li class="chk"><input type="checkbox" data-k="ra-f-zaurus"><span class="lbl"><b>Zaurus</b> — เจอได้ทั่วดันเจี้ยน และเป็นสายพันธุ์ <b>Reptile</b> ที่ใช้นับเข้า Species Conquest ได้ด้วย</span></li>
+    <li class="chk"><input type="checkbox" data-k="ra-f-floatingdeath"><span class="lbl"><b>Floating Death</b> — เจอได้ทั่วดันเจี้ยน และเป็นสายพันธุ์ <b>Eye</b></span></li>
+    <li class="chk"><input type="checkbox" data-k="ra-f-blackelement"><span class="lbl"><b>Black Element</b> — เจอได้ทั่วดันเจี้ยน และเป็นสายพันธุ์ <b>Element</b></span></li>
+    <li class="chk"><input type="checkbox" data-k="ra-f-halma"><span class="lbl"><b>Halma</b> — เจอได้ทั่วดันเจี้ยน และเป็นสายพันธุ์ <b>Helm</b></span></li>
+    <li class="chk"><input type="checkbox" data-k="ra-f-puroboros"><span class="lbl"><b>Puroboros</b> — เจอได้ทั่วดันเจี้ยน และเป็นสายพันธุ์ <b>Bomb</b></span></li>
+    <li class="chk"><input type="checkbox" data-k="ra-f-spirit"><span class="lbl"><b>Spirit</b> — เจอได้ทั่วดันเจี้ยน และเป็นสายพันธุ์ <b>Larva</b></span></li>
+    <li class="chk"><input type="checkbox" data-k="ra-f-mastercoeurl"><span class="lbl"><b>Master Coeurl</b> — เจอได้ทั่วดันเจี้ยน</span></li>
+    <li class="chk"><input type="checkbox" data-k="ra-f-mastertonberry"><span class="lbl"><b>Master Tonberry</b> — เจอได้ทั่วดันเจี้ยน และเป็นศัตรูสุ่มที่แข็งที่สุดกลุ่มหนึ่งของทั้งเกม</span></li>
+    <li class="chk"><input type="checkbox" data-k="ra-f-machea"><span class="lbl">⚠️ <b>Machea</b> — jegged บอกว่าหนาแน่นตรงบริเวณถัดจาก <b>Save Sphere ที่ปากทางเข้า</b> ไปทางฝั่งเหนือ แต่<b>ความหายากยังขัดกัน</b> เพราะผู้เล่นจำนวนมากรายงานว่าหายาก — เลือดราว 10,000 ว่องไวมาก และใส่พิษทุกครั้งที่ตีโดน</span></li>
+    <li class="chk"><input type="checkbox" data-k="ra-f-varuna"><span class="lbl">⚠️ <b>Varuna</b> — <b>ไม่มีจุดตายตัว</b> แต่หนาแน่นขึ้นแถวลานที่สู้ <b>Omega Weapon</b> หลังจากปราบ Omega Weapon ไปแล้ว — เลือด 54,000 และเร่งความเร็วให้ตัวเองด้วย Haste จึงหายากจริงและกินเวลาจริง</span></li>
+  </ul></div>
+  <div class="pick"><h4>รอบที่ 2 – ครบ 10 ตัวแล้ว (สำหรับ Nemesis)</h4><ul class="chklist">
+    <li class="chk"><input type="checkbox" data-k="ra-x10-zaurus"><span class="lbl"><b>Zaurus</b> — ครบ 10 ตัว (ทั่วดันเจี้ยน)</span></li>
+    <li class="chk"><input type="checkbox" data-k="ra-x10-floatingdeath"><span class="lbl"><b>Floating Death</b> — ครบ 10 ตัว (ทั่วดันเจี้ยน)</span></li>
+    <li class="chk"><input type="checkbox" data-k="ra-x10-blackelement"><span class="lbl"><b>Black Element</b> — ครบ 10 ตัว (ทั่วดันเจี้ยน)</span></li>
+    <li class="chk"><input type="checkbox" data-k="ra-x10-halma"><span class="lbl"><b>Halma</b> — ครบ 10 ตัว (ทั่วดันเจี้ยน)</span></li>
+    <li class="chk"><input type="checkbox" data-k="ra-x10-puroboros"><span class="lbl"><b>Puroboros</b> — ครบ 10 ตัว (ทั่วดันเจี้ยน)</span></li>
+    <li class="chk"><input type="checkbox" data-k="ra-x10-spirit"><span class="lbl"><b>Spirit</b> — ครบ 10 ตัว (ทั่วดันเจี้ยน)</span></li>
+    <li class="chk"><input type="checkbox" data-k="ra-x10-mastercoeurl"><span class="lbl"><b>Master Coeurl</b> — ครบ 10 ตัว (ทั่วดันเจี้ยน)</span></li>
+    <li class="chk"><input type="checkbox" data-k="ra-x10-mastertonberry"><span class="lbl"><b>Master Tonberry</b> — ครบ 10 ตัว (ทั่วดันเจี้ยน – แข็งที่สุดกลุ่มหนึ่งของเกม)</span></li>
+    <li class="chk"><input type="checkbox" data-k="ra-x10-machea"><span class="lbl">⚠️ <b>Machea</b> — ครบ 10 ตัว (ความหายากยังขัดกัน สองแหล่งให้ภาพต่างกันคนละเรื่อง จึงวางแผนเวลายาก)</span></li>
+    <li class="chk"><input type="checkbox" data-k="ra-x10-varuna"><span class="lbl">⚠️ <b>Varuna</b> — ครบ 10 ตัว (หายากจริงและไม่มีจุดตายตัว – สิบตัวนี้หนักที่สุดของพื้นที่นี้)</span></li>
+  </ul></div>
+  <div class="pick milestone"><h4>ปลด Area Conquest ของ Omega Ruins</h4><ul class="chklist">
+    <li class="chk"><input type="checkbox" data-k="ra-area-omega"><span class="lbl">ปลด <b>Vorban</b> — จับครบทั้ง 10 ชนิดแล้วกลับไปคุยกับเจ้าของสนาม รับ <span class="it">Designer Wallet ×60</span> (ในเมนูของสนามพื้นที่นี้ใช้ชื่อว่า <b>Omega Dungeon</b>)</span></li>
+  </ul></div>
+  <p data-note><b>ข้อแตกต่างระหว่างเวอร์ชันที่พบในพื้นที่นี้ที่เดียว:</b> <b>Omega Weapon</b> มีเลือด <b>99,999</b> ในเวอร์ชัน PS2 ดั้งเดิม แต่มี <b>999,999</b> ในเวอร์ชัน International และ HD Remaster — และค่าสินบนของ <b>Ultima Weapon</b> ขยับจาก 1,400,000 เป็น 2,000,000 Gil ทั้งสองตัวเป็นบอสประจำแมพ ไม่ใช่ตัวที่ต้องจับ แต่คุณจะเดินชนมันแน่นอนระหว่างไล่เก็บที่นี่</p>
+</section>
+
+<section id="species">
+  <h2><span class="ic">🧬</span> Species Conquest — 14 สายพันธุ์ โควตาไม่เท่ากัน <span class="sec-count" data-count>0/0</span></h2>
+  <p data-note>หมวดนี้ไม่ได้ดูว่าคุณจับที่ไหน แต่ดูว่าคุณจับ<b>สายพันธุ์</b>ไหนครบหรือยัง — คอลัมน์ <b>จับชนิดละ</b> คือจำนวนตัวที่ต้องจับของ fiend <b>ทุกชนิด</b>ในสายพันธุ์นั้น เช่น Lupine ต้องจับชนิดละ 3 ตัว หมายถึง Dingo 3 ตัว Mi'ihen Fang 3 ตัว ไล่ไปจนครบทั้งเจ็ดชนิด ไม่ใช่จับรวมกัน 3 ตัว</p>
+
+  <div class="callout warn"><b><span class="it">Ironclad</span> คืองานหนักที่สุดชิ้นเดียวของทั้งสนาม และควรวางแผนตั้งแต่ต้น:</b> มันมีสมาชิกแค่ 3 ชนิดก็จริง แต่ต้องจับ<b>ชนิดละ 10 ตัว รวมเป็น 30 ตัว</b> และ<b>สองในสามชนิดคือ Gemini คู่ที่อยู่ใน Sin</b> — แปลว่าคุณต้องปักหลักฟาร์มอยู่ข้างใน Sin นานพอสมควร ข่าวดีคือ Gemini สองตัวโผล่มาพร้อมกันเสมอ จับทีเดียวจึงได้เข้าทั้งสองชนิด ส่วนตัวที่สามคือ <b>Iron Giant</b> ที่ <a href="#a6-thunder">Thunder Plains</a> ซึ่งควรฟาร์มให้ครบ 10 ตัวตั้งแต่ตอนไปจุดที่ 6 จะได้ไม่ต้องบินย้อนกลับ</div>
+
+  <table>
+    <tr><th>บอสที่ปลด</th><th>สายพันธุ์</th><th>สมาชิกในสาย</th><th>จับชนิดละ</th><th>รางวัลตอนปลด</th></tr>
+    <tr><td class="nm">Fenrir</td><td>Lupine</td><td>Dingo – Mi'ihen Fang – Garm – Snow Wolf – Sand Wolf – Skoll – Bandersnatch</td><td><b>3</b></td><td><span class="it">Chocobo Feather ×99</span></td></tr>
+    <tr><td class="nm">Ornitholestes</td><td>Reptile</td><td>Dinonix – Ipiria – Raptor – Melusine – Iguion – Yowie – Zaurus</td><td><b>3</b></td><td><span class="it">Stamina Spring ×99</span></td></tr>
+    <tr><td class="nm">Jumbo Flan</td><td>Flan</td><td>Water Flan – Thunder Flan – Snow Flan – Ice Flan – Flame Flan – Dark Flan</td><td><b>3</b></td><td><span class="it">Twin Stars ×60</span></td></tr>
+    <tr><td class="nm">Nega Elemental</td><td>Element</td><td>Yellow – White – Red – Gold – Blue – Dark – Black Element</td><td><b>3</b></td><td><span class="it">Star Curtain</span> <small>(จำนวนยังขัดกัน ×99 หรือ ×60)</small></td></tr>
+    <tr><td class="nm">Tanket</td><td>Helm</td><td>Raldo – Bunyip – Mafdet – Murussu – Shred – Halma</td><td><b>3</b></td><td><span class="it">Gold Hourglass ×99</span></td></tr>
+    <tr><td class="nm">Hornet</td><td>Wasp</td><td>Killer Bee – Bite Bug – Wasp – Nebiros</td><td><b>4</b></td><td><span class="it">Mana Tonic ×60</span></td></tr>
+    <tr><td class="nm">Vidatu</td><td>Imp</td><td>Gandarewa – Aerouge – Imp</td><td><b>4</b></td><td><span class="it">Mana Spring ×99</span></td></tr>
+    <tr><td class="nm">One-Eye</td><td>Eye</td><td>Floating Eye – Buer – Evil Eye – Ahriman – Floating Death</td><td><b>4</b></td><td><span class="it">Stamina Tablet ×60</span></td></tr>
+    <tr><td class="nm">Fafnir</td><td>Drake</td><td>Vouivre – Lamashtu – Kusariqqu – Mushussu – Nidhogg</td><td><b>4</b></td><td><span class="it">Purifying Salt ×99</span></td></tr>
+    <tr><td class="nm">Pteryx</td><td>Bird</td><td>Condor – Simurgh – Alcyone</td><td><b>5</b></td><td><span class="it">Mega Phoenix ×99</span></td></tr>
+    <tr><td class="nm">Sleep Sprout</td><td>Fungus</td><td>Funguar – Exoray – Thorn</td><td><b>5</b></td><td><span class="it">Healing Spring ×99</span></td></tr>
+    <tr><td class="nm">Bomb King</td><td>Bomb</td><td>Bomb – Grenade – Puroboros</td><td><b>5</b></td><td><span class="it">Turbo Ether ×60</span></td></tr>
+    <tr><td class="nm">Juggernaut</td><td>Ruminant</td><td>Dual Horn – Grendel – Valaha</td><td><b>5</b></td><td><span class="it">Light Curtain ×99</span></td></tr>
+    <tr><td class="nm">Ironclad</td><td>Iron Giant</td><td>Iron Giant – Gemini (Club) – Gemini (Sword)</td><td><b>10</b></td><td><span class="it">Mana Tablet ×60</span></td></tr>
+  </table>
+
+  <div class="pick"><h4>เช็กว่าปลดบอสสาย Species ได้ครบหรือยัง</h4><ul class="chklist">
+    <li class="chk"><input type="checkbox" data-k="ra-sp-fenrir"><span class="lbl"><b>Fenrir</b> — สาย Lupine จับชนิดละ 3 ตัว ครบ 7 ชนิด รับ <span class="it">Chocobo Feather ×99</span></span></li>
+    <li class="chk"><input type="checkbox" data-k="ra-sp-ornitholestes"><span class="lbl"><b>Ornitholestes</b> — สาย Reptile จับชนิดละ 3 ตัว ครบ 7 ชนิด รับ <span class="it">Stamina Spring ×99</span></span></li>
+    <li class="chk"><input type="checkbox" data-k="ra-sp-jumboflan"><span class="lbl"><b>Jumbo Flan</b> — สาย Flan จับชนิดละ 3 ตัว ครบ 6 ชนิด รับ <span class="it">Twin Stars ×60</span></span></li>
+    <li class="chk"><input type="checkbox" data-k="ra-sp-negaelemental"><span class="lbl"><b>Nega Elemental</b> — สาย Element จับชนิดละ 3 ตัว ครบ 7 ชนิด รับ <span class="it">Star Curtain</span></span></li>
+    <li class="chk"><input type="checkbox" data-k="ra-sp-tanket"><span class="lbl"><b>Tanket</b> — สาย Helm จับชนิดละ 3 ตัว ครบ 6 ชนิด รับ <span class="it">Gold Hourglass ×99</span></span></li>
+    <li class="chk"><input type="checkbox" data-k="ra-sp-hornet"><span class="lbl"><b>Hornet</b> — สาย Wasp จับชนิดละ 4 ตัว ครบ 4 ชนิด รับ <span class="it">Mana Tonic ×60</span></span></li>
+    <li class="chk"><input type="checkbox" data-k="ra-sp-vidatu"><span class="lbl"><b>Vidatu</b> — สาย Imp จับชนิดละ 4 ตัว ครบ 3 ชนิด รับ <span class="it">Mana Spring ×99</span></span></li>
+    <li class="chk"><input type="checkbox" data-k="ra-sp-oneeye"><span class="lbl"><b>One-Eye</b> — สาย Eye จับชนิดละ 4 ตัว ครบ 5 ชนิด รับ <span class="it">Stamina Tablet ×60</span></span></li>
+    <li class="chk"><input type="checkbox" data-k="ra-sp-fafnir"><span class="lbl"><b>Fafnir</b> — สาย Drake จับชนิดละ 4 ตัว ครบ 5 ชนิด รับ <span class="it">Purifying Salt ×99</span> ซึ่งเป็นวัตถุทำ <span class="it">No Encounters</span></span></li>
+    <li class="chk"><input type="checkbox" data-k="ra-sp-pteryx"><span class="lbl"><b>Pteryx</b> — สาย Bird จับชนิดละ 5 ตัว ครบ 3 ชนิด รับ <span class="it">Mega Phoenix ×99</span> ซึ่งเป็นวัตถุทำ <span class="it">Auto-Phoenix</span></span></li>
+    <li class="chk"><input type="checkbox" data-k="ra-sp-sleepsprout"><span class="lbl"><b>Sleep Sprout</b> — สาย Fungus จับชนิดละ 5 ตัว ครบ 3 ชนิด รับ <span class="it">Healing Spring ×99</span></span></li>
+    <li class="chk"><input type="checkbox" data-k="ra-sp-bombking"><span class="lbl"><b>Bomb King</b> — สาย Bomb จับชนิดละ 5 ตัว ครบ 3 ชนิด รับ <span class="it">Turbo Ether ×60</span></span></li>
+    <li class="chk"><input type="checkbox" data-k="ra-sp-juggernaut"><span class="lbl"><b>Juggernaut</b> — สาย Ruminant จับชนิดละ 5 ตัว ครบ 3 ชนิด รับ <span class="it">Light Curtain ×99</span> ซึ่งเป็นวัตถุทำ <span class="it">Auto-Protect</span></span></li>
+    <li class="chk"><input type="checkbox" data-k="ra-sp-ironclad"><span class="lbl">⚠️ <b>Ironclad</b> — สาย Iron Giant จับ<b>ชนิดละ 10 ตัว</b> ครบ 3 ชนิด รวม 30 ตัว รับ <span class="it">Mana Tablet ×60</span></span></li>
+  </ul></div>
+
+  <div class="callout warn"><b>ข้อมูลผิดที่พบบนเว็บอ้างอิงเอง และคุณจะเจอมันแน่ถ้าไปเปิดดู:</b> หน้าข้อมูลของ <b>Ipiria</b> บน jegged เขียนว่าสาย Reptile ต้องจับ "ชนิดละห้าตัว" ในขณะที่หน้าของ <b>Ornitholestes</b> บนเว็บเดียวกันเขียนว่า <b>สาม</b> — และแหล่งอื่นก็ให้ตัวเลขสามเหมือนกัน <b>คำตอบที่ถูกคือ Reptile จับชนิดละ 3 ตัว</b> หน้า Ipiria ดูเหมือนคัดลอกโควตาของสาย Bird มาผิด</div>
+
+  <p data-note><b>สองจุดที่ยังไม่ยุติในตารางนี้ และหน้านี้เลือกที่จะบอกแทนที่จะเดา:</b> จุดแรกคือ<b>จำนวนรางวัลของ Nega Elemental</b> ซึ่งชื่อของแน่นอนแล้วว่าเป็น <span class="it">Star Curtain</span> แต่จำนวนยังขัดกันระหว่าง ×99 กับ ×60 — จุดที่สองคือ <b>Aqua Flan</b> ซึ่งเป็นตัวที่เจอตามบทใน Via Purifico ว่าเป็นสมาชิกของสาย Flan ด้วยหรือไม่ โดย jegged นับสมาชิก 6 ชนิดตามตารางนี้ ส่วนข้อมูลที่มาจาก Fandom ให้ 7 ชนิด และเรื่องนี้จะมีผลก็ต่อเมื่อ Aqua Flan จับได้จริง ซึ่งก็ยังยืนยันไม่ได้เช่นกัน</p>
+</section>
+
+<section id="rewards">
+  <h2><span class="ic">🎁</span> ทำทั้งหมดนี้ไปเพื่ออะไร</h2>
+  <p data-note>หัวข้อนี้ตอบคำถามว่าไล่จับ 102 ชนิดแล้วได้อะไรกลับมา — รายละเอียดของแต่ละเรื่องอยู่ในหน้าอื่นที่ลิงก์ไว้ให้แล้ว หน้านี้จะไม่เขียนซ้ำเพื่อไม่ให้ข้อมูลชุดเดียวกันขัดกันเองในอนาคต</p>
+
+  <div class="card"><h4>1) ของกอง ×99 ที่จ่ายค่าอุปกรณ์ปลายเกมทั้งชุด</h4>
+    <p>รางวัลตอนปลดบอสแต่ละตัวมาเป็นกองใหญ่ระดับ 40 ถึง 99 ชิ้น ซึ่งเป็นจำนวนที่พอดีกับการคัสตอมความสามารถแพง ๆ ลงเกราะและอาวุธ นี่คือเหตุผลจริง ๆ ที่คนเล่นสาย 100% ยอมลงแรงกับสนามนี้ — <b>ไม่ใช่เพราะอยากได้บอสใหม่ แต่เพราะมันคือแหล่งวัตถุคัสตอมที่ใหญ่ที่สุดในเกม</b></p>
+    <ul>
+      <li><b><span class="it">Chocobo Wing ×99</span> จาก Cactuar King</b> เป็นวัตถุของ <span class="it">Auto-Haste</span> ซึ่งเป็นความสามารถเกราะที่คุ้มที่สุดในเกม</li>
+      <li><b><span class="it">Light Curtain ×99</span> จาก Juggernaut</b> เป็นวัตถุของ <span class="it">Auto-Protect</span></li>
+      <li><b><span class="it">Mega Phoenix ×99</span> จาก Pteryx</b> เป็นวัตถุของ <span class="it">Auto-Phoenix</span> และกองเดียวพอสำหรับเกราะหลายใบ</li>
+      <li><b><span class="it">Purifying Salt ×99</span> จาก Fafnir</b> เป็นวัตถุของ <span class="it">No Encounters</span> ซึ่งใช้ 30 ชิ้นต่อหนึ่งชิ้น และ<b>มีคนเดียวในทีมที่ต้องใส่ก็พอ</b> เพราะมันตัดการเจอศัตรูสุ่มให้ทั้งกลุ่ม</li>
+      <li><b>ควรใส่อะไรลงเกราะและอาวุธของใครบ้าง</b> อยู่ที่หน้า <a href="ref-gear.html">อาวุธ/เกราะ</a> ทั้งหมด รวมทั้งจำนวนวัตถุที่ต้องใช้ต่อชิ้น</li>
+    </ul>
+  </div>
+
+  <div class="callout warn"><b>ของรางวัลกอง ×99 พวกนี้ให้ครั้งเดียวเท่านั้น:</b> คุณจะได้รับตอนที่คุยกับเจ้าของสนามครั้งแรกหลังทำเงื่อนไขครบ — <b>การปล่อย fiend ออกแล้วจับกลับเข้ามาใหม่ไม่ทำให้ได้รางวัลซ้ำ</b> ฉะนั้นอย่าวางแผนโดยคิดว่าจะฟาร์มรางวัลชุดนี้ซ้ำได้ ของบางอย่างมีทางหาแบบทำซ้ำได้จริงแต่เป็นคนละวิธีกัน ซึ่งอยู่ที่หน้า <a href="ref-sidequests.html#arena">Monster Arena ในหน้า Side Quest</a></div>
+
+  <div class="card"><h4>2) <span class="it">Blossom Crown</span> — ของชิ้นเดียวที่มาจากพื้นที่เดียว</h4>
+    <p>ปลด Area Conquest ของ <a href="#a11-gagazet">Mt. Gagazet</a> แล้วเจ้าของสนามจะให้ <span class="it">Blossom Crown</span> มา ซึ่งเป็น<b>หนึ่งในสองชิ้นที่ปลด Aeon Magus Sisters</b> ส่วนอีกชิ้นคือ <span class="it">Flower Scepter</span> ที่ต้องไปเอาจาก <b>Belgemine</b> ที่ <b>Remiem Temple</b> ซึ่งเข้าไปได้ด้วยการขี่โชโกโบเท่านั้น — ทั้งสองเงื่อนไขและลำดับที่ควรทำอยู่ที่หน้า <a href="ref-sidequests.html#aeons">Aeon ครบ 8 ตัว</a></p>
+  </div>
+
+  <div class="card"><h4>3) <span class="it">Mars Sigil</span> — และเหตุผลที่มันง่ายกว่าที่คนคิด</h4>
+    <p><span class="it">Mars Sigil</span> คือชิ้นส่วนที่ปลดพลังเต็มของ <span class="it">Masamune</span> อาวุธเทพของ <b>Auron</b> เงื่อนไขของมันคือ<b>ปลดบอสให้ได้ 10 ตัวจาก Area Conquest และ Species Conquest รวมกัน</b> โดย<b>ผสมกันยังไงก็ได้</b> จะเป็น Area ล้วน Species ล้วน หรือคละกันก็ได้ทั้งหมด</p>
+    <ul>
+      <li><b>บอสหมวด Original ไม่นับเข้า 10 ตัวนี้</b> ฉะนั้นอย่าไปไล่ปลดหมวดนั้นเพื่อหวังให้ครบเร็วขึ้น</li>
+      <li><b>Mars Sigil ไม่เคยต้องการให้จับอะไรถึงสิบตัวเลย</b> เพราะบอสที่ใช้นับล้วนมาจากสองหมวดที่โควตาต่ำกว่านั้น — เส้นทางที่ถูกที่สุดคือไล่ปลด Area Conquest ให้ครบสิบพื้นที่ตามลำดับในหน้านี้ แล้ว Mars Sigil ก็มาเองโดยไม่ต้องฟาร์มอะไรเพิ่ม</li>
+      <li><b>รายละเอียดของอาวุธเทพทั้งเจ็ดเล่ม</b> อยู่ที่หน้า <a href="ref-sidequests.html#weapons">อาวุธเทพ 7 ตัว</a></li>
+    </ul>
+  </div>
+
+  <div class="card"><h4>4) <span class="it">Nemesis</span> — และตัวเลข 10 ที่เป็นของมันคนเดียว</h4>
+    <p><b>Nemesis</b> คือบอสลับตัวสุดท้ายของหมวด <b>Original</b> และมันคือ<b>สิ่งเดียวในสนามที่ต้องจับ fiend ให้ได้ชนิดละ 10 ตัวทั้งเกม</b> — ตัวเลข 10 ที่คนเล่าต่อกันมาจนทำให้ Monster Arena ดูน่ากลัวมาจากตรงนี้ที่เดียว ถ้าคุณไม่ได้ตั้งใจจะสู้กับมัน คุณไม่ต้องจับอะไรถึงสิบตัวเลยยกเว้นสาย <b>Iron Giant</b> ที่ปลด Ironclad</p>
+    <p><b>แปลว่างานในหน้านี้แบ่งเป็นสองระดับชัดเจน:</b> ระดับแรกคือ<b>จับชนิดละ 1 ตัวให้ครบ 102 ชนิด</b> ซึ่งปลด Area Conquest ครบทั้ง 13 พื้นที่ ได้ของรางวัลเกือบทั้งหมด ได้ <span class="it">Blossom Crown</span> และได้ <span class="it">Mars Sigil</span> — ส่วนระดับที่สองคือการไล่เก็บให้ถึงโควตาของแต่ละสายและสุดท้ายคือชนิดละ 10 ตัวเพื่อ Nemesis ซึ่งเป็นงานคนละขนาดกันและเลือกได้ว่าจะทำหรือไม่ทำ</p>
+  </div>
+</section>
+
+<section id="gloss">
+  <h2><span class="ic">📖</span> ศัพท์ควรรู้ในหน้านี้</h2>
+  <div class="card"><dl class="kv">
+    <dt>Monster Arena</dt><dd>สนามของชายเจ้าของสนามที่ตั้งอยู่ริม <b>Calm Lands</b> เขารับ fiend ที่คุณจับเป็น ๆ มาเลี้ยงไว้ แล้วแลกเป็นบอสตัวใหม่ให้สู้พร้อมของรางวัล — ทั้งการซื้ออาวุธที่ติด <span class="it">Capture</span> และการรับรางวัลทุกอย่างเกิดขึ้นที่นี่ที่เดียว</dd>
+    <dt>Area Conquest</dt><dd>หมวดสร้างบอสที่ดูจาก<b>พื้นที่</b> — จับ fiend ในพื้นที่นั้นให้ครบทุกชนิด <b>ชนิดละ 1 ตัวก็พอ</b> แล้วจะปลดบอสประจำพื้นที่นั้นหนึ่งตัวพร้อมของรางวัลหนึ่งกอง มีทั้งหมด 13 พื้นที่</dd>
+    <dt>Species Conquest</dt><dd>หมวดสร้างบอสที่ดูจาก<b>สายพันธุ์</b> ไม่สนว่าจับที่ไหน — ต้องจับ fiend ทุกชนิดในสายนั้นให้ได้<b>ชนิดละ 3 ถึง 10 ตัวแล้วแต่สาย</b> มีทั้งหมด 14 สาย</dd>
+    <dt>Original Creation</dt><dd>หมวดสร้างบอสระดับโหดที่ปลดจากการทำสองหมวดข้างบนถึงเกณฑ์ที่กำหนด และ <b>Nemesis</b> คือตัวสุดท้ายของหมวดนี้ — บอสในหมวดนี้ไม่นับเข้าเงื่อนไข <span class="it">Mars Sigil</span></dd>
+    <dt>NavMap</dt><dd>แผนที่นำทางบนเรือบิน ใช้เลือกจุดหมายว่าจะบินไปลงที่ไหน และมีช่องพิมพ์พิกัดหรือรหัสลับเพื่อปลดล็อกสถานที่เพิ่ม — ที่ลับอย่าง <b>Omega Ruins</b> ต้องค้นด้วยช่องนี้ก่อนถึงจะโผล่ในรายการปกติ</dd>
+    <dt>machina</dt><dd>เครื่องจักรของ Al Bhed ที่นับเป็นศัตรูได้แต่<b>ไม่ใช่สิ่งมีชีวิต</b> จึงจับเข้าสนามไม่ได้เลย และการใช้ Steal กับมันจะทำลายมันทิ้งทันที — ตัวที่ทำให้คนนับผิดบ่อยที่สุดคือ <b>Mech Scouter</b> ที่ Calm Lands</dd>
+    <dt>fiend</dt><dd>คำที่เกมใช้เรียกสัตว์ประหลาดทั่วไปที่เป็นศัตรูสุ่มตามแมพ — ต่างจาก<b>บอส</b> ตรงที่ fiend จับเข้าสนามได้ ส่วนบอสจับไม่ได้ไม่ว่ากรณีใด</dd>
+  </dl></div>
+</section>
+
+<footer>ข้อมูล: Jegged – game8 – almarsguides – missionquestline – <a href="../index.html">หน้ารวม</a> – <a href="ref-sidequests.html">Side Quest</a> – <a href="ref-gear.html">อาวุธ/เกราะ</a> – <a href="../stages/22-calm-lands-monster-arena.html">ด่าน 22 Calm Lands</a></footer>
+</div>
+<script defer src="../assets/js/app.js"></script>
+<script defer src="../assets/js/fx.js"></script><script defer src="../assets/js/art.js"></script><script defer src="../assets/js/gimmicks.js"></script></body></html>

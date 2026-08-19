@@ -1,0 +1,1735 @@
+/* =========================================================================
+   FFX Guide — "Spira Deep Space" design system
+   Light = frosted daylight · Dark = deep-space glass
+   Every legacy class name is preserved so existing HTML keeps working.
+   ========================================================================= */
+
+/* ---------- 1. TOKENS ---------------------------------------------------- */
+:root{
+  /* surfaces */
+  --bg:#f1f4fa;--bg2:#e6ecf7;
+  --panel:rgba(255,255,255,.94);--panel-solid:#ffffff;--panel2:rgba(255,255,255,.72);
+  --line:rgba(18,34,72,.16);--line-soft:rgba(18,34,72,.09);
+  /* text */
+  --ink:#0c1220;--ink-soft:#1e2c42;--muted:#55637a;
+  /* accents */
+  --gold:#b3760a;--gold-dim:#c99a34;
+  --blue:#2563eb;--green:#12855f;--red:#d6335a;--purple:#7038d8;--cyan:#0891a8;
+  /* legacy hero/story/boss slots */
+  --hero1:#e9eefb;--hero2:#eef1f8;--heroglow:rgba(112,56,216,.09);
+  --story1:rgba(112,56,216,.06);--story2:rgba(112,56,216,.01);
+  --boss1:rgba(214,51,90,.07);--boss2:rgba(255,255,255,.5);
+  --pbarbg:rgba(246,248,253,.72);
+  /* effects */
+  --shadow:0 10px 30px -12px rgba(20,40,90,.28);
+  --shadow-lg:0 24px 60px -24px rgba(20,40,90,.4);
+  --glow:0 0 0 1px rgba(255,255,255,.5) inset;
+  --ring:rgba(112,56,216,.35);
+  /* Light mode keeps the aurora barely-there: a hint of depth, never a colour wash */
+  --orb1:rgba(112,56,216,.10);--orb2:rgba(8,145,168,.08);--orb3:rgba(214,51,90,.05);
+  --grid-line:rgba(22,40,80,.045);
+  --star:rgba(40,60,110,.18);
+  --blur:16px;
+  /* type */
+  /* Thai body copy stays on the system Thai face (Segoe UI / Leelawadee UI):
+     the webfont Thai cuts were too thin and hurt readability at body size.
+     Only Latin headings borrow a display face. */
+  --f-body:"Segoe UI","Leelawadee UI","Noto Sans Thai",system-ui,sans-serif;
+  --f-disp:"Space Grotesk","Segoe UI","Leelawadee UI",system-ui,sans-serif;
+  --f-title:"Space Grotesk","Segoe UI","Leelawadee UI",system-ui,sans-serif;
+  --r-sm:10px;--r-md:14px;--r-lg:20px;--r-xl:28px;
+  --mx:50%;--my:0%;
+}
+[data-theme="dark"]{
+  --bg:#05070e;--bg2:#0a0f1c;
+  --panel:rgba(19,26,40,.78);--panel-solid:#0e1422;--panel2:rgba(255,255,255,.05);
+  --line:rgba(255,255,255,.14);--line-soft:rgba(255,255,255,.08);
+  --ink:#eef2fb;--ink-soft:#cfd9ec;--muted:#93a1b8;
+  --gold:#ffcc66;--gold-dim:#c9a04a;
+  --blue:#6aa9ff;--green:#3ee08f;--red:#ff5f7e;--purple:#b388ff;--cyan:#43e6e0;
+  --hero1:#0b1120;--hero2:#05070e;--heroglow:rgba(139,92,246,.28);
+  --story1:rgba(139,92,246,.10);--story2:rgba(139,92,246,.015);
+  --boss1:rgba(255,95,126,.10);--boss2:rgba(255,255,255,.02);
+  --pbarbg:rgba(5,7,14,.62);
+  --shadow:0 12px 34px -14px rgba(0,0,0,.8);
+  --shadow-lg:0 30px 70px -28px rgba(0,0,0,.9);
+  --glow:0 0 0 1px rgba(255,255,255,.06) inset;
+  --ring:rgba(179,136,255,.45);
+  --orb1:rgba(139,92,246,.42);--orb2:rgba(34,211,238,.30);--orb3:rgba(255,95,126,.24);
+  --grid-line:rgba(160,190,255,.06);
+  --star:rgba(200,220,255,.55);
+  --blur:18px;
+}
+
+/* ---------- 2. BASE ------------------------------------------------------ */
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  margin:0;min-height:100vh;font-family:var(--f-body);font-size:16px;line-height:1.8;
+  color:var(--ink);letter-spacing:.1px;
+  /* Baked-in gradient field so the page never looks flat, even if fx.js is
+     unavailable. Kept faint on purpose: tint, not paint. */
+  background:
+    radial-gradient(1000px 680px at 12% -8%,color-mix(in srgb,var(--purple) 7%,transparent),transparent 62%),
+    radial-gradient(820px 600px at 92% 4%,color-mix(in srgb,var(--cyan) 6%,transparent),transparent 60%),
+    linear-gradient(180deg,var(--bg2),var(--bg) 40%);
+  background-attachment:fixed;
+  -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
+  overflow-x:hidden;
+}
+::selection{background:var(--ring);color:#fff}
+a{color:var(--cyan);text-decoration:none}
+b,strong{font-weight:700}
+img{max-width:100%}
+
+/* mouse-follow spotlight — subtle, follows cursor across the whole page */
+body::before{
+  content:"";position:fixed;inset:0;z-index:0;pointer-events:none;
+  background:radial-gradient(460px 460px at var(--mx) var(--my),var(--heroglow),transparent 72%);
+  opacity:.4;transition:opacity .4s;
+}
+
+/* ---------- 3. ANIMATED SPACE BACKDROP (injected by fx.js) --------------- */
+.fx-bg{position:fixed;inset:0;z-index:-2;overflow:hidden;pointer-events:none;
+  background:linear-gradient(180deg,var(--bg2),var(--bg) 55%)}
+.fx-bg .orb{position:absolute;border-radius:50%;filter:blur(90px);will-change:transform}
+.fx-bg .o1{width:52vw;height:52vw;left:-12vw;top:-18vw;background:var(--orb1);animation:drift1 34s ease-in-out infinite}
+.fx-bg .o2{width:44vw;height:44vw;right:-14vw;top:8vh;background:var(--orb2);animation:drift2 44s ease-in-out infinite}
+.fx-bg .o3{width:40vw;height:40vw;left:22vw;bottom:-16vw;background:var(--orb3);animation:drift3 52s ease-in-out infinite}
+.fx-bg{contain:paint}
+.fx-grid{position:absolute;inset:0;
+  background-image:linear-gradient(var(--grid-line) 1px,transparent 1px),linear-gradient(90deg,var(--grid-line) 1px,transparent 1px);
+  background-size:64px 64px;
+  -webkit-mask-image:radial-gradient(90% 60% at 50% 0%,#000,transparent 78%);
+  mask-image:radial-gradient(90% 60% at 50% 0%,#000,transparent 78%)}
+.fx-stars{position:absolute;inset:0;opacity:.9;
+  background-image:
+    radial-gradient(1.4px 1.4px at 12% 18%,var(--star),transparent),
+    radial-gradient(1.2px 1.2px at 78% 12%,var(--star),transparent),
+    radial-gradient(1.6px 1.6px at 33% 62%,var(--star),transparent),
+    radial-gradient(1.1px 1.1px at 62% 44%,var(--star),transparent),
+    radial-gradient(1.3px 1.3px at 88% 72%,var(--star),transparent),
+    radial-gradient(1.2px 1.2px at 45% 88%,var(--star),transparent),
+    radial-gradient(1px 1px at 8% 78%,var(--star),transparent),
+    radial-gradient(1.5px 1.5px at 92% 33%,var(--star),transparent);
+  background-size:100% 100%;animation:twinkle 7s ease-in-out infinite alternate}
+/* film grain keeps flat gradients from banding */
+.fx-noise{position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:.04;mix-blend-mode:overlay;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='140' height='140'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/></filter><rect width='140' height='140' filter='url(%23n)' opacity='.6'/></svg>")}
+
+@keyframes drift1{0%,100%{transform:translate3d(0,0,0) scale(1)}50%{transform:translate3d(8vw,6vh,0) scale(1.16)}}
+@keyframes drift2{0%,100%{transform:translate3d(0,0,0) scale(1.08)}50%{transform:translate3d(-7vw,10vh,0) scale(.92)}}
+@keyframes drift3{0%,100%{transform:translate3d(0,0,0) scale(.95)}50%{transform:translate3d(6vw,-8vh,0) scale(1.2)}}
+@keyframes twinkle{from{opacity:.35}to{opacity:1}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
+@keyframes shine{from{transform:translateX(-120%)}to{transform:translateX(320%)}}
+@keyframes gradShift{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+@keyframes pulseRed{0%,100%{box-shadow:0 0 0 0 rgba(255,95,126,.28)}50%{box-shadow:0 0 28px 4px rgba(255,95,126,.16)}}
+@keyframes pop{0%{transform:scale(.55)}60%{transform:scale(1.18)}100%{transform:scale(1)}}
+@keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+@keyframes spinSlow{to{transform:rotate(360deg)}}
+
+/* ---------- 4. LAYOUT ---------------------------------------------------- */
+/* No z-index here on purpose: giving .wrap its own stacking context capped
+   everything inside it, so a tooltip could never rise above the sticky progress
+   bar (z-index 20) no matter what z-index it asked for. */
+.wrap{max-width:980px;margin:0 auto;padding:0 22px 120px;position:relative}
+section{margin-top:56px;scroll-margin-top:90px}
+
+/* ---------- 5. HERO ------------------------------------------------------ */
+header.hero{
+  position:relative;z-index:1;text-align:center;overflow:hidden;
+  padding:clamp(46px,8vw,84px) 22px clamp(30px,4vw,44px);
+  background:
+    radial-gradient(1200px 460px at 50% -160px,var(--heroglow),transparent 62%),
+    linear-gradient(180deg,var(--hero1),transparent);
+  border-bottom:1px solid var(--line-soft);
+}
+header.hero::after{ /* light sweep across the hero, once per load */
+  content:"";position:absolute;top:0;left:0;width:38%;height:100%;pointer-events:none;
+  background:linear-gradient(100deg,transparent,rgba(255,255,255,.16),transparent);
+  animation:shine 2.6s cubic-bezier(.4,0,.2,1) .35s both;
+}
+.hero .eyebrow{
+  display:inline-flex;align-items:center;gap:8px;color:var(--cyan);
+  letter-spacing:3.2px;font-size:11.5px;font-weight:700;text-transform:uppercase;
+  padding:5px 15px;border-radius:999px;border:1px solid var(--line);
+  background:var(--panel);backdrop-filter:blur(var(--blur));margin-bottom:16px;
+  animation:fadeUp .7s cubic-bezier(.2,.8,.2,1) both;
+}
+.hero .eyebrow::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--cyan);
+  box-shadow:0 0 12px 2px var(--cyan);animation:twinkle 1.8s infinite alternate}
+.hero h1{
+  margin:0;font-family:var(--f-title);font-weight:700;letter-spacing:.4px;line-height:1.18;
+  font-size:clamp(31px,5.6vw,56px);filter:drop-shadow(0 8px 30px var(--heroglow));
+  background:linear-gradient(100deg,var(--ink),var(--ink) 30%,var(--purple),var(--cyan),var(--ink) 85%);
+  background-size:220% auto;-webkit-background-clip:text;background-clip:text;color:transparent;
+  animation:fadeUp .7s cubic-bezier(.2,.8,.2,1) .06s both,gradShift 9s ease-in-out infinite 1s;
+}
+.hero h1 span{background:linear-gradient(100deg,var(--gold),var(--gold-dim));
+  -webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p{color:var(--muted);margin:14px auto 0;max-width:660px;font-size:15.5px;
+  animation:fadeUp .7s cubic-bezier(.2,.8,.2,1) .12s both}
+.badges{display:flex;gap:9px;flex-wrap:wrap;justify-content:center;margin-top:20px;
+  animation:fadeUp .7s cubic-bezier(.2,.8,.2,1) .18s both}
+.badge{
+  font-size:12px;font-weight:700;padding:5px 14px;border-radius:999px;border:1px solid;
+  backdrop-filter:blur(var(--blur));transition:transform .25s cubic-bezier(.2,.8,.2,1),box-shadow .25s;
+}
+.badge:hover{transform:translateY(-3px) scale(1.04)}
+.b-aeon{background:color-mix(in srgb,var(--purple) 14%,transparent);color:var(--purple);border-color:color-mix(in srgb,var(--purple) 42%,transparent);box-shadow:0 6px 20px -10px var(--purple)}
+.b-key{background:color-mix(in srgb,var(--gold) 14%,transparent);color:var(--gold);border-color:color-mix(in srgb,var(--gold) 42%,transparent);box-shadow:0 6px 20px -10px var(--gold)}
+.b-miss{background:color-mix(in srgb,var(--red) 14%,transparent);color:var(--red);border-color:color-mix(in srgb,var(--red) 42%,transparent);box-shadow:0 6px 20px -10px var(--red)}
+.b-boss{background:color-mix(in srgb,var(--red) 10%,transparent);color:var(--red);border-color:color-mix(in srgb,var(--red) 32%,transparent)}
+.b-quest{background:color-mix(in srgb,var(--cyan) 14%,transparent);color:var(--cyan);border-color:color-mix(in srgb,var(--cyan) 40%,transparent);box-shadow:0 6px 20px -10px var(--cyan)}
+
+/* ---------- 6. PREV / NEXT NAV ------------------------------------------ */
+.navbtns{display:flex;justify-content:center;gap:10px;margin-top:24px;flex-wrap:wrap;
+  animation:fadeUp .7s cubic-bezier(.2,.8,.2,1) .24s both}
+.wrap>.navbtns{margin-top:56px}
+.navbtns a{
+  position:relative;overflow:hidden;color:var(--ink-soft);border:1px solid var(--line);
+  padding:9px 18px;border-radius:999px;font-size:14px;font-weight:600;
+  background:var(--panel);backdrop-filter:blur(var(--blur));box-shadow:var(--glow);
+  transition:transform .25s cubic-bezier(.2,.8,.2,1),color .25s,border-color .25s,box-shadow .25s;
+}
+.navbtns a::after{content:"";position:absolute;inset:0;border-radius:inherit;opacity:0;
+  background:linear-gradient(100deg,transparent,rgba(255,255,255,.22),transparent);
+  transition:opacity .3s}
+.navbtns a:hover{transform:translateY(-3px);color:var(--gold);border-color:var(--gold-dim);
+  box-shadow:0 12px 30px -14px var(--gold)}
+.navbtns a:hover::after{opacity:1;animation:shine .9s ease}
+.navbtns .home{color:var(--cyan)}
+.navbtns .home:hover{color:var(--cyan);border-color:var(--cyan);box-shadow:0 12px 30px -14px var(--cyan)}
+
+/* ---------- 7. STICKY PROGRESS BAR -------------------------------------- */
+.pbar{
+  position:sticky;top:0;z-index:20;padding:11px 22px;
+  background:var(--pbarbg);backdrop-filter:blur(20px) saturate(150%);
+  border-bottom:1px solid var(--line-soft);
+}
+.pbar .inner{max-width:980px;margin:0 auto;display:flex;align-items:center;gap:14px;
+  font-size:13px;color:var(--muted);font-weight:600}
+.pbar-track{flex:1;height:9px;background:var(--panel2);border:1px solid var(--line-soft);
+  border-radius:999px;overflow:hidden;position:relative}
+.pbar-fill{
+  height:100%;width:0;border-radius:999px;position:relative;overflow:hidden;
+  background:linear-gradient(90deg,var(--cyan),var(--purple),var(--gold));
+  background-size:220% auto;animation:gradShift 6s linear infinite;
+  box-shadow:0 0 18px -2px var(--purple);
+  transition:width .55s cubic-bezier(.2,.9,.2,1);
+}
+.pbar-fill::after{content:"";position:absolute;inset:0;
+  background:linear-gradient(100deg,transparent,rgba(255,255,255,.5),transparent);
+  animation:shine 2.4s linear infinite}
+.pbar b{color:var(--gold);font-variant-numeric:tabular-nums}
+.rst{
+  background:var(--panel);border:1px solid var(--line);color:var(--muted);border-radius:999px;
+  padding:5px 13px;font-size:12px;font-weight:600;cursor:pointer;font-family:inherit;
+  backdrop-filter:blur(var(--blur));transition:.25s
+}
+.rst:hover{color:var(--red);border-color:var(--red);transform:translateY(-2px)}
+
+/* thin scroll indicator across the very top (injected) */
+.fx-scroll{position:fixed;top:0;left:0;height:3px;width:0;z-index:60;
+  background:linear-gradient(90deg,var(--cyan),var(--purple),var(--gold));
+  box-shadow:0 0 14px var(--purple);transition:width .1s linear}
+
+/* ---------- 8. HEADINGS -------------------------------------------------- */
+h2{
+  font-family:var(--f-disp);font-size:clamp(20px,2.6vw,26px);font-weight:700;letter-spacing:-.3px;
+  color:var(--ink);margin:0 0 14px;display:flex;align-items:center;gap:12px;
+  padding-bottom:14px;position:relative;border-bottom:1px solid var(--line-soft);
+}
+h2::after{content:"";position:absolute;left:0;bottom:-1px;height:2px;width:0;border-radius:2px;
+  background:linear-gradient(90deg,var(--purple),var(--cyan),transparent);
+  transition:width 1s cubic-bezier(.2,.8,.2,1) .1s}
+section.in h2::after,h2.in::after{width:min(320px,55%)}
+h2 .ic{
+  font-size:18px;width:40px;height:40px;flex:0 0 auto;display:inline-flex;
+  align-items:center;justify-content:center;border-radius:13px;
+  background:var(--panel);border:1px solid var(--line);backdrop-filter:blur(var(--blur));
+  box-shadow:var(--glow),0 8px 22px -14px var(--purple);
+}
+h2 .num{
+  font-family:var(--f-disp);font-size:14px;color:#fff;font-weight:700;
+  width:34px;height:34px;border-radius:11px;display:inline-flex;align-items:center;justify-content:center;
+  flex:0 0 auto;background:linear-gradient(135deg,var(--gold),var(--red));
+  box-shadow:0 8px 22px -10px var(--gold)}
+.sec-count{margin-left:auto;font-size:12.5px;color:var(--muted);font-weight:600;
+  background:var(--panel);border:1px solid var(--line);border-radius:999px;padding:3px 12px;
+  backdrop-filter:blur(var(--blur));font-variant-numeric:tabular-nums}
+.sec-count b{color:var(--green)}
+h3{margin:28px 0 10px;font-size:17.5px;font-weight:700;color:var(--gold);letter-spacing:.1px;
+  font-family:var(--f-disp)}
+
+/* ---------- 9. PANELS ---------------------------------------------------- */
+.card,.story,.boss,.callout,.puz,.prow,.chk{
+  backdrop-filter:blur(var(--blur));-webkit-backdrop-filter:blur(var(--blur));
+}
+.card{
+  background:var(--panel);border:1px solid var(--line);border-radius:var(--r-lg);
+  padding:20px 24px;margin:16px 0;box-shadow:var(--glow),var(--shadow);
+  transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s,border-color .35s;
+}
+.card:hover{transform:translateY(-3px);border-color:var(--line);box-shadow:var(--glow),var(--shadow-lg)}
+.card p{margin:10px 0}.card p:first-child{margin-top:0}
+
+.story{
+  position:relative;background:linear-gradient(135deg,var(--story1),var(--story2));
+  border:1px solid var(--line-soft);border-left:3px solid var(--purple);
+  border-radius:6px var(--r-lg) var(--r-lg) 6px;padding:16px 22px;margin:16px 0;
+  color:var(--ink-soft);font-size:15px;box-shadow:var(--shadow);
+}
+.story::before{content:"";position:absolute;left:-3px;top:0;bottom:0;width:3px;
+  background:linear-gradient(180deg,var(--purple),var(--cyan));border-radius:3px;
+  box-shadow:0 0 16px var(--purple)}
+.story b{color:var(--purple)}
+
+.boss{
+  position:relative;background:linear-gradient(150deg,var(--boss1),var(--boss2));
+  border:1px solid color-mix(in srgb,var(--red) 30%,transparent);border-radius:var(--r-lg);
+  padding:20px 24px;margin:18px 0;box-shadow:var(--glow),var(--shadow);
+  animation:pulseRed 4.5s ease-in-out infinite;
+}
+.boss::before{ /* corner label so a boss block is spottable while scrolling fast */
+  content:"BOSS";position:absolute;top:-10px;right:18px;font-family:var(--f-disp);
+  font-size:10.5px;font-weight:700;letter-spacing:2.4px;color:#fff;padding:3px 12px;border-radius:999px;
+  background:linear-gradient(135deg,var(--red),#a11e46);box-shadow:0 8px 20px -8px var(--red)}
+.boss h3{color:var(--ink);margin-top:0;font-size:19px;display:flex;align-items:center;flex-wrap:wrap;gap:8px}
+.boss .lore{background:none;border:none;padding:0 0 0 13px;margin:4px 0 12px;color:var(--muted);
+  font-size:14px;border-left:2px solid var(--purple)}
+.boss .lore b{color:var(--purple)}
+.hp{display:inline-block;background:color-mix(in srgb,var(--red) 15%,transparent);color:var(--red);
+  border:1px solid color-mix(in srgb,var(--red) 42%,transparent);border-radius:999px;padding:2px 11px;
+  font-size:12.5px;font-weight:700;font-variant-numeric:tabular-nums}
+.drops{color:var(--muted);font-size:13.5px;margin:10px 0 0}.drops b{color:var(--cyan)}
+
+.callout{
+  position:relative;border-radius:var(--r-md);padding:15px 19px 15px 21px;margin:15px 0;
+  border:1px solid;font-size:15px;box-shadow:var(--shadow);overflow:hidden;
+}
+.callout::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px}
+.tip{background:color-mix(in srgb,var(--green) 9%,transparent);border-color:color-mix(in srgb,var(--green) 30%,transparent)}
+.tip::before{background:var(--green);box-shadow:0 0 16px var(--green)}
+.tip b{color:var(--green)}
+.warn{background:color-mix(in srgb,var(--red) 9%,transparent);border-color:color-mix(in srgb,var(--red) 30%,transparent)}
+.warn::before{background:var(--red);box-shadow:0 0 16px var(--red)}
+.warn b{color:var(--red)}
+.secret{background:color-mix(in srgb,var(--purple) 9%,transparent);border-color:color-mix(in srgb,var(--purple) 30%,transparent)}
+.secret::before{background:var(--purple);box-shadow:0 0 16px var(--purple)}
+.secret b{color:var(--purple)}
+
+.puz{background:color-mix(in srgb,var(--cyan) 8%,transparent);
+  border:1px solid color-mix(in srgb,var(--cyan) 28%,transparent);
+  border-radius:var(--r-lg);padding:18px 22px;margin:15px 0;box-shadow:var(--shadow)}
+.puz h4{margin:0 0 10px;color:var(--cyan);font-size:15.5px;font-family:var(--f-disp);
+  letter-spacing:.2px;display:flex;align-items:center;gap:8px}
+.puz h4::before{content:"◈";font-size:13px;opacity:.8}
+
+/* ---------- 10. LISTS & STEPS ------------------------------------------- */
+ul{margin:10px 0;padding-left:22px}
+li{margin:7px 0}
+ul li::marker{color:var(--cyan)}
+.steps{counter-reset:s;list-style:none;padding-left:0;margin:10px 0;position:relative}
+.steps::before{content:"";position:absolute;left:14px;top:14px;bottom:14px;width:2px;
+  background:linear-gradient(180deg,var(--cyan),var(--purple),transparent);opacity:.35;border-radius:2px}
+.steps li{counter-increment:s;position:relative;padding-left:44px;margin:12px 0}
+.steps li::before{
+  content:counter(s);position:absolute;left:0;top:0;width:29px;height:29px;
+  background:var(--panel-solid);border:1.5px solid var(--cyan);color:var(--cyan);
+  border-radius:10px;display:flex;align-items:center;justify-content:center;
+  font-weight:700;font-size:13px;font-family:var(--f-disp);
+  box-shadow:0 0 0 4px color-mix(in srgb,var(--cyan) 10%,transparent);
+  transition:transform .3s cubic-bezier(.2,.8,.2,1),box-shadow .3s;
+}
+.steps li:hover::before{transform:scale(1.12) rotate(-6deg);
+  box-shadow:0 0 20px -2px var(--cyan),0 0 0 4px color-mix(in srgb,var(--cyan) 16%,transparent)}
+
+/* ---------- 11. CHECKLIST ----------------------------------------------- */
+.chklist{list-style:none;padding:0;margin:14px 0;display:grid;gap:9px}
+.chk{
+  display:flex;gap:14px;align-items:flex-start;position:relative;overflow:hidden;
+  background:var(--panel2);border:1px solid var(--line-soft);border-radius:var(--r-md);
+  padding:13px 16px;cursor:pointer;
+  transition:transform .25s cubic-bezier(.2,.8,.2,1),border-color .25s,background .25s,box-shadow .25s;
+}
+.chk::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--gold);
+  transform:scaleY(0);transform-origin:center;transition:transform .3s cubic-bezier(.2,.8,.2,1)}
+.chk:hover{transform:translateX(4px);border-color:var(--gold-dim);box-shadow:var(--shadow)}
+.chk:hover::before{transform:scaleY(1)}
+.chk input{
+  appearance:none;-webkit-appearance:none;width:22px;height:22px;margin:3px 0 0;flex:0 0 auto;
+  border:1.6px solid var(--line);border-radius:8px;background:var(--panel-solid);cursor:pointer;
+  position:relative;transition:.25s cubic-bezier(.2,.8,.2,1);
+}
+.chk input:hover{border-color:var(--green)}
+.chk input:checked{
+  background:linear-gradient(135deg,var(--green),var(--cyan));border-color:transparent;
+  box-shadow:0 0 18px -4px var(--green);animation:pop .35s cubic-bezier(.2,.8,.2,1);
+}
+.chk input:checked::after{
+  content:"";position:absolute;left:7px;top:3px;width:6px;height:11px;
+  border:solid #fff;border-width:0 2.5px 2.5px 0;transform:rotate(42deg);
+}
+.chk input:focus-visible{outline:2px solid var(--cyan);outline-offset:3px}
+.chk .it{font-weight:700;color:var(--gold)}
+.chk .lbl{transition:opacity .3s}
+.chk.done{opacity:.5;border-color:color-mix(in srgb,var(--green) 32%,transparent)}
+.chk.done::before{background:var(--green);transform:scaleY(1)}
+.chk.done .lbl{text-decoration:line-through;text-decoration-color:var(--green)}
+
+/* ---------- 12. TABLES --------------------------------------------------- */
+.tbl-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:var(--r-lg);margin:14px 0;
+  background:var(--panel);backdrop-filter:blur(var(--blur));box-shadow:var(--glow),var(--shadow)}
+table{width:100%;border-collapse:collapse;font-size:14.5px;min-width:560px}
+.tbl-wrap table{margin:0}
+th,td{text-align:left;padding:12px 16px;border-bottom:1px solid var(--line-soft);vertical-align:top}
+th{color:var(--muted);font-weight:700;font-size:11.5px;text-transform:uppercase;letter-spacing:1px;
+  background:var(--panel2);position:sticky;top:0;backdrop-filter:blur(10px)}
+tr:last-child td{border-bottom:none}
+tbody tr,table tr{transition:background .2s}
+table tr:hover td{background:color-mix(in srgb,var(--cyan) 7%,transparent)}
+td .n,td .nm{color:var(--gold);font-weight:700}
+td .item{color:var(--cyan);font-weight:700}
+.miss{color:var(--red);font-weight:700}.safe{color:var(--green);font-weight:700}
+
+/* ---------- 13. PUZZLE DIAGRAM ------------------------------------------ */
+.puzzle{display:grid;gap:12px;margin:16px 0}
+.prow{display:flex;align-items:center;gap:16px;background:var(--panel);border:1px solid var(--line);
+  border-radius:var(--r-md);padding:14px 18px;box-shadow:var(--glow);
+  transition:transform .3s cubic-bezier(.2,.8,.2,1),box-shadow .3s}
+.prow:hover{transform:translateX(6px);box-shadow:var(--shadow-lg)}
+.dot{width:30px;height:30px;border-radius:50%;flex:0 0 auto;
+  box-shadow:0 0 20px 3px currentColor;animation:floaty 3.4s ease-in-out infinite}
+.prow .who{font-weight:700;font-size:15.5px}
+.prow .arrow{color:var(--muted)}
+.prow .hole{font-weight:700}
+.c-blue{color:var(--blue);background:var(--blue)}
+.c-green{color:var(--green);background:var(--green)}
+.c-red{color:var(--red);background:var(--red)}
+
+/* ---------- 14. INLINE BITS ---------------------------------------------- */
+.term{border-bottom:1px dashed var(--gold-dim);color:var(--gold);cursor:help;font-weight:600;
+  transition:.2s}
+.term:hover{background:color-mix(in srgb,var(--gold) 14%,transparent);border-radius:4px}
+.flag{color:var(--gold);font-size:12px;font-weight:700}
+
+/* ---------- 15. IN-PAGE TOC (scroll-spy) -------------------------------- */
+nav.toc{display:flex;gap:9px;flex-wrap:wrap;justify-content:center;padding:22px 0 4px;font-size:13.5px}
+nav.toc a{
+  color:var(--muted);padding:7px 15px;border-radius:999px;border:1px solid var(--line);
+  background:var(--panel);backdrop-filter:blur(var(--blur));font-weight:600;
+  transition:transform .25s cubic-bezier(.2,.8,.2,1),color .25s,border-color .25s,box-shadow .25s;
+}
+nav.toc a:hover{color:var(--gold);border-color:var(--gold-dim);transform:translateY(-2px)}
+nav.toc a.active{color:#fff;border-color:transparent;
+  background:linear-gradient(135deg,var(--purple),var(--cyan));
+  box-shadow:0 10px 26px -12px var(--purple)}
+
+/* ---------- 16. INDEX PAGE ---------------------------------------------- */
+.primer-link{
+  display:block;position:relative;overflow:hidden;margin:12px 0 8px;padding:20px 24px;
+  border-radius:var(--r-lg);border:1px solid color-mix(in srgb,var(--purple) 38%,transparent);
+  background:linear-gradient(120deg,color-mix(in srgb,var(--purple) 14%,transparent),transparent 70%),var(--panel);
+  backdrop-filter:blur(var(--blur));box-shadow:var(--glow),var(--shadow);
+  transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s}
+.primer-link:hover{transform:translateY(-4px);box-shadow:0 26px 60px -26px var(--purple)}
+.primer-link::after{content:"";position:absolute;top:0;left:0;width:35%;height:100%;
+  background:linear-gradient(100deg,transparent,rgba(255,255,255,.18),transparent);opacity:0}
+.primer-link:hover::after{opacity:1;animation:shine 1.1s ease}
+.primer-link .pt{color:var(--purple);font-size:17px;font-weight:700;font-family:var(--f-disp)}
+.primer-link .pd{display:block;color:var(--muted);font-size:14px;margin-top:4px}
+
+.guidebar{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:22px 0}
+.guidebar a{
+  background:var(--panel);border:1px solid var(--line);border-radius:var(--r-lg);padding:16px 18px;
+  backdrop-filter:blur(var(--blur));box-shadow:var(--glow);position:relative;overflow:hidden;
+  transition:transform .35s cubic-bezier(.2,.8,.2,1),border-color .35s,box-shadow .35s;
+}
+.guidebar a::before{content:"";position:absolute;inset:0;opacity:0;transition:opacity .35s;
+  background:linear-gradient(135deg,color-mix(in srgb,var(--gold) 14%,transparent),transparent 60%)}
+.guidebar a:hover{transform:translateY(-6px);border-color:var(--gold-dim);box-shadow:0 22px 50px -24px var(--gold)}
+.guidebar a:hover::before{opacity:1}
+.guidebar .gi{position:relative;font-size:11px;font-weight:700;color:#fff;letter-spacing:1px;
+  background:linear-gradient(135deg,var(--gold),var(--red));border-radius:999px;padding:3px 11px;display:inline-block}
+.guidebar .gt{position:relative;display:block;color:var(--ink);font-weight:700;margin-top:9px;font-size:14.5px;line-height:1.5}
+
+h3.sec{
+  font-family:var(--f-disp);font-size:12px;color:var(--cyan);letter-spacing:3.4px;text-transform:uppercase;
+  margin:44px 0 12px;padding-bottom:10px;border-bottom:1px solid var(--line-soft);
+  display:flex;align-items:center;gap:10px;
+}
+h3.sec::before{content:"";width:26px;height:2px;border-radius:2px;
+  background:linear-gradient(90deg,var(--cyan),transparent)}
+
+ol.stages{list-style:none;padding:0;margin:10px 0;display:grid;gap:10px}
+ol.stages li{
+  position:relative;padding:16px 132px 16px 68px;background:var(--panel);
+  border:1px solid var(--line);border-radius:var(--r-lg);backdrop-filter:blur(var(--blur));
+  box-shadow:var(--glow);overflow:hidden;
+  transition:transform .35s cubic-bezier(.2,.8,.2,1),border-color .35s,box-shadow .35s;
+}
+ol.stages li::before{ /* accent rail that slides in on hover */
+  content:"";position:absolute;left:0;top:0;bottom:0;width:3px;
+  background:linear-gradient(180deg,var(--gold),var(--red));
+  transform:scaleY(0);transform-origin:top;transition:transform .35s cubic-bezier(.2,.8,.2,1)}
+ol.stages li:hover{transform:translateY(-4px);border-color:var(--gold-dim);box-shadow:0 22px 50px -26px var(--gold)}
+ol.stages li:hover::before{transform:scaleY(1)}
+ol.stages li .st-n{
+  position:absolute;left:16px;top:15px;width:38px;height:38px;border-radius:12px;
+  background:var(--panel2);border:1px solid var(--gold-dim);color:var(--gold);
+  display:flex;align-items:center;justify-content:center;font-weight:700;font-size:15px;
+  font-family:var(--f-disp);transition:.35s cubic-bezier(.2,.8,.2,1)}
+ol.stages li:hover .st-n{transform:rotate(-8deg) scale(1.06);box-shadow:0 0 22px -6px var(--gold)}
+ol.stages li a.nm{color:var(--ink);font-weight:700;font-size:16px;font-family:var(--f-disp)}
+ol.stages li a.nm:hover{color:var(--gold)}
+ol.stages li .ds{display:block;color:var(--muted);font-size:13px;margin-top:3px}
+ol.stages li .get{position:absolute;right:16px;top:50%;transform:translateY(-50%);text-align:right;max-width:118px}
+ol.stages li .gtag{display:inline-block;font-size:10.5px;font-weight:700;padding:3px 9px;border-radius:999px;
+  margin:2px 0 2px 4px;border:1px solid transparent}
+.gt-aeon{background:color-mix(in srgb,var(--purple) 16%,transparent);color:var(--purple);border-color:color-mix(in srgb,var(--purple) 30%,transparent)}
+.gt-key{background:color-mix(in srgb,var(--gold) 17%,transparent);color:var(--gold);border-color:color-mix(in srgb,var(--gold) 30%,transparent)}
+.gt-miss{background:color-mix(in srgb,var(--red) 16%,transparent);color:var(--red);border-color:color-mix(in srgb,var(--red) 30%,transparent)}
+.gt-quest{background:color-mix(in srgb,var(--cyan) 15%,transparent);color:var(--cyan);border-color:color-mix(in srgb,var(--cyan) 30%,transparent)}
+ol.stages li.here{border-color:var(--cyan)}
+ol.stages li.here .st-n{border-color:var(--cyan);color:var(--cyan)}
+/* per-stage completion ring, filled from localStorage by fx.js */
+ol.stages li .ring{position:absolute;left:16px;top:15px;width:38px;height:38px;border-radius:50%;
+  pointer-events:none;transition:background .6s ease}
+ol.stages li.done-all{border-color:color-mix(in srgb,var(--green) 45%,transparent)}
+ol.stages li.done-all .st-n{border-color:var(--green);color:var(--green)}
+
+/* ---------- 17. FLOATING CONTROLS --------------------------------------- */
+#themeToggle,.fx-fab{
+  position:fixed;z-index:70;width:46px;height:46px;border-radius:50%;cursor:pointer;
+  border:1px solid var(--line);background:var(--panel);color:var(--ink);font-size:18px;
+  backdrop-filter:blur(var(--blur)) saturate(160%);box-shadow:var(--glow),var(--shadow);
+  display:flex;align-items:center;justify-content:center;font-family:inherit;
+  transition:transform .3s cubic-bezier(.2,.8,.2,1),box-shadow .3s,border-color .3s,opacity .3s;
+}
+#themeToggle{top:14px;right:16px}
+#themeToggle:hover,.fx-fab:hover{transform:translateY(-3px) scale(1.07);border-color:var(--gold-dim);
+  box-shadow:0 16px 34px -16px var(--gold)}
+.fx-top{right:16px;bottom:22px;opacity:0;pointer-events:none;font-size:20px}
+.fx-top.show{opacity:1;pointer-events:auto}
+.fx-search{right:16px;bottom:78px;font-size:15px;font-weight:700;letter-spacing:.5px}
+
+/* ---------- 18. COMMAND PALETTE ----------------------------------------- */
+.fx-pal{position:fixed;inset:0;z-index:90;display:none;padding:12vh 20px 20px;
+  background:color-mix(in srgb,var(--bg) 62%,transparent);backdrop-filter:blur(10px)}
+.fx-pal.open{display:block;animation:fadeUp .25s ease}
+.fx-pal .box{max-width:640px;margin:0 auto;border-radius:var(--r-xl);overflow:hidden;
+  border:1px solid var(--line);background:var(--panel-solid);box-shadow:var(--shadow-lg)}
+.fx-pal input{width:100%;border:0;outline:0;padding:20px 24px;font-size:17px;font-family:inherit;
+  background:transparent;color:var(--ink);border-bottom:1px solid var(--line-soft)}
+.fx-pal ul{list-style:none;margin:0;padding:8px;max-height:52vh;overflow:auto}
+.fx-pal li{margin:0}
+.fx-pal a{display:flex;align-items:center;gap:12px;padding:11px 15px;border-radius:var(--r-md);
+  color:var(--ink);font-size:14.5px;font-weight:600}
+.fx-pal a .k{font-family:var(--f-disp);font-size:11.5px;color:var(--gold);border:1px solid var(--line);
+  border-radius:7px;padding:2px 8px;min-width:34px;text-align:center;flex:0 0 auto}
+.fx-pal a .sub{color:var(--muted);font-weight:400;font-size:12.5px;margin-left:auto;text-align:right}
+.fx-pal li.sel a,.fx-pal a:hover{background:linear-gradient(135deg,color-mix(in srgb,var(--purple) 18%,transparent),color-mix(in srgb,var(--cyan) 12%,transparent))}
+.fx-pal .hint{padding:10px 20px;font-size:12px;color:var(--muted);border-top:1px solid var(--line-soft);
+  display:flex;gap:14px;flex-wrap:wrap}
+.fx-pal .hint kbd{font-family:var(--f-disp);border:1px solid var(--line);border-radius:6px;padding:1px 7px;font-size:11px}
+
+/* ---------- 19. TOAST ---------------------------------------------------- */
+.fx-toast{position:fixed;left:50%;bottom:28px;transform:translate(-50%,24px);z-index:95;
+  padding:12px 22px;border-radius:999px;font-size:14px;font-weight:600;
+  background:var(--panel-solid);border:1px solid var(--line);box-shadow:var(--shadow-lg);
+  opacity:0;pointer-events:none;transition:.35s cubic-bezier(.2,.8,.2,1)}
+.fx-toast.show{opacity:1;transform:translate(-50%,0)}
+
+/* ---------- 20. SCROLL REVEAL ------------------------------------------- */
+.rv{opacity:0;transform:translateY(26px);transition:opacity .7s cubic-bezier(.2,.8,.2,1),transform .7s cubic-bezier(.2,.8,.2,1)}
+.rv.in{opacity:1;transform:none}
+
+/* ---------- 21. FOOTER --------------------------------------------------- */
+footer{margin-top:70px;padding:24px 0 0;border-top:1px solid var(--line-soft);color:var(--muted);
+  font-size:13px;text-align:center;line-height:2}
+
+/* ---------- 22. RESPONSIVE ---------------------------------------------- */
+@media(max-width:760px){
+  body{font-size:15.5px}
+  .wrap{padding:0 16px 110px}
+  section{margin-top:44px}
+  .guidebar{grid-template-columns:1fr}
+  ol.stages li{padding:16px 16px 16px 66px}
+  ol.stages li .get{position:static;transform:none;max-width:none;margin-top:8px;display:block;text-align:left}
+  ol.stages li .gtag{margin:2px 4px 2px 0}
+  .navbtns{gap:8px}.navbtns a{padding:8px 14px;font-size:13px}
+  .fx-search{display:none}
+  .pbar .inner{gap:10px;font-size:12px}
+}
+@media(max-width:420px){
+  h2{font-size:19px;gap:9px}
+  h2 .ic{width:34px;height:34px;font-size:16px}
+}
+
+/* ---------- 23. MOTION / PRINT ------------------------------------------ */
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;
+    transition-duration:.01ms!important;scroll-behavior:auto!important}
+  .rv{opacity:1;transform:none}
+}
+@media print{
+  .fx-bg,.fx-noise,.fx-scroll,#themeToggle,.fx-fab,.fx-pal,.pbar,body::before{display:none!important}
+  body{background:#fff;color:#000}
+  .card,.story,.boss,.callout,.puz{break-inside:avoid}
+}
+
+/* =========================================================================
+   24. PREMIUM LAYER — the expensive-looking details
+   Gradient hairline rings, metallic ink, layered depth, real focus states.
+   ========================================================================= */
+
+/* animatable angle for the rotating border ring (graceful fallback: static) */
+@property --ang{syntax:"<angle>";initial-value:0deg;inherits:false}
+@keyframes spinAng{to{--ang:360deg}}
+
+/* A 1px conic-gradient ring painted ONLY on the element's edge (mask xor trick).
+   Invisible at rest, lights up and rotates on hover — the "expensive" tell. */
+.card::before,.puz::before,.primer-link::before,.tbl-wrap::before,
+.guidebar a::after,ol.stages li::after,.fx-pal .box::before{
+  content:"";position:absolute;inset:0;border-radius:inherit;padding:1px;pointer-events:none;
+  background:conic-gradient(from var(--ang),
+    transparent 0deg,
+    color-mix(in srgb,var(--purple) 70%,transparent) 55deg,
+    color-mix(in srgb,var(--cyan) 70%,transparent) 125deg,
+    transparent 195deg,
+    color-mix(in srgb,var(--gold) 60%,transparent) 300deg,
+    transparent 360deg);
+  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
+  mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
+  -webkit-mask-composite:xor;mask-composite:exclude;
+  opacity:0;transition:opacity .5s ease;z-index:0;
+}
+.card:hover::before,.puz:hover::before,.primer-link:hover::before,.tbl-wrap:hover::before,
+.guidebar a:hover::after,ol.stages li:hover::after,.fx-pal .box::before{
+  opacity:1;animation:spinAng 6s linear infinite;
+}
+.fx-pal .box::before{opacity:.75}
+/* keep content above the ring */
+.card>*,.puz>*,.primer-link>*,.guidebar a>*,ol.stages li>*,.tbl-wrap>*{position:relative;z-index:1}
+
+/* Layered depth: inner top highlight + tight contact shadow + wide ambient glow */
+.card,.puz,.boss,.guidebar a,ol.stages li,.primer-link,.tbl-wrap,.prow,#themeToggle,.fx-fab,.fx-pal .box{
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.10),
+    0 1px 2px rgba(8,12,26,.10),
+    0 14px 40px -22px rgba(8,12,26,.55);
+}
+[data-theme="dark"] .card,[data-theme="dark"] .puz,[data-theme="dark"] .boss,
+[data-theme="dark"] .guidebar a,[data-theme="dark"] ol.stages li,[data-theme="dark"] .primer-link,
+[data-theme="dark"] .tbl-wrap,[data-theme="dark"] .prow{
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.07),
+    inset 0 -18px 40px -30px rgba(139,92,246,.55),
+    0 22px 60px -30px rgba(0,0,0,.9);
+}
+
+/* (An earlier "metallic ink" gradient for item names lived here. It was dropped:
+   the gradient stayed painted behind the text once background-clip was reset,
+   which rendered as a solid block over every item name. Names now get weight and
+   an underline instead — see the colour-discipline section.) */
+
+/* Hero: one soft halo, no hard edges — the seam between hero and page must vanish */
+header.hero::before{
+  content:"";position:absolute;left:50%;top:-30%;width:min(1100px,140vw);aspect-ratio:1.6;
+  transform:translateX(-50%);pointer-events:none;border-radius:50%;
+  background:radial-gradient(closest-side,var(--heroglow),transparent 72%);
+  filter:blur(28px);opacity:.85;animation:floaty 12s ease-in-out infinite;
+}
+header.hero{border-bottom:none;background:
+  radial-gradient(1200px 520px at 50% -180px,var(--heroglow),transparent 66%),
+  linear-gradient(180deg,color-mix(in srgb,var(--hero1) 70%,transparent),transparent 92%)}
+
+/* Sticky bar rides ON the page rather than sitting in its own box */
+.pbar{background:linear-gradient(180deg,color-mix(in srgb,var(--bg) 88%,transparent),color-mix(in srgb,var(--bg) 55%,transparent));
+  border-bottom:none}
+.pbar::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;
+  background:linear-gradient(90deg,transparent,var(--line),transparent)}
+
+/* Headings: hairline that fades out instead of a full-width ruled line */
+h2{border-bottom:none}
+h2::before{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;
+  background:linear-gradient(90deg,var(--line),transparent 85%)}
+
+/* Numbered sub-heading badge — replaces the unstylable ①②③ text glyphs */
+.hn{
+  display:inline-flex;align-items:center;justify-content:center;vertical-align:-5px;
+  min-width:30px;height:30px;padding:0 9px;margin-right:11px;border-radius:10px;
+  font-family:var(--f-disp);font-size:13.5px;font-weight:700;color:#fff;letter-spacing:.4px;
+  background:linear-gradient(135deg,var(--gold),var(--red));
+  box-shadow:0 10px 24px -12px var(--gold),inset 0 1px 0 rgba(255,255,255,.35);
+}
+.hn.sm{min-width:23px;height:23px;font-size:11.5px;margin:0 7px 0 0;border-radius:8px;vertical-align:-3px;
+  background:linear-gradient(135deg,var(--cyan),var(--purple));box-shadow:0 8px 18px -10px var(--cyan)}
+
+/* Section headings get gradient ink in dark mode where flat white looks cheap */
+[data-theme="dark"] h2{
+  background:linear-gradient(100deg,#fff,#cfd8ee 60%,#9fb0d6);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+[data-theme="dark"] h2 .sec-count{-webkit-text-fill-color:var(--muted)}
+[data-theme="dark"] h2 .sec-count b{-webkit-text-fill-color:var(--green)}
+
+/* Real focus states — keyboard users get the same premium treatment */
+a:focus-visible,button:focus-visible,input:focus-visible,.chk:focus-within{
+  outline:2px solid var(--cyan);outline-offset:3px;border-radius:10px;
+}
+
+/* Numerals line up everywhere numbers are compared */
+.pbar,.sec-count,.hp,td,.st-n,.steps li::before{font-variant-numeric:tabular-nums}
+
+/* Uppercase micro-labels need optical letter-spacing, lowercase does not */
+.hero .eyebrow,h3.sec,th,.guidebar .gi{font-feature-settings:"ss01","cv01"}
+
+/* Custom scrollbars — the detail nobody asks for and everybody notices */
+*{scrollbar-width:thin;scrollbar-color:color-mix(in srgb,var(--purple) 55%,transparent) transparent}
+::-webkit-scrollbar{width:11px;height:11px}
+::-webkit-scrollbar-track{background:transparent}
+::-webkit-scrollbar-thumb{border-radius:99px;border:3px solid transparent;background-clip:content-box;
+  background-color:color-mix(in srgb,var(--purple) 50%,transparent)}
+::-webkit-scrollbar-thumb:hover{background-color:color-mix(in srgb,var(--purple) 80%,transparent)}
+
+/* Vector watermark per callout type — SVG data-URI used as a MASK so the icon
+   always takes the callout's own accent colour in both light and dark mode. */
+.callout::after{
+  content:"";position:absolute;right:14px;top:50%;transform:translateY(-50%);
+  width:64px;height:64px;opacity:.13;pointer-events:none;
+  -webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;-webkit-mask-size:contain;mask-size:contain;
+}
+.tip::after{background:var(--green);
+  -webkit-mask-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'><circle cx='12' cy='12' r='9'/><path d='m8 12 3 3 5-6'/></svg>");
+  mask-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'><circle cx='12' cy='12' r='9'/><path d='m8 12 3 3 5-6'/></svg>")}
+.warn::after{background:var(--red);
+  -webkit-mask-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'><path d='M12 4 2.6 20h18.8z'/><path d='M12 10v4.6'/><path d='M12 17.6v.2'/></svg>");
+  mask-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'><path d='M12 4 2.6 20h18.8z'/><path d='M12 10v4.6'/><path d='M12 17.6v.2'/></svg>")}
+.secret::after{background:var(--purple);
+  -webkit-mask-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.6' stroke-linejoin='round'><path d='M12 3.2 13.9 9l5.9 1.9-5.9 1.9L12 18.6 10.1 12.8 4.2 10.9 10.1 9z'/><path d='M18.4 15.4l.7 2.1 2.1.7-2.1.7-.7 2.1-.7-2.1-2.1-.7 2.1-.7z'/></svg>");
+  mask-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.6' stroke-linejoin='round'><path d='M12 3.2 13.9 9l5.9 1.9-5.9 1.9L12 18.6 10.1 12.8 4.2 10.9 10.1 9z'/><path d='M18.4 15.4l.7 2.1 2.1.7-2.1.7-.7 2.1-.7-2.1-2.1-.7 2.1-.7z'/></svg>")}
+.callout{padding-right:84px}
+
+/* Story blocks read as narration, not as another card */
+.story::after{content:"";position:absolute;right:18px;top:14px;width:34px;height:34px;opacity:.12;
+  background:var(--purple);-webkit-mask-size:contain;mask-size:contain;-webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;
+  -webkit-mask-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path fill='black' d='M7 7h5v5c0 3-2 5-5 5v-2c1.7 0 3-1.3 3-3H7zm8 0h5v5c0 3-2 5-5 5v-2c1.7 0 3-1.3 3-3h-3z'/></svg>");
+  mask-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path fill='black' d='M7 7h5v5c0 3-2 5-5 5v-2c1.7 0 3-1.3 3-3H7zm8 0h5v5c0 3-2 5-5 5v-2c1.7 0 3-1.3 3-3h-3z'/></svg>")}
+
+/* Wide screens: a checklist of short items in one column wastes the page */
+@media(min-width:920px){
+  .chklist{grid-template-columns:1fr 1fr}
+  .wrap{max-width:1040px}
+  .pbar .inner{max-width:1040px}
+}
+
+/* Custom tooltip for glossary terms (fx.js copies title -> data-tip) */
+.term[data-tip]{position:relative}
+.term[data-tip]::after{
+  content:attr(data-tip);position:absolute;left:50%;bottom:calc(100% + 10px);
+  transform:translate(calc(-50% + var(--tip-dx,0px)),6px);
+  min-width:180px;max-width:min(280px,calc(100vw - 28px));padding:10px 14px;border-radius:12px;z-index:40;
+  background:var(--panel-solid);border:1px solid var(--line);color:var(--ink);
+  font-size:13px;font-weight:400;line-height:1.6;text-align:left;white-space:normal;
+  box-shadow:var(--shadow-lg);opacity:0;pointer-events:none;
+  transition:opacity .22s ease,transform .22s cubic-bezier(.2,.8,.2,1);
+}
+.term[data-tip]:hover::after,.term[data-tip]:focus-visible::after{opacity:1;transform:translate(calc(-50% + var(--tip-dx,0px)),0)}
+
+/* Zebra striping keeps long fiend tables readable without extra rules */
+table tr:nth-child(even) td{background:color-mix(in srgb,var(--ink) 3%,transparent)}
+table tr:hover td{background:color-mix(in srgb,var(--cyan) 8%,transparent)}
+
+/* =========================================================================
+   25. COLOUR DISCIPLINE  (must stay last — it overrides the sections above)
+   Rule: colour carries MEANING, never decoration.
+     · running text + every <b> = ink. Emphasis is weight, not hue.
+     · hue is allowed only on: pills/badges, left accent bars, icons,
+       the progress fill, links, and genuine status words (missable / done).
+     · one accent (violet) leads, gold is the rare highlight, red/green are
+       reserved for "you can lose this" and "you got this".
+   ========================================================================= */
+b,strong,.card b,.story b,.callout b,.tip b,.warn b,.secret b,.puz b,.boss b,td b,li b,p b{
+  color:var(--ink);font-weight:700;
+}
+.story b,.boss .lore b{color:var(--ink)}
+/* Item names: weight + a real underline. (An inset box-shadow was used for this
+   first and browsers painted it as a solid block behind the text — never again.) */
+.chk .it,td .item,td .n,td .nm{
+  color:var(--ink);-webkit-text-fill-color:var(--ink);background:none;font-weight:700;
+  box-shadow:none;text-decoration:underline;text-decoration-thickness:2px;
+  text-underline-offset:4px;text-decoration-color:color-mix(in srgb,var(--gold) 55%,transparent);
+}
+.it{color:var(--ink)}
+/* status words keep their hue — that is the whole point of having one */
+.miss{color:var(--red)}
+.safe,.chk.done .lbl{color:var(--green)}
+.hero h1{background:none;-webkit-text-fill-color:currentColor;color:var(--ink);animation:fadeUp .7s cubic-bezier(.2,.8,.2,1) .06s both}
+.hero h1 span{-webkit-text-fill-color:transparent;
+  background:linear-gradient(100deg,var(--purple),var(--cyan));-webkit-background-clip:text;background-clip:text}
+[data-theme="dark"] h2{background:none;-webkit-text-fill-color:var(--ink);color:var(--ink)}
+h3{color:var(--ink);display:flex;align-items:baseline;gap:10px}
+h3::before{content:"";width:7px;height:7px;border-radius:2px;flex:0 0 auto;transform:rotate(45deg);
+  background:linear-gradient(135deg,var(--purple),var(--cyan))}
+h3.sec{color:var(--muted)}
+h3.sec::before{display:none}
+.boss h3::before,.puz h4::before{display:none}
+.boss h3{color:var(--ink)}
+.drops b{color:var(--ink)}
+.term{color:var(--ink);border-bottom-color:var(--line)}
+.term:hover{border-bottom-color:var(--purple)}
+/* `:not(.active)` matters: without it this rule outranks `nav.toc a.active`
+   (specificity 0,4,2 vs 0,2,2) and the highlighted TOC link lost its white text
+   on the violet gradient — measured 1.01:1 across 29 files. */
+/* `.sec-done`/`.sec-part` are excluded for the same reason `.active` is: this
+   rule is (0,4,2) and would outrank the completion-state colours in section 50,
+   leaving a finished section's sidebar link the same colour as every other. */
+a:not(.navbtns a):not(.gt):not(.nm):not(.active):not(.sec-done):not(.sec-part){color:var(--purple)}
+
+/* =========================================================================
+   26. EDITORIAL PASS — Apple-product-page air, Elysia-clean surfaces
+   Fewer boxes, longer silences between sections, a controlled line length.
+   ========================================================================= */
+/* One column, one width. Ragged block widths are what made it feel unfinished,
+   so the measure is enforced by the column itself rather than per element. */
+.wrap{max-width:940px}
+@media(min-width:920px){.wrap,.pbar .inner{max-width:940px}}
+.chklist{grid-template-columns:1fr}
+@media(min-width:1100px){.chklist{grid-template-columns:1fr 1fr}}
+
+/* The hero's <span> sits mid-sentence on the index and at the end on stage pages,
+   so it has to stay inline: one solid accent hue, no second gradient. */
+.hero h1 span{background:none;-webkit-text-fill-color:var(--purple);color:var(--purple)}
+.story::after{display:none}  /* the quote watermark collided with the text */
+
+/* Air between sections, but a walkthrough is a reference: dense enough to scan.
+   Section rhythm reads as deliberate silence, not as an empty page. */
+section{margin-top:clamp(56px,7vw,84px)}
+h2{margin-bottom:20px;padding-bottom:16px;font-size:clamp(23px,3vw,31px);letter-spacing:-.7px}
+h3{margin:32px 0 10px;font-size:18.5px}
+h3:has(.hn)::before{display:none}   /* the number badge is already the marker */
+.hero p{font-size:17px;line-height:1.75}
+header.hero{padding:clamp(56px,9vw,104px) 22px clamp(34px,5vw,58px)}
+
+/* Surfaces must read as solid objects with a crisp edge — washed-out glass looks
+   unfinished, which was the exact complaint. Opacity buys depth, not vagueness. */
+.card{background:var(--panel);border-color:var(--line);padding:24px 28px}
+.card:hover{transform:none}
+.story{background:linear-gradient(135deg,color-mix(in srgb,var(--purple) 11%,transparent),color-mix(in srgb,var(--panel) 85%,transparent) 60%);
+  border-color:var(--line-soft);padding:18px 24px}
+.callout{background-color:var(--panel)}
+.tip{background-image:linear-gradient(90deg,color-mix(in srgb,var(--green) 12%,transparent),transparent 55%)}
+.warn{background-image:linear-gradient(90deg,color-mix(in srgb,var(--red) 12%,transparent),transparent 55%)}
+.secret{background-image:linear-gradient(90deg,color-mix(in srgb,var(--purple) 12%,transparent),transparent 55%)}
+.puz{background:linear-gradient(180deg,color-mix(in srgb,var(--cyan) 9%,transparent),var(--panel) 70%)}
+.boss{background:linear-gradient(150deg,color-mix(in srgb,var(--red) 10%,transparent),var(--panel) 65%)}
+.chk{background:var(--panel);border-color:var(--line-soft)}
+
+/* =========================================================================
+   27. READABILITY PASS
+   Small print was set in 12–13px inline styles across 35 files; those are now
+   `data-note` attributes so size lives here. Tables get room to breathe.
+   ========================================================================= */
+body{font-size:16.5px;line-height:1.85}
+[data-note]{font-size:14.5px;color:var(--muted);line-height:1.8;margin:12px 0}
+[data-note] b{color:var(--ink-soft)}
+
+/* Tables get a little more room than the prose column, but they must stay INSIDE
+   their column: a viewport-centred breakout lands off-centre once the page uses
+   the two-column sidebar layout, which pushed every table to the right. */
+.tbl-wrap{width:100%;margin-left:0;transform:none}
+/* The breakout is for a table that IS the column content. A table nested inside a
+   padded block (a .callout, a .boss, a .card) has no room to break out of, so the
+   negative margin pushed it past its parent and grew the document width -- 33px of
+   phantom horizontal overflow on the pages that happen to have such a table. */
+@media(min-width:1120px){
+  .tbl-wrap{margin-inline:-26px;width:calc(100% + 52px)}
+  .callout .tbl-wrap,.boss .tbl-wrap,.card .tbl-wrap,.puz .tbl-wrap,.story .tbl-wrap,
+  .pick .tbl-wrap,.prep .tbl-wrap,.skill .tbl-wrap{margin-inline:0;width:100%}
+}
+/* Size to content, not to the container: a two-column MP table stretched to full
+   width leaves a canyon between its columns. Wide tables still fill and scroll. */
+table{width:auto;min-width:0;max-width:100%;font-size:15px}
+th,td{padding:14px 18px;line-height:1.7}
+td:first-child{min-width:158px}
+th{font-size:12px;letter-spacing:.8px}
+table b{font-weight:700}
+
+/* =========================================================================
+   28. SECTION IDENTITY
+   Problem: the same quote-card was used for both the section narrative and the
+   per-step flavour text, so the page read as one undifferentiated stack.
+   Rule: ONE narrative card per section (the opener). Flavour text that follows
+   a sub-heading becomes quiet aside prose. Sections get their own ground.
+   ========================================================================= */
+.wrap{counter-reset:sec}
+section{position:relative;counter-increment:sec}
+
+/* Ghost section number — the strongest "this is a new section" cue there is */
+section>h2{position:relative}
+section::after{
+  content:counter(sec,decimal-leading-zero);position:absolute;right:-4px;top:-30px;z-index:-1;
+  font:700 clamp(56px,8vw,104px)/1 var(--f-disp);letter-spacing:-4px;pointer-events:none;
+  color:color-mix(in srgb,var(--ink) 7%,transparent);
+}
+/* No alternating background bands: they cut the page into visible slabs, which is
+   the opposite of the seamless read we want. Separation comes from space + the
+   ghost number + the heading rule alone. */
+
+/* Flavour text after a sub-heading: an aside, not another card */
+h3+.story{
+  background:none;border:none;border-left:2px solid color-mix(in srgb,var(--purple) 45%,transparent);
+  border-radius:0;padding:2px 0 2px 18px;margin:10px 0 14px;box-shadow:none;
+  color:var(--muted);font-size:15.5px;
+}
+h3+.story::before{display:none}
+h3+.story b{color:var(--ink-soft);font-weight:600}
+
+/* The one narrative card left per section keeps the full treatment */
+.wrap>.story,section>.story:first-of-type{font-size:16px;color:var(--ink-soft)}
+
+/* =========================================================================
+   29. APP LAYOUT — stop shipping a document, ship an interface
+   Desktop: the in-page TOC becomes a sticky left rail beside the content.
+   Index: the stage list becomes a bento grid of cards.
+   ========================================================================= */
+@media(min-width:1120px){
+  .wrap:has(nav.toc){max-width:1260px;display:grid;gap:0 60px;
+    grid-template-columns:230px minmax(0,1fr);align-items:start}
+  .wrap:has(nav.toc)>*{grid-column:2;min-width:0}
+  .wrap>nav.toc{
+    /* Two separate traps here, both hit once already:
+       1. `grid-row:1` made the rail's full height define row 1, which left up to
+          567px of blank space beside a short first block. Spanning every row
+          (1/-1) fixes that — a spanning item only stretches rows when the whole
+          column is shorter than it, which never happens on these pages.
+       2. `height:0` "solved" it but the base rule sets `flex-wrap:wrap`, so a
+          zero-height column wrapped every link into its own column and the menu
+          spread sideways across the page. Never remove the height; keep nowrap. */
+    /* `1 / -1` does NOT span everything here: -1 refers to the end of the
+       EXPLICIT grid, and these rows are all implicit, so it collapsed to a
+       single row and the rail's height became that row's height again.
+       `span 999` spans the implicit rows for real. */
+    grid-column:1;grid-row:1/span 999;align-self:start;position:sticky;top:96px;
+    max-height:calc(100vh - 130px);overflow-y:auto;overscroll-behavior:contain;
+    display:flex;flex-direction:column;flex-wrap:nowrap;align-items:stretch;gap:2px;padding:8px 0 0;
+    border-right:1px solid var(--line-soft);
+  }
+  .wrap>nav.toc::before{content:"ในหน้านี้";font-size:11px;font-weight:700;letter-spacing:2.4px;
+    text-transform:uppercase;color:var(--muted);padding:0 0 10px 14px}
+  .wrap>nav.toc a{
+    text-align:left;background:none;border:none;border-left:2px solid transparent;border-radius:0;
+    padding:9px 14px;font-size:14px;transform:none;backdrop-filter:none;color:var(--muted);
+  }
+  .wrap>nav.toc a:hover{transform:none;color:var(--ink);border-left-color:var(--line)}
+  .wrap>nav.toc a.active{
+    background:linear-gradient(90deg,color-mix(in srgb,var(--purple) 14%,transparent),transparent);
+    border-left-color:var(--purple);color:var(--ink);box-shadow:none;font-weight:700;
+  }
+  .pbar .inner{max-width:1260px}
+}
+
+/* Index: a bento wall of stage cards, not a list of rows */
+@media(min-width:880px){
+  ol.stages{grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+  ol.stages li{padding:22px 22px 18px;display:flex;flex-direction:column;gap:6px;min-height:172px}
+  ol.stages li .st-n{position:static;width:44px;height:44px;border-radius:14px;font-size:17px;margin-bottom:6px}
+  ol.stages li a.nm{font-size:17.5px;line-height:1.35}
+  ol.stages li .ds{font-size:13.5px;margin-top:0}
+  ol.stages li .get{position:static;transform:none;max-width:none;text-align:left;margin-top:auto;padding-top:10px}
+  ol.stages li .gtag{margin:3px 4px 0 0}
+  /* the number badge moves into the flow in bento mode — the progress ring that
+     fx.js overlays on it has to follow, or it floats beside the wrong box */
+  ol.stages li .ring{left:22px;top:22px;width:44px;height:44px}
+  /* the first card of each act spans two columns — a rhythm break, on purpose */
+  ol.stages li:first-child{grid-column:span 2}
+  ol.stages li:first-child a.nm{font-size:22px}
+  .guidebar{grid-template-columns:repeat(3,1fr);gap:14px}
+}
+
+/* Cinematic stage hero: the stage number lives behind the title */
+header.hero{position:relative;isolation:isolate}
+header.hero .eyebrow{font-size:11px;letter-spacing:3.6px}
+
+/* =========================================================================
+   30. ACCESSIBILITY + INTERACTION FIXES (measured, not guessed)
+   Light-mode gold/cyan were bright enough for glow but failed WCAG AA as text
+   (3.66:1 and 3.59:1 against white). Text now uses darker siblings; the bright
+   values stay for glow, borders and badge grounds where 3:1 is the bar.
+   ========================================================================= */
+:root{--gold-text:#8a5a04;--cyan-text:#06707f;--green-text:#0f7350}
+[data-theme="dark"]{--gold-text:var(--gold);--cyan-text:var(--cyan);--green-text:var(--green)}
+.pbar b,.flag,ol.stages li .st-n,.fx-pal a .k,.navbtns a:hover,nav.toc a:hover{color:var(--gold-text)}
+/* `.sec-done` joins the existing exclusion list for the same reason `.nm` and
+   `.home` are on it: this rule's specificity is (0,4,2) — the four :not()
+   arguments each count — so it silently outranks any later `nav.toc a.sec-done`
+   rule, and a finished section's link stayed cyan like every other link. */
+.puz h4,.drops b,a:not(.navbtns a):not(.gt):not(.nm):not(.home):not(.sec-done):not(.sec-part){color:var(--cyan-text)}
+.steps li::before{color:var(--cyan-text);border-color:var(--cyan-text)}
+.tip b,.safe{color:var(--green-text)}
+.b-key,.gt-key{color:var(--gold-text)}
+.b-quest,.gt-quest{color:var(--cyan-text)}
+.chk .it,td .item,td .n,td .nm{text-decoration-color:color-mix(in srgb,var(--gold-text) 45%,transparent)}
+
+/* Headings set their own leading — body's 1.85 is far too loose for bold titles */
+h2{line-height:1.25}
+h3{line-height:1.45}
+.hero h1{line-height:1.14}
+
+/* The whole checklist row is now the click target (it always looked like one).
+   The native box is stretched invisibly over the row and the visual box is drawn
+   by ::after, so no HTML change is needed on 30 stage pages. */
+.chk{position:relative;padding-left:54px;min-height:52px;align-items:center}
+.chk input{position:absolute;inset:0;width:100%;height:100%;margin:0;padding:0;opacity:0;
+  border:none;background:none;border-radius:inherit;cursor:pointer;box-shadow:none;appearance:none}
+.chk::after{
+  content:"";position:absolute;left:17px;top:50%;transform:translateY(-50%);
+  width:23px;height:23px;border:1.7px solid var(--line);border-radius:8px;
+  background:var(--panel-solid);background-repeat:no-repeat;background-position:center;
+  background-size:14px;transition:background-color .2s,border-color .2s,box-shadow .2s;
+}
+.chk:hover::after{border-color:var(--green-text)}
+.chk:has(input:checked)::after{
+  border-color:transparent;background-color:var(--green-text);
+  box-shadow:0 0 16px -4px var(--green-text);
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3.2' stroke-linecap='round' stroke-linejoin='round'><path d='m5 12.5 4.5 4.5L19 7'/></svg>");
+}
+.chk:has(input:focus-visible){outline:2px solid var(--cyan);outline-offset:3px}
+
+/* Done rows: dim the surface, never the text — dimming text undoes the contrast work */
+.chk.done{opacity:1;background:var(--panel2);border-color:color-mix(in srgb,var(--green) 26%,transparent)}
+.chk.done .lbl{color:var(--muted);text-decoration:line-through;text-decoration-color:var(--green-text)}
+.chk.done .it{color:var(--muted);box-shadow:none}
+
+/* Hit targets: 24px is the floor for a pointer target */
+.rst{min-height:30px;padding:6px 14px}
+nav.toc a,.navbtns a{min-height:36px;display:inline-flex;align-items:center}
+
+/* =========================================================================
+   31. NARRATIVE FIRST
+   This guide is a story you read top to bottom, not a checklist. The prose gets
+   the best typography on the page; the checklist is support.
+   ========================================================================= */
+/* The stage's opening narrative — the "novel" paragraph */
+.wrap>.story{
+  font-size:18px;line-height:2;color:var(--ink-soft);padding:26px 32px;margin:26px 0 8px;
+  border-left-width:3px;border-radius:4px var(--r-lg) var(--r-lg) 4px;
+}
+.wrap>.story b{color:var(--ink);font-weight:700}
+
+/* Per-scene mood text: quieter than the steps, but still comfortable reading */
+h3+.story{font-size:16px;color:var(--ink-soft);padding-left:20px;margin:12px 0 16px}
+h3+.story b{color:var(--ink)}
+
+/* Steps carry the actual play instructions — they must be the crispest text */
+.steps li{font-size:16.5px;color:var(--ink)}
+
+/* Legend chips inside a callout were reading like highlighter marks */
+.callout .gtag,.callout .badge{background:transparent;border:1px solid currentColor;font-weight:700}
+.guidebar .gi{background:color-mix(in srgb,var(--purple) 14%,transparent);color:var(--purple);
+  border:1px solid color-mix(in srgb,var(--purple) 32%,transparent)}
+[data-theme="dark"] .guidebar .gi{color:var(--purple)}
+
+/* =========================================================================
+   32. CONTENT COMPONENTS
+   Purpose-built blocks for the reference pages. Generic cards flatten meaning;
+   a gear loadout, a tier list and a combo are different things and should look
+   different at a glance.
+   ========================================================================= */
+
+/* --- Recommended loadout: "put THIS on THIS character" ------------------- */
+.setup{
+  background:linear-gradient(150deg,color-mix(in srgb,var(--green) 10%,transparent),var(--panel) 62%);
+  border:1px solid color-mix(in srgb,var(--green) 30%,transparent);
+  border-radius:var(--r-lg);padding:20px 24px;margin:16px 0;position:relative;
+}
+.setup>h4,.setup .who{margin:0 0 4px;font-family:var(--f-disp);font-size:17px;font-weight:700;color:var(--ink)}
+.setup .role{color:var(--muted);font-size:14px;margin:0 0 12px}
+.setup .slots{display:flex;gap:9px;flex-wrap:wrap;margin-top:10px}
+.setup .slot{
+  background:var(--panel-solid);border:1px solid var(--line);color:var(--ink);
+  border-radius:11px;padding:8px 14px;font-weight:700;font-size:14px;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.08);transition:.25s cubic-bezier(.16,1,.3,1);
+}
+.setup .slot:hover{transform:translateY(-2px);border-color:var(--green-text);
+  box-shadow:0 10px 24px -14px var(--green-text)}
+.setup .slot small{display:block;font-weight:400;font-size:11.5px;color:var(--muted);margin-top:2px}
+
+/* --- Tier list ---------------------------------------------------------- */
+.tierlist{display:grid;gap:10px;margin:16px 0}
+.tier{display:flex;gap:14px;align-items:stretch}
+.tier .lab{
+  flex:0 0 54px;border-radius:14px;display:flex;align-items:center;justify-content:center;
+  font-family:var(--f-disp);font-weight:800;font-size:22px;color:#fff;letter-spacing:-1px;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.28);
+}
+.tS{background:linear-gradient(140deg,#ff5f7e,#b3123c)}
+.tA{background:linear-gradient(140deg,#ffb648,#c07a06);color:#22160a}
+.tB{background:linear-gradient(140deg,#5aa9ff,#2a5fc4)}
+.tC{background:linear-gradient(140deg,#8e9cb5,#5b6880)}
+.tier .items{flex:1;background:var(--panel);border:1px solid var(--line);border-radius:14px;
+  padding:12px 18px;display:flex;align-items:center;flex-wrap:wrap;gap:8px 14px;font-size:15px}
+
+/* --- Ability / combo card ---------------------------------------------- */
+.combo{
+  background:var(--panel);border:1px solid var(--line);border-left:3px solid var(--purple);
+  border-radius:6px var(--r-md) var(--r-md) 6px;padding:16px 20px;margin:12px 0;
+}
+.combo .cname{font-family:var(--f-disp);font-weight:700;font-size:16.5px;color:var(--ink);
+  display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.combo .cwhy{color:var(--muted);font-size:14.5px;margin:6px 0 0}
+.mp{
+  display:inline-block;background:color-mix(in srgb,var(--blue) 14%,transparent);
+  border:1px solid color-mix(in srgb,var(--blue) 34%,transparent);color:var(--blue);
+  border-radius:999px;padding:2px 10px;font-size:12.5px;font-weight:700;
+  font-variant-numeric:tabular-nums;
+}
+[data-theme="light"] .mp{color:#1d4ed8}
+.wtitle{font-family:var(--f-disp);font-weight:700;font-size:16px;color:var(--ink);
+  display:flex;align-items:center;gap:10px;margin:22px 0 8px}
+.wtitle::before{content:"";width:6px;height:18px;border-radius:3px;
+  background:linear-gradient(180deg,var(--gold),var(--red))}
+
+/* --- Key/value spec rows ------------------------------------------------ */
+.kv{display:grid;grid-template-columns:auto 1fr;gap:6px 16px;margin:12px 0;font-size:15px}
+.kv dt{color:var(--muted);font-weight:600}
+.kv dd{margin:0;color:var(--ink)}
+
+/* =========================================================================
+   33. STICKY STACK
+   Two bars pin at the top (the progress bar, then the current-section strip
+   fx.js injects). Anchors must clear BOTH, and the strip must be opaque enough
+   that headings do not ghost through it while scrolling.
+   ========================================================================= */
+section,.boss[id],div[id]{scroll-margin-top:132px}
+#fxSectionStrip{
+  background:color-mix(in srgb,var(--bg) 95%,transparent);
+  backdrop-filter:blur(24px) saturate(160%);-webkit-backdrop-filter:blur(24px) saturate(160%);
+  box-shadow:0 1px 0 var(--line-soft),0 12px 24px -22px rgba(8,12,26,.7);
+}
+#fxSectionStrip .inner{font-weight:700;color:var(--ink)}
+
+/* =========================================================================
+   34. INLINE PICKUPS — the play-order reading model
+   You read a scene, walk it, and tick what you found RIGHT THERE. Loot never
+   lives in a separate section at the bottom of the page; only the fiend table
+   (a lookup, not a step) belongs at the end.
+   ========================================================================= */
+.pick{
+  margin:14px 0 18px;padding:14px 18px 16px;border-radius:var(--r-md);
+  background:color-mix(in srgb,var(--gold) 7%,var(--panel));
+  border:1px solid color-mix(in srgb,var(--gold) 26%,transparent);
+}
+.pick>h4{
+  margin:0 0 10px;font-family:var(--f-disp);font-size:13px;font-weight:700;
+  letter-spacing:1.6px;text-transform:uppercase;color:var(--muted);
+  display:flex;align-items:center;gap:9px;
+}
+.pick>h4::before{content:"";width:16px;height:16px;flex:0 0 auto;background:var(--gold-text);
+  -webkit-mask-size:contain;mask-size:contain;-webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;
+  -webkit-mask-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.8' stroke-linejoin='round'><path d='M3 8h18v12H3z'/><path d='M3 8l2.5-4h13L21 8'/><path d='M12 4v16'/></svg>")}
+.pick .sec-count{margin-left:auto}
+.pick .chklist{grid-template-columns:1fr;gap:7px;margin:0}
+/* padding-left must clear the absolutely-positioned checkbox (left:17px, 23px wide);
+   an earlier shorthand here reset it to 14px and the label ran under the box. */
+.pick .chk{background:var(--panel-solid);min-height:46px;padding:11px 16px 11px 54px}
+@media(min-width:1100px){.pick .chklist{grid-template-columns:1fr}}
+
+/* A boss met mid-scene needs to read as an event in the flow, not an appendix */
+#walk .boss,.scene .boss{margin:20px 0 22px}
+
+/* =========================================================================
+   35. CALM DOWN THE CHROME
+   The entrance animation and the drop shadows were loud enough to be noticed
+   as effects. Depth should be felt, not seen; a reveal should be over before
+   the reader registers it.
+   ========================================================================= */
+/* =========================================================================
+   REVEAL: OFF.
+   Measured on ref-sidequests: the first section sat at opacity 0 with a 32px
+   offset and never revealed, because a scroll-driven timeline maps an element
+   that is already at the top of the page to progress 0. The reader saw a 615px
+   blank gap. A guide is read while playing — content is never allowed to be
+   invisible or late. !important is required to beat the script's animation.
+   ========================================================================= */
+.rv,.rv.in,section,.card,.story,.boss,.callout,.puz,.chklist,.tbl-wrap,ol.stages li,.guidebar a{
+  opacity:1!important;transform:none!important;filter:none!important;
+}
+.rv{transition:none}
+.card,.puz,.boss,.guidebar a,ol.stages li,.primer-link,.tbl-wrap,.prow,#themeToggle,.fx-fab,.fx-pal .box{
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.08),
+    0 1px 2px rgba(8,12,26,.06),
+    0 8px 22px -20px rgba(8,12,26,.4);
+}
+[data-theme="dark"] .card,[data-theme="dark"] .puz,[data-theme="dark"] .boss,
+[data-theme="dark"] .guidebar a,[data-theme="dark"] ol.stages li,[data-theme="dark"] .primer-link,
+[data-theme="dark"] .tbl-wrap,[data-theme="dark"] .prow{
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.05),0 12px 30px -26px rgba(0,0,0,.75);
+}
+.card:hover,ol.stages li:hover,.guidebar a:hover,.primer-link:hover{
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.08),0 14px 34px -24px rgba(8,12,26,.45);
+}
+.boss{animation:none}          /* the red pulse read as a warning light */
+.story,.callout,.puz{box-shadow:none}
+
+/* =========================================================================
+   36. HERO: TYPE ONLY
+   The decorative crest ring sat directly behind the headline and read as a
+   stray circle — decoration with no job. The hero now carries the title, the
+   badges and nothing else; depth comes from the gradient field alone.
+   ========================================================================= */
+/* !important is needed here, not laziness: art.css and gimmicks.css load AFTER
+   this file, so a plain rule would lose to theirs. */
+.art-hero-crest{display:none!important}
+header.hero::before{opacity:.55}
+/* Ornamental rules between sections: pure decoration, and they sat on top of the
+   checklist text. Space already separates sections — the line added nothing. */
+.art-divider{display:none!important}
+/* The footer wave used a viewport-width breakout, which overshoots once a
+   scrollbar exists and pushed the page 145px wide horizontally. Clip it. */
+.art-footer-wave{width:100%!important;max-width:100%!important;margin-left:0!important;
+  transform:none!important;overflow:hidden!important}
+
+/* Boss blocks: no entrance animation and no battle-wipe overlay. A boss is the
+   thing the reader came for; it must be on screen the instant they reach it. */
+/* gimmicks.js puts `gm-wipe` on the .boss ELEMENT itself, so hiding that class
+   hid all 53 boss cards site-wide. Hide only the wipe overlay it paints. */
+.boss.gm-wipe::after,.gm-screen-tint{display:none!important}
+.boss.gm-wipe{display:block!important;opacity:1!important}
+.boss,.boss.rv,.boss.rv:not(.in){opacity:1!important;transform:none!important;filter:none!important}
+
+/* =========================================================================
+   37. WHOLE-CARD CLICK TARGETS
+   If a block looks like a card, the whole card should be the link — hunting
+   for the title text is a needless precision task.
+   ========================================================================= */
+ol.stages li{position:relative}
+ol.stages li a.nm::after{content:"";position:absolute;inset:0;z-index:2;border-radius:inherit}
+/* No `position:relative` here: it overrode `.get`'s absolute placement, dropped
+   the reward tags back into flow and `overflow:hidden` clipped them (63px lost
+   on desktop). An absolutely-positioned element already honours z-index. */
+ol.stages li .st-n,ol.stages li .get,ol.stages li .ring{z-index:3;pointer-events:none}
+ol.stages li .st-n{position:absolute}
+@media(min-width:880px){ol.stages li .st-n{position:static}}
+ol.stages li:focus-within{outline:2px solid var(--cyan);outline-offset:3px}
+
+/* =========================================================================
+   38. STICKY BARS AS FLOATING PILLS
+   A full-width opaque band cut the page in half and fought the glass language
+   everything else uses. The bars keep their job; they just stop being walls.
+   ========================================================================= */
+.pbar,#fxSectionStrip{
+  background:none!important;border:none!important;box-shadow:none!important;
+  backdrop-filter:none!important;-webkit-backdrop-filter:none!important;
+  padding:10px 22px;pointer-events:none;
+}
+.pbar::after,#fxSectionStrip::after{display:none!important}
+.pbar .inner,#fxSectionStrip .inner{
+  pointer-events:auto;gap:12px;padding:9px 8px 9px 18px;border-radius:999px;
+  background:color-mix(in srgb,var(--panel-solid) 82%,transparent);
+  border:1px solid var(--line);
+  backdrop-filter:blur(22px) saturate(170%);-webkit-backdrop-filter:blur(22px) saturate(170%);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.10),0 10px 30px -20px rgba(8,12,26,.55);
+}
+#fxSectionStrip{padding-top:0}
+#fxSectionStrip .inner{padding:7px 18px;font-size:12.5px}
+/* On desktop the sticky left rail already shows which section you are in, so the
+   strip is a second answer to a question nobody asked twice. Mobile keeps it. */
+@media(min-width:1120px){#fxSectionStrip{display:none!important}}
+/* The progress pill hugs its content instead of stretching the full column */
+.pbar .inner{width:fit-content;max-width:100%;margin-inline:auto}
+.pbar-track{height:7px}
+.rst{margin-left:2px}
+
+/* =========================================================================
+   39. DENSITY PASS
+   A walkthrough is read while playing — long silences between blocks turn into
+   scrolling work. Keep the air between SECTIONS, take it back everywhere else.
+   ========================================================================= */
+section{margin-top:clamp(40px,5vw,64px)}
+h2{margin-bottom:16px;padding-bottom:12px}
+h3{margin:26px 0 8px}
+.wrap{padding-bottom:64px}
+header.hero{padding:clamp(40px,6vw,72px) 22px clamp(24px,3vw,38px)}
+.hero p{margin-top:12px}
+.badges{margin-top:14px}
+.navbtns{margin-top:18px}
+.wrap>.navbtns{margin-top:40px}
+.story{margin:12px 0;padding:15px 20px}
+.wrap>.story{padding:20px 26px;margin:18px 0 6px}
+h3+.story{margin:8px 0 12px}
+.card{padding:20px 24px;margin:12px 0}
+.callout{margin:12px 0;padding:13px 18px 13px 20px}
+.boss{padding:18px 22px;margin:16px 0}
+.puz{padding:16px 20px;margin:12px 0}
+.pick{margin:12px 0 14px;padding:12px 16px 14px}
+.steps li{margin:9px 0}
+.chklist{gap:7px}
+.chk{min-height:48px}
+footer{margin-top:44px}
+nav.toc{padding:16px 0 2px}
+
+/* =========================================================================
+   40. CHECKLIST PRIORITY
+   Not every box matters the same. Three levels, readable at a glance without
+   reading the label: lose-it-forever, run-defining, ordinary loot.
+   Applied per row as .pri-miss / .pri-key / .pri-side (fx.js tags them).
+   ========================================================================= */
+.chk::before{transform:scaleY(1);width:4px;background:var(--line);opacity:.6}
+.chk:hover::before{opacity:1}
+
+.chk.pri-miss{background:color-mix(in srgb,var(--red) 7%,var(--panel));
+  border-color:color-mix(in srgb,var(--red) 32%,transparent)}
+.chk.pri-miss::before{background:var(--red);opacity:1}
+.chk.pri-miss .lbl::after{
+  content:"หายถาวร";margin-left:9px;padding:2px 9px;border-radius:999px;font-size:11px;
+  font-weight:700;white-space:nowrap;color:var(--red);
+  background:color-mix(in srgb,var(--red) 14%,transparent);
+  border:1px solid color-mix(in srgb,var(--red) 38%,transparent);
+}
+.chk.pri-key{background:color-mix(in srgb,var(--gold) 7%,var(--panel));
+  border-color:color-mix(in srgb,var(--gold) 30%,transparent)}
+.chk.pri-key::before{background:var(--gold);opacity:1}
+.chk.pri-key .lbl::after{
+  content:"ของสำคัญ";margin-left:9px;padding:2px 9px;border-radius:999px;font-size:11px;
+  font-weight:700;white-space:nowrap;color:var(--gold-text);
+  background:color-mix(in srgb,var(--gold) 15%,transparent);
+  border:1px solid color-mix(in srgb,var(--gold) 36%,transparent);
+}
+.chk.pri-side::before{background:var(--cyan);opacity:.9}
+.chk.done::before{background:var(--green)!important;opacity:1}
+.chk.done .lbl::after{opacity:.45}
+
+/* Legend printed once above each pick list so the colours explain themselves */
+.pick>h4::after{
+  content:"แดง = หายถาวร · ทอง = ของสำคัญ · ฟ้า = เควส/เสริม";
+  margin-left:auto;font-size:11px;font-weight:600;letter-spacing:0;text-transform:none;
+  color:var(--muted);opacity:.85;
+}
+@media(max-width:720px){.pick>h4::after{display:none}}
+
+/* =========================================================================
+   41. FLOATING HOME BUTTON
+   "Back to the index" is needed from anywhere on a long page, so it is pinned
+   top-left, mirroring the theme toggle top-right. The copy in the footer nav
+   stays where it is for readers who reach the end of the page.
+   ========================================================================= */
+/* NOTE: it cannot be the hero's copy — fx.js applies a parallax transform to the
+   hero, and a transformed ancestor turns position:fixed into position:absolute.
+   The footer copy lives in .wrap, which is never transformed. */
+/* fx.js injects .fx-home as a direct child of <body> — deliberately outside the
+   hero, whose parallax transform would otherwise capture position:fixed — and
+   hides the inline copies. Pages opened with the script blocked keep those
+   inline links, so there is always a way back to the index. */
+.fx-home{
+  position:fixed;top:14px;left:16px;z-index:70;height:46px;padding:0 18px;
+  display:inline-flex;align-items:center;gap:8px;border-radius:999px;
+  font-size:14px;font-weight:700;color:var(--ink);text-decoration:none;
+  background:var(--panel);border:1px solid var(--line);
+  backdrop-filter:blur(var(--blur)) saturate(160%);-webkit-backdrop-filter:blur(var(--blur)) saturate(160%);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.10),0 10px 26px -18px rgba(8,12,26,.55);
+  transition:transform .28s cubic-bezier(.16,1,.3,1),border-color .28s,box-shadow .28s,color .28s;
+}
+.fx-home:hover{
+  transform:translateY(-2px);color:var(--cyan-text);border-color:var(--cyan);
+  box-shadow:0 14px 30px -18px var(--cyan);
+}
+.fx-home:focus-visible{outline:2px solid var(--cyan);outline-offset:3px}
+@media(max-width:720px){
+  .fx-home{top:10px;left:10px;height:40px;padding:0 14px;font-size:13px}
+  #themeToggle{top:10px;right:10px;width:40px;height:40px}
+}
+
+/* Checklist rows are UI, not prose: body leading (1.85) made two-line labels
+   tower over the checkbox. Tighter leading, aligned to the box. */
+.chk .lbl{line-height:1.6}
+.chk{align-items:center}
+table td,table th{line-height:1.65}
+
+/* =========================================================================
+   42. SPACING LEAKS
+   Measured on the reference pages: gaps between sections came out 96–163px
+   although the section rule asks for 64px. The last block inside a section was
+   adding its own margin on top of the section margin. Collapse those.
+   ========================================================================= */
+section>*:last-child,.pick>*:last-child,.card>*:last-child,.boss>*:last-child,
+.puz>*:last-child,.story>*:last-child,.callout>*:last-child{margin-bottom:0!important}
+/* margins collapse THROUGH a padding-less wrapper, so reset one level deeper too */
+section>*:last-child>*:last-child,section>*:last-child>*:last-child>*:last-child{margin-bottom:0}
+section>*:first-child{margin-top:0}
+section{margin-top:clamp(28px,3vw,44px)}
+/* The ghost section number was 102px tall and read as empty space above the
+   heading; smaller and tucked closer, it reads as a watermark instead. */
+section::after{font-size:clamp(40px,5vw,72px);top:-14px;letter-spacing:-2px}
+
+/* Light-mode HP chip measured 4.25:1 — just under the 4.5 floor */
+[data-theme="light"] .hp{color:#b3123c}
+
+/* =========================================================================
+   43. INLINE EVENT BLOCKS
+   Checklist, boss and Cloister all live inside the walkthrough flow now, so each
+   one needs a label that makes it findable while scrolling — the same job the
+   old section headings used to do, without breaking play order.
+   ========================================================================= */
+.puz{position:relative;border-left:3px solid var(--cyan);border-radius:6px var(--r-lg) var(--r-lg) 6px}
+.puz::after{
+  content:"CLOISTER";position:absolute;top:-10px;right:18px;
+  font-family:var(--f-disp);font-size:10.5px;font-weight:700;letter-spacing:2.4px;color:#fff;
+  padding:3px 12px;border-radius:999px;background:linear-gradient(135deg,var(--cyan),#0a6f80);
+  box-shadow:0 8px 20px -8px var(--cyan);
+}
+.pick{position:relative}
+.pick::after{
+  content:"เก็บของ";position:absolute;top:-10px;right:18px;
+  font-family:var(--f-disp);font-size:10.5px;font-weight:700;letter-spacing:1.6px;color:#fff;
+  padding:3px 12px;border-radius:999px;background:linear-gradient(135deg,var(--gold),#a05e00);
+  box-shadow:0 8px 20px -8px var(--gold);
+}
+.pick>h4{padding-right:96px}
+/* Some ticks are events, not loot — a story beat, a shop opening, a quest step.
+   Same component, honest label. */
+.pick.milestone{background:color-mix(in srgb,var(--purple) 8%,var(--panel));
+  border-color:color-mix(in srgb,var(--purple) 30%,transparent)}
+.pick.milestone::before{background:var(--purple)}
+.pick.milestone::after{content:"จุดสำคัญ";background:linear-gradient(135deg,var(--purple),#4a1e9e)}
+.pick.milestone>h4::before{background:var(--purple-text);
+  -webkit-mask-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'><path d='M5 3v18'/><path d='M5 4h11l-2 4 2 4H5'/></svg>");
+  mask-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'><path d='M5 3v18'/><path d='M5 4h11l-2 4 2 4H5'/></svg>")}
+.boss h3,.puz h4,.pick>h4{scroll-margin-top:132px}
+
+/* Two more beats the reader needs to spot while scrolling: when to PREPARE for a
+   fight, and when a permanent ability is on offer. Same shape as .pick. */
+.prep,.skill{position:relative;margin:14px 0 16px;padding:14px 18px 16px;border-radius:var(--r-md)}
+.prep>h4,.skill>h4{margin:0 0 10px;font-family:var(--f-disp);font-size:13px;font-weight:700;
+  letter-spacing:1.6px;text-transform:uppercase;color:var(--muted);padding-right:104px}
+.prep{background:color-mix(in srgb,var(--red) 7%,var(--panel));
+  border:1px solid color-mix(in srgb,var(--red) 28%,transparent)}
+.prep::after{content:"เตรียมตัว";background:linear-gradient(135deg,var(--red),#8f1030)}
+.skill{background:color-mix(in srgb,var(--purple) 8%,var(--panel));
+  border:1px solid color-mix(in srgb,var(--purple) 30%,transparent)}
+.skill::after{content:"ได้สกิล";background:linear-gradient(135deg,var(--purple),#4a1e9e)}
+.prep::after,.skill::after{
+  position:absolute;top:-10px;right:18px;font-family:var(--f-disp);font-size:10.5px;
+  font-weight:700;letter-spacing:1.6px;color:#fff;padding:3px 12px;border-radius:999px;
+  box-shadow:0 8px 20px -10px rgba(8,12,26,.7);
+}
+.prep ul,.skill ul{margin:6px 0 0}
+.prep li,.skill li{margin:5px 0}
+
+/* =========================================================================
+   44. DEFECTS FROM THE VISUAL REVIEW (each one measured, not guessed)
+   ========================================================================= */
+/* Two spots still used the raw --cyan as text: measured 3.15:1 in light mode */
+.hero .eyebrow,.navbtns .home{color:var(--cyan-text)}
+
+/* Mobile tables scroll but gave no hint: 356px visible of 584px content.
+   A fading edge is the standard affordance for "there is more to the right". */
+.tbl-wrap{position:relative}
+@media(max-width:760px){
+  .tbl-wrap::after{
+    content:"";position:absolute;top:0;right:0;bottom:0;width:34px;pointer-events:none;
+    background:linear-gradient(90deg,transparent,var(--panel-solid));
+    border-radius:0 var(--r-lg) var(--r-lg) 0;
+  }
+  td:first-child{min-width:120px}
+  nav.toc a{min-height:44px}      /* thumb-sized targets on touch */
+  .navbtns a{min-height:44px}
+}
+
+/* =========================================================================
+   45. QA DEFECTS (measured across 140 renders: 35 files x 2 themes x 2 sizes)
+   ========================================================================= */
+/* The text-safe token set was missing red and purple, so every status chip that
+   used the raw decorative hue failed AA: b-miss 2.99, b-boss 3.13, hp 3.18,
+   b-quest 3.75. */
+:root{--red-text:#b3123c;--purple-text:#5b21b6}
+[data-theme="dark"]{--red-text:var(--red);--purple-text:var(--purple)}
+.b-miss,.b-boss,.hp,.miss,.warn b{color:var(--red-text)}
+.b-aeon,.gt-aeon,.secret b,.story b{color:var(--purple-text)}
+[data-theme="dark"] .story b{color:var(--ink)}
+
+/* White on a gold gradient measured 2.01:1. Darken the chip, keep the shape. */
+.hn{background:linear-gradient(135deg,#8a5a04,#8f1030);color:#fff}
+.hn.sm{background:linear-gradient(135deg,#06707f,#4a1e9e)}
+[data-theme="dark"] .hn{background:linear-gradient(135deg,var(--gold),var(--red));color:#1a1206}
+[data-theme="dark"] .hn.sm{background:linear-gradient(135deg,var(--cyan),var(--purple));color:#0a1020}
+
+/* The opening narrative sat 110–157px above the first section on 8 pages */
+.wrap>.story{margin:14px 0 0}
+.wrap>.story+section,.wrap>.callout+section{margin-top:clamp(22px,2.4vw,34px)}
+
+/* =========================================================================
+   46. PUZZLE MAP
+   Compass prose ("north of the right one, then south-west") is unreadable for a
+   spatial task. A room is a picture: draw it, number the order, keep the words
+   as a caption. Markup:
+     <div class="pmap" style="--cols:5;--rows:4" data-room="ห้องใหญ่">
+       <span class="pnode" style="--x:3;--y:4" data-n="1">สวิตช์หน้าสุด</span>
+       …
+       <span class="pnode is-goal" style="--x:1;--y:1" data-n="5">แท่นวาง Sphere</span>
+     </div>
+   ========================================================================= */
+.pmap{
+  --cols:5;--rows:4;
+  position:relative;display:grid;gap:6px;margin:14px 0 18px;padding:34px 18px 18px;
+  grid-template-columns:repeat(var(--cols),1fr);
+  grid-template-rows:repeat(var(--rows),minmax(46px,auto));
+  background:
+    linear-gradient(color-mix(in srgb,var(--line) 55%,transparent) 1px,transparent 1px) 0 0/100% calc(100%/var(--rows)),
+    linear-gradient(90deg,color-mix(in srgb,var(--line) 55%,transparent) 1px,transparent 1px) 0 0/calc(100%/var(--cols)) 100%,
+    var(--panel);
+  border:1px solid var(--line);border-radius:var(--r-lg);
+}
+.pmap::before{
+  content:attr(data-room);position:absolute;top:9px;left:18px;
+  font-family:var(--f-disp);font-size:11.5px;font-weight:700;letter-spacing:1.6px;
+  text-transform:uppercase;color:var(--muted);
+}
+.pmap::after{  /* compass, so "north" in the caption means something on screen */
+  content:"N ↑";position:absolute;top:9px;right:18px;font-family:var(--f-disp);
+  font-size:11px;font-weight:700;letter-spacing:1.4px;color:var(--muted);
+}
+.pnode{
+  grid-column:var(--x);grid-row:var(--y);align-self:center;justify-self:center;
+  position:relative;min-width:44px;padding:8px 10px 8px 34px;border-radius:10px;
+  background:var(--panel-solid);border:1px solid var(--line);
+  font-size:12.5px;line-height:1.35;color:var(--ink);text-align:left;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.08),0 6px 16px -12px rgba(8,12,26,.5);
+}
+.pnode::before{  /* the order number — the whole point of the diagram */
+  content:attr(data-n);position:absolute;left:7px;top:50%;transform:translateY(-50%);
+  width:21px;height:21px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+  font-family:var(--f-disp);font-size:11.5px;font-weight:700;color:#fff;
+  background:linear-gradient(135deg,var(--cyan-text),var(--purple-text));
+}
+[data-theme="dark"] .pnode::before{background:linear-gradient(135deg,var(--cyan),var(--purple));color:#0a1020}
+.pnode.is-goal{border-color:color-mix(in srgb,var(--gold) 45%,transparent);
+  background:color-mix(in srgb,var(--gold) 10%,var(--panel-solid))}
+.pnode.is-goal::before{background:linear-gradient(135deg,var(--gold-text),#8f1030)}
+.pnode.is-start{border-color:color-mix(in srgb,var(--green) 45%,transparent)}
+.pmap+.steps,.pmap+p{margin-top:8px}
+@media(max-width:640px){
+  /* Measured: at 390px the fixed node minimums pushed content past the map's
+     own edge. Nodes must be free to shrink, and the label wraps instead. */
+  .pmap{grid-template-rows:repeat(var(--rows),minmax(34px,auto));padding:28px 8px 10px;gap:4px}
+  .pnode{font-size:11px;line-height:1.3;padding:5px 6px 5px 24px;min-width:0;
+    justify-self:stretch;overflow-wrap:anywhere}
+  .pnode::before{width:16px;height:16px;font-size:9.5px;left:4px}
+}
+
+/* =========================================================================
+   47. TOOLTIPS MUST ESCAPE THEIR BOX
+   Measured: 38 of 209 glossary terms sit inside a `.callout`, which was set to
+   overflow:hidden to contain its accent bar — so their tooltips were clipped
+   away entirely. The bar and the watermark are both inside the padding box, so
+   the clipping was never needed.
+   ========================================================================= */
+.callout{overflow:visible}
+.term[data-tip]::after{z-index:60}
+/* Near the top of the viewport a tooltip would open under the sticky bar, so
+   terms in the first screenful flip theirs downward. */
+.term[data-tip].tip-down::after{bottom:auto;top:calc(100% + 10px);transform:translate(calc(-50% + var(--tip-dx,0px)),-6px)}
+.term[data-tip].tip-down:hover::after,.term[data-tip].tip-down:focus-visible::after{transform:translate(calc(-50% + var(--tip-dx,0px)),0)}
+
+/* Text rhythm: Thai body copy needs more leading than Latin UI chrome */
+.story,.card p,.callout,li{line-height:1.85}
+.hero .eyebrow,.badge,.gtag,th,.navbtns a,nav.toc a{line-height:1.4}
+h2,h3,.hero h1{text-wrap:balance}
+p,li,.lbl{text-wrap:pretty}
+
+/* =========================================================================
+   48. TABLES MUST FILL THEIR CARD
+   fx.js wraps every <table> in a .tbl-wrap card, so the table IS the card's
+   content. Section 27 set `table{width:auto}` to stop a two-column table from
+   stretching until its two columns drifted apart into a canyon — but that made
+   EVERY table size to its text, so a wide table (ref-gear #proof, 4 columns)
+   stopped short of the card's right edge and left a band of bare card showing.
+   Default is now fill. The canyon case is handled properly instead of by
+   shrinking: give the two-column layout a fixed 38/62 split.
+   ":has(tr > *:nth-child(2):last-child)" reads as "some row's 2nd cell is also
+   its last cell" — i.e. the table has exactly two columns.
+   ========================================================================= */
+.tbl-wrap>table{width:100%;max-width:none}
+.tbl-wrap>table:has(tr>*:nth-child(2):last-child) th:first-child,
+.tbl-wrap>table:has(tr>*:nth-child(2):last-child) td:first-child{width:38%}
+/* Below 760px a filled table crushes its columns instead of scrolling, which
+   is what the fading right edge in section 46 promises the reader. */
+@media(max-width:760px){.tbl-wrap>table{min-width:560px}}
+
+/* =========================================================================
+   49. KEY/VALUE ROWS GET A DIVIDER
+   .kv is a two-column grid (term | definition) used by every glossary and by
+   the spec rows inside boss and story cards. With only a 6px row gap, a long
+   definition ran into the next term and the list read as one grey block.
+   A hairline between rows is what makes it scannable — the reader is looking
+   up ONE term, not reading the list.
+   The rule is border-top on BOTH cells of a row, because grid items are laid
+   out per cell: a border on the <dt> alone would stop halfway across.
+   ========================================================================= */
+.kv{gap:0 18px}
+.kv dt,.kv dd{padding:11px 0;border-top:1px solid var(--line-soft)}
+/* First row needs no divider above it — it sits right under the card's heading. */
+.kv dt:first-of-type,.kv dt:first-of-type+dd{border-top:0;padding-top:0}
+.kv dt:last-of-type,.kv dd:last-of-type{padding-bottom:0}
+/* Below 620px the term column squeezes the definition into a ribbon, so stack
+   them: the divider then separates term/definition PAIRS, not columns. */
+@media(max-width:620px){
+  .kv{grid-template-columns:1fr}
+  .kv dt{padding-bottom:2px}
+  .kv dd{border-top:0;padding-top:0;padding-bottom:12px}
+  .kv dt:first-of-type+dd{padding-top:0}
+}
+
+/* =========================================================================
+   50. COMPLETION STATE MUST BE VISIBLE
+   Four separate reasons a finished chapter looked identical to an untouched
+   one. All four are fixed here plus in fx.js / app.js.
+
+   (a) The per-stage ring was painted BEHIND .st-n at exactly the badge's own
+       size, and .st-n has an opaque background — so the ring was invisible at
+       every percentage, not only at 100%. It is now a halo AROUND the badge,
+       cut into an annulus with a radial mask so the conic sweep reads as an
+       arc rather than a pie.
+   (b) fx.js used to delete the ring at 100% and mark the card with nothing but
+       a faint border tint. It now keeps the ring and the card gets a real
+       treatment.
+   (c) Sidebar links carried no completion state at all — app.js now adds
+       .sec-done / .sec-part and they are styled below.
+   (d) The overall bar divided by "stages visited", not by the real total; that
+       is fixed in fx.js via the data-total stamped into index.html.
+   ========================================================================= */
+
+/* --- (a)+(b) the stage card on index.html ------------------------------- */
+ol.stages li .ring{
+  left:10px;top:9px;width:50px;height:50px;z-index:2;
+  /* Cut out the middle: closest-side makes the gradient stop at the circle's
+     edge, so 78% transparent leaves a ~5px band of colour at the rim. */
+  -webkit-mask:radial-gradient(closest-side,transparent 76%,#000 77%);
+          mask:radial-gradient(closest-side,transparent 76%,#000 77%);
+}
+@media(min-width:880px){
+  /* the badge becomes 44px and moves into the flow at the card's 22px padding,
+     so the halo has to grow and re-centre on it */
+  ol.stages li .ring{left:16px;top:16px;width:56px;height:56px}
+}
+/* An untouched stage keeps a faint track behind the arc, so 0%, 40% and 100%
+   are three visibly different states rather than "nothing" and "something". */
+ol.stages li .ring::before{
+  content:"";position:absolute;inset:0;border-radius:50%;
+  border:3px solid var(--line);
+}
+ol.stages li .ring{position:absolute;border-radius:50%;pointer-events:none;
+  transition:background .6s ease}
+
+/* the running count, so the card says HOW MUCH is left, not just "some" */
+ol.stages li .st-prog{
+  position:absolute;right:14px;top:14px;z-index:4;
+  font-size:11px;font-weight:700;letter-spacing:.4px;font-variant-numeric:tabular-nums;
+  padding:3px 8px;border-radius:999px;
+  background:var(--panel2);border:1px solid var(--line);color:var(--muted);
+}
+@media(min-width:880px){ol.stages li .st-prog{right:18px;top:18px}}
+
+ol.stages li.some-done .st-prog{
+  color:var(--gold-text);border-color:var(--gold-dim);
+  background:color-mix(in srgb,var(--gold) 12%,var(--panel2));
+}
+ol.stages li.some-done .st-n{border-color:var(--gold);color:var(--gold-text)}
+
+/* A cleared chapter reads as cleared at a glance: green rail permanently out,
+   green-tinted card, green badge, and a tick where the count pill was. */
+ol.stages li.done-all{
+  border-color:color-mix(in srgb,var(--green) 55%,transparent);
+  background:linear-gradient(135deg,
+    color-mix(in srgb,var(--green) 11%,var(--panel)),
+    color-mix(in srgb,var(--green) 3%,var(--panel)));
+}
+ol.stages li.done-all::before{
+  transform:scaleY(1);
+  background:linear-gradient(180deg,var(--green),color-mix(in srgb,var(--green) 40%,transparent));
+}
+ol.stages li.done-all .st-n{
+  border-color:var(--green);color:var(--green);
+  background:color-mix(in srgb,var(--green) 14%,var(--panel2));
+}
+ol.stages li.done-all .st-prog{
+  color:var(--green);border-color:color-mix(in srgb,var(--green) 45%,transparent);
+  background:color-mix(in srgb,var(--green) 14%,var(--panel2));
+}
+ol.stages li.done-all .st-prog::after{content:" ✓"}
+ol.stages li.done-all a.nm{color:color-mix(in srgb,var(--green) 60%,var(--ink))}
+ol.stages li.done-all:hover{border-color:var(--green);box-shadow:0 22px 50px -26px var(--green)}
+
+/* --- (c) the sidebar rail ------------------------------------------------ */
+/* Both nav forms (horizontal pills on narrow screens, the sticky rail on wide)
+   get the same three states, because the reader uses whichever they see. */
+/* `nav.toc a` is already `display:inline-flex`, so the ::before tick and the
+   ::after count are FLEX ITEMS, not floats — `float:right` is inert on them and
+   they butted straight against the label with no space at all. The link becomes
+   a three-part row instead: tick, label, count pushed to the far edge. */
+nav.toc a{gap:8px}
+nav.toc a.sec-done{color:var(--green-text)}
+nav.toc a.sec-done::before{content:"✓";font-weight:800;flex:0 0 auto}
+nav.toc a.sec-part::before{content:"◍";color:var(--gold-text);font-weight:800;flex:0 0 auto}
+nav.toc a.sec-done{border-color:color-mix(in srgb,var(--green) 40%,transparent)}
+
+@media(min-width:1120px){
+  .wrap>nav.toc a{padding-right:12px}
+  .wrap>nav.toc a.sec-done{
+    color:var(--green-text);border-left-color:var(--green);
+    background:linear-gradient(90deg,color-mix(in srgb,var(--green) 12%,transparent),transparent);
+  }
+  .wrap>nav.toc a.sec-part{color:var(--ink);border-left-color:var(--gold-dim)}
+  /* the live count sits at the rail's right edge; margin-left:auto is what
+     actually pushes it there in a flex row, and flex:0 0 auto stops the long
+     Thai labels from squeezing it into a wrapped column of digits */
+  .wrap>nav.toc a[data-sec-count]::after{
+    content:attr(data-sec-count);margin-left:auto;flex:0 0 auto;
+    font-size:11px;font-weight:700;font-variant-numeric:tabular-nums;
+    color:var(--muted);opacity:.8;
+  }
+  .wrap>nav.toc a.sec-done::after{color:var(--green-text);opacity:1}
+  /* .active still wins the background, but it must not erase the green text */
+  .wrap>nav.toc a.active.sec-done{color:var(--green-text)}
+}
+
+/* =========================================================================
+   51. THE DOCUMENT MAY NEVER BE WIDER THAN THE VIEWPORT
+   `body{overflow-x:hidden}` alone does NOT achieve this. When <html> is
+   `overflow:visible`, the body's overflow value is propagated up to the
+   viewport and the body itself reverts to visible — so the rule that looks
+   like it clips the page is in fact clipping nothing, and stray width still
+   grows document.scrollWidth.
+   Measured: two pages reported 2px and 33px of document overflow that no
+   element accounted for — hiding every candidate child in turn never isolated
+   a box that was actually sticking out, so it is a line-breaking measurement
+   artefact rather than real overflow. Nothing was visibly cut off, because the
+   propagated `hidden` still suppressed the scrollbar. But "invisible today" is
+   not "cannot bite later", and more importantly the verification harness has
+   no way to tell a harmless artefact apart from a real 300px leak, which makes
+   the check useless while it stays noisy.
+   Setting it on BOTH elements stops the propagation, states the intent
+   explicitly, and gives the harness a signal it can trust.
+   Anything that genuinely needs to scroll sideways — a wide table — already
+   does so inside its own `.tbl-wrap{overflow-x:auto}` container.
+   ========================================================================= */
+html{overflow-x:hidden}
+
+/* =========================================================================
+   52. `.step` — "there is a step before this", which is NOT a permanent loss
+
+   `.miss` is red, and across this whole guide red means one thing: miss it and
+   it is gone for good. Table cells that only meant "you have to do something
+   first" — walk in instead of flying, type a coordinate, clear a battle — were
+   using `.miss`, so ordinary prerequisites were reading as permanent losses and
+   a reader told us so directly.
+
+   `.step` is the missing middle: it draws attention without the alarm. Use
+   `.safe` when nothing is required, `.step` when something is required but
+   nothing can be lost, and `.miss` only for genuine permanent loss.
+   ========================================================================= */
+.step{color:var(--gold-text);font-weight:700}

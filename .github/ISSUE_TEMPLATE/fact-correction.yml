@@ -1,0 +1,115 @@
+# Maintainers: the labels listed below must already exist in the repository, otherwise
+# GitHub cannot apply them when someone submits this form.
+name: Fact correction
+description: Report something in a guide that is wrong – a number, a location, a trigger, a price.
+title: "[fact] "
+labels: ["fact-correction"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you – this is the most valuable kind of report this project gets.
+
+        Accuracy is the rule that outranks every other rule here, and a single wrong
+        number costs a guide its credibility with a reader who has finished the game.
+
+        **You do not need a website to back you up.** If you saw it happen in your own
+        game, that outranks any guide site: those sites copy each other and inherit each
+        other's mistakes, and your save file does not. Choose "I saw this in my own
+        game" below and describe what you observed.
+
+  - type: input
+    id: page
+    attributes:
+      label: Which page is wrong?
+      description: >-
+        The file path inside this repository, or the file name if that is easier to
+        find. If the same mistake appears on more than one page, list them all.
+      placeholder: games/ffx/stages/09-miihen-highroad.html
+    validations:
+      required: true
+
+  - type: textarea
+    id: wrong-text
+    attributes:
+      label: The exact text that is wrong
+      description: >-
+        Copy and paste it from the page, word for word, rather than describing it. An
+        exact string can be searched for; a paraphrase cannot, and the wrong line often
+        appears in several places.
+      placeholder: "Lv.2 Key Sphere – รางวัลจากบททดสอบ Dodger Chocobo ..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: correct-text
+    attributes:
+      label: What it should say instead
+      description: >-
+        State the correct value specifically enough that somebody else could check it.
+        "Purifying Salt x30" can be verified; "you need a lot of Purifying Salt" cannot.
+    validations:
+      required: true
+
+  - type: dropdown
+    id: evidence-kind
+    attributes:
+      label: How do you know?
+      description: All three answers are welcome. None of them is a lesser kind of report.
+      options:
+        - I saw this in my own game
+        - I found it in published sources
+        - Both – I saw it in my own game and found sources that agree
+    validations:
+      required: true
+
+  - type: textarea
+    id: observed
+    attributes:
+      label: What you saw in your own game
+      description: >-
+        Fill this in if you chose "I saw this in my own game" or "Both" above. Describe
+        what you did, what happened, and anything that might have differed from a normal
+        playthrough – a difficulty setting, a story flag, a re-release, an earlier
+        choice. Screenshots are welcome and can be dragged straight into this box.
+      placeholder: >-
+        I opened the chest right after the second bridge and got 2000 gil, not the 1000
+        the page says. I was on my second playthrough, and I had already cleared ...
+    validations:
+      required: false
+
+  - type: textarea
+    id: sources
+    attributes:
+      label: Sources
+      description: >-
+        Two independent URLs are what a correction needs before it can be written into a
+        guide – but if your evidence is your own console, that is fine: write "own game
+        only" here and fill in the box above instead. A maintainer will find the sources.
+        A wiki and a site that visibly copied that wiki count as one source, not two.
+      placeholder: |
+        https://
+        https://
+    validations:
+      required: true
+
+  - type: input
+    id: version
+    attributes:
+      label: Which version and platform?
+      description: >-
+        A fact can be true for one release of a game and false for another, so a
+        correction is not usable without this.
+      placeholder: HD Remaster / International, on PS4
+    validations:
+      required: true
+
+  - type: textarea
+    id: extra
+    attributes:
+      label: Anything else
+      description: >-
+        Optional. Anything that changes how the fact should be used – a common
+        misconception it corrects, or another page that probably has the same mistake.
+    validations:
+      required: false

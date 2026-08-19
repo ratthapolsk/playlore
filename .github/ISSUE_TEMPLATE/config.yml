@@ -1,0 +1,17 @@
+# Blank issues are disabled so that every report arrives with the fields a maintainer
+# needs to act on it. A fact correction without a page reference or evidence cannot be
+# checked, and chasing the missing details costs more than filling them in did.
+#
+# With blank issues off, GitHub shows the template chooser instead, which lists the
+# three templates below with their descriptions – that page is what points people at
+# the right one.
+#
+# The Discussions link below covers open questions – "is this fact right?", "which
+# version does this apply to?" – that are not yet a correction, a proposal or a bug.
+# It only works once Discussions is enabled in the repository settings; until then the
+# link 404s, so enable it or remove the entry.
+blank_issues_enabled: false
+contact_links:
+  - name: Question or open discussion
+    url: https://github.com/ratthapolsk/playlore/discussions
+    about: Ask about a game fact, a guide decision or how something works, before it is a bug report or a correction.

@@ -1,0 +1,104 @@
+---
+description: Core rules for Playlore, the multi-game walkthrough collection — file:// constraints, Thai/English language split, the inline narrative content model, the two-source accuracy rule, and data-k checkbox keys as user data
+alwaysApply: true
+---
+
+Cursor also reads `AGENTS.md` in the project root, which carries these rules in full.
+This rule file exists because `.cursor/rules` is the mechanism Cursor documents as
+authoritative for project rules, and `alwaysApply: true` guarantees the essentials are
+present in every request. Note that rules apply to Agent (Chat) only — not Tab
+completion, not Inline Edit — so anything critical is also stated in `AGENTS.md`.
+
+Full detail: @AGENTS.md and @CLAUDE.md, with depth in `docs/`.
+
+## The project
+
+Thai-language game walkthroughs, one folder per game. `games/ffx/` (Final Fantasy X) is the
+reference implementation — copy what it does. Static HTML opened from disk over
+`file://`: no server, no build step, no package install.
+
+## Constraints that break the site if violated
+
+- No `fetch` / `XHR` / ES module `import` — `file://` blocks them, and CSSOM reads on a
+  `file://` stylesheet throw `SecurityError`. Use `localStorage`.
+- No external images and no remote scripts. Vector art is inline `<svg>`.
+- No `<style>` blocks, and no inline `style=` that sets `font-size`.
+- No hardcoded hex colours inside `<svg>` — use `var(--ink)`, `var(--cyan)`,
+  `currentColor`, or the colour disappears when the reader switches to dark mode.
+- Content must be readable with JavaScript doing nothing.
+
+## Language
+
+- Prose in Thai. Technical and in-game terms stay in English and are never translated —
+  `Sphere Grid`, `Overdrive`, `Save Sphere`, every item, place and character name.
+- The inline separator is `" – "` (spaced en dash). `" · "` and a bare `·` are forbidden.
+- Every bullet is a complete sentence that stands alone, written for a reader with zero
+  prior context who will not click anything to find out what you meant.
+- **A place name is not a location** — name the kind of place (`the city of Luca`), the
+  route inward (building, floor, room), and how to travel there now.
+- No compass directions — a player cannot tell north in-game. Use landmarks plus
+  left/right relative to the direction of travel.
+
+## Content model
+
+A stage page reads top to bottom like a novel in strict play order: enter the scene →
+where to go → what to do → what it unlocks → what you get, with the characters' mood
+carried through. **Everything is inline in the scene where it happens** — a pickup is
+ticked where the player walks past it, a boss block sits where the boss appears, a puzzle
+walkthrough sits in the room. Only pure lookup tables (fiend list, glossary) go at the
+bottom.
+
+Three kinds of checkbox: items, milestones (`.pick milestone`), and preparation
+(`.prep`). Never pad a checklist — when a scene genuinely has nothing to collect, say so
+in one `data-note` line and use milestones instead.
+
+## Accuracy
+
+- Two independent sources for every game fact before it is written. Never guess.
+- If it cannot be verified, mark it unverified or leave it out.
+- Never delete or reword existing content because it looks wrong — verify first, correct
+  it and say so, or leave it and report it.
+- Check `docs/verified-facts/` before searching, and append whatever you newly verify.
+
+## `data-k` is user data
+
+Checkbox keys live in the reader's `localStorage`. Renaming or removing one erases
+progress they earned by playing. Count them before and after every edit and report both
+numbers. Run `node tools/sync-totals.js` after changing counts.
+
+## Proof, not reasoning
+
+Run `node tools/verify-all.js` before claiming anything is done. When a harness result
+contradicts something you already know is fine, suspect the harness first.
+
+## Language — split by reader, not by file type
+
+- **Anything an agent reads is English**: `CLAUDE.md`, `AGENTS.md`, `GEMINI.md`,
+  `.github/copilot-instructions.md`, `.cursor/rules/*.mdc`, everything under `docs/`,
+  every `SKILL.md`, hook source and comments, and commit messages.
+- **A guide's content is written in the language that guide is for.** The Final Fantasy X
+  guide is Thai; a contributor may add a guide in another language. This is the only
+  place non-English prose belongs.
+
+## Keep concepts portable — nothing hardcoded to one game
+
+This repo holds **many** games. State the general rule and use a game as the
+illustration, never the reverse. Tools discover game folders rather than naming one. A
+concept that cannot be taken apart cannot be reused, so split rules until each stands
+alone. Where something genuinely is game-specific — the `ffx_` `localStorage` prefix
+hardcoded in the shared scripts is the live example — **say so out loud** and mark it as
+work a second game must redo. The test: could a second game adopt this rule, tool or
+document **without editing it**?
+
+## Git
+
+**Do not commit unless explicitly asked**, even when the work is finished and verified.
+"The work is done" is not permission.
+
+When you are asked, follow the `git-ship` skill in `.claude/skills/git-ship/`. Its two
+load-bearing steps are the ones that get skipped otherwise: **`node tools/verify-all.js`
+must exit zero before anything is committed**, and afterwards the **documentation sweep** —
+re-read `CLAUDE.md`, `AGENTS.md`, `GEMINI.md`, `README.md`, `.github/copilot-instructions.md`,
+`.cursor/rules/*.mdc`, `docs/` and the skills, and confirm each still describes the repo as
+it now is. Report both steps to the user **even when they find nothing**, because
+"checked and clean" and "forgot to check" look identical in silence.

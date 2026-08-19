@@ -1,0 +1,108 @@
+# Maintainers: the labels listed below must already exist in the repository, otherwise
+# GitHub cannot apply them when someone submits this form.
+name: Site bug
+description: Something about the pages themselves is broken – layout, theme, a control, lost progress.
+title: "[bug] "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this for the site rather than the game facts. If a number or a location in a
+        guide is wrong, use the **Fact correction** form instead.
+
+        These pages are opened straight off disk over `file://`, with no server and no
+        build step, so the browser and the way you opened the page both matter more than
+        usual.
+
+  - type: input
+    id: page
+    attributes:
+      label: Which page?
+      description: The file path or file name. Say "every page" if it happens everywhere.
+      placeholder: games/ffx/stages/23-cavern-aeon-yojimbo.html
+    validations:
+      required: true
+
+  - type: input
+    id: browser
+    attributes:
+      label: Which browser, which version, and which operating system?
+      description: >-
+        Please include the version number. A rendering bug is very often specific to one
+        browser engine, and "latest" stops being a useful answer within weeks.
+      placeholder: Firefox 141 on Windows 11
+    validations:
+      required: true
+
+  - type: dropdown
+    id: how-opened
+    attributes:
+      label: How did you open the page?
+      options:
+        - I opened the file from my own disk (the address bar starts with file://)
+        - I opened it from a web address (http:// or https://)
+        - I am not sure
+    validations:
+      required: true
+
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+      description: >-
+        Describe what you actually saw. Screenshots help a great deal for anything
+        visual and can be dragged straight into this box.
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: What did you expect instead?
+      description: >-
+        This is worth writing out even when it feels obvious – it is often the sentence
+        that shows the two of us were expecting different things.
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: Optional, but a bug that can be reproduced gets fixed much faster.
+      placeholder: |
+        1. Open games/ffx/index.html.
+        2. Click through to stage 23.
+        3. Scroll to the bottom of the page.
+        4. A horizontal scrollbar appears.
+    validations:
+      required: false
+
+  - type: dropdown
+    id: theme
+    attributes:
+      label: Which theme were you using?
+      description: >-
+        Colour and contrast problems are usually specific to one theme, so this narrows
+        it down immediately.
+      options:
+        - Light
+        - Dark
+        - It happens in both
+        - I am not sure
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: progress-loss
+    attributes:
+      label: Did this involve your saved progress?
+      description: >-
+        Your ticked checkboxes are stored in your own browser and there is no server
+        copy, so losing them cannot be undone. A report of lost ticks is treated as the
+        most serious kind of bug here – please tick this if it applies, even if you are
+        not certain.
+      options:
+        - label: Checkboxes I had already ticked came back empty.
+          required: false

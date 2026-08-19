@@ -1,0 +1,237 @@
+/* =========================================================================
+   FFX Guide — GIMMICK layer (owned file, class prefix "gm-" only)
+   Every selector below targets a .gm-* class, except the two explicitly
+   sanctioned scoped additions to existing elements: .boss.gm-wipe and
+   .chk.gm-node (both are compound selectors that only ever fire when *our*
+   class is present — the base .boss / .chk rules in style.css are never
+   touched or redefined). Theme-scoping via `[data-theme="dark"] .gm-x` is
+   used in a few places — the selected/target element is still always our
+   own .gm-* class, the attribute selector is only an ancestor condition.
+   Colour: every hue value here reads the --gm-hue custom property that
+   gimmicks.js sets on <html>, constrained to the site's own violet→cyan
+   band (~188deg cyan .. ~262deg violet) — never a full rainbow.
+   Motion: weighted product easing cubic-bezier(.16,1,.3,1), short
+   durations, no bounce. Reduced motion is already neutralised globally by
+   style.css's `*{animation-duration:.01ms!important}` rule; anything that
+   must be skipped OUTRIGHT (canvas particles, JS-created flash/shake/
+   burst elements) is additionally gated in gimmicks.js itself.
+   ========================================================================= */
+
+/* ---------- pyreflies backdrop canvas ------------------------------------ */
+.gm-pyre{position:fixed;inset:0;z-index:-1;pointer-events:none;width:100%;height:100%;display:block}
+@media (prefers-reduced-motion:reduce){.gm-pyre{display:none}}
+
+/* ---------- overdrive: full-screen charge flash --------------------------- */
+.gm-charge-flash{
+  position:fixed;inset:0;z-index:92;pointer-events:none;
+  background:radial-gradient(circle at 50% 50%,hsl(var(--gm-hue,262) 30% 94%),hsl(var(--gm-hue,262) 38% 72%) 45%,transparent 78%);
+  mix-blend-mode:multiply;
+  animation:gm-chargeflash .65s cubic-bezier(.16,1,.3,1) forwards;
+}
+[data-theme="dark"] .gm-charge-flash{
+  background:radial-gradient(circle at 50% 50%,#fff,hsl(var(--gm-hue,262) 55% 62%) 45%,transparent 78%);
+  mix-blend-mode:screen;
+}
+@keyframes gm-chargeflash{0%{opacity:0}22%{opacity:.16}100%{opacity:0}}
+[data-theme="dark"] .gm-charge-flash{animation-name:gm-chargeflash-dark}
+@keyframes gm-chargeflash-dark{0%{opacity:0}22%{opacity:.32}100%{opacity:0}}
+
+/* ---------- overdrive: centred banner ------------------------------------- */
+.gm-overdrive-banner{
+  position:fixed;top:50%;left:50%;transform:translate(-50%,-50%) scale(.96);z-index:93;
+  text-align:center;padding:26px 40px;border-radius:var(--r-xl);pointer-events:none;
+  background:var(--panel-solid);border:1px solid var(--line);box-shadow:var(--shadow-lg);
+  opacity:0;animation:gm-ov-in .42s cubic-bezier(.16,1,.3,1) forwards;
+  max-width:calc(100vw - 32px);
+}
+.gm-overdrive-banner.gm-out{animation:gm-ov-out .38s cubic-bezier(.4,0,1,1) forwards}
+.gm-ov-title{
+  font-family:var(--f-disp);font-weight:700;font-size:clamp(20px,3.4vw,28px);
+  letter-spacing:2.6px;color:hsl(var(--gm-hue,262) 55% 42%);
+}
+[data-theme="dark"] .gm-ov-title{color:hsl(var(--gm-hue,262) 70% 72%)}
+.gm-ov-sub{margin-top:8px;color:var(--muted);font-size:14px;font-weight:600}
+@keyframes gm-ov-in{from{opacity:0;transform:translate(-50%,-50%) scale(.94)}to{opacity:1;transform:translate(-50%,-50%) scale(1)}}
+@keyframes gm-ov-out{from{opacity:1;transform:translate(-50%,-50%) scale(1)}to{opacity:0;transform:translate(-50%,-50%) scale(1.02)}}
+
+/* ---------- battle transition on .boss (scoped addition, sanctioned) ------ */
+.boss.gm-wipe::after{
+  content:"";position:absolute;inset:0;z-index:2;pointer-events:none;border-radius:inherit;
+  background:conic-gradient(from 0deg,transparent,hsl(var(--gm-hue,262) 30% 45% / .28),transparent 35%,transparent);
+  mix-blend-mode:multiply;
+  clip-path:circle(0% at 50% 50%);
+  animation:gm-wipe-clip .7s cubic-bezier(.16,1,.3,1) forwards,gm-wipe-rot .7s linear forwards;
+}
+[data-theme="dark"] .boss.gm-wipe::after{
+  background:conic-gradient(from 0deg,transparent,hsl(var(--gm-hue,262) 55% 62% / .38),transparent 35%,transparent);
+  mix-blend-mode:screen;
+}
+@keyframes gm-wipe-clip{0%{clip-path:circle(0% at 50% 50%)}45%{clip-path:circle(72% at 50% 50%)}100%{clip-path:circle(0% at 50% 50%)}}
+@keyframes gm-wipe-rot{to{transform:rotate(360deg)}}
+
+/* ---------- boss wipe: subtle full-screen tint pulse ---------------------- */
+.gm-screen-tint{
+  position:fixed;inset:0;z-index:50;pointer-events:none;
+  background:radial-gradient(ellipse at 50% 40%,hsl(var(--gm-hue,262) 28% 40% / .16),transparent 72%);
+  mix-blend-mode:multiply;
+  animation:gm-tint-pulse .55s cubic-bezier(.16,1,.3,1) forwards;
+}
+[data-theme="dark"] .gm-screen-tint{
+  background:radial-gradient(ellipse at 50% 40%,hsl(var(--gm-hue,262) 55% 55% / .28),transparent 72%);
+  mix-blend-mode:screen;
+}
+@keyframes gm-tint-pulse{0%{opacity:0}35%{opacity:1}100%{opacity:0}}
+
+/* ---------- sphere grid tick — node glow ring (scoped addition, sanctioned) */
+.chk.gm-node::after{
+  content:"";position:absolute;left:18px;top:50%;width:24px;height:24px;margin-top:-12px;
+  border-radius:50%;pointer-events:none;
+  border:1.5px solid hsl(var(--gm-hue,262) 45% 45% / .8);
+  box-shadow:0 0 10px 1px hsl(var(--gm-hue,262) 45% 45% / .3);
+  animation:gm-node-ring .6s cubic-bezier(.16,1,.3,1) forwards;
+}
+[data-theme="dark"] .chk.gm-node::after{
+  border-color:hsl(var(--gm-hue,262) 60% 68% / .9);
+  box-shadow:0 0 14px 2px hsl(var(--gm-hue,262) 60% 68% / .45);
+}
+@keyframes gm-node-ring{0%{transform:scale(.5);opacity:.9}100%{transform:scale(2.3);opacity:0}}
+
+/* ---------- floating action buttons (Save Sphere / Al Bhed) --------------- */
+.gm-fab{
+  position:fixed;left:16px;z-index:70;width:46px;height:46px;border-radius:50%;cursor:pointer;
+  border:1px solid var(--line);background:var(--panel);color:var(--ink);font-family:var(--f-disp);
+  font-weight:700;font-size:12.5px;backdrop-filter:blur(var(--blur)) saturate(160%);
+  box-shadow:var(--glow),var(--shadow);display:flex;align-items:center;justify-content:center;
+  transition:transform .32s cubic-bezier(.16,1,.3,1),box-shadow .32s cubic-bezier(.16,1,.3,1),border-color .32s;
+}
+.gm-fab:hover{
+  transform:translateY(-3px) scale(1.06);
+  border-color:hsl(var(--gm-hue,262) 40% 55%);
+  box-shadow:0 16px 34px -18px hsl(var(--gm-hue,262) 40% 45% / .6),var(--shadow);
+}
+.gm-fab.gm-fab-active{
+  border-color:hsl(var(--gm-hue,262) 40% 55%);
+  box-shadow:0 0 0 3px hsl(var(--gm-hue,262) 40% 55% / .22),var(--shadow);
+}
+.gm-albhed-fab{bottom:78px}
+.gm-savesphere-fab{bottom:22px}
+.gm-savesphere-icon{display:inline-flex;animation:gm-spin 16s linear infinite}
+@keyframes gm-spin{to{transform:rotate(360deg)}}
+
+/* ---------- floating panels (shared shell) -------------------------------- */
+.gm-panel{
+  position:fixed;left:16px;z-index:80;width:min(340px,calc(100vw - 32px));max-height:70vh;overflow:auto;
+  border-radius:var(--r-lg);border:1px solid var(--line);background:var(--panel-solid);
+  box-shadow:var(--shadow-lg);padding:16px 18px 18px;
+  opacity:0;transform:translateY(10px);pointer-events:none;
+  transition:opacity .28s cubic-bezier(.16,1,.3,1),transform .28s cubic-bezier(.16,1,.3,1);
+}
+.gm-panel.gm-open{opacity:1;transform:none;pointer-events:auto}
+.gm-albhed-panel{bottom:132px}
+.gm-savesphere-panel{bottom:78px}
+.gm-panel-head{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:12px}
+.gm-panel-title{font-family:var(--f-disp);font-weight:700;font-size:13.5px;color:var(--ink)}
+.gm-panel-close{
+  background:none;border:none;color:var(--muted);font-size:14px;cursor:pointer;
+  padding:3px 7px;border-radius:8px;transition:.2s;line-height:1;
+}
+.gm-panel-close:hover{color:var(--red);background:var(--panel2)}
+
+/* ---------- Al Bhed translator -------------------------------------------- */
+.gm-ab-dirs{display:flex;gap:6px;margin:2px 0 10px}
+.gm-ab-dir{
+  flex:1;background:var(--panel2);border:1px solid var(--line);color:var(--muted);
+  border-radius:999px;padding:6px 4px;font-size:11px;font-weight:700;cursor:pointer;
+  font-family:inherit;transition:.24s cubic-bezier(.16,1,.3,1);
+}
+.gm-ab-dir-active{
+  background:hsl(var(--gm-hue,262) 45% 46%);color:#fff;border-color:transparent;
+}
+[data-theme="dark"] .gm-ab-dir-active{background:hsl(var(--gm-hue,262) 55% 55%)}
+.gm-ab-input,.gm-ab-output,.gm-ss-io-area{
+  width:100%;box-sizing:border-box;border-radius:var(--r-md);border:1px solid var(--line);
+  background:var(--panel2);color:var(--ink);font-family:inherit;font-size:13px;
+  padding:8px 10px;resize:vertical;margin-bottom:8px;
+}
+.gm-ab-out-label{font-size:11.5px;color:var(--muted);font-weight:700;margin:2px 0 4px;text-transform:uppercase;letter-spacing:.6px}
+.gm-ab-copy,.gm-ss-export,.gm-ss-import-btn{
+  background:var(--panel);border:1px solid var(--line);color:var(--muted);border-radius:999px;
+  padding:6px 13px;font-size:12px;font-weight:600;cursor:pointer;font-family:inherit;
+  transition:.24s cubic-bezier(.16,1,.3,1);
+}
+.gm-ab-copy:hover,.gm-ss-export:hover,.gm-ss-import-btn:hover{
+  color:hsl(var(--gm-hue,262) 45% 42%);border-color:hsl(var(--gm-hue,262) 40% 55%);
+}
+[data-theme="dark"] .gm-ab-copy:hover,[data-theme="dark"] .gm-ss-export:hover,[data-theme="dark"] .gm-ss-import-btn:hover{
+  color:hsl(var(--gm-hue,262) 60% 72%);
+}
+.gm-ab-hint{font-size:11px;color:var(--muted);margin:2px 0 0;line-height:1.55}
+
+/* ---------- Al Bhed hover-to-decode (author-opt-in .albhed spans) --------- */
+.albhed{cursor:help;border-bottom:1px dashed hsl(var(--gm-hue,262) 40% 50%);transition:color .2s}
+.albhed.gm-decoding{color:hsl(var(--gm-hue,262) 45% 42%)}
+[data-theme="dark"] .albhed.gm-decoding{color:hsl(var(--gm-hue,262) 60% 72%)}
+
+/* ---------- Save Sphere panel ---------------------------------------------- */
+.gm-ss-overall{
+  font-size:13px;font-weight:700;color:var(--ink);display:flex;align-items:center;gap:10px;margin:2px 0 12px;
+}
+.gm-ss-pct{color:hsl(var(--gm-hue,262) 45% 42%);margin-left:2px;font-variant-numeric:tabular-nums}
+[data-theme="dark"] .gm-ss-pct{color:hsl(var(--gm-hue,262) 60% 72%)}
+.gm-ss-ring{flex:0 0 auto;display:inline-flex}
+.gm-bar{flex:1;height:8px;background:var(--panel2);border:1px solid var(--line-soft);border-radius:999px;overflow:hidden}
+.gm-bar-fill{
+  height:100%;border-radius:999px;
+  background:linear-gradient(90deg,hsl(var(--gm-hue,262) 45% 44%),hsl(var(--gm-hue,262) 45% 60%));
+  transition:width .5s cubic-bezier(.16,1,.3,1);
+}
+[data-theme="dark"] .gm-bar-fill{background:linear-gradient(90deg,hsl(var(--gm-hue,262) 55% 55%),hsl(var(--gm-hue,262) 55% 70%))}
+.gm-ss-body{max-height:220px;overflow-y:auto;margin:2px -2px 0;padding-right:2px}
+.gm-stage-row{display:flex;align-items:center;gap:8px;font-size:11.5px;color:var(--muted);margin:5px 0}
+.gm-stage-ring{flex:0 0 auto;display:inline-flex}
+.gm-stage-name{flex:1 1 auto;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:var(--ink-soft);font-weight:600}
+.gm-stage-frac{flex:0 0 40px;text-align:right;font-variant-numeric:tabular-nums}
+.gm-ss-empty{font-size:12.5px;color:var(--muted);line-height:1.7;margin:6px 0 4px}
+.gm-ss-sfx{display:flex;align-items:center;gap:8px;font-size:12.5px;color:var(--muted);margin-top:14px;cursor:pointer}
+.gm-ss-io{margin-top:14px;border-top:1px solid var(--line-soft);padding-top:12px}
+.gm-ss-io-row{display:flex;gap:8px;margin-bottom:8px}
+
+/* ---------- Jecht Shot easter egg ------------------------------------------ */
+.gm-jecht-ball{
+  position:fixed;left:0;top:0;z-index:94;pointer-events:none;width:40px;height:40px;
+  animation:gm-jecht-arc .95s cubic-bezier(.16,1,.3,1) forwards;
+  filter:drop-shadow(0 6px 14px rgba(0,0,0,.35));
+}
+@keyframes gm-jecht-arc{
+  0%{transform:translate(-10vw,68vh) rotate(0deg);opacity:0}
+  10%{opacity:1}
+  90%{opacity:1}
+  100%{transform:translate(110vw,10vh) rotate(760deg);opacity:0}
+}
+.gm-impact-flash{
+  position:fixed;inset:0;z-index:91;pointer-events:none;
+  background:radial-gradient(circle at 50% 60%,hsl(var(--gm-hue,262) 25% 35% / .22),transparent 68%);
+  mix-blend-mode:multiply;
+  animation:gm-impact .32s cubic-bezier(.16,1,.3,1) forwards;
+}
+[data-theme="dark"] .gm-impact-flash{
+  background:radial-gradient(circle at 50% 60%,hsl(var(--gm-hue,262) 60% 60% / .35),transparent 68%);
+  mix-blend-mode:screen;
+}
+@keyframes gm-impact{0%{opacity:0}30%{opacity:1}100%{opacity:0}}
+
+/* ---------- fallback toast (only used if window.FFX.toast is unavailable) - */
+.gm-toast{
+  position:fixed;left:50%;bottom:28px;transform:translate(-50%,14px);z-index:95;
+  padding:11px 20px;border-radius:999px;font-size:13.5px;font-weight:600;color:var(--ink);
+  background:var(--panel-solid);border:1px solid var(--line);box-shadow:var(--shadow-lg);
+  opacity:0;pointer-events:none;transition:opacity .3s cubic-bezier(.16,1,.3,1),transform .3s cubic-bezier(.16,1,.3,1);
+}
+.gm-toast.gm-show{opacity:1;transform:translate(-50%,0)}
+
+/* ---------- small screens -------------------------------------------------- */
+@media (max-width:480px){
+  .gm-albhed-fab{bottom:70px}
+  .gm-albhed-panel{bottom:120px}
+  .gm-savesphere-panel{bottom:72px}
+}

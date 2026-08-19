@@ -1,0 +1,118 @@
+# Maintainers: the labels listed below must already exist in the repository, otherwise
+# GitHub cannot apply them when someone submits this form.
+name: New game proposal
+description: Propose a walkthrough for a game this collection does not cover yet.
+title: "[new game] "
+labels: ["new-game"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Open this before writing anything, so that two people do not start the same
+        guide in parallel.
+
+        A guide in this collection is read top to bottom like a novel, in strict play
+        order, with every pickup and boss inline in the scene where it happens – see
+        `docs/content-model.md`. It is a real piece of writing rather than a data dump,
+        so a proposal is mostly a question about who is going to write it.
+
+  - type: input
+    id: game
+    attributes:
+      label: Which game?
+      description: The full title, plus the sub-title or episode if the series has several.
+      placeholder: Final Fantasy IX
+    validations:
+      required: true
+
+  - type: input
+    id: version
+    attributes:
+      label: Which version or release should the guide treat as authoritative?
+      description: >-
+        Every guide names one primary version and sticks to it, calling out differences
+        in other releases only where they genuinely differ. Say which release you would
+        write against, and on which platform you would be playing it.
+      placeholder: The 2017 remaster on PC, with the PS1 original's differences noted where they matter
+    validations:
+      required: true
+
+  - type: input
+    id: language
+    attributes:
+      label: What language will the guide be written in?
+      description: >-
+        A guide's prose is written in whatever language that guide is for – the existing
+        Final Fantasy X guide is in Thai. In-game and technical terms stay in English
+        whatever the language, because the player is looking at an English screen.
+      placeholder: Thai
+    validations:
+      required: true
+
+  - type: dropdown
+    id: who-writes
+    attributes:
+      label: Do you intend to write it yourself?
+      description: >-
+        An honest "no" is genuinely useful – it records the request without anybody
+        waiting on a page that is not coming.
+      options:
+        - Yes, I want to write it
+        - I want to help, but not lead it
+        - "No, I am proposing it in case somebody else wants to"
+    validations:
+      required: true
+
+  - type: input
+    id: folder
+    attributes:
+      label: Proposed folder name
+      description: >-
+        Optional. Short, lowercase, no spaces – it becomes `games/<name>/` and also the
+        prefix for that game's saved-progress keys, which must not collide with any
+        existing game.
+      placeholder: ff9
+    validations:
+      required: false
+
+  - type: textarea
+    id: scope
+    attributes:
+      label: Scope you have in mind
+      description: >-
+        Optional. Roughly how many stage pages, and which reference pages the game needs
+        – a gear list, a side-quest page, a fiend table, whatever that game actually has.
+    validations:
+      required: false
+
+  - type: textarea
+    id: sources
+    attributes:
+      label: Which sources would you verify facts against?
+      description: >-
+        Optional, but it helps to know up front. Every fact in a guide needs two
+        genuinely independent sources before it can be written. Some sites refuse
+        automated requests and have to be read through a search result instead –
+        `jegged.com` and `game8.co` fetch cleanly, while `finalfantasy.fandom.com`,
+        `gamerguides.com`, `strategywiki.org` and `gamefaqs.gamespot.com` do not.
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: acknowledgements
+    attributes:
+      label: Before you start writing
+      options:
+        - label: >-
+            I have read `docs/content-model.md` and will follow the narrative content
+            model rather than writing a list of items.
+          required: false
+        - label: >-
+            I understand that every game fact needs two independent sources and a ledger
+            entry in `docs/verified-facts/<game>.md`.
+          required: false
+        - label: >-
+            I will scaffold the folder with the `new-game-guide` skill rather than
+            copying an existing game by hand, so the new game gets its own saved-progress
+            prefix instead of sharing Final Fantasy X's.
+          required: false

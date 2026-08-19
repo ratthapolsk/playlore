@@ -1,0 +1,76 @@
+This repository is licensed in two parts, because it contains two different
+kinds of work.
+
+────────────────────────────────────────────────────────────────────────
+1. CODE  —  MIT License
+────────────────────────────────────────────────────────────────────────
+
+Applies to: everything under `tools/`, `.claude/`, and every `.css` and `.js`
+file under `games/*/assets/`, plus the HTML structure and markup conventions
+that carry them.
+
+MIT License
+
+Copyright (c) 2026 the Playlore contributors
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+────────────────────────────────────────────────────────────────────────
+2. GUIDE CONTENT  —  CC BY-SA 4.0
+────────────────────────────────────────────────────────────────────────
+
+Applies to: the written walkthroughs themselves — the prose, checklists,
+tables, diagrams and research notes in `games/*/stages/`,
+`games/*/reference/`, `games/*/index.html`, and `docs/verified-facts/`.
+
+Licensed under the Creative Commons Attribution-ShareAlike 4.0 International
+License (CC BY-SA 4.0).
+
+    https://creativecommons.org/licenses/by-sa/4.0/
+
+In short: you may share and adapt this material, including commercially, as
+long as you give appropriate credit and license your derivative work under the
+same terms. Translating a guide into another language, or building on the
+research in `docs/verified-facts/`, is exactly the kind of reuse this licence
+is chosen to allow.
+
+Why share-alike for the content: the value here is the verification work — every
+fact carries two independent sources and a date. ShareAlike keeps corrections
+and translations flowing back into the commons rather than being enclosed.
+
+────────────────────────────────────────────────────────────────────────
+3. WHAT IS NOT COVERED
+────────────────────────────────────────────────────────────────────────
+
+Neither licence grants any right in the games being described.
+
+Game titles, character names, place names, item names, mechanics and all other
+elements of the games remain the property of their respective owners. They are
+referred to here descriptively, to identify the things a player sees on screen,
+which is the only way a walkthrough can function.
+
+This project is **unofficial and unaffiliated**. It is not endorsed by,
+sponsored by, or connected with any game publisher or developer.
+
+No game assets are redistributed here — no screenshots, sprites, audio,
+textures or extracted data. Every diagram is drawn from scratch as inline SVG,
+and every page is original writing.
+
+If you are a rights holder and believe something in this repository oversteps,
+open an issue and it will be addressed.

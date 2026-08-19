@@ -1,0 +1,439 @@
+<!DOCTYPE html><html lang="th"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>อ้างอิง — สกิล/เวท + คอมโบ</title><meta name="color-scheme" content="dark light"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="../assets/css/style.css"><link rel="stylesheet" href="../assets/css/art.css"><link rel="stylesheet" href="../assets/css/gimmicks.css"><script>try{document.documentElement.setAttribute("data-theme",localStorage.getItem("ffx_theme")||"light")}catch(e){document.documentElement.setAttribute("data-theme","light")}</script></head>
+<body data-page="refabil">
+<header class="hero">
+  <div class="eyebrow">อ้างอิง – Abilities &amp; Combos</div>
+  <h1>สกิล / เวท ทั้งหมด <span>+ คอมโบ</span></h1>
+  <p>White/Black Magic, Skill, Special, Overdrive + ค่า MP และวิธีเรียนแต่ละท่า – บทบาทตัวละคร – คอมโบใช้จริง</p>
+  <div class="navbtns"><a class="home" href="../index.html">≡ หน้ารวม</a><span style="display:flex;gap:8px"><a href="ref-gear.html">อาวุธ/เกราะ</a><a href="ref-sidequests.html">Side Quest</a><a href="ref-monster-arena.html">Monster Arena</a></span></div>
+</header>
+<div class="wrap">
+<nav class="toc">
+  <a href="#learn">ระบบเรียนความสามารถ</a>
+  <a href="#grid">Sphere Grid</a>
+  <a href="#stats">ค่าพลัง (Stats)</a>
+  <a href="#white">White Magic</a>
+  <a href="#black">Black Magic</a>
+  <a href="#skill">Skill</a>
+  <a href="#special">Special</a>
+  <a href="#status-bad">สถานะร้าย</a>
+  <a href="#status-good">สถานะบัฟ</a>
+  <a href="#overdrive">Overdrive</a>
+  <a href="#builds">บทบาท &amp; บิลด์</a>
+  <a href="#combo">คอมโบ &amp; ซินเนอร์จี</a>
+  <a href="#mix">Rikku Mix</a>
+</nav>
+<div class="callout tip"><b>ก่อนเริ่ม:</b> ท่า <span class="term" title="ท่าไม้ตายที่ปล่อยได้เมื่อเกจพลังเต็ม">Overdrive</span> ทุกท่าในเกม<b>ไม่เสีย MP</b> ปล่อยได้ทุกครั้งที่เกจเต็มโดยไม่ต้องกังวลเรื่อง MP เลย</div>
+<div class="callout warn"><b>ยึดข้อมูลจริง:</b> ค่าต่าง ๆ ตรวจสอบกับ Jegged / FF Wiki (Final Fantasy Fandom) / Game8 แล้ว — หน้านี้ยึด <b>FFX HD Remaster</b> (ซึ่งรวมเนื้อหาเวอร์ชัน International ไว้ครบ) เป็นเวอร์ชันหลัก จุดที่เวอร์ชัน PS2 ต้นฉบับต่างออกไปจะเขียนกำกับไว้เป็นหมายเหตุสั้น ๆ</div>
+
+<section id="learn"><h2><span class="ic">📜</span> ระบบเรียนความสามารถ (อ่านก่อนเริ่ม)</h2>
+<p data-note>ทุกความสามารถในเกมนี้ต้อง "เรียน" ก่อนถึงจะใช้ได้ ไม่มีท่าไหนได้มาฟรีล้วน ๆ — รู้กลไกไว้จะได้วางแผนได้ว่าใครควรเรียนอะไรก่อน</p>
+<dl class="kv">
+<dt>White / Black Magic และ Skill ส่วนใหญ่</dt><dd>เรียนผ่าน <span class="term" title="แผนภูมิทักษะที่ทุกตัวละครเดินหมุดร่วมกัน แต่ละคนเริ่มอยู่คนละโซนของกระดาน">Sphere Grid</span> — เดินหมุดตัวละครไปยังช่องความสามารถที่ต้องการ แล้วเปิดด้วย Sphere สีตรงกับช่องนั้น (หรือ Ability Sphere เปิดได้ทุกช่องไม่จำกัดสี) แต่ละตัวละครเริ่มอยู่ในโซนถนัดของตัวเอง เช่น Yuna เริ่มโซนเวทขาว Lulu เริ่มโซนเวทดำ Auron เริ่มโซน Skill ซื้อ Key Sphere เพื่อเปิดประตูข้ามเข้าโซนของเพื่อนร่วมทีม แล้วสอนความสามารถของเพื่อนให้ตัวเองได้ ทำแบบนี้สะสมไปเรื่อย ๆ จนปลายเกมทุกคนใช้ได้ทุกท่าเหมือนกันหมด</dd>
+<dt>Special ส่วนใหญ่ (Cheer, Provoke, Doublecast ฯลฯ)</dt><dd>อยู่บน Sphere Grid ด้วยกลไกเดียวกับด้านบนทุกอย่าง เพียงแต่ช่องอยู่คนละตำแหน่งบนกระดาน</dd>
+<dt>Lancet (Kimahri)</dt><dd>Kimahri มีติดตัวมาตั้งแต่ต้นเกม ไม่ต้องเรียน ใช้ได้ทันที — ตัวละครอื่นเรียนเพิ่มได้จากช่อง Lancet ใกล้จุดเริ่มต้นของ Kimahri บน Grid</dd>
+<dt>Ronso Rage / Blue Magic (Overdrive ของ Kimahri)</dt><dd>เรียนนอกระบบ Sphere Grid ทั้งหมด — ต้องให้ศัตรูปล่อยท่านั้นใส่ทีมก่อนอย่างน้อย 1 ครั้งในศึกเดียวกัน แล้วรีบสั่ง Kimahri ใช้ <b>Lancet</b> ใส่ศัตรูตัวนั้นทันที (ก่อนจบศึกหรือก่อนมันตาย) ถึงจะเรียนท่านั้นติดตัวถาวร พลาดจังหวะนี้ต้องรอเจอศัตรูตัวเดิมที่ใช้ท่าเดิมอีกครั้ง</dd>
+<dt>ท่าเสริมของ Overdrive (Swordplay / Reels / Bushido)</dt><dd>สามตัวนี้ปลดท่าเพิ่มคนละกลไกกัน ไม่เหมือนกันเลย — <b>Tidus (Swordplay)</b> ปลดตามจำนวนครั้งที่ใช้ Overdrive สะสม, <b>Auron (Bushido)</b> ปลดตามจำนวน <span class="term" title="วัตถุสะสม 10 ชิ้นทั่วแผนที่ Spira">Jecht Sphere</span> ที่เก็บได้, ส่วน <b>Wakka (Reels)</b> ปลดจาก<b>การชนะ Blitzball</b> ล้วน ๆ ไม่เกี่ยวกับจำนวนครั้งที่ใช้ Overdrive — ดูเงื่อนไขเป๊ะ ๆ ในหัวข้อ Overdrive ด้านล่าง</dd>
+</dl></section>
+
+<section id="grid"><h2><span class="ic">🕸️</span> Sphere Grid — Standard กับ Expert ต่างกันตรงไหน</h2>
+<p data-note>เวอร์ชัน HD Remaster จะให้เลือกกระดาน Sphere Grid ตอนเริ่มเกมใหม่ว่าจะเอาแบบ <b>Standard</b> หรือ <b>Expert</b> — เลือกแล้วเปลี่ยนกลางเกมไม่ได้ ต้องเริ่มไฟล์ใหม่ (เวอร์ชัน PS2 อเมริกาเหนือต้นฉบับมีแค่ Standard อย่างเดียว ส่วน Expert มากับเวอร์ชัน International)</p>
+<table><tr><th>หัวข้อ</th><th>Standard Grid</th><th>Expert Grid</th></tr>
+<tr><td class="nm">จำนวนช่องทั้งหมด</td><td>860 ช่อง (แก้ไข/ปลูกใหม่ได้ 775 ช่อง)</td><td>805 ช่อง (แก้ไข/ปลูกใหม่ได้ 720 ช่อง)</td></tr>
+<tr><td class="nm">ตำแหน่งเริ่มต้น</td><td>แต่ละคนเริ่มแยกกันคนละมุมของกระดานตามบทบาทของตัวเอง</td><td>ทุกคนเริ่มเกาะกลุ่มกันใกล้กลางกระดาน แล้วค่อยแตกสายออกไป</td></tr>
+<tr><td class="nm">การข้ามไปสายอื่น</td><td>ข้ามยาก ต้องเดินอ้อมไกลหรือใช้ Key Sphere เปิดประตูล็อก</td><td>ข้ามง่ายกว่ามาก ปั้นตัวละครให้ผิดบทบาทเดิมได้ตั้งแต่ต้นเกม</td></tr>
+<tr><td class="nm">ความสามารถบนกระดาน</td><td colspan="2">ทั้งสองกระดานมี<b>ความสามารถชุดเดียวกันครบเท่ากัน</b> ต่างกันแค่ตำแหน่งที่วางเท่านั้น — ไม่มีท่าไหนหายไปเพราะเลือกกระดานผิด</td></tr>
+</table>
+<div class="callout tip"><b>เลือกอันไหนดี:</b> อยากปั้นตัวละครนอกกรอบตั้งแต่ต้น (เช่นให้ Wakka ร่ายเวทดำ) เลือก <b>Expert</b> — แต่ถ้าเป้าหมายคือ<b>ปั้นค่าพลังให้เต็มเพดานทั้งทีม</b>สำหรับสู้ Dark Aeon/Penance ให้เลือก <b>Standard</b> เพราะช่องเยอะกว่า 55 ช่อง จึงมีที่ว่างให้ปลูกช่อง +4 Stat ได้มากกว่า งานปั้นค่าตันจึงง่ายกว่า — ส่วนคนเล่นรอบแรกทั่วไป Standard คือตัวเลือกที่ปลอดภัยกว่า เพราะเส้นทางชัดและไม่หลงทาง</div>
+<p data-note>ตำแหน่งช่องความสามารถในหน้านี้ที่อ้างว่า "เริ่มโซนของใคร" (เช่น Skill เริ่มโซน Auron, เวทดำเริ่มโซน Lulu) ยึดตาม <b>Standard Grid</b> — ถ้าเล่น Expert Grid ทุกคนเริ่มใกล้กันหมด ให้ยึด "ใครถนัดอะไร" เป็นแนวทางแทนตำแหน่งจริงบนกระดาน</p></section>
+
+<section id="stats"><h2><span class="ic">📊</span> ค่าพลัง (Stats) — แต่ละค่าทำอะไรจริง ๆ</h2>
+<p data-note>นี่คือความรู้ที่ตัดสินทุกการตัดสินใจบน Sphere Grid ว่าจะเดินไปทางไหนและจะปลูกช่อง +4 อะไรลงตรงไหน — ทุกค่าในเกมนี้มีเพดานที่ <b>255</b> ยกเว้น HP (ปกติ 9,999) และ MP (ปกติ 999) แต่ "ตัน 255" ไม่ได้แปลว่า "คุ้มที่จะปั้นถึง 255" เสมอไป บางค่าหยุดให้ผลก่อนถึงเพดานนานมาก และบางค่าแทบไม่มีประโยชน์เลยในช่วงปลายเกม ตารางด้านล่างแยกให้ชัดว่าแต่ละค่าทำอะไร ไม่ได้ทำอะไร และควรปั้นถึงเท่าไหร่</p>
+
+<table><tr><th>ค่าพลัง</th><th>มีผลกับอะไรจริง ๆ</th><th>สิ่งที่มัน <b>ไม่</b> ได้ทำ (เข้าใจผิดกันบ่อย)</th><th>เป้าที่ควรปั้น – คุ้ม Sphere ปลายเกมไหม</th></tr>
+<tr><td class="nm">HP</td><td>เลือดสูงสุดของตัวละคร เพดานปกติ 9,999 — ใส่ auto-ability <b>Break HP Limit</b> บนเกราะแล้วเพดานขึ้นเป็น 99,999 ทันที</td><td>ไม่ได้ลดดาเมจที่รับแม้แต่นิดเดียว (นั่นคืองานของ Defense) — และ<b>ไอเทมฟื้นเลือดยังฟื้นได้สูงสุด 9,999 ต่อครั้งเท่าเดิม</b> ต่อให้หลอดเลือดเป็นหลักหมื่น ต้องฮีลด้วยเวทจากตัวที่ถือ Break Damage Limit หรือสูตร Mix แทน</td><td>สู้ Dark Aeon/Penance ควรมี Break HP Limit แล้วดัน HP ให้เกิน 20,000–30,000 — <b>คุ้มที่สุดในบรรดาทุกค่า</b> เพราะตายในเทิร์นเดียวแปลว่าค่าอื่นทั้งหมดไม่มีความหมาย</td></tr>
+<tr><td class="nm">MP</td><td>แต้มสำหรับร่ายเวทและสกิลที่กิน MP เพดานปกติ 999 — <b>Break MP Limit</b> ดันได้ถึง 9,999</td><td>ไม่ได้เพิ่มพลังเวทแม้แต่นิดเดียว (นั่นคืองานของ Magic) — และท่า Overdrive ทุกท่าไม่กิน MP อยู่แล้ว สายที่เล่น Overdrive เป็นหลักจึงแทบไม่ต้องสนใจค่านี้</td><td>999 เหลือเฟือแม้แต่สาย Doublecast + Ultima ที่กินหนักที่สุด — <b>ปั้นเกิน 999 คือเสียช่องบนกระดานเปล่า ๆ</b> Break MP Limit แทบไม่มีสถานการณ์ไหนต้องใช้จริง</td></tr>
+<tr><td class="nm">Strength</td><td>ตัวคูณของดาเมจกายภาพทั้งหมด (Attack, Quick Hit, Overdrive สายกายภาพ) สูตรฐานคือ <b>[(Strength³ ÷ 32) + 32] × ค่าคงที่ของท่า ÷ 16</b> แล้วจึงหักด้วย Defense ของเป้าหมาย</td><td>ไม่มีผลกับดาเมจเวทเลย (นั่นคืองานของ Magic) — และไม่มีผลกับดาเมจของ Aeon เพราะ Aeon แต่ละตัวมีค่าพลังของตัวเองแยกต่างหาก ไม่ได้ยืมของ Yuna</td><td><b>255 เต็ม</b> — คุ้มมาก และคุ้มขึ้นเรื่อย ๆ ตอนท้าย เพราะดาเมจโตตาม<b>กำลังสาม</b>ของค่านี้ คำนวณจากสูตรจะเห็นว่าไต่จาก 200 ไป 255 เพิ่มดาเมจฐานขึ้นราว <b>2 เท่า</b></td></tr>
+<tr><td class="nm">Defense</td><td>ลดดาเมจ<b>กายภาพ</b>ที่รับ โดยเกมแปลงค่านี้เป็นตัวกลางชื่อ DefNum ด้วยสูตร <b>[(Defense − 280.4)² ÷ 110] + 16</b> แล้วดาเมจจริง = ดาเมจฐาน × DefNum ÷ 730</td><td>ไม่ลดดาเมจเวทเลยสักนิด (นั่นคืองานของ Magic Defense) — และ auto-ability <b>Defense +20%</b> บนเกราะ<b>ไม่ได้บวกเข้าค่า Defense</b> แต่หักดาเมจกายภาพออกตรง ๆ 20% จึงยังได้ผลแม้ Defense ตัน 255 ไปแล้ว และซ้อนกับ Protect ได้</td><td>คำนวณจากสูตร: Defense 100 เหลือรับราว 43% – Defense 200 เหลือราว 10% – Defense 255 เหลือราว 3% <b>คุ้มจริง แต่เก็บทีหลังได้</b> เพราะ Auto-Protect ลดครึ่งหนึ่งให้ทันทีโดยไม่ต้องเสียช่องบนกระดานสักช่อง</td></tr>
+<tr><td class="nm">Magic</td><td>พลังของ Black Magic และ White Magic ทั้งหมด รวมถึงปริมาณที่ฮีลได้จาก Cure/Cura/Curaga และ Pray</td><td>ไม่มีผลกับดาเมจกายภาพ ไม่มีผลกับดาเมจของ Aeon และไม่ได้เพิ่มโอกาสที่สถานะผิดปกติจะติด (สถานะมีการทอยของตัวเองแยกต่างหาก)</td><td>ปั้น 255 เฉพาะตัวที่เล่นสายเวทจริงจังอย่าง Lulu — <b>สำหรับสายบู๊ไม่คุ้ม</b> เพราะดาเมจเวทถูกหักด้วย Magic Defense ของศัตรูซึ่ง Dark Aeon มีสูงมาก ขณะที่อาวุธเทพทะลุ Defense ของศัตรูไปเลย</td></tr>
+<tr><td class="nm">Magic Defense</td><td>ลดดาเมจ<b>เวท</b>ที่รับ ใช้หลักการเดียวกับ Defense ทุกอย่าง แต่แยกกันคนละช่องทาง ค่าหนึ่งไม่ช่วยอีกค่าหนึ่งเลย</td><td>ไม่ลดดาเมจกายภาพเลย และไม่ได้กันสถานะผิดปกติ (สถานะกันด้วยเกราะสาย -proof/-ward เท่านั้น)</td><td>คุ้มสำหรับ Dark Aeon เพราะท่าใหญ่ของพวกมันหลายท่าเป็นดาเมจสายเวท — แต่เหมือน Defense คือ <b>Shell และ Magic Defense +20% ให้ผลทันทีและถูกกว่ามาก</b> จึงควรเก็บค่านี้ทีหลัง</td></tr>
+<tr><td class="nm">Agility</td><td>กำหนดความถี่ที่จะได้เทิร์นในคิว CTB โดยแปลงเป็นค่าที่เรียกว่า tick speed (ยิ่ง Agility สูง tick speed ยิ่งต่ำ = รอสั้นลง = ได้เทิร์นถี่ขึ้น)</td><td><b>ไม่ได้ช่วยหลบการโจมตี</b> (นั่นคืองานของ Evasion กับ Luck) และไม่ได้เพิ่มดาเมจ — เป็นเรื่องของ "จำนวนเทิร์น" ล้วน ๆ</td><td><b>170 พอดี แล้วหยุด</b> — เพดานคือ 255 ก็จริง แต่ผลของมันตันที่ 170 ทุกอย่างตั้งแต่ 170 ถึง 255 ได้ tick speed เท่ากันหมด ต่างกันแค่คิวเทิร์นแรกสุดของศึกเท่านั้น <b>ทุกช่องที่ลงเกิน 170 คือช่องที่ทิ้งเปล่า</b></td></tr>
+<tr><td class="nm">Luck</td><td>ค่าที่ทำงานสามด้านพร้อมกัน — เพิ่มโอกาสที่<b>เราจะตีเข้า</b> เพิ่มโอกาสที่<b>ศัตรูจะตีเราพลาด</b> และเป็นตัวกำหนด<b>โอกาสคริติคอล</b> แทบทั้งหมด</td><td>ไม่มีผลกับอัตราขโมยของ Steal (ความเชื่อผิดที่ดังที่สุดเรื่องหนึ่งของเกมนี้ — Steal มีสูตรของตัวเองที่ไม่เกี่ยวกับ Luck เลย) และไม่มีแหล่งอ้างอิงที่ตรวจสอบได้ยืนยันว่ามีผลกับอัตราดรอปไอเทม จึงไม่ควรปั้น Luck ด้วยเหตุผลว่าอยากได้ของหายากง่ายขึ้น</td><td><b>ค่าที่คุ้มที่สุดสำหรับสู้ซูเปอร์บอส</b> — ดูหัวข้อเจาะลึกด้านล่าง เพราะเป็นค่าเดียวที่ทำงานทั้งฝั่งบุกและฝั่งรับพร้อมกัน</td></tr>
+<tr><td class="nm">Evasion</td><td>เพิ่มโอกาสหลบการโจมตี<b>กายภาพที่หลบได้</b>ของศัตรู</td><td>หลบเวทไม่ได้ หลบท่าที่เกมกำหนดว่าหลบไม่ได้ก็ไม่ได้ — และในบรรดา Dark Aeon, Penance และสัตว์ประหลาดสร้างพิเศษของ Monster Arena ทั้งหมด <b>มีเพียงการโจมตีกายภาพของ Dark Ixion เท่านั้นที่หลบได้จริง</b> ค่านี้จึงแทบไม่ได้ใช้งานเลยในศึกที่ยากที่สุด</td><td><b>ข้ามไปได้เลย</b> — Luck 1 แต้มช่วยหลบได้เท่ากับ Evasion 1 แต้มเป๊ะ ๆ แต่ Luck ยังช่วยด้านบุกให้อีก ลง Luck แทนคุ้มกว่าทุกกรณี</td></tr>
+<tr><td class="nm">Accuracy</td><td>เพิ่มโอกาสที่การโจมตีกายภาพของเราจะเข้าเป้า — แต่<b>เกมนับให้แค่ 40% ของค่าที่มี</b> ตัวละครที่ Accuracy ตัน 255 จึงส่งผลเข้าสูตรได้เพียง 102 แต้มเท่านั้น</td><td>ไม่มีผลกับเวท (เวทในเกมนี้ไม่พลาดเป้า) ไม่มีผลกับโอกาสที่สถานะผิดปกติจะติด และ<b>ค่า Accuracy ของศัตรูไม่ถูกใช้ในสูตรเลย</b> — ตอนศัตรูตีเรา เกมดูแค่ Evasion กับ Luck ของเรา</td><td><b>เก็บทีหลังสุด หรือข้ามไปเลย</b> — คำนวณจากสูตรจะเห็นว่า Accuracy 255 การันตีเข้า 100% ได้เฉพาะกับศัตรูที่ Evasion ไม่เกิน 103 พอเจอศัตรูที่ Evasion 111 ขึ้นไป ค่านี้กลายเป็นศูนย์ทันทีไม่ว่าจะปั้นสูงแค่ไหน</td></tr>
+</table>
+<p data-note>เพดานทุกค่าคือ 255 แต่<b>ช่องบนกระดานมีจำกัด</b> — Standard Grid ปลูกใหม่ได้ 775 ช่อง ส่วน Expert Grid 720 ช่อง ขณะที่ลำพัง HP 99,999 อย่างเดียวก็ต้องใช้ช่อง HP +300 ถึง 334 ช่องแล้ว จึงเป็นไปไม่ได้ที่จะดันทุกค่าให้ตันพร้อม HP เต็มเพดานในคนเดียวกัน <b>ทุกคนต้องเลือกทิ้งบางอย่าง</b> — ซึ่งเป็นเหตุผลที่ต้องรู้ว่าค่าไหนไม่คุ้มก่อนจะลงมือ</p>
+
+<div class="wtitle">Luck — ค่าที่ตัดสินว่าจะสู้ซูเปอร์บอสไหวหรือไม่</div>
+<p>ถ้าจะจำเรื่องค่าพลังได้แค่เรื่องเดียวจากทั้งหน้านี้ ให้จำเรื่อง Luck — เพราะมันคือค่าเดียวที่<b>ทำงานสองทางพร้อมกัน</b> ในขณะที่ Accuracy ช่วยแค่ตอนเราตี และ Evasion ช่วยแค่ตอนเราโดนตี <b>Luck 1 แต้มมีค่าเท่ากับ Evasion 1 แต้มเป๊ะ ๆ ในด้านการหลบ และยังช่วยด้านความแม่นให้อีกต่อหนึ่งด้วย</b> เท่ากับได้ประโยชน์สองเด้งจากช่องเดียวกันบนกระดาน และมันยังเป็นตัวกำหนดโอกาสคริติคอลแทบทั้งหมดเป็นเด้งที่สาม</p>
+<dl class="kv">
+<dt>ขั้นที่ 1 — หาค่าความแม่นพื้นฐาน</dt><dd>เกมคำนวณตัวเลขกลางตัวหนึ่ง (เอกสารกลไกเรียกว่า AcNum) ด้วยสูตร <b>AcNum = (Accuracy ของผู้ตี × 0.4) − Evasion ของเป้าหมาย + 9</b> — สังเกตว่าตัวคูณคือ <b>0.4</b> แปลว่าตัวละครใช้ Accuracy ได้เพียง 40% ของที่มี ต่อให้ตัน 255 ก็ส่งเข้าสูตรได้แค่ 102</dd>
+<dt>ขั้นที่ 2 — แปลง AcNum เป็นเปอร์เซ็นต์</dt><dd>AcNum ไม่ใช่เปอร์เซ็นต์โดยตรง แต่ถูกเปิดตารางแปลงอีกทีเป็นค่าที่เรียกว่า Base Accuracy (ตารางอยู่ด้านล่าง) — จุดสำคัญคือ <b>ถ้า AcNum ออกมาเป็น 0 หรือติดลบ Base Accuracy จะถูกล็อกไว้ที่ 25% ไม่ว่าจะติดลบมากแค่ไหน</b></dd>
+<dt>ขั้นที่ 3 — Luck เข้ามาบวกลบทีหลัง</dt><dd><b>โอกาสตีเข้าจริง = Base Accuracy + Luck ของผู้ตี − Luck ของเป้าหมาย</b> — Luck ถูกบวกเข้าไป<b>นอกตาราง</b> ไม่ถูกตัดทอนด้วยตัวคูณ 0.4 และไม่โดนเพดานของ Base Accuracy กด นี่คือเหตุผลทางคณิตศาสตร์ทั้งหมดว่าทำไม Luck ถึงเหนือกว่า Accuracy</dd>
+<dt>โอกาสคริติคอล</dt><dd><b>โอกาสคริ (%) = Luck ของผู้ตี − Luck ของเป้าหมาย + โบนัสคริของอุปกรณ์</b> — โบนัสคริเป็นค่าซ่อนที่ติดมากับอาวุธ/เกราะ: <b>3%</b> สำหรับของทั่วไป, <b>6%</b> สำหรับของที่ดรอปจาก Dark Aeon และสัตว์ประหลาดสร้างพิเศษของ Monster Arena, <b>10%</b> สำหรับของที่ดรอปจาก Penance — <b>แต่โบนัสนี้ใช้ได้เฉพาะการโจมตีกายภาพ ไม่ถูกนับให้กับท่า Overdrive</b> Overdrive จึงต้องพึ่ง Luck ล้วน ๆ</dd>
+</dl>
+<table><tr><th>AcNum ที่คำนวณได้</th><th>Base Accuracy (โอกาสเข้าก่อนคิด Luck)</th></tr>
+<tr><td class="nm">0 หรือติดลบ</td><td><b>25%</b> — เพดานล่างที่ลงไปต่ำกว่านี้ไม่ได้ และสูงกว่านี้ก็ไม่ได้เช่นกัน</td></tr>
+<tr><td class="nm">1–2</td><td>30%</td></tr>
+<tr><td class="nm">3–4</td><td>40%</td></tr>
+<tr><td class="nm">5</td><td>50%</td></tr>
+<tr><td class="nm">6</td><td>60%</td></tr>
+<tr><td class="nm">7</td><td>80%</td></tr>
+<tr><td class="nm">8 ขึ้นไป</td><td>100%</td></tr>
+</table>
+<div class="callout secret"><b>ตัวเลข 111 ที่ทำให้ Accuracy กลายเป็นศูนย์:</b> ค่าสูงสุดที่ AcNum เป็นไปได้คือ <b>255 × 0.4 + 9 = 111</b> ดังนั้นถ้าศัตรูมี Evasion ตั้งแต่ <b>111</b> ขึ้นไป AcNum จะออกมา 0 หรือติดลบเสมอ ไม่ว่าจะปั้น Accuracy สูงแค่ไหน — แปลว่า<b>โอกาสตีเข้าพื้นฐานถูกล็อกที่ 25% ตายตัว</b> และ Dark Aeon แทบทุกตัวอยู่ในกลุ่มนี้ ตัวที่หนักที่สุดคือ <b>Dark Mindy</b> ซึ่งมี Evasion 240 คู่กับ Luck 130 ทำให้เป็นศัตรูที่ตียากที่สุดในเกม <b>ทางเดียวที่จะแก้ปัญหานี้ได้คือ Luck</b> เพราะมันถูกบวกเข้าไปหลังเพดาน 25% — ไม่มีค่าอื่นในเกมทำแทนได้เลย นี่คือเหตุผลที่ Luck คือค่าที่ทำให้การล้มซูเปอร์บอสเป็นไปได้</div>
+<table><tr><th>ค่า Luck ที่ปั้นถึง</th><th>ได้อะไรตอบแทน</th></tr>
+<tr><td class="nm">ราว 114</td><td>เข้า 100% กับ <b>Dark Yojimbo</b> และ <b>Penance</b> — เป็นค่าประนีประนอมที่ไกด์ Jegged แนะนำสำหรับคนที่ไม่อยากฟาร์มยาว และเพียงพอสำหรับจบเนื้อหาปลายเกมส่วนใหญ่</td></tr>
+<tr><td class="nm">ราว 205</td><td>เข้า 100% กับ <b>Dark Mindy</b> ศัตรูที่หลบเก่งที่สุดในเกม (คำนวณจากสูตร: 25% + Luck ของเรา − Luck 130 ของมัน ต้องได้อย่างน้อย 100)</td></tr>
+<tr><td class="nm">ราว 230</td><td><b>คริติคอลทุกครั้งกับศัตรูทุกตัวในเกม รวมถึงท่า Overdrive</b> ที่ไม่ได้รับโบนัสคริจากอุปกรณ์ — คิดจาก Luck 130 ของ Dark Mindy บวกส่วนต่างที่ต้องมีอีกราว 100 แต้ม (งานถอดรหัสโค้ดระบุตัวเลขนี้ที่ 231 ต่างกันแต้มเดียว ไม่มีผลในทางปฏิบัติ)</td></tr>
+<tr><td class="nm">255</td><td>เพดานสูงสุดของเกม — เกิน 230 ไปแล้วไม่ได้อะไรเพิ่มอีก นอกจากความสบายใจว่าตันแล้วจริง ๆ</td></tr>
+</table>
+<div class="callout tip"><b>กฎง่าย ๆ ที่ใช้ได้กับศัตรูทุกตัวที่ Evasion เกิน 111:</b> ถ้า <b>Luck ของเรามากกว่า Luck ของศัตรูราว 75 แต้ม</b> จะตีเข้า 100% (มาจาก 25% + 75 = 100%) และถ้ามากกว่าราว <b>100 แต้ม</b> จะคริทุกครั้ง — จำสองตัวเลขนี้ไว้แล้วเปิดดู Luck ของศัตรูด้วย Scan ก็คำนวณเป้าหมายเองได้ทุกศึก</div>
+<div class="callout warn"><b>บทสรุปที่ใช้ตัดสินใจได้เลย — ปั้น Luck ก่อน แล้ว Accuracy กับ Evasion จะแทบไม่จำเป็นอีกต่อไป:</b> เมื่อ Luck สูงพอ ฝั่งบุกก็ตีเข้าอยู่แล้วโดยไม่ต้องพึ่ง Accuracy และฝั่งรับก็หลบได้เท่ากับที่ Evasion ให้อยู่แล้ว การเอาช่องบนกระดานไปลง Accuracy หรือ Evasion จึงเป็นการซื้อของอย่างเดียวในราคาเดียวกับที่ซื้อได้สองอย่าง <b>ผลพลอยได้ที่คนไม่ค่อยรู้:</b> สถานะ <b>Darkness</b> กดความแม่นพื้นฐานลงเหลือ 10% แต่ส่วนที่มาจาก Luck ไม่ถูกกด ดังนั้นถ้า Luck ของเราสูงกว่าเป้าหมาย <b>90 แต้ม</b>ขึ้นไป จะได้ 10% + 90 = 100% เท่ากับ<b>ตาบอดแล้วยังตีเข้าทุกนัดเหมือนไม่ได้ติดสถานะอะไรเลย</b></div>
+<p data-note>ท่า <b>Luck</b> และ <b>Jinx</b> ในหมวด Special (ดูตารางด้านล่างของหน้านี้) ขยับส่วนต่าง Luck ระหว่างเราและศัตรูได้ทีละนิดในระหว่างศึก ซ้อนได้ 5 ชั้น — ช่วยได้จริงในศึกยาว ๆ แต่ขนาดของมันเล็กเกินกว่าจะใช้แทนการปั้นค่า Luck บนกระดาน ให้คิดว่าเป็นของแถมช่วงเปิดศึก ไม่ใช่ทางลัด</p>
+
+<div class="wtitle">CTB กับ Rank ของท่า — ทำไมบางท่าถึงวนเทิร์นกลับมาเร็วกว่า</div>
+<p>ระบบต่อสู้ของ FFX ชื่อ <span class="term" title="Conditional Turn-Based Battle — คิวเทิร์นที่มองเห็นล่วงหน้าได้ที่มุมบนขวาของจอ">CTB</span> ไม่ได้สลับเทิร์นวนตามลำดับตายตัว แต่ทุกฝ่ายเดินอยู่บนตัวนับเวลาเดียวกัน ใครนับถึงก่อนได้เทิร์นก่อน — และสิ่งที่คนเล่นรอบแรกมักไม่รู้คือ <b>ท่าที่คุณสั่งในเทิร์นนี้เป็นตัวกำหนดว่าเทิร์นถัดไปของคุณจะมาเร็วแค่ไหน</b> ไม่ใช่แค่ค่า Agility อย่างเดียว</p>
+<dl class="kv">
+<dt>Rank ของท่า</dt><dd>ทุกการกระทำในเกมมีตัวเลขประจำตัวเรียกว่า Rank บอกว่า "ใช้ท่านี้แล้วต้องรอนานแค่ไหนกว่าจะถึงเทิร์นถัดไป" — สเกลเป็น<b>เส้นตรง</b> ท่า Rank 8 ทำให้ต้องรอนานเป็น <b>8 เท่า</b> ของท่า Rank 1 พอดี</dd>
+<dt>ค่ามาตรฐานที่ควรจำ</dt><dd>Attack และความสามารถทั่วไปส่วนใหญ่คือ <b>Rank 3</b> – การใช้ไอเทมและ Defend คือ <b>Rank 2</b> – การเปลี่ยนอาวุธ/เกราะ และการหนีจากศึก คือ <b>Rank 1</b> — นี่คือเหตุผลที่การโยนไอเทมและท่าเบา ๆ วนเทิร์นกลับมาไวกว่าท่าหนัก และเป็นเหตุผลที่ Rikku ซึ่งเล่นด้วย Use เป็นหลักได้เทิร์นถี่กว่าคนอื่นอย่างเห็นได้ชัด</dd>
+<dt>สูตรเวลารอ</dt><dd>เวลารอเทิร์นถัดไป = <b>tick speed ของตัวละคร × Rank ของท่าที่ใช้</b> โดย tick speed แปลงมาจากค่า Agility ตามตารางด้านล่าง — สถานะ <b>Haste</b> หารเวลารอลงครึ่งหนึ่ง ส่วน <b>Slow</b> คูณสอง ซึ่งอธิบายว่าทำไมคอมโบ Hastega คู่กับ Slow ถึงเปลี่ยนผลของศึกได้ขนาดนั้น</dd>
+<dt>Quick Hit ใน HD Remaster</dt><dd>เวอร์ชัน PS2 อเมริกาเหนือต้นฉบับ Quick Hit เป็น <b>Rank 1</b> และกิน 12 MP — เวอร์ชัน International ซึ่ง HD Remaster ยึดตาม ปรับเป็น <b>Rank 2</b> และ 36 MP ผลคือมันเร็วกว่า Attack (Rank 3) ราว 1.5 เท่า ไม่ใช่ 3 เท่าเหมือนต้นฉบับ <b>ยังเป็นท่าตีที่ดีที่สุดปลายเกมอยู่ แต่ไม่โกงเท่าที่ไกด์เก่าเล่าไว้</b></dd>
+</dl>
+<table><tr><th>ค่า Agility</th><th>tick speed (ยิ่งน้อยยิ่งได้เทิร์นถี่)</th></tr>
+<tr><td class="nm">170–255</td><td><b>3</b> — ต่ำที่สุดที่เป็นไปได้ ทั้งช่วงนี้ให้ผลเท่ากันหมด</td></tr>
+<tr><td class="nm">98–169</td><td>4</td></tr>
+<tr><td class="nm">62–97</td><td>5</td></tr>
+<tr><td class="nm">44–61</td><td>6</td></tr>
+<tr><td class="nm">35–43</td><td>7</td></tr>
+<tr><td class="nm">29–34</td><td>8</td></tr>
+<tr><td class="nm">ต่ำกว่า 29</td><td>9 ขึ้นไป — ไต่สูงขึ้นเรื่อย ๆ จนถึง 28 ที่ Agility 0</td></tr>
+</table>
+<div class="callout tip"><b>หยุด Agility ที่ 170 เท่านั้น:</b> ตารางข้างบนอธิบายทุกอย่าง — พอถึง 170 แล้ว tick speed ลงไปแตะ 3 ซึ่งเป็นค่าต่ำสุด และปั้นต่อจนถึงเพดาน 255 ก็ยังได้ 3 เท่าเดิม สิ่งเดียวที่ค่าเกิน 170 ยังมีผลคือ<b>ลำดับคิวในเทิร์นแรกสุดของศึก</b> ซึ่งแทบไม่มีความหมายเมื่อทีมมี Auto-Haste และ First Strike อยู่แล้ว — <b>ทุกช่อง +4 Agility ที่ลงเกิน 170 คือช่องที่ควรเอาไปลง Luck หรือ HP แทน</b></div>
+
+<div class="wtitle">ลำดับการปั้นค่าพลังก่อนไปสู้ Dark Aeon &amp; Penance</div>
+<p data-note>ทำตามลำดับนี้จะได้ผลตอบแทนต่อช่องบนกระดานสูงที่สุด — และสำคัญกว่านั้นคือจะไม่เสียเวลาฟาร์มของที่ไม่ได้ใช้ ก่อนเริ่มควรอ่านเรื่องอาวุธเทพและ auto-ability ของเกราะควบคู่ไปด้วยที่ <a href="ref-gear.html">คู่มืออาวุธ/เกราะ</a> เพราะหลายค่าถูกแทนที่ด้วย auto-ability ได้ถูกกว่า</p>
+<div class="setup">
+<p class="who">ชั้นที่ 1 — ขาดไม่ได้ ทำก่อนทุกอย่าง</p>
+<p class="role">ถ้าสามอย่างนี้ไม่ครบ ศึก Dark Aeon จะจบตั้งแต่ไม่กี่เทิร์นแรกเสมอ</p>
+<div class="slots">
+<div class="slot">HP + Break HP Limit<small>ดันให้เกิน 20,000–30,000 — รอดก่อน ค่อยคิดเรื่องตี</small></div>
+<div class="slot">Strength 255<small>ดาเมจโตตามกำลังสาม ช่วงท้ายคุ้มที่สุด</small></div>
+<div class="slot">Luck อย่างน้อย 114<small>ต่ำกว่านี้คือตีพลาดจนดาเมจที่ปั้นมาไม่มีความหมาย</small></div>
+</div></div>
+<div class="setup">
+<p class="who">ชั้นที่ 2 — ทำต่อทันทีเมื่อชั้นแรกครบ</p>
+<p class="role">จุดนี้คือเส้นแบ่งระหว่าง "สู้ไหว" กับ "สู้สบาย"</p>
+<div class="slots">
+<div class="slot">Agility 170 แล้วหยุด<small>เกินจากนี้ไม่ได้อะไรเพิ่ม</small></div>
+<div class="slot">Luck ต่อจนถึง 205–230<small>205 = เข้าทุกนัดกับ Dark Mindy, 230 = คริทุกนัดรวม Overdrive</small></div>
+<div class="slot">Magic + MP<small>เฉพาะตัวที่เล่นสายเวทจริงจังอย่าง Lulu เท่านั้น</small></div>
+</div></div>
+<div class="setup">
+<p class="who">ชั้นที่ 3 — เก็บทีหลัง หรือข้ามไปเลย</p>
+<p class="role">ทั้งหมดนี้มี auto-ability ราคาถูกกว่าทำแทนได้ หรือไม่ได้ใช้จริงในศึกที่ยากที่สุด</p>
+<div class="slots">
+<div class="slot">Defense / Magic Defense<small>Auto-Protect กับ Shell ให้ผลทันทีโดยไม่กินช่อง</small></div>
+<div class="slot">Accuracy<small>ตัน 255 ก็ยังแพ้ศัตรูที่ Evasion 111 ขึ้นไป</small></div>
+<div class="slot">Evasion<small>ในกลุ่มซูเปอร์บอสมีแค่ท่ากายภาพของ Dark Ixion ที่หลบได้</small></div>
+</div></div>
+<p><b>Sphere ที่ต้องใช้และฟาร์มจากตัวไหน</b> — Sphere แบ่งเป็นสองประเภทที่คนสับสนกันบ่อยมาก: กลุ่มแรกคือ<b>ตัวเปิดช่อง</b> ใช้เปิดช่องที่วางอยู่บนกระดานอยู่แล้ว ส่วนกลุ่มที่สองคือ<b>ตัวปลูกช่องใหม่</b> ต้องใช้ <b>Clear Sphere</b> ล้างช่องเดิมให้ว่างก่อน แล้วจึงปลูกช่องใหม่ลงไปแทน — ตัวปลูกช่องทั้งหมดฟาร์มได้จาก Monster Arena เท่านั้น</p>
+<table><tr><th>Sphere</th><th>ประเภท – ทำอะไร</th><th>ฟาร์มจากตัวไหน</th></tr>
+<tr><td class="nm">Power Sphere</td><td>ตัวเปิดช่อง — เปิดช่อง HP, Strength และ Defense ที่มีอยู่แล้ว</td><td>ศัตรูทั่วไปดรอปตลอดทั้งเกม — ฟาร์มเร็วที่สุดคือใช้ Power Distiller กับศัตรูที่ Monster Arena</td></tr>
+<tr><td class="nm">Mana Sphere</td><td>ตัวเปิดช่อง — เปิดช่อง MP, Magic และ Magic Defense</td><td>เหมือนด้านบน แต่ใช้ Mana Distiller</td></tr>
+<tr><td class="nm">Speed Sphere</td><td>ตัวเปิดช่อง — เปิดช่อง Agility, Accuracy และ Evasion</td><td>เหมือนด้านบน แต่ใช้ Speed Distiller</td></tr>
+<tr><td class="nm">Ability Sphere</td><td>ตัวเปิดช่อง — เปิดช่องความสามารถทุกช่องไม่จำกัดสี</td><td>เหมือนด้านบน แต่ใช้ Ability Distiller</td></tr>
+<tr><td class="nm">Fortune Sphere</td><td>ตัวเปิดช่อง — <b>เปิดช่อง Luck ที่มีอยู่แล้ว</b>บนกระดาน</td><td><b>Earth Eater</b> ที่ Monster Arena (กลุ่ม Original Creation) ดรอปครั้งละ 1 ลูก</td></tr>
+<tr><td class="nm">Luck Sphere</td><td>ตัวปลูกช่องใหม่ — <b>ปลูกช่อง Luck +4 ขึ้นมาใหม่</b> ในช่องที่ล้างว่างไว้</td><td><b>Greater Sphere</b> ที่ Monster Arena (กลุ่ม Original Creation) — เป็นศัตรูตัวเดียวในเกมที่ดรอปของชิ้นนี้ จึงเป็นคอขวดของงานปั้น Luck</td></tr>
+<tr><td class="nm">HP Sphere</td><td>ตัวปลูกช่องใหม่ — ปลูกช่อง HP +300</td><td><b>Ironclad</b> (Species Conquest)</td></tr>
+<tr><td class="nm">MP Sphere</td><td>ตัวปลูกช่องใหม่ — ปลูกช่อง MP +40</td><td><b>Vidatu</b> (Species Conquest)</td></tr>
+<tr><td class="nm">Strength Sphere</td><td>ตัวปลูกช่องใหม่ — ปลูกช่อง Strength +4</td><td><b>Juggernaut</b> (Species Conquest)</td></tr>
+<tr><td class="nm">Defense Sphere</td><td>ตัวปลูกช่องใหม่ — ปลูกช่อง Defense +4</td><td><b>Tanket</b> (Species Conquest)</td></tr>
+<tr><td class="nm">Magic Sphere</td><td>ตัวปลูกช่องใหม่ — ปลูกช่อง Magic +4</td><td><b>Jumbo Flan</b> (Species Conquest)</td></tr>
+<tr><td class="nm">Magic Def Sphere</td><td>ตัวปลูกช่องใหม่ — ปลูกช่อง Magic Defense +4</td><td><b>One-Eye</b> (Species Conquest)</td></tr>
+<tr><td class="nm">Agility Sphere</td><td>ตัวปลูกช่องใหม่ — ปลูกช่อง Agility +4</td><td><b>Fenrir</b> (Species Conquest)</td></tr>
+<tr><td class="nm">Accuracy Sphere</td><td>ตัวปลูกช่องใหม่ — ปลูกช่อง Accuracy +4</td><td><b>Hornet</b> (Species Conquest)</td></tr>
+<tr><td class="nm">Evasion Sphere</td><td>ตัวปลูกช่องใหม่ — ปลูกช่อง Evasion +4</td><td><b>Pteryx</b> (Species Conquest)</td></tr>
+</table>
+<div class="callout warn"><b>อย่าสับสนระหว่าง Fortune Sphere กับ Luck Sphere:</b> ชื่อคล้ายกันแต่คนละหน้าที่กันคนละเรื่อง — <b>Fortune Sphere</b> ใช้<b>เปิด</b>ช่อง Luck ที่มีวางอยู่บนกระดานอยู่แล้ว (ซึ่งทั้งกระดานมีอยู่ไม่กี่ช่อง) ส่วน <b>Luck Sphere</b> ใช้<b>ปลูก</b>ช่อง Luck +4 ขึ้นมาใหม่ในช่องว่าง จึงเป็นตัวที่ใช้ดัน Luck ขึ้นหลักร้อยได้จริง คนที่ฟาร์มผิดตัวมักเสียเวลาไปหลายชั่วโมงก่อนจะรู้ตัว</div>
+<p data-note>วิธีปลดล็อกและวิธีฟาร์มศัตรูแต่ละตัวที่ Monster Arena รวมถึงเงื่อนไขของ Dark Aeon และ Penance ทั้งหมด อยู่ในคู่มือ <a href="ref-sidequests.html#arena">Monster Arena</a> และ <a href="ref-sidequests.html#darkaeon">Dark Aeon &amp; Penance</a> — หน้านี้จงใจไม่เขียนซ้ำ เพื่อให้มีแหล่งข้อมูลเดียวที่ต้องคอยอัปเดต</p>
+<p data-note><b>ที่มาของตัวเลขในหัวข้อนี้:</b> สูตรความแม่น สูตรคริติคอล ตาราง AcNum และตาราง tick speed มาจากเอกสาร Stat Mechanics FAQ ของ SinirothX บน GameFAQs, หน้า Luck / Speed / Defense / Rank ของ FF Wiki (Final Fantasy Fandom), หน้าค่าพลังของ Game8 ซึ่งอ้างหนังสือ FFX Ultimania และงานถอดรหัสโค้ดของโปรเจกต์ FFX-Info — ค่าที่ต่างกันตามเวอร์ชันเขียนกำกับไว้แล้วทุกจุด ส่วนตัวเลขที่ระบุว่า "คำนวณจากสูตร" คือผลที่แทนค่าลงในสูตรข้างต้นโดยตรง ไม่ใช่ตัวเลขที่คัดลอกมาจากไกด์ใด</p>
+</section>
+
+<section id="white"><h2><span class="ic">✨</span> White Magic</h2>
+<table><tr><th>ชื่อ</th><th>MP</th><th>ผล</th></tr>
+<tr><td class="nm">Cure/Cura/Curaga</td><td><span class="mp">4/10/20</span></td><td>ฟื้น HP เล็ก/กลาง/มาก</td></tr>
+<tr><td class="nm">Scan</td><td><span class="mp">1</span></td><td>ดู HP ปัจจุบัน/สูงสุด ค่าพลัง และจุดอ่อนธาตุของศัตรู — ใช้ก่อนบอสทุกตัวที่ไม่เคยเจอ</td></tr>
+<tr><td class="nm">NulBlaze/Frost/Shock/Tide</td><td><span class="mp">2</span></td><td>กันธาตุนั้น 1 ครั้ง (ทั้งทีม)</td></tr>
+<tr><td class="nm">Esuna</td><td><span class="mp">5</span></td><td>ล้างสถานะผิดปกติ</td></tr>
+<tr><td class="nm">Life/Full-Life</td><td><span class="mp">18/60</span></td><td>ชุบชีวิต (เล็ก/เต็ม)</td></tr>
+<tr><td class="nm">Haste/Hastega</td><td><span class="mp">8/30</span></td><td>เพิ่มความเร็ว (เดี่ยว/ทีม)</td></tr>
+<tr><td class="nm">Slow/Slowga</td><td><span class="mp">12/20</span></td><td>ลดความเร็วศัตรู</td></tr>
+<tr><td class="nm">Shell/Protect</td><td><span class="mp">10/12</span></td><td>ลดดาเมจเวท/กายภาพครึ่ง</td></tr>
+<tr><td class="nm">Reflect</td><td><span class="mp">14</span></td><td>สะท้อนเวท</td></tr>
+<tr><td class="nm">Dispel</td><td><span class="mp">12</span></td><td>ลบบัฟศัตรู</td></tr>
+<tr><td class="nm">Regen</td><td><span class="mp">40</span></td><td>ฟื้น HP ต่อเนื่อง</td></tr>
+<tr><td class="nm">Holy</td><td><span class="mp">85</span></td><td>ดาเมจธาตุแสงหนัก</td></tr>
+<tr><td class="nm">Auto-Life</td><td><span class="mp">97</span></td><td>ฟื้นชีพอัตโนมัติ 1 ครั้ง</td></tr>
+</table></section>
+
+<section id="black"><h2><span class="ic">🔥</span> Black Magic</h2>
+<table><tr><th>ชื่อ</th><th>MP</th><th>ผล</th></tr>
+<tr><td class="nm">Fire/Fira/Firaga</td><td><span class="mp">4/8/16</span></td><td>ไฟ เล็ก/กลาง/หนัก</td></tr>
+<tr><td class="nm">Blizzard/Blizzara/Blizzaga</td><td><span class="mp">4/8/16</span></td><td>น้ำแข็ง เล็ก/กลาง/หนัก</td></tr>
+<tr><td class="nm">Thunder/Thundara/Thundaga</td><td><span class="mp">4/8/16</span></td><td>สายฟ้า เล็ก/กลาง/หนัก</td></tr>
+<tr><td class="nm">Water/Watera/Waterga</td><td><span class="mp">4/8/16</span></td><td>น้ำ เล็ก/กลาง/หนัก</td></tr>
+<tr><td class="nm">Bio</td><td><span class="mp">10</span></td><td>ติดพิษ (เลือดลดต่อเทิร์น) + ดาเมจเล็กน้อย</td></tr>
+<tr><td class="nm">Demi</td><td><span class="mp">32</span></td><td>ลด HP ปัจจุบันเป้าหมาย ~1/4 (บอสหลายตัวมีภูมิคุ้มกัน ใช้ไม่ได้ผล)</td></tr>
+<tr><td class="nm">Death</td><td><span class="mp">20</span></td><td>โอกาส KO ทันที (ศัตรู/บอสหลายตัวมีภูมิคุ้มกันเช่นกัน)</td></tr>
+<tr><td class="nm">Drain/Osmose</td><td><span class="mp">12/0</span></td><td>ดูด HP จากศัตรู / ดูด MP จากศัตรู</td></tr>
+<tr><td class="nm">Flare</td><td><span class="mp">54</span></td><td>ดาเมจไร้ธาตุหนัก (เป้าเดี่ยว)</td></tr>
+<tr><td class="nm">Ultima</td><td><span class="mp">90</span></td><td>ดาเมจไร้ธาตุมหาศาล ใส่ศัตรูทั้งหมด (เวทแรงสุดในเกม)</td></tr>
+</table></section>
+
+<section id="skill"><h2><span class="ic">🗡️</span> Skill (เริ่มโซน Auron)</h2>
+<table><tr><th>ชื่อ</th><th>MP</th><th>ผล</th></tr>
+<tr><td class="nm">Dark/Silence/Sleep Attack (Buster)</td><td><span class="mp">5/10</span></td><td>ตาบอด/พูดไม่ได้/หลับ (Buster โอกาสติดสูงกว่า Attack)</td></tr>
+<tr><td class="nm">Triple Foul</td><td><span class="mp">24</span></td><td>โอกาสติด หลับ+พูดไม่ได้+ตาบอด พร้อมกัน</td></tr>
+<tr><td class="nm">Zombie Attack</td><td><span class="mp">10</span></td><td>ทำให้ศัตรูเป็นซอมบี้</td></tr>
+<tr><td class="nm">Power/Magic Break</td><td><span class="mp">8</span></td><td>ลดพลังตี/พลังเวทของศัตรู</td></tr>
+<tr><td class="nm">Armor/Mental Break</td><td><span class="mp">12</span></td><td>ลดเกราะกายภาพ/เวทของศัตรู — Armor Break ยังทะลุการลดดาเมจของศัตรูหุ้มเกราะไปพร้อมกันด้วย</td></tr>
+<tr><td class="nm">Full Break</td><td><span class="mp">99</span></td><td>ใส่ Break ทั้ง 4 พร้อมกันในท่าเดียว</td></tr>
+<tr><td class="nm">Delay Attack/Buster</td><td><span class="mp">8/18</span></td><td>ตี + ถ่วงเทิร์นถัดไปของศัตรู (Buster ถ่วงมากกว่า)</td></tr>
+<tr><td class="nm">Mug / Nab Gil</td><td><span class="mp">10/30</span></td><td>ตี + ขโมยไอเทม / ตี + ขโมย Gil</td></tr>
+<tr><td class="nm">Quick Hit</td><td><span class="mp">36</span></td><td>ตีเร็ว รีโหลดเทิร์นสั้นมาก (ท่าตีเทพช่วงปลายเกม)</td></tr>
+<tr><td class="nm">Extract Power/Mana/Speed/Ability</td><td><span class="mp">1</span></td><td>ศัตรูดรอป Sphere ชนิดนั้นตอนตาย (ใช้ฟาร์ม)</td></tr>
+</table>
+<p data-note>หมวดนี้เริ่มอยู่ในโซน Auron บน Sphere Grid แต่ตัวละครอื่นเรียนเพิ่มได้เสมอผ่าน Key Sphere — ที่เหมาะเรียนเพิ่มเป็นพิเศษ: Mug/Nab Gil เหมาะกับ Rikku เพราะถนัดสายขโมยอยู่แล้ว, Quick Hit เหมาะกับตัวตีหลักที่ Agility สูง, Break ทั้ง 4 เหมาะให้ใครก็ได้ที่เปิดหน้าก่อนตี</p></section>
+
+<section id="special"><h2><span class="ic">⭐</span> Special</h2>
+<table><tr><th>ชื่อ</th><th>MP</th><th>ผล</th><th>ใครควรใช้</th></tr>
+<tr><td class="nm">Steal</td><td>—</td><td>ขโมยไอเทมจากศัตรู (เปิดหีบบางใบได้)</td><td>Rikku — มีติดตัวตั้งแต่ต้น</td></tr>
+<tr><td class="nm">Use</td><td>—</td><td>ใช้ไอเทม/ของพิเศษในการต่อสู้</td><td>Rikku — มีติดตัวตั้งแต่ต้น</td></tr>
+<tr><td class="nm">Flee</td><td>—</td><td>ช่วยทั้งทีมหนีจากการต่อสู้</td><td>ตัวที่ยืนอยู่หน้าสุด/เสี่ยงตายง่าย</td></tr>
+<tr><td class="nm">Pray</td><td>—</td><td>ฟื้น HP เล็กน้อยทั้งทีม (ตามค่า Magic ผู้ใช้)</td><td>ตัวที่มี Magic สูง</td></tr>
+<tr><td class="nm">Cheer</td><td>—</td><td>เพิ่ม Strength+Defense ทั้งทีม (ซ้อนได้ 5)</td><td rowspan="4">เริ่มโซน Tidus แต่ใครว่างเทิร์นก็ปั๊มได้ก่อนบอสยาก</td></tr>
+<tr><td class="nm">Aim</td><td>—</td><td>เพิ่มความแม่นทั้งทีม (ซ้อน 5)</td></tr>
+<tr><td class="nm">Focus</td><td>—</td><td>เพิ่ม Magic+Magic Def ทั้งทีม (ซ้อน 5)</td></tr>
+<tr><td class="nm">Reflex</td><td>—</td><td>เพิ่มการหลบทั้งทีม (ซ้อน 5)</td></tr>
+<tr><td class="nm">Luck</td><td>—</td><td>เพิ่มค่า Luck ทั้งทีม (ซ้อน 5)</td><td>ตัวที่ว่างเทิร์น ก่อนสู้ศัตรูที่ต้องพึ่งดวง</td></tr>
+<tr><td class="nm">Jinx</td><td>—</td><td>ลด Luck ศัตรูทั้งหมด (ซ้อน 5)</td><td>ตัวที่ว่างเทิร์น ก่อนสู้ศัตรูที่ต้องพึ่งดวง</td></tr>
+<tr><td class="nm">Lancet</td><td>—</td><td>ดูด HP+MP จากศัตรู + Kimahri เรียน Ronso Rage ไปด้วย</td><td>Kimahri — มีติดตัวตั้งแต่ต้น</td></tr>
+<tr><td class="nm">Doublecast</td><td>—</td><td>ร่าย Black Magic 2 เวทในเทิร์นเดียว</td><td>Lulu — จอมเวทตัวจริง คุ้มสุด</td></tr>
+<tr><td class="nm">Bribe</td><td>—</td><td>จ่าย Gil ให้ศัตรูหนี + ดรอปไอเทม (ฟาร์มของหายาก)</td><td>Rikku — มีติดตัวตั้งแต่ต้น</td></tr>
+<tr><td class="nm">Spare Change</td><td>—</td><td>ขว้าง Gil โจมตี (10 Gil = 1 ดาเมจ)</td><td>Rikku — มีติดตัวตั้งแต่ต้น</td></tr>
+<tr><td class="nm">Guard</td><td>—</td><td>รับดาเมจแทนเพื่อนที่เลือก</td><td rowspan="2">ตัวเลือด/เกราะหนา (Auron/Kimahri)</td></tr>
+<tr><td class="nm">Sentinel</td><td>—</td><td>ตั้งรับ + ปกป้องเพื่อน (ลดดาเมจ)</td></tr>
+<tr><td class="nm">Provoke</td><td><span class="mp">4</span></td><td>ล่อให้ศัตรูโจมตีเฉพาะผู้ใช้</td><td>เริ่มโซน Tidus</td></tr>
+<tr><td class="nm">Threaten</td><td><span class="mp">12</span></td><td>ข่มให้ศัตรูขยับไม่ได้ (ใช้ไม่ได้กับตัวแกร่ง)</td><td>ตัวที่ว่างเทิร์น ก่อนสู้ศัตรูตัวเดียวที่ไม่มีภูมิคุ้มกัน</td></tr>
+<tr><td class="nm">Copycat</td><td><span class="mp">28</span></td><td>เลียนแบบการกระทำล่าสุดของเพื่อน</td><td>ตัวที่ว่างเทิร์น หลังมีใครปล่อยท่าใหญ่ไปแล้ว</td></tr>
+</table>
+<p data-note>Pray (ฟื้น HP เล็กน้อยทั้งทีม ตามค่า Magic) อยู่ในหมวด Special ไม่ใช่ White Magic — ตามไกด์อ้างอิง Rikku คือเจ้าของ Steal/Use/Mug/Bribe/Spare Change ตัวจริง ส่วน Tidus คือเจ้าของ Cheer/Aim/Focus/Reflex/Provoke ตัวจริง — "Dismiss" ไม่มีอยู่ในเกม FFX (ชื่อที่บางไกด์ใช้เรียกผิด)</p></section>
+
+<section id="status-bad"><h2><span class="ic">🩸</span> สถานะ (Status) ในเกม — ตัวร้าย</h2>
+<p data-note>สถานะผิดปกติที่ศัตรูใส่เรา (หรือเราใส่ศัตรู) — รู้จักไว้จะได้เตรียมของแก้/เกราะกันถูกตัว</p>
+<table><tr><th>สถานะ</th><th>ทำอะไร</th><th>แก้ยังไง</th></tr>
+<tr><td class="nm">Poison (พิษ)</td><td>เสีย HP ~1/4 ของ Max ทุกเทิร์น (รวมตอนเดินแผนที่)</td><td>Antidote – Esuna – Poisonproof/Ward</td></tr>
+<tr><td class="nm">Silence (เงียบ)</td><td>ร่ายเวททุกชนิดไม่ได้ (ตัวจอมเวทตายสนิท)</td><td>Echo Screen – Esuna – Silenceproof/Ward</td></tr>
+<tr><td class="nm">Sleep (หลับ)</td><td>ขยับ/สั่งไม่ได้จนกว่าจะโดนตี — <b>โดนตีกายภาพจะตื่น</b></td><td>รอโดนตี – Esuna – Sleepproof/Ward</td></tr>
+<tr><td class="nm">Darkness/Blind (ตาบอด)</td><td>โจมตี<b>กายภาพ</b>พลาดบ่อยมาก (เวทไม่โดนผล)</td><td>Eye Drops – Esuna – Darkproof/Ward</td></tr>
+<tr><td class="nm">Petrify/Stone (หิน)</td><td>กลายเป็นหิน สั่งไม่ได้ — <b>ถ้าโดนตีตอนเป็นหินจะ "แตก" ตายถาวร (Shatter)</b></td><td>Soft – Esuna – <b>Stoneproof</b> (สำคัญปลายเกม)</td></tr>
+<tr><td class="nm">Zombie (ซอมบี้)</td><td>ฮีล/Cure กลายเป็น<b>ดาเมจ</b> – Phoenix Down ฆ่าทันที (ใช้ประโยชน์ได้ทั้งสองทาง)</td><td>Holy Water – Remedy – Zombieproof/Ward</td></tr>
+<tr><td class="nm">Confusion (สับสน)</td><td>สั่งไม่ได้ ตีมั่ว รวมถึงตีพวกเดียวกันเอง</td><td>โดนตีจะหาย – Remedy – Confuseproof/Ward</td></tr>
+<tr><td class="nm">Berserk (คลั่ง)</td><td>ตีกายภาพเองรัว ๆ สั่งอย่างอื่นไม่ได้ (พลังตีขึ้นแต่คุมไม่ได้)</td><td>Remedy – Berserkproof/Ward</td></tr>
+<tr><td class="nm">Slow (ช้า)</td><td>เกจเทิร์นมาช้าลงมาก (ตรงข้ามกับ Haste)</td><td>Haste/Hastega ทับ – Dispel – Slowproof/Ward</td></tr>
+<tr><td class="nm">Curse (สาป)</td><td>ใช้ <b>Overdrive ไม่ได้</b> ชั่วคราว</td><td>หายเอง (ล้างด้วย Dispel ไม่ได้) – Curseproof</td></tr>
+<tr><td class="nm">Doom (นับถอยหลังตาย)</td><td>มีตัวเลขนับถอยหลังเหนือหัว พอถึง <b>0 = ตายทันที</b></td><td>รีบจบศึก/ชุบใหม่หลังตาย – Deathproof กันบางท่า</td></tr>
+<tr><td class="nm">Death/KO (ตาย)</td><td>ตัวละครล้ม ออกจากการสั่ง</td><td>Phoenix Down – Life/Full-Life – Auto-Life กันล่วงหน้า</td></tr>
+<tr><td class="nm">Power/Armor Break</td><td>ลด<b>พลังตี</b>/<b>เกราะกายภาพ</b>ของเป้า (ใส่ศัตรูให้ตีมันเจ็บขึ้น)</td><td>ฝั่งศัตรูหายเมื่อจบศึก – ฝั่งเรากันด้วย Break-immune ของบอสบางตัว</td></tr>
+<tr><td class="nm">Magic/Mental Break</td><td>ลด<b>พลังเวท</b>/<b>เกราะเวท</b>ของเป้า</td><td>เหมือนด้านบน</td></tr>
+<tr><td class="nm">Provoke / Threaten</td><td>Provoke = ยั่วให้ศัตรูตีเฉพาะผู้ยั่ว – Threaten = ข่มจนศัตรูขยับไม่ได้ชั่วคราว</td><td>เป็นสถานะที่ "เรา" ใส่ศัตรู ใช้คุมเกม</td></tr>
+</table></section>
+
+<section id="status-good"><h2><span class="ic">🛡️</span> สถานะ (Status) ในเกม — ตัวช่วย (บัฟ)</h2>
+<table><tr><th>บัฟ</th><th>ให้ผลอะไร</th></tr>
+<tr><td class="nm">Haste / Hastega</td><td>เกจเทิร์นมาถี่ขึ้นมาก (เดี่ยว/ทั้งทีม) — บัฟที่คุ้มสุดในเกม</td></tr>
+<tr><td class="nm">Protect</td><td>ลดดาเมจ<b>กายภาพ</b>ที่รับลงครึ่งหนึ่ง</td></tr>
+<tr><td class="nm">Shell</td><td>ลดดาเมจ<b>เวท</b>ที่รับลงครึ่งหนึ่ง</td></tr>
+<tr><td class="nm">Reflect</td><td>สะท้อนเวท<b>เป้าเดี่ยว</b>กลับใส่ผู้ร่าย (เวทกลุ่ม/ฮีลบางอย่างไม่สะท้อน)</td></tr>
+<tr><td class="nm">Regen</td><td>ฟื้น HP ทีละนิดต่อเนื่องทุกเทิร์น</td></tr>
+<tr><td class="nm">Auto-Life</td><td>ตั้งไว้ล่วงหน้า — พอ KO จะ<b>ฟื้นชีพเองอัตโนมัติ 1 ครั้ง</b></td></tr>
+<tr><td class="nm">NulBlaze / NulFrost / NulShock / NulTide</td><td>กันธาตุ ไฟ/น้ำแข็ง/สายฟ้า/น้ำ <b>1 ครั้ง</b> (ธาตุนั้นดาเมจเป็น 0 แล้วบัฟหลุด)</td></tr>
+<tr><td class="nm">Cheer / Aim / Focus / Reflex / Luck</td><td>บัฟทีม <b>ซ้อนได้สูงสุด 5 ชั้น</b>: Cheer=Str+Def / Aim=แม่นยำ / Focus=Mag+MagDef / Reflex=หลบ / Luck=ดวง(คริ/หลบ)</td></tr>
+</table>
+<div class="callout tip"><b>เคล็ด:</b> <b>Dispel</b> ลบบัฟ (เช่น ลบ Reflect ของบอสก่อนร่ายเวทใส่) ส่วน <b>Esuna</b> ล้างสถานะร้ายของฝั่งเรา — สองอย่างนี้คนละหน้าที่กัน อย่าสับสน</div></section>
+
+<section id="overdrive"><h2><span class="ic">💥</span> Overdrive แต่ละตัว — ทำอะไร + เหมาะกับใคร</h2>
+<p data-note>Overdrive คือท่าไม้ตายที่ปล่อยได้เมื่อเกจเต็ม แต่ละตัวละครมีชนิดตายตัวเปลี่ยนไม่ได้ — ด้านล่างบอกว่ามัน "ให้ผลอะไร" และ "ตัวนี้เก่งด้านนี้เพราะอะไร" ท่าทุกท่าไม่เสีย MP</p>
+<table><tr><th>ตัวละคร</th><th>ชนิด</th><th>ให้ผลอะไร + เหมาะกับใคร (ทำไม)</th></tr>
+<tr><td class="nm">Tidus</td><td>Swordplay</td><td><b>ดาเมจกายภาพเดี่ยว</b> ปลดเพิ่มเรื่อย ๆ (Spiral Cut → Slice&amp;Dice → Energy Rain → Blitz Ace) — Blitz Ace คือท่าตีหนักสุดในเกม <b>เหมาะเป็นตัวยิงดาเมจหลัก</b> ทุกท่าต้องกดปุ่มจับจังหวะ (timing)</td></tr>
+<tr><td class="nm">Wakka</td><td>Slots/Reels</td><td><b>สล็อตหมุนเสี่ยง</b> — Attack Reels = ดาเมจหลายฮิต (ถ้าจัดเรียงตรงจะแรงมาก), Status Reels = ยัดสถานะทั้ง Sleep/Silence/Dark/Poison ใส่ศัตรูทีเดียว <b>เหมาะกับคนถนัดกดจับจังหวะ</b> — Attack Reels เป็นหนึ่งในดาเมจสูงสุดของเกม</td></tr>
+<tr><td class="nm">Auron</td><td>Bushido</td><td><b>ดาเมจ + ลดสถานะศัตรู</b> — Dragon Fang (ตีทั้งกลุ่ม), Shooting Star (เขี่ยศัตรูออกจากศึก = จบเร็ว), Banishing Blade (ลดทุกค่าศัตรู), Tornado (ทั้งกลุ่มแรง) <b>เหมาะเป็นตัวเปิดหน้าลดพลังศัตรู</b> ปลดท่าเพิ่มด้วย Jecht Sphere ต้องกดตัวอักษรตามจอ</td></tr>
+<tr><td class="nm">Lulu</td><td>Fury</td><td><b>ร่ายเวทดำซ้ำรัว ๆ ในเทิร์นเดียว</b> — ยิ่งหมุนได้เร็ว ยิ่งได้จำนวนครั้งมาก (เช่น Firaga รัว 8–15 ครั้ง) <b>เหมาะกับ Lulu ที่ปั้นเป็นจอมเวท</b> เพราะแปลงเป็นดาเมจเวทมหาศาลรวดเดียว<br><span data-note>▸ <b>PS2/จอย:</b> หมุนสติ๊กขวาวน ๆ ให้เร็วที่สุด &nbsp; ▸ <b>คีย์บอร์ด (PC/HD):</b> รัวปุ่มทิศทางสลับกันเร็ว ๆ (เช่น ←→←→ หรือ ↑↓↑↓) หรือหมุน L2/R2 ตาม prompt — ยิ่งรัวไว จำนวนเวทยิ่งมาก</span></td></tr>
+<tr><td class="nm">Kimahri</td><td>Ronso Rage</td><td><b>Blue Magic</b> — ดูดท่าจากศัตรูมาใช้ผ่าน Lancet (ท่าเด่น: White Wind ฮีลทั้งทีม, Mighty Guard บัฟกันทั้งทีม, Nova ดาเมจหนัก, Bad Breath ยัดสถานะรวม) <b>เหมาะเป็นตัวยืดหยุ่น</b> — เล่นเป็นฮีลเลอร์/บัฟเฟอร์สำรองหรือตัวยัดสถานะได้</td></tr>
+<tr><td class="nm">Yuna</td><td>Grand Summon</td><td><b>เรียก Aeon ออกมาพร้อมเกจ Overdrive เต็มทันที</b> ปล่อยท่าไม้ตาย Aeon ได้เลย + Aeon รับดาเมจแทน 1 ครั้งฟรี <b>เหมาะเปิดบอสใหญ่</b> — เบิร์นดาเมจก้อนโตแล้วถอย Aeon ออกโดยทีมไม่เจ็บ</td></tr>
+<tr><td class="nm">Rikku</td><td>Mix</td><td><b>ผสมไอเทม 2 ชิ้น</b> ได้ผลลัพธ์ที่เป็นไปได้ 64 แบบ ตั้งแต่ฮีลทั้งทีม บัฟ (Trio of 9999, Hyper Mighty G) ไปจนดาเมจทะลุเพดาน (Sunburst) <b>เหมาะเป็นตัวซัพพอร์ตอเนกประสงค์</b> — Overdrive ที่ยืดหยุ่นสุดในเกมถ้ามีไอเทมพอ (ดูตาราง Mix ด้านล่าง)</td></tr>
+</table>
+
+<div class="wtitle">ท่าที่ปลดเพิ่มระหว่างเกม — Tidus / Wakka / Auron</div>
+<p data-note>สามตัวนี้เริ่มมีแค่ท่าแรก แล้วปลดท่าถัดไปเองอัตโนมัติเมื่อเข้าเงื่อนไข ไม่ต้องทำอะไรเป็นพิเศษนอกจากเล่นไปเรื่อย ๆ</p>
+<div class="setup">
+<p class="who">Tidus — Swordplay</p>
+<p class="role">ดาเมจกายภาพ ปลดท่าเพิ่มตามจำนวนครั้งที่ใช้ Overdrive สะสม</p>
+<div class="slots">
+<div class="slot">Spiral Cut<small>มีตั้งแต่ต้น — ตีเดี่ยว</small></div>
+<div class="slot">Slice &amp; Dice<small>ใช้ Overdrive ครบ 10 ครั้ง — โดน 6 ตัวสุ่ม</small></div>
+<div class="slot">Energy Rain<small>ใช้ Overdrive ครบ 30 ครั้ง — โดนทุกตัว 1 ครั้ง</small></div>
+<div class="slot">Blitz Ace<small>ใช้ Overdrive ครบ 80 ครั้ง — 8 ฟัน + ยิงลูกบอล แรงสุด</small></div>
+</div></div>
+<div class="setup">
+<p class="who">Wakka — Slots (Reels)</p>
+<p class="role">หมุนวงล้อแล้วหยุดให้ตรงจังหวะ — <b>ปลดท่าเพิ่มด้วยการชนะ Blitzball เท่านั้น</b> ไม่เกี่ยวกับจำนวนครั้งที่ใช้ Overdrive</p>
+<div class="slots">
+<div class="slot">Element Reels<small>มีตั้งแต่ต้น — ดาเมจธาตุตามวงล้อ</small></div>
+<div class="slot">Attack Reels<small>ได้ที่ 1 ในทัวร์นาเมนต์ Blitzball 1 ครั้ง — ตีหลายครั้ง แรงมากถ้าเรียงติด</small></div>
+<div class="slot">Status Reels<small>มี Attack Reels แล้ว + ผ่านการต่อสู้สะสม 250 ศึกขึ้นไป แล้วได้ที่ 1 ใน<b>ลีก</b> — ใส่สถานะผิดปกติตามวงล้อ</small></div>
+<div class="slot">Aurochs Reels<small>มี Status Reels แล้ว + ผ่านการต่อสู้สะสม 450 ศึกขึ้นไป แล้วได้ที่ 1 ใน<b>ทัวร์นาเมนต์</b> — ผสมผสานทุกแบบ</small></div>
+</div>
+<p data-note><b>อย่าเข้าใจผิด:</b> ไกด์เก่าหลายแหล่งเขียนว่า Reels ปลดตามจำนวนครั้งที่ใช้ Overdrive แบบเดียวกับ Tidus — <b>ไม่ใช่</b> ทั้งสามท่าเป็นของรางวัลจาก Blitzball ล้วน ๆ ถ้าไม่แตะ Blitzball เลย Wakka จะมีแค่ Element Reels ไปตลอดเกม และจะไม่มีทางได้ <span class="it">Jupiter Sigil</span> ด้วย เพราะ Sigil จะมีโอกาสโผล่เป็นรางวัลลีกก็ต่อเมื่อได้ Reels ครบทั้งสามท่าแล้วเท่านั้น</p></div>
+<div class="setup">
+<p class="who">Auron — Bushido</p>
+<p class="role">กดปุ่มตามสัญลักษณ์บนจอให้ทันเวลา ปลดท่าเพิ่มด้วยการป้อน Jecht Sphere ให้ Auron</p>
+<div class="slots">
+<div class="slot">Dragon Fang<small>มีตั้งแต่ต้น — ดาเมจ + ถ่วงเทิร์นทุกตัว</small></div>
+<div class="slot">Shooting Star<small>ป้อน Jecht Sphere ครบ 1 ชิ้น — ดาเมจเดี่ยวหนัก อาจเด้งศัตรูออกจากศึก</small></div>
+<div class="slot">Banishing Blade<small>ป้อน Jecht Sphere ครบ 3 ชิ้น — ดาเมจ + Full Break</small></div>
+<div class="slot">Tornado<small>ป้อน Jecht Sphere ครบ 10 ชิ้น (ครบทุกลูก) — ดาเมจหนักทุกตัว</small></div>
+</div>
+<p data-note>Bushido มีแค่ 4 ท่านี้เท่านั้น — "Zanmato" และ "Spirit" เป็นท่าของ Aeon Yojimbo ไม่ใช่ของ Auron (สับสนกันบ่อย)</p></div>
+
+<div class="wtitle">Kimahri — Ronso Rage (Blue Magic ครบ 12 ท่า)</div>
+<div class="callout secret"><b>วิธีเรียนทุกท่า:</b> ต้องให้ศัตรูปล่อยท่านั้นใส่ทีมก่อนอย่างน้อย 1 ครั้งในศึกเดียวกัน แล้วรีบสั่ง Kimahri ใช้ <b>Lancet</b> ใส่ศัตรูตัวนั้นทันที (ก่อนจบศึกหรือก่อนมันตาย) ถึงจะเรียนท่านั้นติดตัวถาวร — พลาดจังหวะนี้ต้องรอเจอศัตรูตัวเดิมที่ใช้ท่าเดิมอีกครั้ง</div>
+<div class="setup">
+<p class="who">Kimahri — Ronso Rage</p>
+<p class="role">Blue Magic ที่ดูดมาจากศัตรูทีละท่า ยิ่งเรียนเยอะยิ่งเล่นได้หลายบทบาท (ฮีล/บัฟ/ดาเมจ/สถานะ)</p>
+</div>
+<div class="callout warn"><b>โอกาสทองที่พลาดแล้วเสียดายที่สุด — ศึก Biran &amp; Yenke Ronso บน Mt. Gagazet (ด่าน 25):</b> ศึกนี้เกิดขึ้น<b>ครั้งเดียวในเนื้อเรื่อง</b> และสองพี่น้อง Ronso คู่นี้ใช้ท่า Ronso Rage รวมกันถึง <b>8 ท่า</b> จาก 12 ท่า — เท่ากับเก็บได้เกินครึ่งในศึกเดียว ให้ตั้งใจสู้ยาว ๆ อย่ารีบปิดจ็อบ รอให้แต่ละตัวปล่อยท่าครบก่อนแล้วค่อย Lancet ทีละท่า พลาดศึกนี้ไปก็ยังเก็บครบได้จากฟีนด์ทั่วไปตามตารางด้านล่าง แต่ต้องไล่ตามหาทีละตัวทั่ว Spira ซึ่งเสียเวลากว่ามาก</div>
+<table><tr><th>ท่า</th><th>ทำอะไร</th><th>เรียนจากศัตรูตัวไหน (อยู่ที่ไหน)</th></tr>
+<tr><td class="nm">Jump</td><td>ดาเมจกายภาพเป้าเดี่ยว</td><td><b>มีติดตัวมาตั้งแต่ต้นเกม</b> ไม่ต้อง Lancet จากใคร</td></tr>
+<tr><td class="nm">Seed Cannon</td><td>ดาเมจกายภาพเป้าเดี่ยว</td><td><b>Ragora</b> (ป่า Kilika)</td></tr>
+<tr><td class="nm">Self-Destruct</td><td>ดาเมจหนักเป้าเดี่ยว แต่ <b>Kimahri ตายเอง</b>ทันที</td><td><b>Biran Ronso</b> (Mt. Gagazet) – <b>Bomb</b> (Mi'ihen Highroad) – <b>Grenade</b> (Mt. Gagazet) – <b>Puroboros</b> (Omega Ruins)</td></tr>
+<tr><td class="nm">Thrust Kick</td><td>ดาเมจ + มีโอกาสเตะศัตรูกระเด็นออกจากศึกไปเลย (จบศึกเร็ว แต่ไม่ได้ AP จากตัวนั้น)</td><td><b>Biran Ronso</b> (Mt. Gagazet) – <b>YKT-63</b> (Bevelle) – <b>YKT-11</b> (ซาก Zanarkand)</td></tr>
+<tr><td class="nm">Fire Breath</td><td>ดาเมจธาตุไฟใส่ศัตรูทั้งหมด</td><td><b>Yenke Ronso</b> (Mt. Gagazet) – <b>Dual Horn</b> (Mi'ihen Highroad) – <b>Valaha</b> (Cavern of the Stolen Fayth) – <b>Grendel</b> (Mt. Gagazet)</td></tr>
+<tr><td class="nm">Stone Breath</td><td>โอกาสทำให้ศัตรูทั้งหมดกลายเป็นหิน</td><td><b>Yenke Ronso</b> (Mt. Gagazet) – <b>Basilisk</b> (Djose Highroad) – <b>Anacondaur</b> (Calm Lands)</td></tr>
+<tr><td class="nm">Aqua Breath</td><td>ดาเมจธาตุน้ำใส่ศัตรูทั้งหมด</td><td><b>Yenke Ronso</b> (Mt. Gagazet) – <b>Chimera</b> (Macalania)</td></tr>
+<tr><td class="nm">Doom</td><td>ใส่สถานะนับถอยหลังตาย พอครบเป้าหมายตายทันที</td><td><b>Biran Ronso</b> (Mt. Gagazet) – <b>Ghost</b> (Cavern of the Stolen Fayth) – <b>Wraith</b> (Inside Sin)</td></tr>
+<tr><td class="nm">White Wind</td><td><b>ฮีลทั้งทีม</b>ตามสัดส่วน HP ที่ Kimahri เหลืออยู่ — ท่าเด่น ใช้แทนฮีลเลอร์ได้ทั้งเกม</td><td><b>Yenke Ronso</b> (Mt. Gagazet) – <b>Dark Flan</b> (Mt. Gagazet) – <b>Spirit</b> (Omega Ruins)</td></tr>
+<tr><td class="nm">Bad Breath</td><td>ยัดสถานะผิดปกติหลายชนิดรวดเดียวใส่ศัตรูทั้งหมด — ท่าเด่น</td><td><b>Malboro</b> (มุมตะวันตกเฉียงเหนือของ Calm Lands) – <b>Great Malboro</b> (Inside Sin และ Omega Ruins) — <b>ทั้งสองตัวไม่มีในศึก Biran &amp; Yenke</b> ต้องไปเก็บเอง <b>ทางที่ง่ายที่สุดคือ Great Malboro</b> เพราะมัน<b>เปิดศึกด้วย Bad Breath เสมอ</b> ไม่ต้องรอจังหวะ</td></tr>
+<tr><td class="nm">Mighty Guard</td><td>Protect + Shell + NulAll ให้ทั้งทีมพร้อมกัน — ท่าเด่น บัฟเปิดศึกซูเปอร์บอส</td><td><b>Biran Ronso</b> (Mt. Gagazet) – <b>Behemoth</b> (Mt. Gagazet) – <b>Behemoth King</b> (Inside Sin)</td></tr>
+<tr><td class="nm">Nova</td><td>ดาเมจไร้ธาตุหนักที่สุดของสาย Ronso Rage ใส่ศัตรูทั้งหมด — ท่าเด่น</td><td><b>Omega Weapon</b> (Omega Ruins) – <b>Nemesis</b> (Monster Arena) — <b>ท่าสุดท้ายและยากที่สุด</b> ต้องเก็บตอนปลายเกมเท่านั้น เพราะทั้งสองตัวเป็นซูเปอร์บอส</td></tr>
+</table>
+<p data-note><b>สรุปว่าใครสอนอะไร:</b> <b>Biran Ronso</b> สอน Self-Destruct, Thrust Kick, Doom, Mighty Guard – <b>Yenke Ronso</b> สอน Fire Breath, Stone Breath, Aqua Breath, White Wind — รวมสองตัว 8 ท่า เหลืออีก 4 ท่าที่ต้องหาเอง คือ Jump (มีมาแต่ต้น), Seed Cannon (Ragora ที่ Kilika ตั้งแต่ด่าน 06), Bad Breath (Malboro หรือ Great Malboro) และ Nova (Omega Weapon หรือ Nemesis ปลายเกม) — <b>Bad Breath กับ Nova คือสองท่าเดียวที่เรียนจาก Biran/Yenke ไม่ได้เด็ดขาด</b></p>
+<p data-note><b>เคลียร์ข้อสงสัยเรื่อง White Wind:</b> ไกด์บางแหล่งบอกว่าได้จาก Yenke Ronso บางแหล่งบอกว่าได้จาก Dark Flan — <b>ถูกทั้งคู่</b> เพราะ White Wind มีศัตรูที่ใช้ท่านี้อยู่ 3 ตัว คือ Yenke Ronso, Dark Flan และ Spirit ตัวไหนก็เรียนได้เหมือนกัน ทางที่ง่ายที่สุดคือเก็บจาก <b>Yenke Ronso</b> ในศึกบังคับที่ Mt. Gagazet ไปเลย เพราะ Dark Flan อยู่บน Gagazet เหมือนกันแต่ต้องรอเจอสุ่ม ส่วน Spirit อยู่ลึกใน Omega Ruins ปลายเกม</p>
+
+<div class="wtitle">Yuna &amp; Rikku — ไม่มีท่าให้ปลด แค่เลือกใช้</div>
+<p data-note><b>Yuna – Grand Summon:</b> เรียก Aeon ที่มีอยู่ออกมาพร้อมเกจ Overdrive เต็มทันที ปล่อยท่าไม้ตายของ Aeon ได้เลย (เช่น Bahamut → Mega Flare) <b>Rikku – Mix:</b> ผสมไอเทม 2 ชิ้นเป็นเอฟเฟกต์ได้ 64 แบบ ไม่ต้องปลดล็อกอะไรเพิ่ม มีครบตั้งแต่ต้น (สูตรเด่นดูหัวข้อ Rikku Mix ด้านล่างของหน้านี้)</p>
+
+<div class="wtitle">ระบบชาร์จเกจ Overdrive (Overdrive Mode)</div>
+<p><b>Overdrive Mode คืออะไร:</b> เกจ Overdrive ไม่ได้เต็มขึ้นเองตามเวลา แต่เต็มขึ้นจาก<b>พฤติกรรมที่คุณเลือกไว้ล่วงหน้า</b> — "Overdrive Mode" คือการตั้งค่าว่าตัวละครคนนั้นจะสะสมเกจจากอะไร เช่นจากการโดนตี จากการทำดาเมจ หรือจากการฮีลเพื่อน <b>ต้องสนใจไปทำไม:</b> เพราะตั้งผิดโหมดแปลว่า<b>เกจแทบไม่ขึ้นเลยตลอดศึก</b> เช่นตั้งตัวฮีลเลอร์ไว้ที่ Warrior ทั้งที่มันไม่เคยตีใคร — ในศึกซูเปอร์บอสที่ Overdrive คือดาเมจก้อนใหญ่ที่สุดที่คุณมี การเลือกโหมดผิดคือการทิ้งดาเมจไปเปล่า ๆ <b>ปรับได้ตอนไหน:</b> เปลี่ยนได้อิสระทุกเมื่อจากเมนูตัวละคร ไม่มีข้อจำกัด <b>ต้องพร้อมแค่ไหน:</b> ไม่ต้องเตรียมอะไร แต่<b>โหมดที่ยังไม่ปลดล็อกจะเลือกไม่ได้</b> จึงควรรู้ตั้งแต่ต้นเกมว่าอยากใช้โหมดไหน จะได้สะสมเงื่อนไขไปเรื่อย ๆ ระหว่างเล่น</p>
+<p data-note>เกจ Overdrive ของแต่ละตัวละครชาร์จตามเงื่อนไขที่เลือกได้ — เปลี่ยน "Overdrive Mode" ได้อิสระทุกเมื่อจากเมนูตัวละคร แต่<b>เลือกได้เฉพาะโหมดที่ตัวละครคนนั้นปลดล็อกไว้แล้วเท่านั้น</b> และแต่ละคนปลดล็อกแยกกันของใครของมัน ไม่ใช่ปลดครั้งเดียวใช้ได้ทั้งทีม</p>
+<div class="callout tip"><b>ตอนเริ่มเกมทุกตัวละครมีโหมดเดียวกันหมดคือ <span class="it">Stoic</span></b> — โหมดอื่นทั้ง 16 โหมดต้อง "ทำพฤติกรรมนั้นซ้ำ ๆ" จนถึงเกณฑ์ถึงจะโผล่มาให้เลือก เช่นจะปลด Warrior ก็ต้องเอาตัวละครคนนั้นตีศัตรูให้เข้าเป้าสะสมหลายร้อยครั้ง โหมดในเกมนี้มีทั้งหมด <b>17 โหมด</b></div>
+<table><tr><th>โหมด</th><th>เกจเต็มเมื่อไหร่</th><th>ปลดล็อกด้วย (จำนวนครั้งสะสม โดยประมาณ)</th></tr>
+<tr><td class="nm">Stoic</td><td>ตัวเอง<b>โดนตี</b> — เหมาะจับคู่กับ Guard/Sentinel และเกราะอึด ดันเกจเต็มเร็วโดยแทบไม่เสี่ยง</td><td><b>มีมาตั้งแต่ต้นเกม</b> ทุกตัวละคร</td></tr>
+<tr><td class="nm">Warrior</td><td>ตัวเอง<b>ทำดาเมจ</b>ใส่ศัตรู — โหมดมาตรฐานที่ใช้กันมากสุด</td><td>ทำดาเมจใส่ศัตรูราว 100–300 ครั้ง</td></tr>
+<tr><td class="nm">Comrade</td><td><b>เพื่อนร่วมทีมโดนตี</b></td><td>ให้เพื่อนโดนตีต่อหน้าราว 100–300 ครั้ง</td></tr>
+<tr><td class="nm">Healer</td><td>ตัวเอง<b>ฮีล HP ให้เพื่อน</b></td><td>ฮีลเพื่อนราว 60–200 ครั้ง</td></tr>
+<tr><td class="nm">Tactician</td><td>ตัวเอง<b>ใส่สถานะผิดปกติให้ศัตรูสำเร็จ</b></td><td>ใส่สถานะสำเร็จราว 60–200 ครั้ง</td></tr>
+<tr><td class="nm">Victim</td><td>ตัวเอง<b>โดนสถานะผิดปกติ</b>ใส่</td><td>โดนสถานะใส่ราว 80–130 ครั้ง</td></tr>
+<tr><td class="nm">Dancer</td><td>ตัวเอง<b>หลบการโจมตีได้</b></td><td>หลบสำเร็จราว 130–300 ครั้ง</td></tr>
+<tr><td class="nm">Avenger</td><td><b>เพื่อนร่วมทีมล้ม (KO)</b></td><td>เห็นเพื่อนล้มราว 80–150 ครั้ง</td></tr>
+<tr><td class="nm">Slayer</td><td>ตัวเอง<b>ฆ่าศัตรูได้</b></td><td>ฆ่าศัตรูราว 80–130 ครั้ง</td></tr>
+<tr><td class="nm">Hero</td><td>ตัวเอง<b>ฆ่าศัตรูที่แข็งแกร่ง</b> (เลือดตั้งแต่ 10,000 ขึ้นไป)</td><td>ฆ่าศัตรูเลือดหนาราว 40–70 ตัว</td></tr>
+<tr><td class="nm">Rook</td><td>ตัวเอง<b>กันการโจมตีด้วยเวท</b> (Nul- ต่าง ๆ / Reflect ทำงาน)</td><td>กันด้วยเวทราว 110–120 ครั้ง</td></tr>
+<tr><td class="nm">Victor</td><td><b>ทีมชนะศึก</b></td><td>ชนะศึกราว 120–200 ครั้ง</td></tr>
+<tr><td class="nm">Coward</td><td>ตัวเอง<b>หนีจากการต่อสู้</b></td><td>หนีศึกราว 400–1,000 ครั้ง (โหดที่สุดในบรรดาโหมดทั้งหมด)</td></tr>
+<tr><td class="nm">Ally</td><td><b>ถึงเทิร์นของตัวเอง</b> — สะสมเรื่อย ๆ โดยไม่ต้องทำอะไรเป็นพิเศษ</td><td>—</td></tr>
+<tr><td class="nm">Sufferer</td><td>ตัวเอง<b>ยังติดสถานะผิดปกติอยู่</b>ตอนถึงเทิร์น</td><td>ผ่านเทิร์นขณะติดสถานะราว 80–130 ครั้ง</td></tr>
+<tr><td class="nm">Daredevil</td><td>ตัวเอง<b>สู้ตอนเลือดต่ำ</b> (HP เหลือไม่ถึงครึ่ง)</td><td>ลงมือตอนเลือดต่ำกว่าครึ่งราว 90–260 ครั้ง</td></tr>
+<tr><td class="nm">Loner</td><td>ตัวเอง<b>สู้อยู่คนเดียว</b> (เพื่อนล้มหมดแล้ว)</td><td>สู้ลำพังราว 35–180 ครั้ง</td></tr>
+</table>
+<p data-note><b>ตัวเลขในคอลัมน์ขวาเป็นช่วงโดยประมาณ ไม่ใช่เลขตายตัว</b> — เกณฑ์จริงต่างกันไปตามตัวละครแต่ละคน (บางคนปลดเร็วกว่าคนอื่นในโหมดเดียวกัน) เกมไม่มีตัวนับให้ดู ตัวเลขนี้อ้างอิงตาราง Overdrive Modes ของ Jegged.com เพื่อให้พอกะได้ว่าต้องทำอีกนานแค่ไหน</p>
+<div class="callout secret"><b>เลือกโหมดยังไงตอนสู้ Dark Aeon/Penance:</b> <b>Stoic</b> คือคำตอบมาตรฐาน เพราะศึกซูเปอร์บอสคุณจะโดนตีหนักและถี่อยู่แล้ว เกจจึงเต็มเองโดยไม่ต้องเสียเทิร์น — ส่วน <b>Comrade</b> เหมาะกับตัวซัพพอร์ตที่ไม่ค่อยโดนตีเอง และ <b>Ally</b> เหมาะกับศึกยาว ๆ ที่ไม่อยากพึ่งดวง เพราะสะสมสม่ำเสมอทุกเทิร์น เมื่อรวมกับ <b>Triple Overdrive</b> บนอาวุธเทพจะได้ Overdrive ถี่มาก</div>
+
+<div class="wtitle">การควบคุมแต่ละ Overdrive (จอย/คีย์บอร์ด)</div>
+<table><tr><th>ตัวละคร</th><th>รูปแบบการกด</th><th>คีย์บอร์ด (PC/Steam)</th></tr>
+<tr><td class="nm">Tidus</td><td>จับจังหวะ กดตอนแถบวิ่งเข้าโซนเป้าหมาย</td><td>ปุ่มทิศทาง/Enter ตามที่ปุ่ม prompt ขึ้นบนจอ</td></tr>
+<tr><td class="nm">Wakka</td><td>กดหยุดวงล้อทีละคอลัมน์ให้ตรงจังหวะ</td><td>ปุ่มยืนยัน (Enter/Z) กดตอนวงล้อหมุนถึงจุดที่ต้องการ</td></tr>
+<tr><td class="nm">Auron</td><td>กดปุ่มตามลำดับสัญลักษณ์ที่ขึ้นบนจอ ให้ทันก่อนหมดเวลา</td><td>ปุ่มทิศทาง/Enter ตามสัญลักษณ์ที่ตรงกัน</td></tr>
+<tr><td class="nm">Lulu</td><td>หมุน/สลับทิศให้เร็วที่สุดในเวลาจำกัด ยิ่งเร็วยิ่งร่ายซ้ำได้หลายครั้ง</td><td>รัวปุ่มทิศทางสลับซ้าย-ขวา (หรือ ↑↓) เร็ว ๆ</td></tr>
+<tr><td class="nm">Kimahri / Yuna / Rikku</td><td>เลือกจากเมนูตรง ๆ ไม่มีจับจังหวะ</td><td>เลือกท่า/Aeon/ไอเทมแล้วกดยืนยัน</td></tr>
+</table></section>
+
+<section id="builds"><h2><span class="ic">🎭</span> บทบาท &amp; บิลด์ปลายเกม</h2>
+<table><tr><th>ตัว</th><th>บทบาท</th><th>บิลด์</th></tr>
+<tr><td class="nm">Tidus</td><td>คุมความเร็ว</td><td>Agi+Str+Luck – Quick Hit, Haste, Slow</td></tr>
+<tr><td class="nm">Wakka</td><td>ตีบิน+สถานะ</td><td>Str+Acc+Agi – Attack/Status Reels, Break</td></tr>
+<tr><td class="nm">Auron</td><td>Break+ตีหนัก</td><td>Str+HP+Def – Armor Break, Quick Hit</td></tr>
+<tr><td class="nm">Lulu</td><td>จอมเวทดำ</td><td>Mag+MagDef+MP – Doublecast, Ultima, Flare</td></tr>
+<tr><td class="nm">Yuna</td><td>เวทขาว+อัญเชิญ</td><td>Mag+MP+Agi – Holy, Auto-Life, Grand Summon</td></tr>
+<tr><td class="nm">Kimahri</td><td>ยืดหยุ่น</td><td>คล้าย Tidus/Auron – Quick Hit, Ronso Rage</td></tr>
+<tr><td class="nm">Rikku</td><td>ขโมย/Mix</td><td>Agi+Luck – Quick Hit, Steal, Mix</td></tr>
+</table>
+<div class="callout tip"><b>เกราะปลายเกมที่แนะนำให้ใส่เหมือนกันหมดทุกตัว:</b> Break HP Limit – Auto-Haste – Auto-Protect – Ribbon <b>อาวุธ:</b> Break Damage Limit – Triple Overdrive – First Strike – Evade &amp; Counter (มีครบในตัวถ้าใช้อาวุธเทพ) — รายละเอียดเต็มอยู่ในคู่มือ <a href="ref-gear.html">อาวุธ/เกราะ</a></div></section>
+
+<section id="combo"><h2><span class="ic">🔗</span> คอมโบ &amp; ซินเนอร์จีที่ใช้ได้จริง</h2>
+<div class="combo"><div class="cname">Armor Break → ตีกายภาพ <span class="mp">MP 12</span></div><p class="cwhy">Auron ใช้ Armor Break ลดเกราะกายภาพของศัตรูและทะลุการลดดาเมจของศัตรูหุ้มเกราะไปพร้อมกัน จากนั้นให้ Tidus, Wakka หรือ Auron ตีเต็มแรงใส่บอสเกราะหนา ถ้าเสริมด้วย Power Break และ Mental Break ด้วยจะล็อกเกราะของศัตรูได้ครบทุกด้าน</p></div>
+<div class="combo"><div class="cname">Slow/Hastega เปรียบเทิร์น <span class="mp">MP 30</span></div><p class="cwhy">ใส่ Slow (หรือ Delay Attack/Buster) ให้ศัตรูช้าลง พร้อมร่าย Hastega ให้ทั้งทีมเร็วขึ้น ผลคือทีมได้เทิร์นถี่กว่าศัตรูราว 2–3 เท่า นี่คือกลยุทธ์พื้นฐานของการสู้บอสยากแทบทุกตัวในเกม</p></div>
+<div class="combo"><div class="cname">Quick Hit สแปม</div><p class="cwhy">Quick Hit กินเวลาต่อเทิร์นน้อยมากอยู่แล้ว เมื่อรวมกับ Agility สูง (ราว 170 ขึ้นไป) และ Haste จะทำให้ตีถี่ยิบจนกลายเป็นวิธีทำดาเมจเป้าเดี่ยวที่ดีที่สุดในช่วงปลายเกม</p></div>
+<div class="combo"><div class="cname">Wakka: อ่อนสถานะ + Reels <span class="mp">MP 24</span></div><p class="cwhy">ใช้ Dark/Silence/Sleep Attack (หรือ Triple Foul) อ่อนศัตรูก่อน จากนั้นสลับไปที่ Overdrive: Status Reels เพื่อยัดสถานะผิดปกติรวดเดียว หรือ Attack Reels เพื่อตีหลายครั้งรวด — ถ้าศัตรูโดน Break ไว้ก่อนแล้ว Attack Reels จะแรงขึ้นมาก</p></div>
+<div class="combo"><div class="cname">Doublecast + Ultima/Flare</div><p class="cwhy">Lulu ร่ายเวทดำได้ 2 ครั้งในเทิร์นเดียวด้วย Doublecast — จับคู่กับ Ultima หรือ Flare เพื่อเบิร์นดาเมจก้อนใหญ่รวดเดียวโดยไม่ต้องรอเทิร์นถัดไป</p></div>
+<div class="combo"><div class="cname">Grand Summon + Aeon Overdrive</div><p class="cwhy">Yuna เรียก Aeon ออกมาพร้อมเกจ Overdrive เต็มทันที ปล่อยท่าไม้ตายของ Aeon ได้เลยในเทิร์นแรก และ Aeon ยังรับดาเมจแทนทีมได้ฟรีอีก 1 ครั้งก่อนถอยกลับ</p></div>
+<div class="combo"><div class="cname">Provoke + Sentinel</div><p class="cwhy">ใช้ Provoke ล่อให้ศัตรูโจมตีเฉพาะผู้ใช้ท่า แล้วให้ตัวเลือดหนา/เกราะหนาอย่าง Auron หรือ Kimahri ใช้ Sentinel ตั้งรับปกป้องทั้งทีมไปพร้อมกัน ลดความเสี่ยงที่ตัวเวทหรือตัวเลือดบางจะโดนตี</p></div>
+<div class="combo"><div class="cname">Copycat ทำซ้ำท่าใหญ่ฟรี</div><p class="cwhy">Copycat เลียนแบบการกระทำล่าสุดของเพื่อนร่วมทีมโดยไม่เสีย MP หรือไอเทม — ให้ใครสักคนปล่อย Ultima หรือ Mix สูตร Trio of 9999 ก่อน แล้วให้ตัวที่ใช้ Copycat ทำซ้ำทันที เท่ากับได้ท่าแรงระดับนั้นฟรีอีกรอบ</p></div>
+<div class="combo"><div class="cname">Bribe ฟาร์มของหายาก</div><p class="cwhy">จ่าย Gil ให้ศัตรูตัวนั้นออกจากการต่อสู้ทันที แลกกับไอเทมที่มันดรอปเมื่อรับสินบน — เป็นวิธีฟาร์มของหายากหรือวัตถุคัสตอมที่เร็วกว่าการฆ่าศัตรูตามปกติมาก โดยเฉพาะกับศัตรูที่ดรอปของยากผ่าน Steal หรือ Drop ปกติได้ยาก</p></div>
+<div class="combo"><div class="cname">Extract/Distill ก่อนฆ่า</div><p class="cwhy">ใช้ท่า Extract Power/Mana/Speed/Ability (หรืออาวุธ Distiller ชนิดเดียวกัน) ใส่ศัตรูก่อนฆ่า เพื่อบังคับให้มันดรอป Stat Sphere ชนิดที่ต้องการตอนตาย ช่วยเร่งเดิน Sphere Grid ไปยังสายที่ต้องการได้เร็วขึ้น</p></div>
+</section>
+
+<section id="mix"><h2><span class="ic">🧪</span> Rikku Mix — สูตรเด่น</h2>
+<div class="callout warn"><b>อ่านก่อนใช้ตารางนี้:</b> Mix ผสมไอเทม 2 ชิ้นเข้าด้วยกัน ให้ผลลัพธ์ที่เป็นไปได้ <b>64 แบบ</b> และ<b>หลายคู่ให้ผลเดียวกัน</b> — เกมดูจาก "ชนิด/ระดับของไอเทมสองชิ้น" ไม่ใช่จากคู่ที่เจาะจง ส่วนผสมในคอลัมน์ขวาจึงเป็น<b>คู่ตัวอย่างที่ยืนยันแล้วว่าใช้ได้</b> ไม่ใช่คู่เดียวที่ทำได้ – <b>ลำดับที่เลือกไอเทมไม่มีผล</b> สลับซ้ายขวาได้ผลเหมือนกัน</div>
+<table><tr><th>Mix</th><th>ผล</th><th>ตัวอย่างส่วนผสม</th></tr>
+<tr><td class="nm">Trio of 9999</td><td>ทั้งทีมตี+ฮีล ทะลุขั้นต่ำ 9999 ทั้งศึก (ดังสุด)</td><td>Wings to Discovery ×2 / Gambler's Spirit ×2</td></tr>
+<tr><td class="nm">Hyper Mighty G</td><td>Protect+Shell+Haste+Regen+Auto-Life ทั้งทีม (บัฟกันสุดยอด)</td><td>Healing Spring + Underdog's Secret</td></tr>
+<tr><td class="nm">Super Elixir</td><td>ฟื้น HP+MP เต็มทั้งทีม + ล้างสถานะผิดปกติ — <b>ฟื้นทะลุ 9,999 ได้</b> ถ้าทีมมี Break HP Limit</td><td>Healing Water + Healing Spring</td></tr>
+<tr><td class="nm">Final Elixir</td><td>ฟื้น HP/MP เต็ม + ล้างสถานะ + ชุบชีวิตคนที่ล้มขึ้นมาเลือดเต็ม</td><td>Hi-Potion + Lv.1 Key Sphere</td></tr>
+<tr><td class="nm">Miracle Drink</td><td>ทีมคริติคอลทุกการโจมตีทั้งศึก</td><td>Ether/Turbo Ether + Luck/Fortune Sphere</td></tr>
+<tr><td class="nm">Eccentrick</td><td>เกจ Overdrive เต็มเร็วขึ้น 2 เท่าทั้งทีม</td><td>Amulet ×2</td></tr>
+<tr><td class="nm">Sunburst</td><td>ดาเมจไร้ธาตุ ~19,998 ทุกตัว (ทะลุเพดาน)</td><td>Shining Gem + Supreme Gem</td></tr>
+<tr><td class="nm">Chaos Grenade</td><td>ดาเมจหนัก + Full Break + สถานะรวมทุกตัว</td><td>Farplane Wind/Shadow + Lv.1 Key Sphere</td></tr>
+</table>
+<p data-note>คู่หลักที่ใช้ในศึก superboss/Dark Aeon/Penance คือ <b>Trio of 9999</b> (ทำทีมกายภาพเป็นเครื่องจักรดาเมจ) และ <b>Hyper Mighty G</b> (เกือบอมตะไม่กี่เทิร์น) — ทั้งสองสูตรทำซ้ำฟรีได้อีกด้วย Copycat</p>
+
+<div class="card">
+  <h4>จัดอาวุธยังไงถ้าเล่น Rikku เป็นสาย Mix</h4>
+  <div class="callout tip"><b>คำตอบสั้นที่สุดคือ ไม่มี "อาวุธสาย Mix" และไม่ต้องมี</b> — Mix เป็น <b>Overdrive</b> ไม่ใช่การโจมตีจากอาวุธ ความสามารถบนอาวุธจึงแทบไม่แตะผลของมันเลย สิ่งที่กำหนดว่าสาย Mix แรงหรือไม่คือ <b>ความถี่ที่ปล่อยได้</b> กับ <b>ของที่มีในกระเป๋า</b> ไม่ใช่อาวุธที่ถือ</div>
+  <dl class="kv">
+    <dt>ช่องเดียวที่มีผลจริงกับ Mix</dt><dd><b><span class="it">Triple Overdrive</span></b> (Winning Formula ×30) — ทำให้เกจเต็มเร็วขึ้นสามเท่า เท่ากับได้ Mix ถี่ขึ้นสามเท่า <b>นี่คือช่องที่แบกทั้งบิลด์ไว้</b> ส่วนอีกสามช่องไม่ได้ทำอะไรกับ Mix โดยตรง</dd>
+    <dt>สิ่งที่กำหนดความเร็วจริง ๆ ไม่ใช่อาวุธ</dt><dd>คือ <b>โหมด Overdrive</b> ที่ตั้งให้เธอ — <b>Comrade</b> (เกจเพิ่มเมื่อเพื่อนโดนตี) หรือ <b>Stoic</b> (เกจเพิ่มเมื่อตัวเองโดนตี) เหมาะกว่า <b>Warrior</b> (เกจเพิ่มเมื่อตัวเองทำดาเมจ) เพราะสาย Mix ไม่ได้เป็นตัวตีหลักอยู่แล้ว – <b>ตั้งโหมดผิดคือเหตุผลอันดับหนึ่งที่สาย Mix รู้สึกช้า ไม่ใช่เพราะอาวุธไม่ดี</b></dd>
+    <dt>แล้วอีกสามช่องใส่อะไร</dt><dd>ใส่ของที่ช่วยเธอ<b>ตอนที่ยังไม่ได้ปล่อย Mix</b> ซึ่งคือเวลาส่วนใหญ่ของศึก — ชุดสายกายภาพมาตรฐาน <span class="it">Break Damage Limit</span> + <span class="it">Evade &amp; Counter</span> + <span class="it">Piercing</span> ใช้ได้ตามเดิม ไม่ต้องจัดใหม่</dd>
+    <dt>ข้อที่ยืนยันไม่ได้ และผมจะไม่สรุปแทน</dt><dd><b>ยังไม่มีแหล่งไหนยืนยันชัดว่า <span class="it">Break Damage Limit</span> ปลดเพดานให้ดาเมจที่ออกจาก Mix หรือไม่</b> — มีแหล่งหนึ่งระบุว่าข้อยกเว้นของ Break Damage Limit คือ "ดาเมจจากไอเทม" ซึ่งถ้าตีความตามนั้น Mix ก็ไม่ได้ประโยชน์ แต่ไม่มีแหล่งที่สองมายืนยัน <b>ผลในทางปฏิบัติไม่เปลี่ยน</b> เพราะช่องนั้นคุ้มอยู่แล้วจากการตีปกติกับการสวนกลับของเธอ</dd>
+    <dt>ความสามารถที่ต้องเลี่ยงในบิลด์นี้</dt><dd><b><span class="it">Overdrive → AP</span> เป็นศัตรูโดยตรงกับสาย Mix</b> เพราะมันเอาเกจที่เต็มแล้วไปแปลงเป็น AP แทนที่จะให้คุณได้ปล่อย Mix — ของชิ้นนี้อยู่ในอาวุธเล่มฟาร์มเท่านั้น ห้ามหลงมาอยู่ในเล่มที่ใช้สู้จริง</dd>
+  </dl>
+</div>
+
+<div class="card">
+  <h4>ของที่ต้องตุนไว้ และหาจากไหน</h4>
+  <p data-note>กลไกสำคัญที่ทำให้ตุนง่ายกว่าที่คิด — <b>เกมดูจาก "ประเภทของไอเทม" ไม่ใช่คู่ที่เจาะจง</b> เช่น Hyper Mighty G เกิดจาก <b>ของสายป้องกันอะไรก็ได้ + ของหายากอะไรก็ได้</b> ฉะนั้นไม่ต้องไล่หาคู่เป๊ะ ๆ ตามตาราง ขอแค่มีของในหมวดที่ถูกต้อง</p>
+  <table>
+    <tr><th>ของที่ควรตุน</th><th>ใช้ทำอะไร</th><th>หาจากไหน</th></tr>
+    <tr><td class="nm"><span class="it">Wings to Discovery</span></td><td>คู่กันเองได้ <b>Trio of 9999</b> ซึ่งเป็นสูตรสำคัญที่สุด</td><td><b>ชนะแข่งโชโกโบที่ Remiem Temple ได้ทีเดียว 30 ชิ้น</b> – ตัวนี้ยังใช้คัสตอม Triple AP (×50) และ Break HP Limit (×30) ด้วย <b>วางแผนฟาร์มรอบเดียวคุ้มที่สุด</b></td></tr>
+    <tr><td class="nm"><span class="it">Gambler's Spirit</span></td><td>คู่กันเองได้ <b>Trio of 9999</b> เช่นกัน</td><td>รางวัลจากสนาม Monster Arena</td></tr>
+    <tr><td class="nm"><span class="it">Amulet</span></td><td>คู่กันเองได้ <b>Eccentrick</b> (เกจทั้งทีมเต็มไวขึ้น 2 เท่า)</td><td>ปราบ <b>Stratoavis</b> ที่ Monster Arena</td></tr>
+    <tr><td class="nm"><span class="it">Lv.3 Key Sphere</span></td><td>จับคู่กับของหายากได้ <b>Trio of 9999</b></td><td>ขโมยจาก <b>Biran Ronso</b> และ <b>Yenke Ronso</b></td></tr>
+    <tr><td class="nm">ของสายป้องกัน<small>เช่น Healing Spring, Lunar Curtain, Light Curtain</small></td><td>จับคู่กับของหายากได้ <b>Hyper Mighty G</b></td><td>ดูตารางแหล่งวัตถุที่ <a href="ref-gear.html#source">คู่มืออาวุธ/เกราะ</a> ซึ่งของหลายตัวซ้ำกับที่ใช้คัสตอมอยู่แล้ว</td></tr>
+  </table>
+  <div class="callout warn"><b>ข้อควรระวังที่ทำให้เสียของแพงโดยไม่รู้ตัว:</b> Mix <b>กินไอเทมสองชิ้นหายไปเลย</b> ทุกครั้งที่ปล่อย — และของที่ให้สูตรดีที่สุดก็คือของที่คุณต้องใช้คัสตอมอาวุธกับเกราะเหมือนกัน <b>ให้แยกโควตาไว้ในใจก่อนเริ่มผสม</b> ไม่งั้นจะพบว่า Wings to Discovery ที่เก็บมาทั้งกองหมดไปกับการทดลองสูตร แล้วไม่เหลือทำ Triple AP</div>
+</div></section>
+
+<footer>ข้อมูลอ้างอิง: Jegged – Final Fantasy Fandom (FF Wiki) – StrategyWiki – FinalFantasyKingdom – GameFAQs – EIP Gaming – <a href="../index.html">หน้ารวม</a> – <a href="ref-gear.html">อาวุธ/เกราะ</a> – <a href="ref-sidequests.html">Side Quest</a></footer>
+</div>
+<script defer src="../assets/js/fx.js"></script><script defer src="../assets/js/art.js"></script><script defer src="../assets/js/gimmicks.js"></script></body></html>

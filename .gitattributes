@@ -1,0 +1,5 @@
+# Normalise every text file to LF inside the repository, whatever the contributor's OS
+# does in their working copy. Without this, a Windows checkout rewrites line endings and
+# the next commit shows every line of a file as changed, which buries the real diff and
+# makes review impossible.
+* text=auto eol=lf

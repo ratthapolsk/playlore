@@ -483,3 +483,22 @@ actually generic yet."
   actually rolled when the menu is opened, so a reader following that line saves too late
   and the shortcut does nothing. **When writing a save-and-reload technique, state the exact
   moment the game decides**, because that moment is the whole technique.
+
+- **A guard that fails silently is worse than no guard, because everyone believes it is
+  working.** A house-style hook loaded its blocklist inside `try { ... } catch { return [] }`.
+  The loader referenced `fs` without importing it, so it threw on every run, the catch
+  swallowed it, and the list was empty every time. Two opposite symptoms followed from that
+  one fault: with an empty list the blocklist was interpolated into a regex as an empty
+  alternation, which matched almost everything and blocked innocent edits; and once that was
+  guarded, the check matched nothing at all and waved real violations straight through.
+  **Catch only the error you actually expect — a missing file — and let every other failure
+  surface.** A hook that crashes gets fixed the same day; one that quietly does nothing does
+  not.
+
+- **A shell heredoc eats one level of backslash, so a regex written through one is not the
+  regex you tested.** Debugging the hook above, three probes reported that its pattern
+  matched nothing. The probes were wrong, not the hook: `\s` had arrived as `s` and `\b`
+  had vanished entirely, so the test regex bore no relation to the real one. This repo had
+  already recorded the same trap once. **Write anything containing escapes to a real file
+  and run that file** — and when a test and the thing it tests disagree, suspect the test
+  first.

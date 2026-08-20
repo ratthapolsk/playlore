@@ -169,6 +169,15 @@ harness first.** That has been the right call every time in this repo.
 - **Verify every agent's claim before accepting it.** Two agents in this repo once
   contradicted each other on a game mechanic; the orchestrator settled it with a search,
   not by picking the more confident answer.
+- **Spawn the fewest agents that cover the work.** One agent with a batched brief costs far
+  less than one agent per item and usually answers better, because it sees how the pieces
+  relate. Every agent re-reads the repo's context from nothing, so setup is paid **per
+  agent**. Fan out only when the pieces are genuinely independent **and** one agent would run
+  out of room. Before spawning N, ask what a single well-batched agent would miss; if the
+  answer is "nothing", spawn one.
+- **Scale the pass to the evidence already in hand.** When the person asking has tested
+  something on their own console, the job is to fill gaps and catch
+  right-observation-wrong-explanation cases, not to re-derive what they watched happen.
 
 ## Language — split by reader, not by file type
 

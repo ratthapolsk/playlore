@@ -951,3 +951,149 @@ Append new entries at the bottom of the relevant section. Never delete one.
   — by then it is locked and the trick does nothing. The timing, not the trick, was the
   part that was wrong.
 
+
+### Blitzball — the shot and pass maths are randomised, not a straight comparison
+- **Answer:** Both are a **random 50–150% roll**, not a threshold test. **Shooting:** `SH`
+  decays with distance, any defender you did **not** break through subtracts their `BL`,
+  and then the keeper subtracts **50–150% of their `CA`**, rolled per shot. So `SH` merely
+  above `CA` is a **coin flip**; `SH` above **1.5 × CA** always scores; `SH` at or below
+  **0.5 × CA** never does. **Passing:** `PA` decays with distance and a defender on the line
+  subtracts 50–150% of their `BL`; if it reaches 0 the pass **turns the ball over**, it is
+  not merely incomplete. Breaking through a defender removes their `BL` from the sum
+  entirely, so "No Break" is the **more expensive** option, not the safe one.
+- **Naming:** the stats are `HP SP EN AT PA BL SH CA`. The HD Remaster match screen labels
+  four of them `PAS SHT BLK CAT`, so those on-screen names are correct to use — but there is
+  **no `BLI` stat**; that spelling should never appear.
+- **Status:** confirmed
+- **Version:** HD Remaster / International
+- **Verified:** 2026-08-20
+- **Sources:** https://ffextreme.com/ff10/blitzball/action-commands/ ·
+  https://www.fandomspot.com/ffx-blitzball-stats/ ·
+  https://strategywiki.org/wiki/Final_Fantasy_X/Blitzball (search extraction)
+- **Why it matters more than it looks:** it changes team-building. A forward whose `SH` just
+  beats the enemy keeper `CA` is not "good enough" — aim for roughly 1.5 times it.
+
+### Blitzball prize rerolling — three different methods, only one works on league prizes
+- **Answer:** The prize table rolls **the first time you open the Blitzball screen after a
+  competition ends**, and viewing locks it. Three techniques exploit that, and they are
+  **not interchangeable**:
+  1. **Save before opening the menu, reload if the prize is wrong** — rerolls **both** the
+     league and tournament tables, costs nothing. **This is the default.**
+  2. **Enter and leave the Blitzball menu about five times** — this is **not a reroll at
+     all**. After a tournament finishes the `Tournament` option is greyed out for **four**
+     menu entries and returns on the **fifth**; the new tournament that spawns carries a
+     fresh prize as a side effect. **Tournament prizes only — it does nothing to the league
+     table**, and both `Status Reels` and the `Jupiter Sigil` are league prizes.
+  3. **`Reset Data`** (Save Sphere, then Play Blitzball, then the main menu) — forces a fresh
+     roll of both tables at any time, at severe cost (next entry).
+- **Status:** confirmed
+- **Version:** HD Remaster / International
+- **Verified:** 2026-08-20
+- **Sources:** https://gamefaqs.gamespot.com/ps3/643146-final-fantasy-x-x-2-hd-remaster/faqs/82607/blitzball ·
+  https://gamefaqs.gamespot.com/ps3/643146-final-fantasy-x-x-2-hd-remaster/answers/369222-how-do-i-get-the-tournament-option-back-in-blitzball ·
+  https://www.allgamestaff.com/final-fantasy-x/blitzball/ (search extraction; those domains 403 on direct fetch)
+- **Notes:** Method 2 is the classic **right procedure, wrong explanation** — players see the
+  prize change and conclude they rerolled it, then apply it to a league prize and cycle the
+  menu forever.
+
+### Reset Data destroys more than it is usually credited with
+- **Answer:** It resets **every player level to its starting value** (several below 3),
+  **wipes every learned technique on every player**, **wipes all contracts** so recruits
+  scatter back to their original teams, **returns every team in the league to its default
+  roster** — not only yours — and **resets standings, win/loss records and statistics**.
+- **The trap:** **Tidus still knows `Jecht Shot` but cannot equip it** until he is levelled
+  back to 3, because equipping needs a tech slot and the first slot opens at level 3.
+  Knowing a technique and being able to use it are different states.
+- **Status:** confirmed
+- **Version:** HD Remaster / International
+- **Verified:** 2026-08-20
+- **Sources:** https://www.allgamestaff.com/final-fantasy-x/blitzball/ ·
+  https://gamefaqs.gamespot.com/ps2/197344-final-fantasy-x/answers/293970-blitzball-reset-data-trick-for-wakkas-reels-jupiter-sigil ·
+  https://gamefaqs.gamespot.com/ps3/643146-final-fantasy-x-x-2-hd-remaster/answers/462608-i-cant-use-jecht-shot-after-reset-data-on-blitzball
+  (search extraction)
+- **Inferred, not documented — say so when writing it:** that already-won prizes stay in the
+  inventory, and that the 250/450 battle counter survives. Neither is stated anywhere, but the
+  published 26-match method resets repeatedly after each prize is won and still depends on
+  the counter, so it would be impossible if either were wiped.
+
+### Blitzball tech slots open at five levels, not one
+- **Answer:** A player has **five** technique slots and they open one at a time at levels
+  **3, 7, 12, 20 and 30**. "Level 3" is only the first rung. A freshly signed level-1 recruit
+  has no slot at all, which is why the set-techs screen appears to do nothing for them.
+- **Status:** confirmed
+- **Version:** HD Remaster / International
+- **Verified:** 2026-08-20
+- **Sources:** https://www.esque.com/slr/gamefaqs/ffx_blitz_tech_primer_v17.txt ·
+  https://game8.co/games/Final-Fantasy-X/archives/271410
+
+### Mark changes defensive AI — the blue prompt is a side effect, not the mechanic
+- **Answer:** Marking an opponent makes your player **abandon positional defence and follow
+  that one opponent** whether or not they hold the ball, which leaves the space they were
+  covering open. Marking is also the **only** gate on **Techcopy**: only a marked opponent
+  technique can be copied, and the game announces the chance with a blue-and-white flashing
+  prompt.
+- **So "No Mark on everyone" is right for winning quickly and wrong for building a team** —
+  it forfeits technique learning for the whole game. The reason usually given, that the blue
+  prompt interrupts your inputs, describes a real annoyance but not the mechanic that decides
+  matches.
+- **Status:** confirmed
+- **Version:** HD Remaster / International
+- **Verified:** 2026-08-20
+- **Sources:** https://ffextreme.com/ff10/blitzball/formations/ ·
+  https://game8.co/games/Final-Fantasy-X/archives/275310
+
+### Recruiting Nimrook, and what the standard write-up leaves out
+- **Answer:** Best keeper in the game (`CA` 67 at level 99), contracted to the **Al Bhed
+  Psyches**. To read his remaining contract: stand in front of him and press the **scout
+  button** (Square on a PlayStation pad). To burn contract games: play **Exhibition** against
+  the Psyches and choose **Forfeit** (Triangle during the match). With **one** game left,
+  **save first**, then forfeit — the renew-or-release roll happens as that match ends, so
+  reloading rerolls it. Once he is free, sign him before playing anything else, because
+  another team can take him. He costs **100 gil per game**, so 99 games is 9,900 gil.
+- **Two preconditions on Forfeit that break the instruction when omitted:** your side must
+  **hold the ball** and also be **behind on score**. At 0–0 the option can be greyed out; let
+  them score once, take the ball back, then forfeit.
+- **Location:** the airship **Corridor** — from the Bridge (the control room holding the Save
+  Sphere and the NavMap console), through the door behind the pilot seat and down the narrow
+  passage running toward the Cabin, past the lift where Rin trades. jegged calls the same
+  place the "cargo area"; the name the game shows is **Corridor**.
+- **Contracts are paid in full up front and tick down for every match the team plays, benched
+  or not** — so a long forfeit grind shortens your own squad contracts at the same time.
+- **Status:** confirmed. The odds of release are **undocumented** — do not invent a number.
+- **Version:** HD Remaster / International
+- **Verified:** 2026-08-20
+- **Sources:** https://jegged.com/Games/Final-Fantasy-X/Blitzball/Recruiting-Players.html ·
+  https://game8.co/games/Final-Fantasy-X/archives/275303 ·
+  https://www.thegamer.com/final-fantasy-10-every-blitzball-player-location-guide/
+
+### Level-1 blitzball recruits — three superlatives that get repeated wrongly
+- **Answer:** **Ropp does not have the best starting `AT`.** The famous `AT` 73 is a
+  **level-99** figure; at level 1 he has `AT` 11 and **Zalitz beats him at 15**. The real
+  level-1 strengths of Ropp are `BL` 15 and `HP` 191. **Zalitz ships with `Hi-Risk`**, which
+  halves every stat except `HP` and `SP` in exchange for double EXP — leave it equipped and
+  the defender is far weaker than the stat line suggests. **Letty is not a balanced passer:**
+  at level 1 his `PA` is 3 and his `BL` is 2, his two worst stats. **The `SH` 17 of Wedge**
+  is the best among **recruitable** players, not in the game — **Tidus starts at `SH` 78**.
+  **The `CA` 14 of Jumal** is the best keeper obtainable **before the airship**, not overall.
+  **Brother is airship-locked**, so this roster cannot be completed before the Fahrenheit.
+- **Status:** confirmed
+- **Version:** HD Remaster / International
+- **Verified:** 2026-08-20
+- **Sources:** https://game8.co/games/Final-Fantasy-X/archives/274808 (Ropp) ·
+  https://www.fandomspot.com/ffx-zalitz/ ·
+  https://game8.co/games/Final-Fantasy-X/archives/274787 (Wedge) ·
+  https://game8.co/games/Final-Fantasy-X/archives/274793 (Jumal) ·
+  https://www.fandomspot.com/ffx-brother/
+
+### Tournament overtime has a clock; a league draw does not
+- **Answer:** A **league** draw ends the match with no extra time and both sides take
+  **1 point** (a win is 3, a loss is 0). A **tournament** draw goes to **Golden Goal overtime
+  made of repeating 5-minute periods** — if nobody scores the period resets and another
+  starts, so it is effectively endless, but there **is** a visible clock counting down. A
+  reader told "no time limit" will panic when they watch it approach zero.
+- **Status:** confirmed
+- **Version:** HD Remaster / International
+- **Verified:** 2026-08-20
+- **Sources:** https://www.hxchector.com/final-fantasy-x-hd-remaster-walkthrough/blitzball/ ·
+  https://finalfantasy.fandom.com/wiki/Blitzball_(minigame) (search extraction, 402 on fetch)
+- **Unverified:** the league standings tiebreaker when two teams finish level on points.

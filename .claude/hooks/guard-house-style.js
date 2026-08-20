@@ -62,6 +62,7 @@
  * blowing up) fails OPEN via runHook() - it logs to stderr and allows the write.
  */
 
+const fs = require('fs');
 const path = require('path');
 const io = require(path.join(__dirname, '_hook-io.js'));
 
@@ -77,10 +78,17 @@ const HOOK_NAME = 'guard-house-style';
  * this hook still runs. To enable it, create the file with your own list. */
 function loadCodenames() {
   try {
-    const raw = fs.readFileSync(path.join(__dirname, 'codenames.local.json'), 'utf8');
+    const raw = fs.readFileSync(path.join(__dirname, "codenames.local.json"), "utf8");
     const list = JSON.parse(raw);
-    return Array.isArray(list) ? list.filter(s => typeof s === 'string' && s).map(s => s.toLowerCase()) : [];
-  } catch (e) { return []; }
+    return Array.isArray(list) ? list.filter(s => typeof s === "string" && s).map(s => s.toLowerCase()) : [];
+  } catch (e) {
+    // No file at all is the normal state for a fresh clone: the list is git-ignored.
+    if (e && e.code === 'ENOENT') return [];
+    // Anything else is a defect. Let it surface as a hook failure rather than silently
+    // returning an empty list, because an empty list disables this check completely and
+    // nobody would ever find out. That silence already cost one debugging session.
+    throw e;
+  }
 }
 const CODENAMES = loadCodenames();
 const CODENAME_ALT = CODENAMES.join('|');
@@ -167,6 +175,15 @@ function findCodenameIdentifiers(text) {
 }
 
 function findCodenames(text) {
+  /* An empty list must DISABLE this check, never widen it.
+   * Three of the four patterns below interpolate the codename list into a regex as an
+   * alternation. With no names the alternation is the empty string, so (?:) matches
+   * everywhere and the attribution pattern collapses to "the word by followed by any
+   * lowercase word" - which appears in almost every document in this repo. That empty
+   * state is the NORMAL one for anyone who clones this repository, because the list
+   * file is git-ignored. Without this guard the hook would block nearly every edit
+   * they make and blame a codename that was never there. */
+  if (CODENAMES.length === 0) return [];
   return [
     ...findCodenameIdentifiers(text),
     ...io.findMatches(text, ATTRIBUTION_RE),
